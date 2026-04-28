@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow · Email Triage — for Kiana</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12l5 5 9-12"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Kiana Blücher / CIELO</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="email-triage.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Workflow 02 · Email Triage · continuous</div>
+    <h1 class="page-title">
+      Five decisions a day.<br>
+      <em>Not eighty.</em>
+    </h1>
+    <p class="page-lede">
+      Inbox split into Client, Investor, Team, Personal, and Cold. Tier-2 replies auto-drafted in your voice, queued for one-tap approval. Tier-1 lands in a Decisions inbox you actually read. Click <em>Run Triage</em> on a sample of your real-feeling Tuesday inbox.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="morning-brief.html">Morning Brief <span class="badge">01</span></a></li>
+          <li><a href="email-triage.html" class="active">Email Triage <span class="badge">02</span></a></li>
+          <li><a href="pre-meeting.html">Pre-Meeting Brief <span class="badge">03</span></a></li>
+          <li><a href="reflection.html">Reflection Layer <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">Triage rules</h4>
+        <div class="card card-tight" style="font-size: 12px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">CLIENT</div>
+          <div>Active engagements + named project domains. Auto-route to project Notion. Tier-1 if scope/billing change.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">INVESTOR</div>
+          <div>LP, allocator, board contacts. Always tier-1. Drafted with formal tone.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">TEAM</div>
+          <div>cielo.agency domains. Routed to Slack thread; you only see escalations.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">PERSONAL</div>
+          <div>Family, friends, vendors, travel. Auto-organize, never auto-respond.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">COLD</div>
+          <div>Cold sales, mass marketing, scrapers. Silently archived. Reb2b ID'd outbound goes to a separate review pile.</div>
+        </div>
+      </aside>
+
+      <div>
+        <!-- Flow diagram -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How triage runs · ~ 8 seconds per email</div>
+          <div class="row gap-8" style="flex-wrap: wrap;">
+            <div class="flow-node in"><svg class="ic ic-sm"><use href="#i-mail"/></svg> Gmail inbound</div>
+            <span class="flow-arrow" style="font-size: 22px;">→</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Claude classifies</div>
+            <span class="flow-arrow" style="font-size: 22px;">→</span>
+            <div class="flow-stack">
+              <div class="flow-node" style="background: #EFF6FF; border-color: #BFDBFE; color: #1D4ED8;">Client → Notion + draft</div>
+              <div class="flow-node" style="background: #FAF5FF; border-color: #E9D5FF; color: #7C3AED;">Investor → tier-1</div>
+              <div class="flow-node" style="background: #F0FDF4; border-color: #BBF7D0; color: #15803D;">Team → Slack thread</div>
+              <div class="flow-node" style="background: #FFFBEB; border-color: #FED7AA; color: #B45309;">Personal → folder</div>
+              <div class="flow-node" style="background: #FAFAFA; border-color: #E5E5E5; color: #525252;">Cold → archive</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Before / after -->
+        <div class="card mb-24" style="padding: 24px;">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Inbox compression · Tuesday morning</div>
+          <div style="display: grid; grid-template-columns: 1fr 60px 1fr; align-items: center; gap: 24px;">
+            <div>
+              <div class="counter" style="font-size: 56px;">47</div>
+              <div class="text-soft" style="font-size: 13px; margin-top: 6px;">Unread when you wake up</div>
+              <div style="height: 6px; background: #FECACA; border-radius: 999px; margin-top: 12px;"></div>
+            </div>
+            <div style="text-align: center;">
+              <svg class="ic ic-xl text-muted"><use href="#i-arrow"/></svg>
+            </div>
+            <div>
+              <div class="counter" style="font-size: 56px; color: var(--green);">5</div>
+              <div class="text-soft" style="font-size: 13px; margin-top: 6px;">Decisions left for you · 89% reduction</div>
+              <div style="height: 6px; background: #BBF7D0; border-radius: 999px; margin-top: 12px; width: 11%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI counter -->
+        <div class="kpis mb-24">
+          <div class="kpi">
+            <div class="label">Inbox total</div>
+            <div class="num" id="kpi-total">12</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Auto-handled</div>
+            <div class="num" id="kpi-auto">0</div>
+            <div class="delta" id="kpi-auto-pct">—</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Drafted (tier-2)</div>
+            <div class="num" id="kpi-draft">0</div>
+            <div class="delta">one-tap approve</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Your decisions</div>
+            <div class="num" id="kpi-tier1">0</div>
+            <div class="delta">tier-1 only</div>
+          </div>
+        </div>
+
+        <div class="row-between mb-16">
+          <div class="row gap-8">
+            <span class="tag"><span class="tag-dot"></span>Live demo · sample inbox</span>
+            <span class="tag tag-blue">Tuesday morning · 47 unread</span>
+          </div>
+          <div class="row gap-8">
+            <button class="btn-ghost btn-sm" id="btn-reset">Reset</button>
+            <button class="btn" id="btn-triage">Run triage</button>
+          </div>
+        </div>
+
+        <!-- Email list -->
+        <div class="email-list" id="email-list"></div>
+
+        <!-- Drafted reply preview (slides in after triage) -->
+        <div id="draft-preview" class="card mt-32 hidden" style="border-color: var(--ink);">
+          <div class="row-between mb-16">
+            <div>
+              <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 6px;">Auto-drafted reply · awaits your approval</div>
+              <div style="font-weight: 600; font-size: 16px;">→ Sarah Chen, Greenline Capital · Re: brand audit follow-up</div>
+            </div>
+            <span class="tag tag-blue"><span class="tag-dot"></span>Tier-2 · matches your voice</span>
+          </div>
+
+          <!-- Read-only view -->
+          <div id="draft-view" style="background: var(--bg-soft); padding: 20px; border-radius: var(--radius); font-size: 14px; line-height: 1.65;">
+            Hi Sarah,<br><br>
+            Thanks for circling back. Tuesday at 10am ET works on my end — I've held the slot. I'll send a short pre-read tomorrow afternoon so we can use the call to focus on the perception layer rather than the deck.<br><br>
+            One thing in advance: when we talk, I'd rather understand how Greenline is being read by your LPs today than walk you through CIELO's portfolio. The strategy work compounds from there.<br><br>
+            See you Tuesday.<br><br>
+            <em>Kiana</em>
+          </div>
+
+          <!-- Editable view (hidden by default) -->
+          <textarea id="draft-edit" class="reply-editor hidden">Hi Sarah,
+
+Thanks for circling back. Tuesday at 10am ET works on my end — I've held the slot. I'll send a short pre-read tomorrow afternoon so we can use the call to focus on the perception layer rather than the deck.
+
+One thing in advance: when we talk, I'd rather understand how Greenline is being read by your LPs today than walk you through CIELO's portfolio. The strategy work compounds from there.
+
+See you Tuesday.
+
+— Kiana</textarea>
+
+          <div class="row gap-8 mt-16" id="draft-actions">
+            <button class="btn btn-sm" id="btn-send-reply"><svg class="ic ic-sm"><use href="#i-check"/></svg> Approve &amp; send</button>
+            <button class="btn btn-secondary btn-sm" id="btn-edit-reply">Edit before send</button>
+            <button class="btn-ghost btn-sm" id="btn-skip-reply">Skip · I'll handle</button>
+          </div>
+
+          <div class="row gap-8 mt-16 hidden" id="draft-edit-actions">
+            <button class="btn btn-sm" id="btn-save-send"><svg class="ic ic-sm"><use href="#i-check"/></svg> Save &amp; send</button>
+            <button class="btn-ghost btn-sm" id="btn-cancel-edit">Cancel</button>
+          </div>
+
+          <!-- Sent state -->
+          <div class="hidden mt-16" id="draft-sent" style="display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: var(--radius); color: #15803D;">
+            <svg class="ic" style="color: #15803D;"><use href="#i-check"/></svg>
+            <span style="font-size: 14px;">Sent to Sarah Chen at 09:42. Logged to GHL CRM. Follow-up reminder set for Friday.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast container -->
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">PM who builds. IIT Kanpur. AI-native daily.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9468688354 <a class="wa-badge" href="https://wa.me/919468688354" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const emails = [
+    { from: 'Sarah Chen, Greenline Capital', subject: 'Re: brand audit follow-up — Tuesday 10am?', preview: 'Looping back on the audit conversation. We have a $80K window for Q3 brand work…', bucket: 'client', tier: 2 },
+    { from: 'Marcus Reilly, Apex LP', subject: 'Quarterly LP letter — feedback on draft', preview: 'Two redlines on the cover. Would love your take on the perception framing before Friday.', bucket: 'investor', tier: 1 },
+    { from: 'Klarité Salon · billing@', subject: 'Q3 retainer signed · invoice attached', preview: 'Auto-confirmation. Renewal locked, invoice for $14,500 attached.', bucket: 'client', tier: 2 },
+    { from: 'Kim Ortiz · CIELO', subject: 'Tomorrow agenda + pipeline review', preview: 'Pushing Ana\'s pipeline review to Thursday per her request. Meet at noon as usual?', bucket: 'team', tier: 2 },
+    { from: 'Elevate Planners · ops', subject: 'Q2 social calendar — gentle nudge', preview: 'Hi Kiana, our team has been waiting on sign-off for the Q2 plan…', bucket: 'client', tier: 1 },
+    { from: 'Jamie · CookOnly', subject: 'Personal: Mom\'s birthday booking confirmed', preview: 'Just confirming the brunch reservation Saturday at 11. Table for 6.', bucket: 'personal', tier: 2 },
+    { from: 'sales@beanstalk-growth.io', subject: '🚀 Scale your agency 10x with our SaaS', preview: 'Hi {first_name}, I noticed CIELO Agency is doing great work. Our platform helps…', bucket: 'cold', tier: 0 },
+    { from: 'Zandra Drysdale · CIELO', subject: 'Zen Botanica staging — checkout flow blocker', preview: 'Found a checkout step breaking on Safari mobile. Patched. Need your QA before launch.', bucket: 'team', tier: 2 },
+    { from: 'David Park, Northbrook RIA', subject: 'Intro: looking for a brand partner', preview: 'Vincent Ko at Apex sent me your way. We\'re a $480M RIA looking to refresh…', bucket: 'client', tier: 1 },
+    { from: 'noreply@medium.com', subject: 'Daily digest: 5 stories on branding', preview: 'Topics you follow have new stories…', bucket: 'cold', tier: 0 },
+    { from: 'Ana Vélez · CIELO', subject: 'OOO update + handover notes', preview: 'I\'m on PTO Wednesday-Thursday. Marina is covering the Klarité account…', bucket: 'team', tier: 2 },
+    { from: 'invitations@calendly.com', subject: 'New meeting booked: Friday 3pm', preview: 'A new prospect, Lina Werner, booked a 30-min discovery call.', bucket: 'client', tier: 2 }
+  ];
+
+  const bucketLabels = {
+    client: { label: 'Client', cls: 'bucket-client' },
+    investor: { label: 'Investor', cls: 'bucket-investor' },
+    team: { label: 'Team', cls: 'bucket-team' },
+    personal: { label: 'Personal', cls: 'bucket-personal' },
+    cold: { label: 'Cold · auto-archive', cls: 'bucket-cold' }
+  };
+
+  const list = document.getElementById('email-list');
+
+  function render(showBuckets) {
+    list.innerHTML = '';
+    emails.forEach((e, idx) => {
+      const div = document.createElement('div');
+      div.className = 'email-item';
+      div.style.transitionDelay = (idx * 0.04) + 's';
+      div.innerHTML = `
+        <div class="email-row-top">
+          <div class="from">${e.from}</div>
+          <div class="bucket">
+            ${showBuckets
+              ? `<span class="bucket-pill ${bucketLabels[e.bucket].cls}"><span class="tag-dot"></span>${bucketLabels[e.bucket].label}</span>`
+              : '<span class="text-muted mono" style="font-size: 10px; letter-spacing: 0.1em;">UNPROCESSED</span>'}
+          </div>
+        </div>
+        <div class="subj">${e.subject}</div>
+        <span class="preview">${e.preview}</span>
+      `;
+      if (showBuckets) div.classList.add('processed');
+      list.appendChild(div);
+    });
+  }
+  render(false);
+
+  document.getElementById('btn-triage').addEventListener('click', () => {
+    render(true);
+    // Animate KPIs
+    const total = emails.length;
+    const cold = emails.filter(e => e.bucket === 'cold').length;
+    const tier2 = emails.filter(e => e.tier === 2).length;
+    const tier1 = emails.filter(e => e.tier === 1).length;
+    const auto = cold + tier2;
+    const pct = Math.round((auto / total) * 100);
+    animate('kpi-total', total);
+    animate('kpi-auto', auto);
+    document.getElementById('kpi-auto-pct').textContent = pct + '% of inbox';
+    document.getElementById('kpi-auto-pct').classList.add('up');
+    animate('kpi-draft', tier2);
+    animate('kpi-tier1', tier1);
+    // Show draft preview
+    setTimeout(() => {
+      const dp = document.getElementById('draft-preview');
+      dp.classList.remove('hidden');
+      dp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 800);
+  });
+
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    render(false);
+    ['kpi-auto', 'kpi-draft', 'kpi-tier1'].forEach(id => document.getElementById(id).textContent = '0');
+    document.getElementById('kpi-auto-pct').textContent = '—';
+    document.getElementById('draft-preview').classList.add('hidden');
+  });
+
+  function animate(id, target) {
+    const el = document.getElementById(id);
+    const start = parseInt(el.textContent) || 0;
+    const dur = 600;
+    const t0 = performance.now();
+    function step(t) {
+      const p = Math.min(1, (t - t0) / dur);
+      el.textContent = Math.round(start + (target - start) * p);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ============== Toast helpers ==============
+  function toast(message, opts = {}) {
+    const stack = document.getElementById('toast-stack');
+    const el = document.createElement('div');
+    el.className = 'toast ' + (opts.kind || 'info');
+    el.innerHTML = `
+      <svg class="ic"><use href="#${opts.icon || 'i-check'}"/></svg>
+      <span>${message}</span>
+      ${opts.meta ? `<span class="toast-meta">${opts.meta}</span>` : ''}
+    `;
+    stack.appendChild(el);
+    setTimeout(() => el.remove(), 4400);
+  }
+
+  // ============== Edit / Send / Skip flow ==============
+  const draftView = document.getElementById('draft-view');
+  const draftEdit = document.getElementById('draft-edit');
+  const draftActions = document.getElementById('draft-actions');
+  const draftEditActions = document.getElementById('draft-edit-actions');
+  const draftSent = document.getElementById('draft-sent');
+  const btnSend = document.getElementById('btn-send-reply');
+  const btnEdit = document.getElementById('btn-edit-reply');
+  const btnSkip = document.getElementById('btn-skip-reply');
+  const btnSaveSend = document.getElementById('btn-save-send');
+  const btnCancel = document.getElementById('btn-cancel-edit');
+
+  function showSentState(metaText) {
+    draftView.classList.add('hidden');
+    draftEdit.classList.add('hidden');
+    draftActions.classList.add('hidden');
+    draftEditActions.classList.add('hidden');
+    draftSent.classList.remove('hidden');
+    draftSent.querySelector('span').textContent = metaText;
+  }
+
+  btnEdit.addEventListener('click', () => {
+    draftView.classList.add('hidden');
+    draftEdit.classList.remove('hidden');
+    draftActions.classList.add('hidden');
+    draftEditActions.classList.remove('hidden');
+    draftEdit.focus();
+    // place cursor at end
+    draftEdit.setSelectionRange(draftEdit.value.length, draftEdit.value.length);
+  });
+
+  btnCancel.addEventListener('click', () => {
+    draftView.classList.remove('hidden');
+    draftEdit.classList.add('hidden');
+    draftActions.classList.remove('hidden');
+    draftEditActions.classList.add('hidden');
+  });
+
+  btnSaveSend.addEventListener('click', () => {
+    const edited = draftEdit.value.trim();
+    if (!edited) { toast('Reply is empty. Add something first.', { kind: 'info' }); return; }
+    // Update the read-only view with the edited content (formatted)
+    draftView.innerHTML = edited.replace(/\n/g, '<br>');
+    showSentState('Sent to Sarah Chen at ' + nowTime() + ' (edited). Logged to GHL CRM. Follow-up reminder set.');
+    toast('Edited reply sent to Sarah Chen', { kind: 'success', icon: 'i-check', meta: 'GHL · LOGGED' });
+  });
+
+  btnSend.addEventListener('click', () => {
+    showSentState('Sent to Sarah Chen at ' + nowTime() + '. Logged to GHL CRM. Follow-up reminder set for Friday.');
+    toast('Reply sent to Sarah Chen', { kind: 'success', icon: 'i-check', meta: 'GHL · LOGGED' });
+  });
+
+  btnSkip.addEventListener('click', () => {
+    draftView.classList.add('hidden');
+    draftActions.classList.add('hidden');
+    draftSent.classList.remove('hidden');
+    draftSent.style.background = '#FFFBEB';
+    draftSent.style.borderColor = '#FED7AA';
+    draftSent.style.color = '#B45309';
+    draftSent.querySelector('span').textContent = 'Moved to your "Decisions" inbox. I won\'t auto-send.';
+    draftSent.querySelector('svg').style.color = '#B45309';
+    toast('Moved to your Decisions inbox', { kind: 'info', icon: 'i-arrow' });
+  });
+
+  function nowTime() {
+    const d = new Date();
+    const h = String(d.getHours()).padStart(2, '0');
+    const m = String(d.getMinutes()).padStart(2, '0');
+    return `${h}:${m}`;
+  }
+</script>
+
+</body>
+</html>

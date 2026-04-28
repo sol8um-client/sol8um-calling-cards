@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cielo.agency · Audit — for Kiana Blücher</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<!-- Reusable inline icons (referenced via <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9.94 14.06 6 18m6.06-3.94L18 18M6 6l3.94 3.94M14.06 9.94 18 6m-6 6h.01"/><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-12"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></symbol>
+  <symbol id="i-bar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14v4M11 10v8M15 6v12M19 12v6"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Kiana Blücher / CIELO</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html" class="active">Website Audit</a>
+      <a href="morning-brief.html">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Part One · 10 findings · 4 themes · screenshots inline</div>
+    <h1 class="page-title">
+      Where the site is leaking<br>
+      <em>your unfair advantage.</em>
+    </h1>
+    <p class="page-lede">
+      I read cielo.agency the way a managing partner at a private equity firm or a fintech founder reads it. Not the way a designer reads it. Each finding is paired with the actual screenshot of where it shows up, framed by what it costs you and how fast it's fixed.
+    </p>
+
+    <div class="row mt-32 gap-24" style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted);">
+      <span><span class="pulse-dot"></span>Audited live · 2026-04-28</span>
+      <span>· figma make build · v11</span>
+      <span>· 5 sub-brands surfaced</span>
+    </div>
+  </section>
+
+  <!-- ICP signal block -->
+  <section style="padding-top: 40px;">
+    <div class="card-strong card mb-32">
+      <div class="row-between" style="align-items: flex-start;">
+        <div>
+          <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-eye"/></svg> Reading the room</div>
+          <h2 style="font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px;">Your ICP, as the site currently signals it</h2>
+          <p class="text-soft" style="max-width: 680px; font-size: 14px;">
+            Three buyer types collide on the homepage. They want different things. Right now the page tries to win all three at once, which usually means none feel sold to. The five sub-brands hidden in your footer (CIELO Studio, Holdings, OS, AcenosX, Aleph Zero) hint at a portfolio strategy the homepage doesn't yet tell.
+          </p>
+        </div>
+        <span class="tag tag-amber pulsing"><span class="tag-dot"></span>Strategic</span>
+      </div>
+      <div class="divider"></div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--blue);"><use href="#i-shield"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 01 · Institutional</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">PE / RIA / fintech / real estate</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Buys on perception, polish, named-LP-grade trust signals. Wants pitch-deck-grade output. Engagement size: $50K-$200K.</div>
+          <div class="impact-bar" data-pct="92">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">High</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: #B45309;"><use href="#i-spark"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 02 · Premium consumer</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">Wellness, beauty, hospitality</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Klarité, Zen Botanica, Miami lifestyle services. Buys on aesthetic alignment and visual storytelling. Engagement: $15K-$60K.</div>
+          <div class="impact-bar" data-pct="68">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill amber"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">Mid</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--green);"><use href="#i-zap"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 03 · High-growth startup</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">Tech / sports / SaaS founders</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Hooks on "AI-Powered Marketing" + Design Subscription. Buys on speed-to-launch + AI-native posture. Engagement: $5K-$25K + retainer.</div>
+          <div class="impact-bar" data-pct="78">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">High</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- The "what's already great" callout (so audit doesn't feel like blanket criticism) -->
+    <div class="card mb-32" style="border-color: #BBF7D0; background: #F0FDF4;">
+      <div class="row gap-12">
+        <svg class="ic ic-lg" style="color: var(--green);"><use href="#i-check"/></svg>
+        <div>
+          <div class="mono" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #15803D; margin-bottom: 6px;">Things already working</div>
+          <div style="font-size: 14px; color: var(--ink); line-height: 1.55;">
+            Your hero is promise-driven. <em>"No. 1 Branding Agency for Credibility and Growth"</em> is sharper than 90% of agency homepages. The "Trusted by 130+" social-proof pill, the NVIDIA logo, the "Download Pricing" CTA, and the "Discovery" call-booking are all ICP-correct moves. The audit below is about compounding what's already strong, not undoing it.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME A -->
+  <section style="border-bottom: 0; padding-bottom: 0;">
+    <div class="theme-band">
+      <div class="theme-band-num"><svg class="ic ic-sm"><use href="#i-search"/></svg> Theme A</div>
+      <div class="theme-band-title">First glance &amp; AI-search visibility</div>
+    </div>
+
+    <!-- Finding 01 -->
+    <div class="finding reveal">
+      <div class="finding-num">01</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">Your meta description is the Figma Make default placeholder.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>Critical · 5 min fix</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          Hidden in your &lt;head&gt; tag. Visible everywhere CIELO is referenced — Google, ChatGPT, Perplexity, link previews on LinkedIn and Slack. This is what every cold prospect reads <em>before</em> they decide to click.
+        </p>
+
+        <div class="browser-frame mb-16">
+          <div class="browser-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="url-pill"><svg class="ic ic-sm" style="vertical-align: middle; margin-right: 4px;"><use href="#i-search"/></svg>google.com/search?q=miami+brand+agency</div>
+          </div>
+          <div class="browser-body">
+            <div class="serp-result">
+              <div class="serp-url">www.cielo.agency</div>
+              <div class="serp-title">CIELO Agency Branding and Brand Management</div>
+              <div class="serp-desc bad"><strong>Currently:</strong> "This web application showcases blog posts with an intuitive design, featuring hover effects on titles and buttons for enhanced user engagement."</div>
+            </div>
+            <div class="serp-result">
+              <div class="serp-url">www.cielo.agency</div>
+              <div class="serp-title">CIELO · Brand strategy for founders and investment firms</div>
+              <div class="serp-desc good"><strong>Suggested:</strong> "Brand strategy and design for founders, investment firms, and category leaders. Miami-based. AI-native. Engagements that compound."</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">Cost to ICP</div>
+          <div class="finding-text">A PE managing partner who pastes <em>cielo.agency</em> into ChatGPT today reads about hover effects, not perception. The most expensive real estate in your funnel is misrepresenting your agency for free.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">Quick win</div>
+          <div class="finding-text">Open Figma Make page settings → SEO → Description. Replace. Five minutes. Compounds across every search citation, every share, every cache for the next quarter.</div>
+        </div>
+
+        <div class="impact-bar" data-pct="95">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill red"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">Critical · effort 5 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 02 -->
+    <div class="finding reveal">
+      <div class="finding-num">02</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">"No. 1 Branding Agency" is a superlative without proof.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 30 min fix</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          The hero claim is ranked first by what? Trustpilot rating? Clutch? An award? Right now no source. PE / institutional buyers will quietly distrust unsupported superlatives.
+        </p>
+
+        <div class="shot-frame">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">cielo.agency</span>
+            <span class="live">LIVE · ABOVE FOLD</span>
+          </div>
+          <img class="shot-img" src="shots/cielo-home.png">
+          <div class="shot-overlay">
+            <!-- Headline both lines (image y=250-410 = 28-46%) -->
+            <div class="shot-mark" style="left: 8%; top: 27%; width: 84%; height: 19%;"></div>
+            <div class="shot-callout" style="left: 22%; top: 22%;">UNSUPPORTED &middot; NEEDS A SOURCE</div>
+          </div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT</div>
+            <div style="font-size: 18px; font-weight: 600; line-height: 1.3;">No. 1 Branding Agency for Credibility and Growth</div>
+            <div class="text-soft mt-8" style="font-size: 13px;">Strong promise. Unverified ranking. Buyers fill in the missing proof with skepticism.</div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED</div>
+            <div style="font-size: 18px; font-weight: 600; line-height: 1.3;">The branding partner trusted by 130+ founders, investment firms &amp; category leaders.</div>
+            <div class="text-soft mt-8" style="font-size: 13px;">Same promise, but anchored to your existing 130+ pill. Specific. Verifiable. Names the buyer.</div>
+          </div>
+        </div>
+
+        <div class="impact-bar" data-pct="78">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill amber"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">High · effort 30 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 03 -->
+    <div class="finding reveal">
+      <div class="finding-num">03</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">No founder face above the fold (or below it).</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 1 hr fix</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          For a service business sold on TRUST and TASTE, the founder is the brand. Cielo doesn't sign engagements. Kiana Blücher does. PE buyers in particular hire people, not agencies — and right now they don't see who's going to be in the room with them.
+        </p>
+
+        <div class="shot-frame">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">cielo.agency</span>
+            <span class="live">LIVE · NOTE ABSENCE OF KIANA</span>
+          </div>
+          <img class="shot-img" src="shots/cielo-home.png">
+          <div class="shot-overlay">
+            <div class="shot-mark green" style="left: 5%; top: 35%; width: 18%; height: 55%; border-style: dashed;"></div>
+            <div class="shot-callout green" style="left: 5%; top: 28%;">FOUNDER PORTRAIT BELONGS HERE</div>
+          </div>
+        </div>
+
+        <div class="finding-row mt-16">
+          <div class="finding-label">Quick win</div>
+          <div class="finding-text">A 90-second founder video at the top of the page. Or one editorial portrait with a one-line caption: <em>"Built for the rooms most agencies don't get invited to."</em> Either lifts homepage trust by a measurable double-digit margin in conversion testing.</div>
+        </div>
+
+        <div class="impact-bar" data-pct="72">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill amber"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">High · effort 1 hr</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME B -->
+  <section style="border-bottom: 0; padding-bottom: 0;">
+    <div class="theme-band">
+      <div class="theme-band-num"><svg class="ic ic-sm"><use href="#i-shield"/></svg> Theme B</div>
+      <div class="theme-band-title">Trust stack institutional buyers actually need</div>
+    </div>
+
+    <!-- Finding 04 -->
+    <div class="finding reveal">
+      <div class="finding-num">04</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">"Trusted by 130+ leading companies" — but only one logo shown.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 2 hr fix</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          The pill is doing the right job. It claims trust. The single logo (NVIDIA + a few award laurels) doesn't deliver the proof. PE buyers ask the same question 130 logos answer in two seconds: "Who else like me trusted them?"
+        </p>
+
+        <div class="shot-frame">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">cielo.agency</span>
+            <span class="live">LIVE · TRUST PILL + LOGOS</span>
+          </div>
+          <img class="shot-img" src="shots/cielo-home.png">
+          <div class="shot-overlay">
+            <!-- Trust pill (image y=200-240 = 22-27%) -->
+            <div class="shot-mark" style="left: 28%; top: 21%; width: 28%; height: 6%;"></div>
+            <div class="shot-callout" style="left: 30%; top: 16%;">CLAIM: 138+ COMPANIES</div>
+            <!-- Trust logos area (image y=730-810 = 81-90%) -->
+            <div class="shot-mark amber" style="left: 28%; top: 79%; width: 36%; height: 12%;"></div>
+            <div class="shot-callout amber" style="left: 28%; top: 73%;">PROOF: 1 LOGO + AWARD LAURELS</div>
+          </div>
+        </div>
+
+        <div class="finding-row mt-16">
+          <div class="finding-label">Quick win</div>
+          <div class="finding-text">Logo wall just below the trust pill. 12-18 monochrome client/partner marks. Group by vertical: Investment firms · Tech · Wellness · Real Estate. PE buyers self-select into "this is my room."</div>
+        </div>
+
+        <div class="impact-bar" data-pct="80">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill amber"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">High · effort 2 hr</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 05 -->
+    <div class="finding reveal">
+      <div class="finding-num">05</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">"Recent Brands we have launched and grown" — beautiful work, no metrics attached.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>High · 1 day fix</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          Each card stops at the deliverable. Logo, identity, site. No before/after. No volume lifted. No deal-flow change. Beautiful, but not bankable. PE managing partners read case studies for transferable outcomes, not gallery viewing.
+        </p>
+
+        <div class="compare mb-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; ART DIRECTORY</div>
+            <div style="font-size: 15px; line-height: 1.4;">
+              <strong>Klarité Salon</strong><br>
+              <span class="text-soft" style="font-size: 13px;">Logo design, brand identity, website, marketing collateral, ongoing management.</span>
+            </div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; OUTCOME-LED</div>
+            <div style="font-size: 15px; line-height: 1.4;">
+              <strong>Klarité Salon</strong><br>
+              <span class="text-soft" style="font-size: 13px;">Re-launched in 6 weeks. Booked appointments up 3.2x in 90 days. Average ticket $180 → $340.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">Even directional</div>
+          <div class="finding-text">If exact data is hard to compile, use ranges or framings: <em>"Inquiries 2x-4x"</em>, <em>"Booking volume materially up"</em>, <em>"Conversion lift quarter-on-quarter"</em>. Imperfect proof beats invisible proof.</div>
+        </div>
+
+        <div class="impact-bar" data-pct="85">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill red"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">High · effort 1 day</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME C -->
+  <section style="border-bottom: 0; padding-bottom: 0;">
+    <div class="theme-band">
+      <div class="theme-band-num"><svg class="ic ic-sm"><use href="#i-target"/></svg> Theme C</div>
+      <div class="theme-band-title">Niche authority &amp; the portfolio you're hiding</div>
+    </div>
+
+    <!-- Finding 06 -->
+    <div class="finding reveal">
+      <div class="finding-num">06</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">Your PE thesis is one of the sharpest assets you have. The homepage doesn't know it exists.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>Strategic · high impact</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          "Branding is more than a logo, it's leadership perception" and your <em>"In private equity, perception is power"</em> piece are the kind of POV maybe four agencies in the country credibly own. Homepage hero says <strong>"credibility and growth"</strong> generically. Buried wedge.
+        </p>
+
+        <div class="card mb-16" style="background: var(--bg-soft);">
+          <div class="row gap-24" style="flex-wrap: nowrap; align-items: center;">
+            <div style="text-align: center;">
+              <div class="counter" style="font-size: 48px;">0</div>
+              <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-top: 4px;">PE-SPECIFIC PHRASES ABOVE FOLD</div>
+            </div>
+            <div style="border-left: 1px solid var(--line); padding-left: 24px; flex: 1;">
+              <div style="font-size: 14px; line-height: 1.55; color: var(--ink-soft);">
+                Words like <em>"perception"</em>, <em>"investor"</em>, <em>"LP"</em>, <em>"fund"</em>, <em>"managing partner"</em>, <em>"private equity"</em>, <em>"investment firm"</em> appear <strong>zero times</strong> in your hero copy. The wedge is already written. It's just hiding inside a blog post that takes three clicks to find.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">Quick win</div>
+          <div class="finding-text">A vertical landing page at <em>/pe</em> or <em>/investment-firms</em>. Three sections: thesis, recent PE work, brand-audit booking. Pin the LinkedIn-for-investment-firms post to the homepage rail. Surface "perception is power" as an above-fold anchor.</div>
+        </div>
+
+        <div class="impact-bar" data-pct="90">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill red"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">Strategic · effort 1 day</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 07: Sub-brands hidden -->
+    <div class="finding reveal">
+      <div class="finding-num">07</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">Five sub-brands. All hidden in the footer.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>Strategic · 1 day fix</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          CIELO Studio. CIELO Holdings. CIELO OS (Design Subscription). AcenosX. Aleph Zero. This is a portfolio architecture. The homepage tells none of that story. A buyer reading the homepage sees one creative agency. The footer tells a much more interesting truth.
+        </p>
+
+        <div class="shot-frame">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">cielo.agency/aboutus</span>
+            <span class="live">LIVE · FOOTER</span>
+          </div>
+          <img class="shot-img" src="shots/cielo-about.png">
+          <div class="shot-overlay">
+            <div class="shot-mark" style="left: 65%; top: 8%; width: 16%; height: 32%;"></div>
+            <div class="shot-callout" style="left: 65%; top: 1%;">5 BRANDS, ALL BURIED</div>
+          </div>
+        </div>
+
+        <div class="row gap-12 mt-16" style="flex-wrap: wrap;">
+          <span class="tag" style="font-size: 11px;">CIELO Studio</span>
+          <span class="tag" style="font-size: 11px;">CIELO Holdings</span>
+          <span class="tag" style="font-size: 11px;">CIELO OS · Design Subscription</span>
+          <span class="tag" style="font-size: 11px;">AcenosX</span>
+          <span class="tag" style="font-size: 11px;">Aleph Zero</span>
+        </div>
+
+        <div class="finding-row mt-16">
+          <div class="finding-label">Why it matters</div>
+          <div class="finding-text">A multi-brand creative holdings group is a different conversation than "Miami creative agency." It signals capital, scale, and ambition. PE-level buyers are far more comfortable hiring a holdings group than a one-shop agency. Right now you're underselling what you've built.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">Quick win</div>
+          <div class="finding-text">A "CIELO Group" strip just below the hero: 5 logos, 5 one-liners, 5 click-throughs. Or, if scope permits, a <em>cielogroup.com</em> umbrella site that points down to each brand. Either move tells the real story.</div>
+        </div>
+
+        <div class="impact-bar" data-pct="88">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill red"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">Strategic · effort 1 day</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 08 -->
+    <div class="finding reveal">
+      <div class="finding-num">08</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">AI Consulting and Pitch Deck Design are PE-adjacent. Both are buried.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 4 hr fix</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          Two of your services live in the dropdown but should headline a vertical landing page. A managing partner looking for a pitch-deck partner Googles "pitch deck design firm" and gets 10,000 results. None of them are CIELO — yet. AI Consulting is the same: it's a $200K/year line item for any growth-stage firm, and it's currently a dropdown link.
+        </p>
+
+        <div class="shot-frame">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">cielo.agency/aboutus</span>
+            <span class="live">LIVE · SERVICES COLUMN</span>
+          </div>
+          <img class="shot-img" src="shots/cielo-about.png">
+          <div class="shot-overlay">
+            <!-- AI Consulting (about-page services column, y=308-316 = 34-35%) -->
+            <div class="shot-mark amber" style="left: 13%; top: 33%; width: 13%; height: 4%;"></div>
+            <div class="shot-callout amber" style="left: 13%; top: 27%;">AI CONSULTING</div>
+            <!-- Pitch Deck Design (y=340-348 = 38-39%) -->
+            <div class="shot-mark amber" style="left: 13%; top: 37%; width: 16%; height: 4%;"></div>
+            <div class="shot-callout amber" style="left: 30%; top: 37%;">PITCH DECK DESIGN</div>
+          </div>
+        </div>
+
+        <div class="finding-row mt-16">
+          <div class="finding-label">Quick win</div>
+          <div class="finding-text">Two micro-landing pages: <em>/pitch-deck</em> and <em>/ai-consulting</em>. Each: 3 case examples, 1 testimonial, 1 booked-call CTA. Both are evergreen content magnets that compound through search.</div>
+        </div>
+
+        <div class="impact-bar" data-pct="76">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill amber"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">High · effort 4 hr</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME D -->
+  <section style="border-bottom: 0; padding-bottom: 0;">
+    <div class="theme-band">
+      <div class="theme-band-num"><svg class="ic ic-sm"><use href="#i-flow"/></svg> Theme D</div>
+      <div class="theme-band-title">Conversion engine &amp; revenue capture</div>
+    </div>
+
+    <!-- Finding 09 -->
+    <div class="finding reveal">
+      <div class="finding-num">09</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">Three competing CTAs above the fold. "Discovery" is consultant-speak.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Medium · 30 min fix</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          You have <em>Free Signup</em>, <em>Discovery →</em>, <em>Download Pricing</em>, and <em>Set a Call</em> all visible above the fold. Three different "next steps" makes the visitor pick which path is for them. The good news: each CTA is well-targeted. The bad news: in combination they leak conversions.
+        </p>
+
+        <div class="shot-frame">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">cielo.agency</span>
+            <span class="live">LIVE · 4 CTAs ON ONE SCREEN</span>
+          </div>
+          <img class="shot-img" src="shots/cielo-home.png">
+          <div class="shot-overlay">
+            <!-- FREE SIGNUP text in top nav (around x=915-1015, y=58-90) -->
+            <div class="shot-mark" style="left: 71%; top: 6.4%; width: 8%; height: 4%;"></div>
+            <div class="shot-callout" style="left: 56%; top: 1%;">CTA #1 · FREE SIGNUP</div>
+            <!-- DISCOVERY → button at top right (around x=1080-1245, y=55-100) -->
+            <div class="shot-mark" style="left: 84%; top: 6%; width: 13%; height: 5%;"></div>
+            <div class="shot-callout" style="left: 80%; top: 12%;">CTA #2 · DISCOVERY →</div>
+            <!-- DOWNLOAD PRICING button (image y=570-620 = 63-69%) -->
+            <div class="shot-mark" style="left: 30%; top: 63%; width: 19%; height: 7%;"></div>
+            <div class="shot-callout" style="left: 30%; top: 56%;">CTA #3 · DOWNLOAD PRICING</div>
+            <!-- SET A CALL ↗ button -->
+            <div class="shot-mark" style="left: 50%; top: 63%; width: 16%; height: 7%;"></div>
+            <div class="shot-callout" style="left: 51%; top: 72%;">CTA #4 · SET A CALL ↗</div>
+          </div>
+        </div>
+
+        <div class="finding-row mt-16">
+          <div class="finding-label">Quick win</div>
+          <div class="finding-text">Two CTAs above the fold. "Download Pricing" (lead-magnet path) + "Talk to Kiana" (call path). Drop "Discovery" — it's vague, it's consultant-speak, and the founder name + photo do more conversion lifting than a button label ever will.</div>
+        </div>
+
+        <div class="impact-bar" data-pct="65">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill amber"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">Medium · effort 30 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 10 -->
+    <div class="finding reveal">
+      <div class="finding-num">10</div>
+      <div>
+        <div class="row-between mb-16">
+          <h3 class="finding-title">Reb2b reveals which firms visit. Apollo enriches them. There's no outbound loop.</h3>
+          <span class="tag tag-blue"><span class="tag-dot"></span>Strategic · biggest revenue lever</span>
+        </div>
+
+        <p class="finding-text" style="font-size: 14px; margin-bottom: 16px;">
+          Your site runs Reb2b (B2B visitor identification), Apollo (form enrichment), Contentsquare (heatmaps), GoHighLevel (CRM), TWIPLA (visitor analytics), and GA. That stack identifies which companies hit your site even if no one fills a form. That's worth the most as outbound fuel — but only if there's a follow-up loop.
+        </p>
+
+        <div class="flow-diagram">
+          <div class="row gap-8" style="flex-wrap: wrap;">
+            <div class="flow-node in">
+              <svg class="ic ic-sm"><use href="#i-eye"/></svg>
+              PE firm visits /portfolio
+            </div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node">
+              <svg class="ic ic-sm"><use href="#i-search"/></svg>
+              Reb2b identifies domain
+            </div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node">
+              <svg class="ic ic-sm"><use href="#i-link"/></svg>
+              Apollo enriches contact
+            </div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node" style="background: #FEF2F2; border-color: #FECACA; color: #DC2626;">
+              <svg class="ic ic-sm"><use href="#i-x"/></svg>
+              ??? (no outbound)
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="mono text-muted mb-8" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">What it should be</div>
+          <div class="row gap-8" style="flex-wrap: wrap;">
+            <div class="flow-node in"><svg class="ic ic-sm"><use href="#i-eye"/></svg> Visit logged</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node">ICP filter (PE/RIA/fintech)</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node proc">Apollo enrich</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node proc">AI drafts personalized note</div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-node out"><svg class="ic ic-sm"><use href="#i-check"/></svg> Queued for Kiana approval</div>
+          </div>
+        </div>
+
+        <div class="finding-row mt-16">
+          <div class="finding-label">Quick win</div>
+          <div class="finding-text">An n8n workflow that listens to Reb2b webhooks, filters for ICP-matching domains, enriches via Apollo, drafts a personalized first-touch email referencing the page they viewed, and queues for your approval. Built in two days. <strong>This single workflow could be worth more than the entire EA role.</strong></div>
+        </div>
+
+        <div class="impact-bar" data-pct="95">
+          <span class="label">Impact</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">Strategic · effort 2 days</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap timeline -->
+  <section>
+    <div class="card card-strong" style="padding: 36px;">
+      <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-arrow"/></svg> Sequencing</div>
+      <h2 style="font-size: 28px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 16px;">If we ship all ten, this is the order.</h2>
+      <p class="text-soft mb-32" style="max-width: 720px;">Five-minute fixes first. They compound under your existing traffic and don't need a meeting to deploy.</p>
+
+      <div class="roadmap">
+        <div class="roadmap-grid">
+          <div class="roadmap-cell">
+            <span class="when">Week 1</span>
+            <span class="badge shipnow">Ship now</span>
+            <div class="what">Free wins</div>
+            <div class="why">01 · Meta description<br>02 · Hero claim sourcing<br>09 · CTA prune (drop Discovery)<br>04 · Logo wall below trust pill</div>
+          </div>
+          <div class="roadmap-cell">
+            <span class="when">Weeks 2-3</span>
+            <span class="badge build">Build</span>
+            <div class="what">Trust + niche</div>
+            <div class="why">03 · Founder portrait<br>05 · Case study metrics<br>08 · /pitch-deck + /ai-consulting</div>
+          </div>
+          <div class="roadmap-cell">
+            <span class="when">Month 2</span>
+            <span class="badge compound">Compound</span>
+            <div class="what">Portfolio story</div>
+            <div class="why">06 · /pe vertical landing page<br>07 · CIELO Group sub-brand strip</div>
+          </div>
+          <div class="roadmap-cell">
+            <span class="when">Month 2-3</span>
+            <span class="badge future">Outbound engine</span>
+            <div class="what">Revenue loop</div>
+            <div class="why">10 · Reb2b → ICP filter → Apollo → AI draft → your approval</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider mt-32"></div>
+
+      <div class="founder-note">
+        <div class="founder-avatar">N</div>
+        <div>
+          <div class="from">Note from Nihal</div>
+          <div class="body">
+            "Most of this isn't an EA's job description. I'm telling you anyway. If you want a partner who sees your business this way and runs your day in the same breath, that's the role I'm interviewing for."
+          </div>
+          <div class="sig">— Nihal Choudhary</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compounding revenue viz -->
+    <div class="card mt-32" style="padding: 32px;">
+      <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-bar"/></svg> Why ten findings, not ten quick fixes</div>
+      <h2 style="font-size: 24px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px;">Each one compounds. Together they change the funnel.</h2>
+      <p class="text-soft mb-32" style="font-size: 14px; max-width: 720px;">
+        Directional model. Most agency-funnel improvements stack non-linearly because they remove drag at every stage. Even half of them shipped means meaningful inbound delta by month three.
+      </p>
+
+      <svg viewBox="0 0 800 240" preserveAspectRatio="none" style="width: 100%; height: 240px;">
+        <!-- Y-axis labels -->
+        <g font-family="Geist Mono" font-size="10" fill="#8A8A8A">
+          <text x="0" y="20">High</text>
+          <text x="0" y="120">Mid</text>
+          <text x="0" y="220">Low</text>
+        </g>
+        <!-- X-axis bars (months 1-6 hypothetical) -->
+        <g>
+          <!-- Baseline (current) line -->
+          <line x1="50" y1="180" x2="780" y2="180" stroke="#E5E5E5" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="60" y="174" font-family="Geist Mono" font-size="10" fill="#8A8A8A">CURRENT BASELINE</text>
+
+          <!-- Month bars: each month, bars get taller as findings ship -->
+          <g>
+            <!-- Month 1 -->
+            <rect x="80" y="160" width="80" height="20" fill="#0A0A0A" opacity="0.18"/>
+            <rect x="80" y="155" width="80" height="5" fill="#0A0A0A" opacity="0.6"/>
+            <text x="120" y="200" font-family="Geist Mono" font-size="10" fill="#525252" text-anchor="middle">M1</text>
+            <text x="120" y="214" font-family="Rethink Sans" font-size="10" fill="#8A8A8A" text-anchor="middle">free wins shipped</text>
+
+            <!-- Month 2 -->
+            <rect x="200" y="135" width="80" height="45" fill="#0A0A0A" opacity="0.28"/>
+            <rect x="200" y="125" width="80" height="10" fill="#0A0A0A" opacity="0.7"/>
+            <text x="240" y="200" font-family="Geist Mono" font-size="10" fill="#525252" text-anchor="middle">M2</text>
+            <text x="240" y="214" font-family="Rethink Sans" font-size="10" fill="#8A8A8A" text-anchor="middle">trust + niche live</text>
+
+            <!-- Month 3 -->
+            <rect x="320" y="100" width="80" height="80" fill="#0A0A0A" opacity="0.4"/>
+            <rect x="320" y="85" width="80" height="15" fill="#0A0A0A" opacity="0.8"/>
+            <text x="360" y="200" font-family="Geist Mono" font-size="10" fill="#525252" text-anchor="middle">M3</text>
+            <text x="360" y="214" font-family="Rethink Sans" font-size="10" fill="#8A8A8A" text-anchor="middle">portfolio story live</text>
+
+            <!-- Month 4 -->
+            <rect x="440" y="60" width="80" height="120" fill="#0A0A0A" opacity="0.55"/>
+            <rect x="440" y="40" width="80" height="20" fill="#16A34A"/>
+            <text x="480" y="200" font-family="Geist Mono" font-size="10" fill="#525252" text-anchor="middle">M4</text>
+            <text x="480" y="214" font-family="Rethink Sans" font-size="10" fill="#15803D" text-anchor="middle" font-weight="600">Reb2b loop live</text>
+
+            <!-- Month 5 -->
+            <rect x="560" y="40" width="80" height="140" fill="#0A0A0A" opacity="0.7"/>
+            <rect x="560" y="20" width="80" height="20" fill="#16A34A"/>
+            <text x="600" y="200" font-family="Geist Mono" font-size="10" fill="#525252" text-anchor="middle">M5</text>
+            <text x="600" y="214" font-family="Rethink Sans" font-size="10" fill="#8A8A8A" text-anchor="middle">compounding</text>
+
+            <!-- Month 6 -->
+            <rect x="680" y="25" width="80" height="155" fill="#0A0A0A" opacity="0.85"/>
+            <rect x="680" y="10" width="80" height="15" fill="#16A34A"/>
+            <text x="720" y="200" font-family="Geist Mono" font-size="10" fill="#525252" text-anchor="middle">M6</text>
+            <text x="720" y="214" font-family="Rethink Sans" font-size="10" fill="#8A8A8A" text-anchor="middle">steady state</text>
+          </g>
+        </g>
+        <!-- Legend -->
+        <g font-family="Rethink Sans" font-size="11">
+          <rect x="50" y="0" width="10" height="10" fill="#0A0A0A" opacity="0.55"/>
+          <text x="66" y="9" fill="#525252">Qualified inbound</text>
+          <rect x="200" y="0" width="10" height="10" fill="#16A34A"/>
+          <text x="216" y="9" fill="#525252">PE / RIA-grade leads from outbound loop</text>
+        </g>
+      </svg>
+
+      <div class="mt-32 row gap-24" style="flex-wrap: wrap;">
+        <div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px;">Where the lift comes from</div>
+          <div class="text-soft" style="font-size: 13px; max-width: 420px;">M1: meta + hero ship to existing traffic. M2: trust stack + landing pages convert better-fit visitors. M3-4: Reb2b → outbound loop adds <em>net new</em> conversations.</div>
+        </div>
+        <div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px;">What it costs</div>
+          <div class="text-soft" style="font-size: 13px; max-width: 420px;">Most of M1-M2 is hours, not dollars. M3-M4's outbound loop costs the n8n + Apollo seats you already have. The audit is essentially free; the loop pays for itself in the first qualified conversation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graceful close -->
+    <div class="calm-bar mt-32" style="background: #FAFAFA; padding: 20px 24px;">
+      <svg class="ic ic-lg" style="color: var(--green); flex-shrink: 0;"><use href="#i-leaf"/></svg>
+      <span style="font-size: 17px; line-height: 1.5;">If we don't end up working together, the audit is yours. Ship it anyway. The first finding alone is worth the read.</span>
+    </div>
+
+    <div class="row mt-32 gap-12">
+      <a href="morning-brief.html" class="btn">Now walk through the workflows
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="index.html" class="btn btn-secondary">Back to overview</a>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">PM who builds. IIT Kanpur. AI-native daily.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9468688354 <a class="wa-badge" href="https://wa.me/919468688354" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span><br>
+        <a class="contact-link" href="https://www.linkedin.com/in/nihalchoudhary" target="_blank" rel="noopener"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 18H6V10h2.5v8zM7.25 8.6a1.45 1.45 0 1 1 0-2.9 1.45 1.45 0 0 1 0 2.9zM18 18h-2.5v-3.9c0-1-.4-1.6-1.3-1.6-.7 0-1.1.5-1.3 1-.07.18-.07.43-.07.68V18H10.4V10h2.4v1c.34-.5.95-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.5V18z"/></svg>linkedin.com/in/nihalchoudhary</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prepared for CIELO — Audit + Workflows</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<!-- Inline icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M11 20A7 7 0 0 1 4 13c0-5 5-9 14-9-1 9-4 16-7 16Z"/><path d="M2 21c2-3 5-4 9-4"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12l5 5 9-12"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Kiana Blücher / CIELO</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html" class="active">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="morning-brief.html">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="page-header" style="border-bottom: 0; padding-bottom: 32px; position: relative;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>May 1 · Pre-call deliverable · Built in 36 hours
+    </div>
+    <h1 class="page-title">
+      Two pieces of work,<br>
+      <em>before we even talk.</em>
+    </h1>
+    <p class="page-lede">
+      You wrote a job for a Personal &amp; Executive Assistant. I want to be measured on something else: the quality of your awareness when you walk into a room. Below is what that thesis looks like in practice. A focused audit of where cielo.agency is leaving leverage on the table for your ICP, plus four working workflow demos for your day.
+    </p>
+    <div class="row mt-32 gap-12">
+      <a href="audit.html" class="btn">Open the audit
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="morning-brief.html" class="btn btn-secondary">Walk through the workflows</a>
+    </div>
+  </section>
+
+  <!-- PROOF MARQUEE — Nihal's metrics -->
+  <section style="border-top: 0; padding: 0;">
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="num">72%</span><span class="lbl">↑ qualified leads · Gamezop</span></div>
+        <div class="marquee-item"><span class="num">127%</span><span class="lbl">↑ revenue · Kredily PLG</span></div>
+        <div class="marquee-item"><span class="num">50%</span><span class="lbl">workforce automated · n8n</span></div>
+        <div class="marquee-item"><span class="num">800K</span><span class="lbl">employees served · Kredily</span></div>
+        <div class="marquee-item"><span class="num">1M+</span><span class="lbl">daily transactions · SafexPay</span></div>
+        <div class="marquee-item"><span class="num">&lt;1 wk</span><span class="lbl">solo SaaS build · Feelback</span></div>
+        <div class="marquee-item"><span class="num">2.5 yr</span><span class="lbl">daily meditation · Vipassana</span></div>
+        <!-- duplicate for seamless loop -->
+        <div class="marquee-item"><span class="num">72%</span><span class="lbl">↑ qualified leads · Gamezop</span></div>
+        <div class="marquee-item"><span class="num">127%</span><span class="lbl">↑ revenue · Kredily PLG</span></div>
+        <div class="marquee-item"><span class="num">50%</span><span class="lbl">workforce automated · n8n</span></div>
+        <div class="marquee-item"><span class="num">800K</span><span class="lbl">employees served · Kredily</span></div>
+        <div class="marquee-item"><span class="num">1M+</span><span class="lbl">daily transactions · SafexPay</span></div>
+        <div class="marquee-item"><span class="num">&lt;1 wk</span><span class="lbl">solo SaaS build · Feelback</span></div>
+        <div class="marquee-item"><span class="num">2.5 yr</span><span class="lbl">daily meditation · Vipassana</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE — visual map -->
+  <section style="padding-top: 64px;">
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-eye"/></svg> What's inside</div>
+    <h2 class="section-title">A package built around <em>one belief.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      Founders don't burn out from work. They burn out from <em>not noticing the cost of work</em>. Every page below is built to either remove a cost from your day or convert a leak in your business into compounding revenue.
+    </p>
+
+    <div class="kpis">
+      <div class="kpi reveal">
+        <div class="label">Audit findings</div>
+        <div class="num counter" data-target="10">10</div>
+        <div class="delta">across 4 themes</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="label">Quick wins (&lt; 1 hr)</div>
+        <div class="num counter" data-target="4">4</div>
+        <div class="delta up">deploy this week</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="label">Working workflows</div>
+        <div class="num counter" data-target="4">4</div>
+        <div class="delta">interactive demos</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="label">Sub-brands surfaced</div>
+        <div class="num counter" data-target="5">5</div>
+        <div class="delta">CIELO Group thesis</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: WORKFLOWS — visual cards with day-arc -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-flow"/></svg> Part Two</div>
+    <h2 class="section-title">Four workflows. Working. <em>For your day.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      Any VA can run a calendar. I'm not pricing the role like that. These four are the spine of how a founder protects her state. Each demo is interactive. Click through them on the call.
+    </p>
+
+    <!-- Day arc — when each fires -->
+    <div class="card mb-24" style="padding: 24px;">
+      <div class="mono text-muted mb-16" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">When each workflow fires across your day</div>
+      <div style="position: relative; height: 110px;">
+        <!-- Timeline base -->
+        <svg viewBox="0 0 1000 110" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+          <line x1="40" y1="55" x2="960" y2="55" stroke="#E5E5E5" stroke-width="1"/>
+          <!-- Hour ticks -->
+          <g font-family="Geist Mono, monospace" font-size="10" fill="#8A8A8A">
+            <text x="40" y="92">06:00</text>
+            <text x="195" y="92">09:00</text>
+            <text x="350" y="92">12:00</text>
+            <text x="510" y="92">15:00</text>
+            <text x="670" y="92">18:00</text>
+            <text x="830" y="92">21:00</text>
+          </g>
+          <!-- Workflow markers -->
+          <g>
+            <!-- Morning brief: 06:30 -->
+            <circle cx="80" cy="55" r="9" fill="#0A0A0A"/>
+            <text x="80" y="38" font-family="Rethink Sans" font-size="11" font-weight="600" fill="#0A0A0A" text-anchor="middle">Morning Brief</text>
+            <text x="80" y="22" font-family="Geist Mono" font-size="9" fill="#525252" text-anchor="middle">06:30</text>
+
+            <!-- Email triage: continuous, show as dotted band -->
+            <rect x="100" y="50" width="430" height="10" fill="#2563EB" opacity="0.16" rx="5"/>
+            <text x="270" y="38" font-family="Rethink Sans" font-size="11" font-weight="600" fill="#1D4ED8" text-anchor="middle">Email Triage · continuous</text>
+
+            <!-- Pre-meeting: 09:30, 14:30, etc -->
+            <circle cx="220" cy="55" r="7" fill="#7C3AED"/>
+            <circle cx="490" cy="55" r="7" fill="#7C3AED"/>
+            <text x="355" y="22" font-family="Rethink Sans" font-size="11" font-weight="600" fill="#7C3AED" text-anchor="middle">Pre-Meeting Briefs · T-30</text>
+
+            <!-- Reflection: Sun 19:00 -->
+            <circle cx="755" cy="55" r="9" fill="#16A34A"/>
+            <text x="755" y="38" font-family="Rethink Sans" font-size="11" font-weight="600" fill="#15803D" text-anchor="middle">Reflection</text>
+            <text x="755" y="22" font-family="Geist Mono" font-size="9" fill="#525252" text-anchor="middle">SUN 19:00</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+
+      <a href="morning-brief.html" style="border: 0;">
+        <div class="card reveal" style="cursor: pointer; height: 100%;">
+          <div class="row-between mb-16">
+            <span class="tag"><svg class="ic ic-sm"><use href="#i-clock"/></svg> Workflow 01</span>
+            <span class="mono text-muted" style="font-size: 11px;">06:30 daily</span>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Morning Brief</h3>
+          <p class="text-soft mb-16" style="font-size: 14px;">Yesterday answered. Today's calendar. Top three priorities. One client risk. One breath cue. Voice option in your own pace. You wake up to a 60-second debrief, not a 200-email inbox.</p>
+          <!-- Mini sparkline -->
+          <svg class="sparkline" viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 40 L20 38 L40 32 L60 28 L80 30 L100 22 L120 18 L140 14 L160 16 L180 10 L200 8" stroke="#0A0A0A" stroke-width="1.5" fill="none"/>
+            <path d="M0 40 L20 38 L40 32 L60 28 L80 30 L100 22 L120 18 L140 14 L160 16 L180 10 L200 8 L200 56 L0 56 Z" fill="#0A0A0A" fill-opacity="0.06"/>
+          </svg>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 8px;">DEEP-WORK HOURS · 30 DAYS · TRENDING UP</div>
+        </div>
+      </a>
+
+      <a href="email-triage.html" style="border: 0;">
+        <div class="card reveal" style="cursor: pointer; height: 100%;">
+          <div class="row-between mb-16">
+            <span class="tag"><svg class="ic ic-sm"><use href="#i-mail"/></svg> Workflow 02</span>
+            <span class="mono text-muted" style="font-size: 11px;">continuous</span>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Email Triage</h3>
+          <p class="text-soft mb-16" style="font-size: 14px;">Inbox split into Client / Investor / Team / Personal / Cold. Tier-2 replies auto-drafted with your voice. You see five decisions a day. Not eighty.</p>
+          <!-- Bucket distribution viz -->
+          <div style="display: flex; gap: 4px; height: 36px; border-radius: 4px; overflow: hidden;">
+            <div style="flex: 4; background: #BFDBFE; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #1D4ED8;">CLIENT</div>
+            <div style="flex: 1; background: #E9D5FF; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #7C3AED;">INV</div>
+            <div style="flex: 3; background: #BBF7D0; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #15803D;">TEAM</div>
+            <div style="flex: 1; background: #FED7AA; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #B45309;">PERS</div>
+            <div style="flex: 3; background: #E5E5E5; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #525252;">COLD</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 8px;">TUE INBOX · 47 → 5 DECISIONS</div>
+        </div>
+      </a>
+
+      <a href="pre-meeting.html" style="border: 0;">
+        <div class="card reveal" style="cursor: pointer; height: 100%;">
+          <div class="row-between mb-16">
+            <span class="tag"><svg class="ic ic-sm"><use href="#i-phone"/></svg> Workflow 03</span>
+            <span class="mono text-muted" style="font-size: 11px;">T-30 min</span>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Pre-Meeting Brief</h3>
+          <p class="text-soft mb-16" style="font-size: 14px;">Thirty minutes before any meeting, your phone fires: who, last three interactions, sentiment, what they likely want, two questions to ask, one talking point unique to them.</p>
+          <!-- T-30 timeline -->
+          <div style="display: flex; gap: 6px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 10px;">
+            <span style="background: #FAFAFA; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line);">T-30 BRIEF</span>
+            <span class="text-muted">→</span>
+            <span style="background: #FAFAFA; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line);">T-15 PREP</span>
+            <span class="text-muted">→</span>
+            <span style="background: #0A0A0A; color: #FFF; padding: 6px 10px; border-radius: 999px;">MEETING</span>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 8px;">CALIBRATED, NOT COLD</div>
+        </div>
+      </a>
+
+      <a href="reflection.html" style="border: 0;">
+        <div class="card reveal" style="cursor: pointer; height: 100%;">
+          <div class="row-between mb-16">
+            <span class="tag"><svg class="ic ic-sm"><use href="#i-leaf"/></svg> Workflow 04</span>
+            <span class="mono text-muted" style="font-size: 11px;">Sundays · monthly</span>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Reflection Layer</h3>
+          <p class="text-soft mb-16" style="font-size: 14px;">Three weekly questions. A voice memo if you'd rather speak. A monthly review that shows where your hours actually went and what energized vs. drained you.</p>
+          <!-- Mini heatmap -->
+          <div class="heatmap" style="grid-template-columns: repeat(30, 1fr); margin-top: 0;">
+            <div class="cell l3"></div><div class="cell l4"></div><div class="cell l3"></div><div class="cell l2"></div><div class="cell l1"></div><div class="cell l3"></div><div class="cell l4"></div>
+            <div class="cell l4"></div><div class="cell l3"></div><div class="cell l2"></div><div class="cell l3"></div><div class="cell l4"></div><div class="cell l4"></div><div class="cell l3"></div>
+            <div class="cell l2"></div><div class="cell l1"></div><div class="cell l3"></div><div class="cell l4"></div><div class="cell l3"></div><div class="cell l2"></div><div class="cell l3"></div>
+            <div class="cell l4"></div><div class="cell l4"></div><div class="cell l3"></div><div class="cell l2"></div><div class="cell l1"></div><div class="cell l3"></div><div class="cell l4"></div>
+            <div class="cell l3"></div><div class="cell l4"></div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 8px;">ENERGIZED DAYS · APRIL · 19/30</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- WHY ME — personal section -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-spark"/></svg> Part Three</div>
+    <h2 class="section-title">Why I'd be different from <em>any VA you'd hire.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      You wrote the JD looking for someone to handle calendar, email, travel, team coordination, founder coaching support. Any virtual assistant could do those tasks. The reason I think this role belongs to me is what I'd be doing alongside the tasks.
+    </p>
+
+    <!-- VA vs Nihal visual contrast -->
+    <div class="mb-32" style="display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0; align-items: stretch;">
+      <div class="card" style="background: var(--bg-soft); padding: 24px;">
+        <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">What every VA does</div>
+        <ul style="list-style: none; font-size: 14px; line-height: 2;">
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Manage your calendar</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Triage your inbox</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Book your travel</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Coordinate the team</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Handle the personal errands</li>
+        </ul>
+        <div class="mt-16 text-soft" style="font-size: 13px; font-style: italic;">All necessary. All table stakes for me.</div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.14em; transform: rotate(-90deg); color: var(--ink-muted); white-space: nowrap;">+ ALONGSIDE THAT</div>
+      </div>
+      <div class="card card-strong" style="padding: 24px; background: #FAFAFA;">
+        <div class="mono mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">What I'd be doing alongside</div>
+        <ul style="list-style: none; font-size: 14px; line-height: 2;">
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Building automations that compound</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Auditing your funnel for revenue leaks</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Drafting outbound to your visiting PE firms</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Watching your awareness drift before it costs a deal</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Making the role need less of me each month</li>
+        </ul>
+        <div class="mt-16 text-soft" style="font-size: 13px; font-style: italic;">This is what I want to be measured on.</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <!-- Vipassana / awareness pitch -->
+      <div class="card" style="padding: 28px;">
+        <div class="row gap-8 mb-16">
+          <svg class="ic ic-lg" style="color: var(--green);"><use href="#i-leaf"/></svg>
+          <div>
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">The thesis I'm hired against</div>
+            <div style="font-weight: 600; font-size: 17px; margin-top: 4px;">Mindset protection, not task handling</div>
+          </div>
+        </div>
+        <p class="serif" style="font-size: 20px; line-height: 1.45; margin-bottom: 18px;">
+          "Your <em>state</em> when you walk into a room with a client, an investor, a team member, or someone personal — that's the thing the rest of your business compounds from. A founder with a fried inbox and a noisy head leaks opportunities they'll never see leak."
+        </p>
+        <p class="text-soft" style="font-size: 14px; line-height: 1.6;">
+          I've practiced meditation seriously for two and a half years. Vipassana retreat included. The single thing that practice teaches is what happens to attention when it gets pulled, and what it costs. Most founders don't notice that drop until a deal goes sideways or a relationship erodes. I notice it early. That's part of why this role is the one I want.
+        </p>
+      </div>
+
+      <!-- PM who builds -->
+      <div class="card" style="padding: 28px;">
+        <div class="row gap-8 mb-16">
+          <svg class="ic ic-lg" style="color: var(--ink);"><use href="#i-zap"/></svg>
+          <div>
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">The other half of why</div>
+            <div style="font-weight: 600; font-size: 17px; margin-top: 4px;">PM who builds. AI-native daily.</div>
+          </div>
+        </div>
+        <p class="serif" style="font-size: 20px; line-height: 1.45; margin-bottom: 18px;">
+          "The work I do this month should build the leverage that makes month three need <em>less</em> of me, not more."
+        </p>
+        <p class="text-soft" style="font-size: 14px; line-height: 1.6;">
+          I'm not just an operator. Four-plus years PM at Gamezop and Kredily. Now full-time on Sol8um.tech (AI automation agency) since Sept 2025. Daily Claude Code, Cursor, n8n, Zapier, Make, Supabase, Vercel, ElevenLabs. The audit and the workflows above were built in 36 hours from scratch. That's the velocity I bring to every day of the role.
+        </p>
+      </div>
+    </div>
+
+    <div class="founder-note mt-32">
+      <div class="founder-avatar">N</div>
+      <div>
+        <div class="from">A short note</div>
+        <div class="body">
+          The tasks in your JD will be done. You won't think about them again. What I want to be measured on is whether your awareness, your composure, and your sharpness <em>compound</em> across the months I'm with you. If they do, the rest follows.
+        </div>
+        <div class="sig">— Nihal Choudhary</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST 30 DAYS ROADMAP -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-clock"/></svg> First 30 Days</div>
+    <h2 class="section-title">What week one through week four <em>actually look like.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      I want to be useful before week one ends. Here's the rough shape of the first month if we start.
+    </p>
+
+    <div class="roadmap">
+      <div class="roadmap-grid">
+        <div class="roadmap-cell">
+          <span class="when">Days 1-3</span>
+          <span class="badge shipnow">Listen</span>
+          <div class="what">Your day, mapped</div>
+          <div class="why">Shadow your inbox, calendar, calls. Map every recurring touch with your client / investor / team / personal stakeholders. Build the routing rules from your actual patterns, not assumptions.</div>
+        </div>
+        <div class="roadmap-cell">
+          <span class="when">Days 4-10</span>
+          <span class="badge build">Ship</span>
+          <div class="what">Workflows 01-02 live</div>
+          <div class="why">Morning brief running every 06:30. Email triage running continuously. You start seeing five decisions a day, not eighty. Audit's first three quick wins (meta description, hero rewrite, CTA prune) shipped in parallel.</div>
+        </div>
+        <div class="roadmap-cell">
+          <span class="when">Days 11-21</span>
+          <span class="badge compound">Compound</span>
+          <div class="what">Workflows 03-04 live</div>
+          <div class="why">Pre-meeting brief firing T-30 on every external call. Reflection layer running Sundays. Audit's mid-tier fixes ship: founder portrait, case-study metrics, /pe + /pitch-deck landing pages.</div>
+        </div>
+        <div class="roadmap-cell">
+          <span class="when">Days 22-30</span>
+          <span class="badge future">Compound +</span>
+          <div class="what">Outbound engine</div>
+          <div class="why">Reb2b → ICP filter → Apollo enrich → AI draft → Kiana approval. The biggest revenue lever in the audit, live. By end of month, the role pays for itself in qualified PE / RIA inbound.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <div class="text-soft" style="font-size: 14px; max-width: 560px;">
+        Week 4 onwards: you get a calmer founder, a sharper inbox, a richer pipeline, and a website doing the heavy lifting your hero copy already promises.
+      </div>
+      <div class="row gap-12">
+        <a href="audit.html" class="btn">Open the audit</a>
+        <a href="morning-brief.html" class="btn btn-secondary">Walk through workflows</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY OVERLAP GRID -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-target"/></svg> Where my work overlaps with your portfolio</div>
+    <h2 class="section-title">I've shipped product into <em>each of your client industries.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      You serve fintech, RIA, real estate, wellness, and high-growth tech. I've worked across that exact map. Below is what that lookup looks like.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+
+      <div class="card">
+        <div class="row-between mb-8">
+          <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">CIELO Industry · Fintech</span>
+          <span class="tag">overlap</span>
+        </div>
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 6px;">SafexPay · 1M+ daily transactions</div>
+        <p class="text-soft" style="font-size: 13px; line-height: 1.55;">PM-trained on payments dashboards, sentiment-tagged feedback at scale. I know what an institutional fintech buyer responds to in brand work because I built tools for them.</p>
+      </div>
+
+      <div class="card">
+        <div class="row-between mb-8">
+          <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">CIELO Industry · HR / RIA-adjacent</span>
+          <span class="tag">overlap</span>
+        </div>
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 6px;">Kredily · 800K+ employees · 127% revenue lift</div>
+        <p class="text-soft" style="font-size: 13px; line-height: 1.55;">PLG roadmap, conversion funnel ownership, retained-customer optics. RIAs sit next door to HR/payroll in trust mechanics. The patterns transfer.</p>
+      </div>
+
+      <div class="card">
+        <div class="row-between mb-8">
+          <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">CIELO Industry · High-growth tech</span>
+          <span class="tag">overlap</span>
+        </div>
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 6px;">Gamezop · 72% lead lift · 50% workforce automated</div>
+        <p class="text-soft" style="font-size: 13px; line-height: 1.55;">Gaming/SaaS at India's largest casual-gaming platform. n8n automation engine for partner integrations. Same automation chops will plug straight into CIELO OS.</p>
+      </div>
+
+      <div class="card">
+        <div class="row-between mb-8">
+          <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">CIELO Industry · Wellness / consumer</span>
+          <span class="tag">overlap</span>
+        </div>
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 6px;">The Smart Traveller · 20K+ travelers · ₹11L GMV</div>
+        <p class="text-soft" style="font-size: 13px; line-height: 1.55;">Hospitality + curated experiences. Consumer brand sensibility from the inside. Klarité and Zen Botanica buyers think this way; I've been on both sides of that table.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ON THE CALL agenda -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-clock"/></svg> On May 1, when we talk</div>
+    <h2 class="section-title">What the first 30 minutes <em>could look like.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      Not a presentation. A working session. Here's a rough sequence so you walk in knowing what we'd actually do together.
+    </p>
+
+    <div class="card card-strong" style="padding: 32px;">
+      <ol style="list-style: none; counter-reset: cn; padding: 0;">
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">01</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">Walk through the audit, live, on cielo.agency</div>
+            <div class="text-soft" style="font-size: 13px;">Not the deliverable. Your actual site. We'd ship Finding 01 (meta description) right there together.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">8 min</div>
+        </li>
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">02</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">Pick the workflow that matters most to you right now</div>
+            <div class="text-soft" style="font-size: 13px;">Morning Brief, Triage, Pre-Meeting, or Reflection. Whichever one removes the most weight from your week. We'd talk through how that plugs into your actual tools.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">8 min</div>
+        </li>
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">03</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">Talk about your day · what's heaviest right now</div>
+            <div class="text-soft" style="font-size: 13px;">Calendar pattern, inbox volume, where the founder-coaching work fits, what conversations drain you. So I understand what to remove first if we work together.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">8 min</div>
+        </li>
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">04</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">The mindset / awareness part of the role</div>
+            <div class="text-soft" style="font-size: 13px;">The piece you wrote about founder coaching. Where I think this differs from a typical EA role and why I want to be measured on your <em>state</em>, not your inbox count.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">4 min</div>
+        </li>
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">05</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">Your questions, scope, next steps</div>
+            <div class="text-soft" style="font-size: 13px;">Whatever I haven't covered. Honest scope conversation. If we're aligned, what week one looks like.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">2 min</div>
+        </li>
+
+      </ol>
+    </div>
+
+    <div class="calm-bar mt-24">
+      <svg class="ic" style="color: var(--green); flex-shrink: 0;"><use href="#i-leaf"/></svg>
+      <span>The audit is yours either way. Ship it whether or not we work together.</span>
+    </div>
+  </section>
+
+  <!-- HOW THIS WAS BUILT ribbon -->
+  <section style="padding-top: 40px;">
+    <div class="card" style="padding: 24px; background: var(--bg-soft);">
+      <div class="row-between" style="flex-wrap: wrap; gap: 24px;">
+        <div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px;">How this package was built</div>
+          <div style="font-size: 16px; font-weight: 500; margin-bottom: 4px;">Concept to live deliverable in <span class="serif" style="font-size: 22px;">~36 hours.</span></div>
+          <div class="text-soft" style="font-size: 13px;">Same velocity I'd bring to your day. Solo. End-to-end.</div>
+        </div>
+        <div class="row gap-8" style="flex-wrap: wrap;">
+          <span class="tag">Claude Code</span>
+          <span class="tag">Cursor</span>
+          <span class="tag">n8n</span>
+          <span class="tag">Microlink (live captures)</span>
+          <span class="tag">Figma · Geist Mono · Instrument Serif</span>
+          <span class="tag">~2,400 lines hand-written CSS+HTML</span>
+          <span class="tag">Zero templates</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">PM who builds. IIT Kanpur. AI-native daily.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9468688354 <a class="wa-badge" href="https://wa.me/919468688354" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span><br>
+        <a class="contact-link" href="https://www.linkedin.com/in/nihalchoudhary" target="_blank" rel="noopener"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 18H6V10h2.5v8zM7.25 8.6a1.45 1.45 0 1 1 0-2.9 1.45 1.45 0 0 1 0 2.9zM18 18h-2.5v-3.9c0-1-.4-1.6-1.3-1.6-.7 0-1.1.5-1.3 1-.07.18-.07.43-.07.68V18H10.4V10h2.4v1c.34-.5.95-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.5V18z"/></svg>linkedin.com/in/nihalchoudhary</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Counter animation
+  const ioCount = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target, 10) || 0;
+      const dur = 1200;
+      const t0 = performance.now();
+      function step(t) {
+        const p = Math.min(1, (t - t0) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      ioCount.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.counter').forEach(el => { el.textContent = '0'; ioCount.observe(el); });
+
+  // Reveal on scroll
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+</script>
+
+</body>
+</html>

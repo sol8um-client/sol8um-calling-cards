@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow · Morning Brief — for Kiana</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Kiana Blücher / CIELO</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="morning-brief.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Workflow 01 · Morning Brief · 06:30 daily</div>
+    <h1 class="page-title">
+      You wake up to a debrief.<br>
+      <em>Not an inbox.</em>
+    </h1>
+    <p class="page-lede">
+      Yesterday answered. Today's calendar mapped. Top three priorities. One client risk. One breath cue calibrated to the day's first decision. Voice option in your own pace. Click <em>Generate</em> and watch what 06:30 looks like.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <!-- Side nav -->
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="morning-brief.html" class="active">Morning Brief <span class="badge">01</span></a></li>
+          <li><a href="email-triage.html">Email Triage <span class="badge">02</span></a></li>
+          <li><a href="pre-meeting.html">Pre-Meeting Brief <span class="badge">03</span></a></li>
+          <li><a href="reflection.html">Reflection Layer <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>n8n cron → Gmail + Calendar + Notion + GHL CRM → Claude → ElevenLabs (voice) → push to phone &amp; Notion dashboard.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>30 min of "what's on today" each morning, plus the cognitive load of prioritizing cold.</div>
+        </div>
+      </aside>
+
+      <!-- Main demo -->
+      <div>
+
+        <!-- System architecture diagram -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How the brief composes itself · 90 seconds, 06:30</div>
+          <div class="row gap-8" style="flex-wrap: wrap;">
+            <div class="flow-stack">
+              <div class="flow-node in">Gmail · 47 unread</div>
+              <div class="flow-node in">Calendar · 4 mtgs</div>
+              <div class="flow-node in">Notion priorities</div>
+              <div class="flow-node in">GHL CRM</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">→</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Claude scores tiers + writes</div>
+            <span class="flow-arrow" style="font-size: 24px;">→</span>
+            <div class="flow-stack">
+              <div class="flow-node out"><svg class="ic ic-sm"><use href="#i-mic"/></svg> ElevenLabs voice memo</div>
+              <div class="flow-node out">Phone push (60 sec)</div>
+              <div class="flow-node out">Notion dashboard</div>
+            </div>
+          </div>
+
+          <!-- Sparkline showing deep-work trend -->
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Deep-work hours · last 30 days</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">+18% vs last 30</span>
+          </div>
+          <svg class="sparkline" viewBox="0 0 600 56" preserveAspectRatio="none" style="height: 56px;">
+            <path d="M0 36 L20 38 L40 32 L60 28 L80 30 L100 22 L120 24 L140 18 L160 22 L180 14 L200 18 L220 12 L240 16 L260 10 L280 14 L300 8 L320 12 L340 6 L360 10 L380 8 L400 14 L420 6 L440 10 L460 4 L480 8 L500 6 L520 10 L540 4 L560 8 L580 6 L600 4" stroke="#0A0A0A" stroke-width="1.5" fill="none"/>
+            <path d="M0 36 L20 38 L40 32 L60 28 L80 30 L100 22 L120 24 L140 18 L160 22 L180 14 L200 18 L220 12 L240 16 L260 10 L280 14 L300 8 L320 12 L340 6 L360 10 L380 8 L400 14 L420 6 L440 10 L460 4 L480 8 L500 6 L520 10 L540 4 L560 8 L580 6 L600 4 L600 56 L0 56 Z" fill="#0A0A0A" fill-opacity="0.06"/>
+          </svg>
+        </div>
+
+        <div class="row-between mb-24">
+          <div class="row gap-8">
+            <span class="tag"><span class="tag-dot"></span>Live demo · mock data</span>
+            <span class="tag tag-blue">Tuesday, May 6</span>
+          </div>
+          <div class="row gap-8">
+            <button class="btn-ghost btn-sm" id="btn-voice"><svg class="ic ic-sm"><use href="#i-mic"/></svg> Listen as voice memo</button>
+            <button class="btn" id="btn-generate"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Generate brief</button>
+          </div>
+        </div>
+
+        <!-- Generation status (hidden until clicked) -->
+        <div id="gen-status" class="card card-tight mb-16 hidden" style="background: var(--bg-soft); font-family: 'Geist Mono', monospace; font-size: 12px; line-height: 1.7;">
+          <div id="gen-line-1"></div>
+          <div id="gen-line-2"></div>
+          <div id="gen-line-3"></div>
+          <div id="gen-line-4"></div>
+          <div id="gen-line-5"></div>
+        </div>
+
+        <!-- The brief itself -->
+        <div class="brief-card" id="brief">
+          <div class="brief-head">
+            <div>
+              <div class="greeting">Good morning, Kiana.</div>
+              <div class="text-soft mt-8" style="font-size: 14px;">3 things ran in the background while you slept.</div>
+            </div>
+            <div class="date">TUE · MAY 06 · 06:30</div>
+          </div>
+
+          <div class="brief-section">
+            <h5>Yesterday, in one breath</h5>
+            <ul class="brief-list">
+              <li><span class="time">→ Closed</span><span>2 client check-ins answered. Klarité retainer renewed for Q3, signature received at 21:14.</span></li>
+              <li><span class="time">→ Drafted</span><span>11 email replies queued for your morning approval. 3 are tier-1 (your judgment), 8 are tier-2 (one-tap send).</span></li>
+              <li><span class="time">→ Watching</span><span>Elevate Planners hasn't replied to the Q2 social plan in 4 days. Nudge drafted, ready under your name.</span></li>
+            </ul>
+          </div>
+
+          <div class="brief-section">
+            <h5>Today's shape</h5>
+            <ul class="brief-list">
+              <li><span class="time">10:00</span><span><strong>Brand audit call · Greenline Capital (PE).</strong> Pre-meeting brief fires at 09:30. Budget signal: $80K range. Goal: position you, don't sell.</span></li>
+              <li><span class="time">12:00</span><span><strong>Team sync (Kim, Marina, Zandra).</strong> Agenda already in Slack. Ana's pipeline review pushed to Thursday at her request.</span></li>
+              <li><span class="time">15:00</span><span><strong>Zen Botanica · launch QA.</strong> Site staging is up. I tested the checkout flow at 04:12. Two issues flagged in your Notion review board.</span></li>
+              <li><span class="time">17:30</span><span>Buffer hold. Protected. Suggested: 45 min on the PE landing page draft.</span></li>
+            </ul>
+          </div>
+
+          <div class="brief-section">
+            <h5>Your three</h5>
+            <ul class="brief-list">
+              <li><span class="time">01</span><span>Approve the Greenline pre-meeting brief (90 sec read). I'll send your prep right after.</span></li>
+              <li><span class="time">02</span><span>Sign off on Elevate Planners' nudge before 11:00. Risk: their ops lead is on PTO Wednesday.</span></li>
+              <li><span class="time">03</span><span>10 min on the homepage hero rewrite. Three options drafted in the audit doc.</span></li>
+            </ul>
+          </div>
+
+          <div class="brief-section">
+            <h5>Energy reading</h5>
+            <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.6;">
+              You spent 4.2 deep-work hours yesterday (target: 4). Two back-to-back calls before noon today. Suggested: a 7-minute breath reset at 09:50, before the Greenline call.
+            </p>
+          </div>
+
+          <div class="cue-box">
+            <div class="cue-label">Today's cue</div>
+            <div class="cue-body">"Walk in light. Greenline isn't buying a deck. They're buying who you are when no one is watching."</div>
+          </div>
+        </div>
+
+        <div class="row-between mt-24">
+          <div class="text-muted mono" style="font-size: 11px; letter-spacing: 0.08em;">SOURCES: Gmail · Google Calendar · Notion · GHL · Reb2b · Apollo</div>
+          <div class="row gap-8">
+            <button class="btn-ghost btn-sm" id="btn-approve-all">Approve all tier-2 drafts</button>
+            <button class="btn-ghost btn-sm" id="btn-open-notion">Open Notion dashboard</button>
+          </div>
+        </div>
+
+        <!-- Toast container -->
+        <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">PM who builds. IIT Kanpur. AI-native daily.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9468688354 <a class="wa-badge" href="https://wa.me/919468688354" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Generate-brief animation
+  const genBtn = document.getElementById('btn-generate');
+  const genStatus = document.getElementById('gen-status');
+  const lines = [
+    'Connecting Gmail (kiana@cielo.agency)...',
+    'Reading 47 unread · scoring tiers...',
+    'Pulling Calendar · 4 meetings today...',
+    'Cross-checking Notion priorities + GHL CRM...',
+    'Composing brief · ElevenLabs voice ready.'
+  ];
+  genBtn.addEventListener('click', () => {
+    genStatus.classList.remove('hidden');
+    for (let i = 0; i < 5; i++) {
+      const el = document.getElementById('gen-line-' + (i+1));
+      el.textContent = '';
+      setTimeout(() => {
+        el.textContent = '✓ ' + lines[i];
+        el.style.color = '#16A34A';
+      }, (i+1) * 350);
+    }
+    setTimeout(() => {
+      const brief = document.getElementById('brief');
+      brief.style.animation = 'none';
+      void brief.offsetWidth;
+      brief.style.animation = 'notifSlide 0.6s cubic-bezier(0.16,1,0.3,1)';
+    }, 1900);
+  });
+
+  // Voice button — uses browser TTS
+  const voiceBtn = document.getElementById('btn-voice');
+  let speaking = false;
+  voiceBtn.addEventListener('click', () => {
+    if (speaking) {
+      window.speechSynthesis.cancel();
+      speaking = false;
+      voiceBtn.textContent = '▶ Listen as voice memo';
+      return;
+    }
+    if (!('speechSynthesis' in window)) {
+      alert('Browser does not support speech. Production build uses ElevenLabs voice in your own tone.');
+      return;
+    }
+    const text = "Good morning Kiana. Three things ran while you slept. Two client check-ins answered. Klarité renewed for Q3. Eleven email replies queued. Today: Greenline Capital at 10, team sync at 12, Zen Botanica QA at 3. Your three priorities are simple. Approve the Greenline pre-meeting brief. Sign off on the Elevate Planners nudge before 11. And ten minutes on the homepage hero rewrite. Today's cue: walk in light. Greenline isn't buying a deck. They're buying who you are when no one is watching.";
+    const u = new SpeechSynthesisUtterance(text);
+    u.rate = 0.95;
+    u.pitch = 1.0;
+    const voices = window.speechSynthesis.getVoices();
+    const fem = voices.find(v => /female|samantha|karen|allison|fiona|moira/i.test(v.name)) || voices[0];
+    if (fem) u.voice = fem;
+    u.onend = () => { speaking = false; voiceBtn.textContent = '▶ Listen as voice memo'; };
+    window.speechSynthesis.speak(u);
+    speaking = true;
+    voiceBtn.textContent = '■ Stop';
+  });
+  // Some browsers populate voices async
+  window.speechSynthesis.onvoiceschanged = () => {};
+
+  // ============== Toast helper + tier-2 / Notion buttons ==============
+  function toast(message, opts = {}) {
+    const stack = document.getElementById('toast-stack');
+    const el = document.createElement('div');
+    el.className = 'toast ' + (opts.kind || 'info');
+    el.innerHTML = `<span>${message}</span>${opts.meta ? `<span class="toast-meta">${opts.meta}</span>` : ''}`;
+    stack.appendChild(el);
+    setTimeout(() => el.remove(), 4400);
+  }
+
+  document.getElementById('btn-approve-all').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    btn.textContent = '✓ Approved · 8 sent';
+    btn.disabled = true;
+    btn.style.opacity = '0.55';
+    toast('8 tier-2 drafts approved &amp; sent. Logged to GHL.', { kind: 'success', meta: 'GMAIL · GHL' });
+  });
+
+  document.getElementById('btn-open-notion').addEventListener('click', () => {
+    window.open('https://www.notion.so/', '_blank', 'noopener');
+    toast('Opening Notion dashboard…', { kind: 'info' });
+  });
+</script>
+
+</body>
+</html>
