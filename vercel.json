@@ -1,3 +1,9 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/:slug([a-z0-9-]+)", "destination": "/cards/:slug/index.html" },
+    { "source": "/:slug([a-z0-9-]+)/", "destination": "/cards/:slug/index.html" },
+    { "source": "/:slug([a-z0-9-]+)/:file([a-z0-9-]+\\.html)", "destination": "/cards/:slug/:file" },
+    { "source": "/:slug([a-z0-9-]+)/:path*", "destination": "/cards/:slug/:path*" }
+  ]
 }
