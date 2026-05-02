@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow 03 · Sprint Readiness Dossier — SciSpace</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-bar"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Saikiran Chandha / SciSpace</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="researcher-feedback-synthesizer.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Workflow 03 &middot; Sprint Readiness Dossier &middot; T-60 min before sprint planning</div>
+    <h1 class="page-title">
+      Sprint planning starts from evidence.<br>
+      <em>Not memory.</em>
+    </h1>
+    <p class="page-lede">
+      60 minutes before sprint planning, a Notion page auto-populates with eval trends, top feedback themes, any competitor moves from Elicit or Consensus in the last 14 days, and 5 ranked sprint candidates with one-line rationale. The meeting walks in calibrated, not guessing.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="researcher-feedback-synthesizer.html">Feedback Synthesizer <span class="badge">01</span></a></li>
+          <li><a href="agent-eval-regression-pulse.html">Eval Regression Pulse <span class="badge">02</span></a></li>
+          <li><a href="sprint-readiness-dossier.html" class="active">Sprint Readiness Dossier <span class="badge">03</span></a></li>
+          <li><a href="agent-cohort-activation-gap.html">Cohort Activation Gap <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Calendar event trigger (title contains "sprint planning") &rarr; Eval regression log + Feedback Synthesizer themes + Linear backlog + Competitor RSS feeds (Elicit, Consensus, OpenAI blog) + Agent credits usage logs &rarr; Claude ranks and synthesizes &rarr; Notion page + calendar invite link.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>45-60 min of pre-sprint manual synthesis. The failure mode of priority decisions defaulting to whoever argues most forcefully rather than what the data shows.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>% of sprint decisions traceable to a cited data source in the dossier. Target: above 80%.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- System architecture -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How the dossier composes itself &middot; T-60 before sprint</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Eval regression log (last sprint)</div>
+              <div class="flow-node in">Feedback themes (last 14 days)</div>
+              <div class="flow-node in">Linear backlog (open bugs + requests)</div>
+              <div class="flow-node in">Competitor RSS (Elicit, Consensus, OAI)</div>
+              <div class="flow-node in">Agent credits usage by tool category</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Claude maps themes to Linear tickets, scores by impact x urgency, drafts 3 open questions</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">Notion page (auto-created)</div>
+              <div class="flow-node out">Calendar invite link injected</div>
+              <div class="flow-node out">5 ranked sprint candidates</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div style="display: flex; gap: 6px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 11px;">
+            <span style="background: #FAFAFA; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line);">T-60 DOSSIER READY</span>
+            <span class="text-muted">&rarr;</span>
+            <span style="background: #EDE9FE; padding: 6px 12px; border-radius: 999px; border: 1px solid #C4B5FD; color: #5B21B6;">T-30 CALENDAR NOTIF</span>
+            <span class="text-muted">&rarr;</span>
+            <span style="background: #0A0A0A; color: #FFF; padding: 6px 12px; border-radius: 999px;">SPRINT PLANNING</span>
+          </div>
+        </div>
+
+        <!-- Sample dossier -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; Sprint 14 dossier &middot; Mon Apr 28, 09:00 IST</div>
+            <span class="tag" style="background: #EDE9FE; color: #5B21B6; border-color: #C4B5FD;">Sprint brief</span>
+          </div>
+
+          <div style="display: grid; gap: 16px;">
+
+            <!-- Eval trend -->
+            <div>
+              <div class="mono text-muted mb-8" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">Eval trend (Sprint 13)</div>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <span style="padding: 5px 12px; background: #F0FDF4; border-radius: 999px; font-size: 12px; color: #15803D; border: 1px solid #BBF7D0;">Citation accuracy: stable</span>
+                <span style="padding: 5px 12px; background: #FFFBEB; border-radius: 999px; font-size: 12px; color: #92400E; border: 1px solid #FDE68A;">Synthesis: regression (open)</span>
+                <span style="padding: 5px 12px; background: #F0FDF4; border-radius: 999px; font-size: 12px; color: #15803D; border: 1px solid #BBF7D0;">Hallucination: stable</span>
+              </div>
+            </div>
+
+            <!-- Top 3 feedback themes -->
+            <div>
+              <div class="mono text-muted mb-8" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">Top 3 researcher feedback themes (14 days)</div>
+              <ol style="list-style: none; padding: 0; font-size: 13px; line-height: 1.7;">
+                <li><strong>1.</strong> Grant workflow citation hallucination (+210% last week) &rarr; <a href="#" style="color: var(--blue);">Linear #1247 (open)</a></li>
+                <li><strong>2.</strong> Agent credits pricing unpredictability (stable, high vol) &rarr; <span style="color: var(--ink-muted); font-size: 12px;">Untracked &middot; queued</span></li>
+                <li><strong>3.</strong> PDF to Video format requests (positive + feature ask) &rarr; <span style="color: var(--ink-muted); font-size: 12px;">No Linear ticket</span></li>
+              </ol>
+            </div>
+
+            <!-- Competitor alert -->
+            <div style="background: var(--bg-soft); border-radius: 6px; padding: 12px;">
+              <div class="mono text-muted mb-6" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">Competitor moves (last 14 days)</div>
+              <div style="font-size: 13px;">
+                <strong>Elicit:</strong> Released "structured data extraction" column feature (Apr 22) &middot; impacts SciSpace's Extract Data tool positioning<br>
+                <strong>OpenAI:</strong> Research Mode added PDF upload support (Apr 25) &middot; directly overlaps SciSpace Copilot free tier
+              </div>
+            </div>
+
+            <!-- Top 5 sprint candidates -->
+            <div>
+              <div class="mono text-muted mb-8" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">5 ranked sprint candidates</div>
+              <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13px;">
+                <div style="display: flex; gap: 12px; padding: 8px 12px; background: #FFF8F0; border-radius: 6px; border: 1px solid #FDE68A;">
+                  <span style="font-weight: 700; color: #92400E; width: 20px; flex-shrink: 0;">1.</span>
+                  <span><strong>Fix synthesis coherence regression</strong> &middot; Affects 88% of Agent users &middot; Prompt version rollback candidate</span>
+                </div>
+                <div style="display: flex; gap: 12px; padding: 8px 12px; background: #FAFAFA; border-radius: 6px; border: 1px solid var(--line);">
+                  <span style="font-weight: 700; color: var(--ink-muted); width: 20px; flex-shrink: 0;">2.</span>
+                  <span><strong>Credits calculator on pricing page</strong> &middot; Resolves top feedback theme #2 &middot; 1 sprint story</span>
+                </div>
+                <div style="display: flex; gap: 12px; padding: 8px 12px; background: #FAFAFA; border-radius: 6px; border: 1px solid var(--line);">
+                  <span style="font-weight: 700; color: var(--ink-muted); width: 20px; flex-shrink: 0;">3.</span>
+                  <span><strong>Grant workflow benchmark expansion</strong> &middot; Ties to eval regression cause &middot; Addresses rising user feedback</span>
+                </div>
+                <div style="display: flex; gap: 12px; padding: 8px 12px; background: #FAFAFA; border-radius: 6px; border: 1px solid var(--line);">
+                  <span style="font-weight: 700; color: var(--ink-muted); width: 20px; flex-shrink: 0;">4.</span>
+                  <span><strong>Free Agent credits for new Premium signups</strong> &middot; Activation funnel experiment &middot; Ties to Audit F06</span>
+                </div>
+                <div style="display: flex; gap: 12px; padding: 8px 12px; background: #FAFAFA; border-radius: 6px; border: 1px solid var(--line);">
+                  <span style="font-weight: 700; color: var(--ink-muted); width: 20px; flex-shrink: 0;">5.</span>
+                  <span><strong>PDF to Video format expansion (MP4 + GIF)</strong> &middot; High praise to feature request ratio &middot; Low eng effort</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Open questions -->
+            <div>
+              <div class="mono text-muted mb-8" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">3 open questions for the sprint discussion</div>
+              <ol style="font-size: 13px; line-height: 1.8; padding-left: 20px;">
+                <li>Is the synthesis coherence regression prompt-caused or model-config-caused? Engineering to confirm before sprint starts.</li>
+                <li>Should the credits calculator be a pricing page addition (1 sprint) or a full pricing page redesign (3 sprints)? PO to decide.</li>
+                <li>OpenAI Research Mode now has PDF upload -- does this change the priority of the Copilot free tier differentiation work?</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive demo -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; generate a sample dossier section</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="sprint-section" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="eval">Eval trend summary</option>
+              <option value="feedback">Top feedback themes</option>
+              <option value="competitor">Competitor alert</option>
+              <option value="candidates">Sprint candidates</option>
+            </select>
+            <button id="run-sprint" class="btn">Generate section</button>
+          </div>
+          <div id="sprint-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;"></div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="83">
+          <span class="label">Sprint decisions traceable to cited data</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">Target: 80%+</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="agent-eval-regression-pulse.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Eval Regression Pulse
+      </a>
+      <a href="agent-cohort-activation-gap.html" class="btn">
+        Next: Cohort Activation Gap <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  const sprintSections = {
+    eval: '<strong>Eval trend summary (Sprint 13):</strong><br>Citation accuracy: 97.2% (stable) &middot; Synthesis coherence: 88.1% (regression, open) &middot; Hallucination rate: 1.1% (stable) &middot; Grant quality: 94.4% (stable)<br><em>One open regression entering Sprint 14. Must resolve or accept regression risk before sprint closes.</em>',
+    feedback: '<strong>Top 3 themes (last 14 days, 312 signals):</strong><br>1. Grant citation hallucination (+210%, PhD-dominant) &rarr; unresolved Linear ticket<br>2. Credits pricing unpredictability (stable, Lab PI + PhD) &rarr; no ticket yet<br>3. PDF to Video praise + MP4/GIF format requests (positive signal) &rarr; no ticket<br><em>Theme 2 has been in the top-3 for 3 consecutive sprints without a ticket. Escalate or deprioritize explicitly.</em>',
+    competitor: '<strong>Competitor moves (14 days):</strong><br>Elicit Apr 22: Structured data extraction columns (impacts Extract Data tool). Elicit Apr 24: Export to Google Sheets (new capability SciSpace lacks).<br>OpenAI Apr 25: Research Mode + PDF upload (directly overlaps Copilot free tier). No Consensus moves detected.<br><em>OpenAI PDF upload is the most significant. Does not affect Agent (where SciSpace has the most depth) but could accelerate free-tier churn if Copilot free limit stays at 5 papers.</em>',
+    candidates: '<strong>Top 5 sprint candidates (scored by feedback volume &times; eval severity &times; credits signal):</strong><br>1. Synthesis regression fix (critical, blocks quality SLA) &middot; 2. Credits calculator on pricing (high volume, easy) &middot; 3. Grant workflow benchmark expansion (ties regression root cause) &middot; 4. Free credits onboarding hook (activation experiment) &middot; 5. PDF to Video format expansion (low effort, high praise signal)<br><em>Items 1-3 are data-led. Items 4-5 are hypotheses to test. Capacity determines which 4-5 of these fit Sprint 14.</em>'
+  };
+
+  document.getElementById('run-sprint').addEventListener('click', function() {
+    const section = document.getElementById('sprint-section').value;
+    const out = document.getElementById('sprint-output');
+    out.innerHTML = sprintSections[section];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

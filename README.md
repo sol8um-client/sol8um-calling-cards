@@ -44,11 +44,13 @@ calling-cards/
     └── cielo/             ← reference card · CIELO Agency / Kiana Blücher
         ├── index.html
         ├── audit.html
-        ├── morning-brief.html
-        ├── email-triage.html
-        ├── pre-meeting.html
-        ├── reflection.html
+        ├── morning-brief.html   ← Cielo-specific workflow (EA + founder-coaching scope)
+        ├── email-triage.html    ← Cielo-specific workflow
+        ├── pre-meeting.html     ← Cielo-specific workflow
+        ├── reflection.html      ← Cielo-specific workflow
         └── shots/
+    NOTE: Cielo's 4 workflow filenames are NOT the template. Every new card gets
+    freshly-named workflow files derived from that role's actual daily reality.
 ```
 
 `styles.css` lives at the root and every card pulls from `../../styles.css`. One brand system, n cards.
@@ -90,13 +92,17 @@ White background, pure black ink, hairline borders. Premium minimalist that sign
 ### Fixed (system DNA)
 - Visual theme + typography
 - Page structure: Overview / Audit / 4 Workflows
-- The 4 workflow concepts: Morning Brief, Email Triage, Pre-Meeting Brief, Reflection Layer
-- "VA-vs-me" framing
-- Vipassana / awareness thesis
-- "PM who builds" positioning
 - Marquee with track-record metrics
 - Maker's mark (serif italic "N")
 - Closing graceful line ("the audit is yours either way")
+- "PM who builds" positioning (Nihal's spine — it IS the consistent thread)
+- Component vocabulary (day-arc, KPI grid, impact-bar, browser-frame, marquee, etc.)
+
+### Varies per card (bespoke, not templated)
+- **The 4 workflow names and concepts** — freshly derived from THIS company's role and daily reality. Never copied from a prior card. The Cielo card's four (Morning Brief / Email Triage / Pre-Meeting Brief / Reflection Layer) were right for one specific EA role with founder-coaching scope. They are not a template.
+- **"VA-vs-me" framing** — only for EA / ops / coordinator roles. Replaced with role-specific framing for PM / GTM / engineering roles.
+- **Vipassana / awareness thesis** — only when the founder's public POV signals inner-game or mindfulness. Replaced with speed / technical depth / pattern-matching pitch for other roles.
+- **Audit 4-theme spine** — adapted to the company's actual funnel, not reused from Cielo.
 
 ### Customized (per company)
 - Hero copy + page subhead (mentions ICP/industry)

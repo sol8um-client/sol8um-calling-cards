@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow 01 · Researcher Feedback Synthesizer — SciSpace</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-mail"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Saikiran Chandha / SciSpace</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="researcher-feedback-synthesizer.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Workflow 01 &middot; Researcher Feedback Synthesizer &middot; continuous + 08:30 digest</div>
+    <h1 class="page-title">
+      1M users generate signal constantly.<br>
+      <em>This reads it for you.</em>
+    </h1>
+    <p class="page-lede">
+      Intercom, Chrome Web Store, G2, Capterra, in-app events -- all day, every day. This workflow clusters the stream into themes, scores by frequency and ICP segment, and delivers a ranked 08:30 digest to Slack. The PM reads insights, not tickets.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="researcher-feedback-synthesizer.html" class="active">Feedback Synthesizer <span class="badge">01</span></a></li>
+          <li><a href="agent-eval-regression-pulse.html">Eval Regression Pulse <span class="badge">02</span></a></li>
+          <li><a href="sprint-readiness-dossier.html">Sprint Readiness Dossier <span class="badge">03</span></a></li>
+          <li><a href="agent-cohort-activation-gap.html">Cohort Activation Gap <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Intercom API + Chrome Web Store scraper + G2/Capterra webhook + Mixpanel feedback events &rarr; n8n clustering + Claude &rarr; Slack #agent-feedback + Linear (weekly tickets).</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>2-3 hrs/day reading raw tickets. The failure mode of roadmap decisions made without signal from the actual ICP.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Median time from feedback event to Linear ticket. Target: same-day. Was: 5+ days untracked.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- System architecture -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How the synthesis composes itself &middot; continuous + 08:30 digest</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Intercom tickets &middot; ~40/day</div>
+              <div class="flow-node in">Chrome Web Store reviews &middot; 300K users</div>
+              <div class="flow-node in">G2 + Capterra mentions</div>
+              <div class="flow-node in">Mixpanel feedback events</div>
+              <div class="flow-node in">App Store reviews</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> n8n clusters + Claude scores by theme &times; ICP segment &times; recency</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">Slack 08:30 digest</div>
+              <div class="flow-node out">Rising-fast alert (threshold)</div>
+              <div class="flow-node out">Weekly &rarr; Linear tickets</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Weekly signal volume &middot; last 6 weeks</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">+34% week-on-week</span>
+          </div>
+          <svg class="sparkline" viewBox="0 0 600 56" preserveAspectRatio="none" style="height: 56px;">
+            <path d="M0 48 L100 44 L200 38 L300 32 L400 24 L500 16 L600 8" stroke="#4A90D9" stroke-width="1.5" fill="none"/>
+            <path d="M0 48 L100 44 L200 38 L300 32 L400 24 L500 16 L600 8 L600 56 L0 56 Z" fill="#4A90D9" fill-opacity="0.08"/>
+          </svg>
+        </div>
+
+        <!-- Sample output card -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; Thursday 08:30 digest &middot; Slack #agent-feedback</div>
+            <span class="tag tag-amber pulsing"><span class="tag-dot"></span>Live signal</span>
+          </div>
+
+          <div style="background: #1A1D23; border-radius: 8px; padding: 16px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #E3E4E6; line-height: 1.7;">
+            <div style="color: #4A90D9; font-weight: 600; margin-bottom: 8px;">@nihal &mdash; Agent Feedback Digest &middot; Thu Apr 30 &middot; 312 signals processed</div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #E84C4C;">&#9650; Rising fast</span> <strong>Citation hallucination on grant workflow</strong> (38 mentions, +210% vs 7-day avg)<br>
+              <span style="color: #8A8A8A;">Evidence: "The Agent cited a 2019 paper that doesn't exist in the NIH database" (3 verbatim)</span><br>
+              <span style="color: #8A8A8A;">ICP: PhD candidates (72%) &gt; postdocs (20%)</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #D97706;">02</span> <strong>Agent credit pricing confusion</strong> (41 mentions, stable)<br>
+              <span style="color: #8A8A8A;">"I don't know how many credits a full lit review costs before I buy" (5 verbatim)</span><br>
+              <span style="color: #8A8A8A;">ICP: PhD candidates (55%) &gt; Lab PIs (30%)</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">03</span> <strong>PDF to Video feature praised, more format options requested</strong> (28 mentions)<br>
+              <span style="color: #8A8A8A;">"Saved my entire thesis defense presentation" (best verbatim)</span><br>
+              <span style="color: #8A8A8A;">ICP: PhD candidates (80%)</span>
+            </div>
+            <div style="color: #525252; margin-top: 8px; font-size: 11px;">Linear tickets queued: 2 &middot; Full cluster: notion.so/agent-feedback/thu-apr-30</div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; generate a sample digest</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="icp-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="all">All ICPs</option>
+              <option value="phd">PhD candidates only</option>
+              <option value="lab">Lab PIs only</option>
+              <option value="industry">Industry researchers</option>
+            </select>
+            <select id="theme-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="all">All themes</option>
+              <option value="citation">Citation accuracy</option>
+              <option value="agent">Agent UX</option>
+              <option value="credits">Credits pricing</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Generate digest</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="88">
+          <span class="label">Feedback-to-ticket latency reduction</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">5+ days &rarr; same-day</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="audit.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Back to audit
+      </a>
+      <a href="agent-eval-regression-pulse.html" class="btn">
+        Next: Eval Regression Pulse <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const icp = document.getElementById('icp-filter').value;
+    const theme = document.getElementById('theme-filter').value;
+    const out = document.getElementById('demo-output');
+    const icpLabel = {'all':'All ICPs','phd':'PhD candidates','lab':'Lab PIs','industry':'Industry researchers'}[icp];
+    const themeLabel = {'all':'all themes','citation':'citation accuracy','agent':'Agent UX','credits':'credits pricing'}[theme];
+    const digests = {
+      phd_citation: '&#9650; <strong>Rising: Grant workflow citations hallucinate 2.3% of papers</strong> (61 PhD mentions, +210%)<br>"The Agent cited a Lancet paper from 2019 that doesn\'t appear in PubMed." (verbatim)<br><span style="color:var(--ink-muted)">Recommended action: escalate to eval harness, add grant-workflow benchmark set.</span>',
+      phd_all: '<strong>Top 3 themes for PhD candidates (44 signals today):</strong><br>1. Citation hallucination on grant workflow (+210%) &middot; 2. Credit cost unpredictability &middot; 3. PDF to Video praised<br><span style="color:var(--ink-muted)">Rising fast: grant citation quality. Queue to Linear: 1 ticket.</span>',
+      lab_all: '<strong>Top themes for Lab PIs (18 signals today):</strong><br>1. Team workspace sharing confusion (3 PIs, same week) &middot; 2. Credit billing per-seat vs. shared pool question<br><span style="color:var(--ink-muted)">Pattern: Lab plan onboarding is unclear on credit pooling. Queue to Linear.</span>',
+      all_credits: '<strong>Credits pricing friction: 41 signals this week (stable, high volume)</strong><br>"I can\'t budget my monthly Agent usage because I don\'t know how many credits a systematic review costs before I start."<br><span style="color:var(--ink-muted)">Affects: PhD 55%, Lab PI 30%, Postdoc 15%. Recommendation: add credits calculator to pricing page.</span>',
+      default: '<strong>Thursday digest (312 signals, all ICPs, all themes):</strong><br>Top: citation hallucination on grant workflows (+210%) &middot; credits confusion (stable) &middot; PDF to Video praise<br>Segments: PhD 62% of feedback &middot; Postdoc 22% &middot; Lab PI 12% &middot; Industry 4%<br><span style="color:var(--ink-muted)">2 Linear tickets queued. Full clusters: Notion.</span>'
+    };
+    let key = (icp !== 'all' && theme !== 'all') ? icp + '_' + theme : (icp !== 'all' ? icp + '_all' : (theme !== 'all' ? 'all_' + theme : 'default'));
+    out.innerHTML = digests[key] || digests['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow 04 · Agent Cohort Activation Gap — SciSpace</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Saikiran Chandha / SciSpace</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="researcher-feedback-synthesizer.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Workflow 04 &middot; Agent Cohort Activation Gap &middot; Friday 17:00 IST</div>
+    <h1 class="page-title">
+      The credits revenue loop<br>
+      <em>doesn't leak silently.</em>
+    </h1>
+    <p class="page-lede">
+      Every Friday, Mixpanel cohorts are segmented by researcher type and Agent activation stage. One bright-spot cohort. One at-risk cohort (credits bought, never consumed). Two experiment hypotheses for next week. The difference between a growing Agent business and a stalling one is this gap, measured weekly.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="researcher-feedback-synthesizer.html">Feedback Synthesizer <span class="badge">01</span></a></li>
+          <li><a href="agent-eval-regression-pulse.html">Eval Regression Pulse <span class="badge">02</span></a></li>
+          <li><a href="sprint-readiness-dossier.html">Sprint Readiness Dossier <span class="badge">03</span></a></li>
+          <li><a href="agent-cohort-activation-gap.html" class="active">Cohort Activation Gap <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Mixpanel cohort data (Premium users segmented by researcher type) + Agent credits consumption logs + conversion events + silent churn events (credits bought, 7 days unused) + NPS micro-survey responses &rarr; n8n + Claude &rarr; Friday Slack post + Notion weekly report.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>1.5 hrs of manual Mixpanel cohort queries every Friday. The failure mode of optimizing for total Agent usage while missing the cohort that purchases credits and silently churns.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Agent activation rate among Premium subscribers. Target: 25%+ weekly active on Agent by Q2.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- System architecture -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How the activation report composes itself &middot; Friday 17:00 IST</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Mixpanel cohorts (PhD / postdoc / lab PI / industry)</div>
+              <div class="flow-node in">Agent credits consumption logs (by tool category)</div>
+              <div class="flow-node in">Free-to-Premium + Premium-to-credits conversion events</div>
+              <div class="flow-node in">Silent churn: credits bought, 7 days unused</div>
+              <div class="flow-node in">Post-session NPS micro-survey</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> n8n segments by activation stage + Claude identifies bright-spot and at-risk cohorts + generates 2 experiment hypotheses</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">Slack #agent-metrics post</div>
+              <div class="flow-node out">Notion weekly report + funnel visual</div>
+              <div class="flow-node out">2 experiment hypotheses + success metrics</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Agent activation by cohort &middot; week-on-week</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">PhD up 8pp &middot; Postdoc at risk</span>
+          </div>
+          <svg class="sparkline" viewBox="0 0 600 56" preserveAspectRatio="none" style="height: 56px;">
+            <path d="M0 40 L80 36 L160 30 L240 24 L320 20 L400 16 L480 12 L600 8" stroke="#2ECC71" stroke-width="1.5" fill="none"/>
+            <path d="M0 40 L80 36 L160 30 L240 24 L320 20 L400 16 L480 12 L600 8 L600 56 L0 56 Z" fill="#2ECC71" fill-opacity="0.08"/>
+            <path d="M0 30 L80 32 L160 34 L240 38 L320 40 L400 42 L480 44 L600 46" stroke="#E84C4C" stroke-width="1" stroke-dasharray="4,3" fill="none"/>
+          </svg>
+          <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); margin-top: 4px;">Green: PhD cohort (activating) &middot; Red dashed: Postdoc cohort (at risk)</div>
+        </div>
+
+        <!-- Sample Friday report -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; Friday May 2 17:00 &middot; Slack #agent-metrics</div>
+            <span class="tag" style="background: #D1FAE5; color: #065F46; border-color: #6EE7B7;">Weekly anchor</span>
+          </div>
+
+          <!-- Activation funnel by segment -->
+          <div style="margin-bottom: 20px;">
+            <div class="mono text-muted mb-10" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">Agent activation funnel by researcher type (this week)</div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: grid; grid-template-columns: 130px 1fr 80px; gap: 8px; align-items: center; font-size: 12px;">
+                <span class="mono text-muted">PhD candidates</span>
+                <div style="height: 16px; background: #6EE7B7; border-radius: 3px; width: 34%;"></div>
+                <span class="mono" style="font-size: 11px; color: #065F46;">34% activated</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 130px 1fr 80px; gap: 8px; align-items: center; font-size: 12px;">
+                <span class="mono text-muted">Industry researchers</span>
+                <div style="height: 16px; background: #A7F3D0; border-radius: 3px; width: 28%;"></div>
+                <span class="mono" style="font-size: 11px; color: #065F46;">28% activated</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 130px 1fr 80px; gap: 8px; align-items: center; font-size: 12px;">
+                <span class="mono text-muted">Lab PIs</span>
+                <div style="height: 16px; background: #FDE68A; border-radius: 3px; width: 19%;"></div>
+                <span class="mono" style="font-size: 11px; color: #92400E;">19% activated</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 130px 1fr 80px; gap: 8px; align-items: center; font-size: 12px;">
+                <span class="mono text-muted">Postdocs</span>
+                <div style="height: 16px; background: #FECACA; border-radius: 3px; width: 9%;"></div>
+                <span class="mono" style="font-size: 11px; color: #B91C1C;">9% activated &#9660;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bright spot + at risk -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
+            <div style="background: #F0FDF4; border-radius: 6px; padding: 14px; border: 1px solid #BBF7D0;">
+              <div class="mono" style="font-size: 10px; letter-spacing: 0.12em; color: #15803D; text-transform: uppercase; margin-bottom: 6px;">&#10024; Bright spot cohort</div>
+              <div style="font-weight: 600; margin-bottom: 4px;">PhD candidates (STEM, year 2-4)</div>
+              <div class="text-soft" style="font-size: 12px; line-height: 1.5;">34% activated on Agent this week (+8pp vs last). Usage pattern: literature review first, then grant draft. Average session: 47 min. Credits re-purchase rate: 62%.</div>
+            </div>
+            <div style="background: #FFF1F2; border-radius: 6px; padding: 14px; border: 1px solid #FECACA;">
+              <div class="mono" style="font-size: 10px; letter-spacing: 0.12em; color: #B91C1C; text-transform: uppercase; margin-bottom: 6px;">&#9888; At-risk cohort</div>
+              <div style="font-weight: 600; margin-bottom: 4px;">Postdocs (STEM, any year)</div>
+              <div class="text-soft" style="font-size: 12px; line-height: 1.5;">9% activation (-5pp vs last). 61% purchased credits, 0 Agent tasks completed within 7 days. They buy, open the Agent, and close it. Something in the onboarding step loses them.</div>
+            </div>
+          </div>
+
+          <!-- 2 experiment hypotheses -->
+          <div>
+            <div class="mono text-muted mb-8" style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;">2 experiment hypotheses for next week</div>
+            <div style="font-size: 13px; line-height: 1.7;">
+              <strong>Hypothesis A:</strong> Postdocs aren't activating because the Agent's first-run UX defaults to "literature review" -- a task they do differently than PhD students (they supervise, not write). Show a "systematic review" task type on first run. Metric: postdoc 7-day activation rate.<br>
+              <strong>Hypothesis B:</strong> Credits confusion is causing postdocs to open Agent, see an empty prompt, and close without trying. Add a "Try this: [suggested research question]" pre-fill on first run. Metric: first-task completion rate for credits holders.
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive demo -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; explore cohort activation data</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="cohort-select" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="phd">PhD candidates</option>
+              <option value="postdoc">Postdocs</option>
+              <option value="lab">Lab PIs</option>
+              <option value="industry">Industry researchers</option>
+            </select>
+            <button id="run-cohort" class="btn">Show cohort report</button>
+          </div>
+          <div id="cohort-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;"></div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="78">
+          <span class="label">Agent activation rate (Premium users)</span>
+          <span class="track"><span class="fill green"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">Target: 25%+ by Q2</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="sprint-readiness-dossier.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Sprint Readiness Dossier
+      </a>
+      <a href="index.html" class="btn">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Back to overview
+      </a>
+    </div>
+
+    <div class="calm-bar mt-24">
+      <svg class="ic" style="color: var(--green); flex-shrink: 0;"><use href="#i-spark"/></svg>
+      <span>The audit is yours either way. Ship it whether or not we work together.</span>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  const cohortReports = {
+    phd: '<strong>PhD candidates (STEM, year 2-4):</strong><br>Activation rate: 34% (+8pp week-on-week) &middot; BRIGHT SPOT<br>Top Agent tools used: literature review (68%), grant workflow (22%), manuscript draft (10%)<br>Credits re-purchase rate: 62% &middot; Avg session: 47 min<br><em>Hypothesis: lit review first, then grant draft is a natural PhD workflow. Replicate this onboarding path for other cohorts.</em>',
+    postdoc: '<strong>Postdocs (STEM, any year):</strong><br>Activation rate: 9% (-5pp week-on-week) &middot; AT RISK<br>Credits purchased: 61% &middot; Agent tasks completed within 7 days: 0%<br>Pattern: buy credits, open Agent, close without running a task<br><em>Hypothesis: the "literature review" default task type doesn\'t match how postdocs think about their work (they supervise, not primarily write). Test: show "systematic review" task type on first run.</em>',
+    lab: '<strong>Lab PIs:</strong><br>Activation rate: 19% (+1pp week-on-week) &middot; STABLE<br>Top concern: team credits sharing ("do my 3 postdocs share my credits or do they need separate subscriptions?")<br>Engagement: sporadic, once per 2 weeks average<br><em>Lab PIs are evaluators, not primary users. Their activation rate improves when at least 1 of their team is activated. Consider "invite a lab member" hook.</em>',
+    industry: '<strong>Industry researchers (pharma, biotech, corporate R&D):</strong><br>Activation rate: 28% (-2pp week-on-week) &middot; WATCH<br>Top use case: competitive landscape synthesis, patent prior art<br>Barrier: security/data privacy concern for unpublished data (4 mentions this week)<br><em>Audit Finding 08 (security page) is directly linked to this cohort\'s activation barrier. Ship the security page and re-measure.</em>'
+  };
+
+  document.getElementById('run-cohort').addEventListener('click', function() {
+    const cohort = document.getElementById('cohort-select').value;
+    const out = document.getElementById('cohort-output');
+    out.innerHTML = cohortReports[cohort];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

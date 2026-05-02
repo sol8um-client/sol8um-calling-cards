@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prepared for SciSpace — Audit + Workflows</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<!-- Inline icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M9 3h6v8l3.4 6.4A2 2 0 0 1 16.8 20H7.2a2 2 0 0 1-1.6-2.6L9 11V3Z"/><path d="M6.6 15h10.8"/></symbol>
+  <symbol id="i-flow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12l5 5 9-12"/></symbol>
+  <symbol id="i-bar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Saikiran Chandha / SciSpace</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html" class="active">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="researcher-feedback-synthesizer.html">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="page-header" style="border-bottom: 0; padding-bottom: 32px; position: relative;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>April 2026 &middot; Pre-call deliverable &middot; Built in 36 hours
+    </div>
+    <h1 class="page-title">
+      Two pieces of work,<br>
+      <em>before we even talk.</em>
+    </h1>
+    <p class="page-lede">
+      You posted a Product Owner role for the AI Research Agent. I want to be measured on something else: the quality of evidence a PM brings to decisions about an LLM product that 1M+ researchers depend on. Below is what that argument looks like in practice. A focused audit of where scispace.com is leaving researcher trust and Agent revenue on the table, plus four working workflow demos for the PM who owns your Agent product.
+    </p>
+    <div class="row mt-32 gap-12">
+      <a href="audit.html" class="btn">Open the audit
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="researcher-feedback-synthesizer.html" class="btn btn-secondary">Walk through the workflows</a>
+    </div>
+  </section>
+
+  <!-- PROOF MARQUEE -->
+  <section style="border-top: 0; padding: 0;">
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="num">72%</span><span class="lbl">qualified leads · Gamezop</span></div>
+        <div class="marquee-item"><span class="num">127%</span><span class="lbl">revenue growth · Kredily PLG</span></div>
+        <div class="marquee-item"><span class="num">50%</span><span class="lbl">workforce automated · n8n</span></div>
+        <div class="marquee-item"><span class="num">800K</span><span class="lbl">employees served · Kredily</span></div>
+        <div class="marquee-item"><span class="num">1M+</span><span class="lbl">daily transactions · SafexPay</span></div>
+        <div class="marquee-item"><span class="num">&lt;1 wk</span><span class="lbl">full SaaS shipped solo · Feelback</span></div>
+        <div class="marquee-item"><span class="num">daily</span><span class="lbl">Claude + n8n + LLM evals · Sol8um</span></div>
+        <!-- duplicate for loop -->
+        <div class="marquee-item"><span class="num">72%</span><span class="lbl">qualified leads · Gamezop</span></div>
+        <div class="marquee-item"><span class="num">127%</span><span class="lbl">revenue growth · Kredily PLG</span></div>
+        <div class="marquee-item"><span class="num">50%</span><span class="lbl">workforce automated · n8n</span></div>
+        <div class="marquee-item"><span class="num">800K</span><span class="lbl">employees served · Kredily</span></div>
+        <div class="marquee-item"><span class="num">1M+</span><span class="lbl">daily transactions · SafexPay</span></div>
+        <div class="marquee-item"><span class="num">&lt;1 wk</span><span class="lbl">full SaaS shipped solo · Feelback</span></div>
+        <div class="marquee-item"><span class="num">daily</span><span class="lbl">Claude + n8n + LLM evals · Sol8um</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section style="padding-top: 64px;">
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-eye"/></svg> What's inside</div>
+    <h2 class="section-title">A package built around <em>one belief.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      A PM who builds LLM products should be able to show their work before the first call. Every page below is built to either surface a specific gap in scispace.com or demonstrate a workflow the Agent Product Owner would actually run.
+    </p>
+
+    <div class="kpis">
+      <div class="kpi reveal">
+        <div class="label">Audit findings</div>
+        <div class="num counter" data-target="10">10</div>
+        <div class="delta">across 4 themes</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="label">Quick wins (&lt;1 hr)</div>
+        <div class="num counter" data-target="3">3</div>
+        <div class="delta up">deploy this week</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="label">Working workflows</div>
+        <div class="num counter" data-target="4">4</div>
+        <div class="delta">interactive demos</div>
+      </div>
+      <div class="kpi reveal">
+        <div class="label">Funnel steps mapped</div>
+        <div class="num counter" data-target="8">8</div>
+        <div class="delta">free to Agent buyer</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOWS SECTION -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-flow"/></svg> Part Two</div>
+    <h2 class="section-title">Four workflows. Working. <em>For your Agent PM's day.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      Any PM can write a PRD. These four are the spine of how a Product Owner running an LLM product protects researcher trust, turns feedback into ranked roadmap decisions, and keeps the engineering cycle anchored to real data. Each demo is interactive.
+    </p>
+
+    <!-- Day arc -->
+    <div class="card mb-24" style="padding: 24px;">
+      <div class="mono text-muted mb-16" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">When each workflow fires across the Agent PM's day</div>
+      <div style="position: relative; height: 120px;">
+        <svg viewBox="0 0 1000 120" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;">
+          <line x1="40" y1="60" x2="960" y2="60" stroke="#E5E5E5" stroke-width="1"/>
+          <g font-family="Geist Mono, monospace" font-size="10" fill="#8A8A8A">
+            <text x="40"  y="100">06:00</text>
+            <text x="195" y="100">09:00</text>
+            <text x="350" y="100">12:00</text>
+            <text x="510" y="100">15:00</text>
+            <text x="670" y="100">18:00</text>
+            <text x="830" y="100">21:00</text>
+          </g>
+          <g>
+            <!-- Feedback Synthesizer: continuous band + 08:30 digest dot -->
+            <rect x="40" y="55" width="880" height="10" fill="#4A90D9" opacity="0.14" rx="5"/>
+            <circle cx="118" cy="60" r="7" fill="#4A90D9"/>
+            <text x="118" y="44" font-family="Rethink Sans" font-size="11" font-weight="600" fill="#1D4ED8" text-anchor="middle">Feedback Pulse</text>
+            <text x="118" y="28" font-family="Geist Mono" font-size="9" fill="#525252" text-anchor="middle">08:30 digest</text>
+
+            <!-- Eval Regression Pulse: 09:00 -->
+            <circle cx="195" cy="60" r="9" fill="#E84C4C"/>
+            <text x="195" y="44" font-family="Rethink Sans" font-size="11" font-weight="600" fill="#B91C1C" text-anchor="middle">Eval Check</text>
+            <text x="195" y="28" font-family="Geist Mono" font-size="9" fill="#525252" text-anchor="middle">09:00 daily</text>
+
+            <!-- Sprint Readiness Dossier: T-60 before sprint (Mon/Wed ~10:00 event) -->
+            <circle cx="250" cy="60" r="7" fill="#7B61FF"/>
+            <circle cx="505" cy="60" r="7" fill="#7B61FF"/>
+            <text x="378" y="28" font-family="Rethink Sans" font-size="11" font-weight="600" fill="#6D28D9" text-anchor="middle">Sprint Dossier · T-60</text>
+
+            <!-- Cohort Activation Gap: Friday 17:00 -->
+            <circle cx="742" cy="60" r="9" fill="#2ECC71"/>
+            <text x="742" y="44" font-family="Rethink Sans" font-size="11" font-weight="600" fill="#15803D" text-anchor="middle">Cohort Gap</text>
+            <text x="742" y="28" font-family="Geist Mono" font-size="9" fill="#525252" text-anchor="middle">FRI 17:00</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+
+      <a href="researcher-feedback-synthesizer.html" style="border: 0;">
+        <div class="card reveal" style="cursor: pointer; height: 100%;">
+          <div class="row-between mb-16">
+            <span class="tag"><svg class="ic ic-sm"><use href="#i-mail"/></svg> Workflow 01</span>
+            <span class="mono text-muted" style="font-size: 11px;">continuous + 08:30 digest</span>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Researcher Feedback Synthesizer</h3>
+          <p class="text-soft mb-16" style="font-size: 14px;">1M+ users generate a constant stream of feedback across Intercom, Chrome Web Store, G2, and in-app events. This workflow clusters it by theme and ICP segment every day so roadmap decisions are pulled from signal, not pushed from intuition.</p>
+          <!-- Feedback category viz -->
+          <div style="display: flex; gap: 4px; height: 36px; border-radius: 4px; overflow: hidden;">
+            <div style="flex: 5; background: #BFDBFE; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #1D4ED8;">CITATION</div>
+            <div style="flex: 4; background: #E9D5FF; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #7C3AED;">AGENT UX</div>
+            <div style="flex: 3; background: #BBF7D0; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #15803D;">CREDITS</div>
+            <div style="flex: 2; background: #FED7AA; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #B45309;">PERF</div>
+            <div style="flex: 2; background: #E5E5E5; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #525252;">OTHER</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 8px;">FRIDAY CLUSTER &middot; 312 SIGNALS &rarr; 5 THEMES</div>
+        </div>
+      </a>
+
+      <a href="agent-eval-regression-pulse.html" style="border: 0;">
+        <div class="card reveal" style="cursor: pointer; height: 100%;">
+          <div class="row-between mb-16">
+            <span class="tag"><svg class="ic ic-sm"><use href="#i-flask"/></svg> Workflow 02</span>
+            <span class="mono text-muted" style="font-size: 11px;">09:00 daily</span>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Agent Eval Regression Pulse</h3>
+          <p class="text-soft mb-16" style="font-size: 14px;">Nightly eval suite runs against a frozen benchmark of 200+ researcher queries. Every morning at 09:00 the PM sees a green/amber/red card per eval dimension with failing case diffs. Citations don't regress silently to 1M researchers.</p>
+          <!-- Eval status viz -->
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 4px;">
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 11px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #16A34A; flex-shrink: 0;"></span>
+              <span>Citation accuracy</span><span class="text-muted" style="margin-left: auto;">97.2% (+0.4)</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 11px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #D97706; flex-shrink: 0;"></span>
+              <span>Synthesis coherence</span><span class="text-muted" style="margin-left: auto;">88.1% (-6.3) &#9650;</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 11px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #16A34A; flex-shrink: 0;"></span>
+              <span>Hallucination rate</span><span class="text-muted" style="margin-left: auto;">1.1% (stable)</span>
+            </div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 10px;">THU EVAL RUN &middot; 1 REGRESSION FLAGGED</div>
+        </div>
+      </a>
+
+      <a href="sprint-readiness-dossier.html" style="border: 0;">
+        <div class="card reveal" style="cursor: pointer; height: 100%;">
+          <div class="row-between mb-16">
+            <span class="tag"><svg class="ic ic-sm"><use href="#i-bar"/></svg> Workflow 03</span>
+            <span class="mono text-muted" style="font-size: 11px;">T-60 min before sprint</span>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Sprint Readiness Dossier</h3>
+          <p class="text-soft mb-16" style="font-size: 14px;">60 minutes before sprint planning, a Notion page auto-populates with eval trends, top 3 feedback themes, competitor moves from Elicit and Consensus, and 5 ranked sprint candidates with one-line rationale. The meeting starts from evidence, not memory.</p>
+          <!-- T-60 timeline -->
+          <div style="display: flex; gap: 6px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 10px;">
+            <span style="background: #FAFAFA; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line);">T-60 DOSSIER</span>
+            <span class="text-muted">&rarr;</span>
+            <span style="background: #FAFAFA; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line);">T-0 PLANNING</span>
+            <span class="text-muted">&rarr;</span>
+            <span style="background: #0A0A0A; color: #FFF; padding: 6px 10px; border-radius: 999px;">SPRINT KICKS</span>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 8px;">DATA-LED, NOT LOUDEST-VOICE-WINS</div>
+        </div>
+      </a>
+
+      <a href="agent-cohort-activation-gap.html" style="border: 0;">
+        <div class="card reveal" style="cursor: pointer; height: 100%;">
+          <div class="row-between mb-16">
+            <span class="tag"><svg class="ic ic-sm"><use href="#i-target"/></svg> Workflow 04</span>
+            <span class="mono text-muted" style="font-size: 11px;">Friday 17:00</span>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Agent Cohort Activation Gap</h3>
+          <p class="text-soft mb-16" style="font-size: 14px;">Every Friday, Mixpanel cohorts are segmented by researcher type and Agent activation stage. One bright-spot cohort (activating fastest), one at-risk cohort (credits purchased, never consumed), two experiment hypotheses. The credits revenue loop doesn't leak silently.</p>
+          <!-- Cohort funnel viz -->
+          <svg class="sparkline" viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 8 L30 10 L60 14 L90 22 L120 30 L150 38 L180 44 L200 48" stroke="#2ECC71" stroke-width="1.5" fill="none"/>
+            <path d="M0 8 L30 10 L60 14 L90 22 L120 30 L150 38 L180 44 L200 48 L200 56 L0 56 Z" fill="#2ECC71" fill-opacity="0.08"/>
+            <path d="M0 20 L30 22 L60 28 L90 36 L120 46 L150 50 L180 52 L200 54" stroke="#E84C4C" stroke-width="1" stroke-dasharray="3,2" fill="none"/>
+          </svg>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 4px;">PHDS ACTIVATING 34% &middot; POSTDOCS AT RISK 61%</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- WHY ME — PM-specific framing, no VA contrast, no Vipassana -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-spark"/></svg> Part Three</div>
+    <h2 class="section-title">Why I'd be different from <em>any PM you'd hire.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      You wrote the JD looking for someone who owns the Agent roadmap, designs Evals, uses AI to accelerate their own product work, and holds their own with LLM engineers. Most PMs describe those capabilities. I've been running them daily since 2024.
+    </p>
+
+    <!-- PM contrast: What every PM does vs. what I'd do alongside -->
+    <div class="mb-32" style="display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0; align-items: stretch;">
+      <div class="card" style="background: var(--bg-soft); padding: 24px;">
+        <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">What every PM does</div>
+        <ul style="list-style: none; font-size: 14px; line-height: 2;">
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Write the PRD and spec features</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Prioritize the backlog</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Read user feedback and tag themes</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Join sprint planning and align eng</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm text-muted"><use href="#i-check"/></svg> Ask for Evals results from engineering</li>
+        </ul>
+        <div class="mt-16 text-soft" style="font-size: 13px; font-style: italic;">All necessary. All table stakes for me.</div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.14em; transform: rotate(-90deg); color: var(--ink-muted); white-space: nowrap;">+ ALONGSIDE THAT</div>
+      </div>
+      <div class="card card-strong" style="padding: 24px; background: #FAFAFA;">
+        <div class="mono mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">What I'd be doing alongside</div>
+        <ul style="list-style: none; font-size: 14px; line-height: 2;">
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Building the Eval framework myself, not just requesting it</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Automating feedback clustering so I read insights not tickets</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Catching citation regressions before researchers tweet about them</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Running experiments on the Agent credits funnel backed by data</li>
+          <li style="display: flex; gap: 10px; align-items: center;"><svg class="ic ic-sm" style="color: var(--green);"><use href="#i-spark"/></svg> Making the role need fewer hours from engineering each quarter</li>
+        </ul>
+        <div class="mt-16 text-soft" style="font-size: 13px; font-style: italic;">This is what I want to be measured on.</div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <!-- Speed pillar -->
+      <div class="card" style="padding: 28px;">
+        <div class="row gap-8 mb-16">
+          <svg class="ic ic-lg" style="color: var(--ink);"><use href="#i-zap"/></svg>
+          <div>
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">The first thesis</div>
+            <div style="font-weight: 600; font-size: 17px; margin-top: 4px;">Ships faster than any PM you'll interview</div>
+          </div>
+        </div>
+        <p class="serif" style="font-size: 20px; line-height: 1.45; margin-bottom: 18px;">
+          "The speed a PM ships at is a product decision. A slower ship means the Agent falls further behind OpenAI Research Mode <em>every week</em>."
+        </p>
+        <p class="text-soft" style="font-size: 14px; line-height: 1.6;">
+          Built feelback.fun (full SaaS: AI feedback collection, rewards engine, analytics dashboard) solo in under one week. Not a prototype. A product with real users and a 5% to 30%+ engagement conversion. This package you're reading was built in 36 hours from research to live deliverable. That's the velocity I'd bring to the Agent's roadmap every sprint.
+        </p>
+      </div>
+
+      <!-- Technical depth pillar -->
+      <div class="card" style="padding: 28px;">
+        <div class="row gap-8 mb-16">
+          <svg class="ic ic-lg" style="color: var(--green);"><use href="#i-spark"/></svg>
+          <div>
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">The second thesis</div>
+            <div style="font-weight: 600; font-size: 17px; margin-top: 4px;">IIT Kanpur depth. Holds his own with LLM engineers.</div>
+          </div>
+        </div>
+        <p class="serif" style="font-size: 20px; line-height: 1.45; margin-bottom: 18px;">
+          "The PM on an LLM product who can't read an eval failure diff is dependent on engineering to interpret their own quality signal."
+        </p>
+        <p class="text-soft" style="font-size: 14px; line-height: 1.6;">
+          IIT Kanpur (B.S.B.E., 2021). Full-time AI-native founder since Sept 2025: daily Claude Code, Cursor, n8n eval pipelines, Supabase, Vercel, ElevenLabs. At Sol8um I design and run LLM evaluation pipelines for client automation systems. I read the diffs. I write the prompts. I own the quality loop without creating engineering dependency.
+        </p>
+      </div>
+    </div>
+
+    <div class="founder-note mt-32">
+      <div class="founder-avatar">N</div>
+      <div>
+        <div class="from">A short note</div>
+        <div class="body">
+          The role's core ask is a PM who uses AI to do the PM work, not just to spec AI features. That's been my daily reality for 18 months. The four workflows above aren't demos I built to impress you. They're tools I'd build on week two if we started together. The audit findings are what I'd bring to your first sprint planning as context no one else has run.
+        </div>
+        <div class="sig">-- Nihal Choudhary</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST 30 DAYS ROADMAP -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-clock"/></svg> First 30 Days</div>
+    <h2 class="section-title">What week one through week four <em>actually look like.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      I want to be useful before week one ends. Here's the rough shape of the first month scoped to the Agent PM role.
+    </p>
+
+    <div class="roadmap">
+      <div class="roadmap-grid">
+        <div class="roadmap-cell">
+          <span class="when">Days 1-3</span>
+          <span class="badge shipnow">Listen</span>
+          <div class="what">Agent product mapped</div>
+          <div class="why">Shadow Mixpanel, existing eval harness, Intercom queue, Linear backlog. Map every friction point in the free-to-credits funnel. Read the last 10 sprint retros. Understand what broke and what shipped.</div>
+        </div>
+        <div class="roadmap-cell">
+          <span class="when">Days 4-10</span>
+          <span class="badge build">Ship</span>
+          <div class="what">Eval framework v1 + funnel instrumented</div>
+          <div class="why">Write eval benchmark set for top 3 Agent task types (lit review, manuscript draft, citation generation). Instrument the 8-step activation funnel in Mixpanel. Ship audit Finding 01-02 (meta description + Agent pipeline hero copy) with the website team.</div>
+        </div>
+        <div class="roadmap-cell">
+          <span class="when">Days 11-21</span>
+          <span class="badge compound">Compound</span>
+          <div class="what">Feedback loop + first Agent credits experiment</div>
+          <div class="why">Researcher Feedback Synthesizer running continuously. First 10 free Agent credits experiment live for new Premium subscribers. Institutions page shipped. Eval regression caught and resolved in under 12 hours for the first time.</div>
+        </div>
+        <div class="roadmap-cell">
+          <span class="when">Days 22-30</span>
+          <span class="badge future">Compound+</span>
+          <div class="what">Cohort dashboard + first data-led sprint</div>
+          <div class="why">Agent Cohort Activation Gap dashboard live. Sprint 3 planned entirely from the Sprint Readiness Dossier. First experiment results in: conversion rate at the credits purchase step, data feeding roadmap for Q2. The PM function is now a system, not a person doing tasks.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <div class="text-soft" style="font-size: 14px; max-width: 560px;">
+        Week 4 onwards: the Agent has an instrumented quality loop, a grounded roadmap, and a PM who reads the eval diffs in the morning and ships the fix by afternoon.
+      </div>
+      <div class="row gap-12">
+        <a href="audit.html" class="btn">Open the audit</a>
+        <a href="researcher-feedback-synthesizer.html" class="btn btn-secondary">Walk through workflows</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY OVERLAP GRID -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-target"/></svg> Where my work overlaps with SciSpace's domain</div>
+    <h2 class="section-title">I've shipped product into <em>each of your adjacent verticals.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      SciSpace lives at the intersection of AI tooling, B2B SaaS, researcher productivity, and bootstrapped growth. I've worked across that exact map.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
+
+      <div class="card">
+        <div class="row-between mb-8">
+          <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">SciSpace domain &middot; AI Automation tooling</span>
+          <span class="tag">overlap</span>
+        </div>
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 6px;">Sol8um.tech &middot; AI agency &middot; paying clients</div>
+        <p class="text-soft" style="font-size: 13px; line-height: 1.55;">Full-time AI-native founder since Sept 2025. Build LLM eval pipelines, n8n automation systems, and AI-assisted product workflows for clients daily. The exact skills the JD describes as requirements are my production environment.</p>
+      </div>
+
+      <div class="card">
+        <div class="row-between mb-8">
+          <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">SciSpace domain &middot; B2B SaaS PLG</span>
+          <span class="tag">overlap</span>
+        </div>
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 6px;">Kredily &middot; 800K+ employees &middot; 127% revenue growth</div>
+        <p class="text-soft" style="font-size: 13px; line-height: 1.55;">PLG roadmap ownership, conversion funnel design, free-to-paid activation. The same mechanics SciSpace needs for the free-to-Premium-to-credits funnel. I've measured this at scale and know where the leaks hide.</p>
+      </div>
+
+      <div class="card">
+        <div class="row-between mb-8">
+          <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">SciSpace domain &middot; User engagement SaaS</span>
+          <span class="tag">overlap</span>
+        </div>
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 6px;">Feelback.fun &middot; 5% to 30%+ engagement conversion</div>
+        <p class="text-soft" style="font-size: 13px; line-height: 1.55;">Built a full AI feedback and rewards SaaS solo in under a week. Engagement conversion went from 5% to 30%+. Understanding activation loops at the product level is not theory for me: I designed them, shipped them, and measured them.</p>
+      </div>
+
+      <div class="card">
+        <div class="row-between mb-8">
+          <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">SciSpace domain &middot; Bootstrapped lean growth</span>
+          <span class="tag">overlap</span>
+        </div>
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 6px;">The Smart Traveller &middot; 20K+ travelers &middot; Rs.11L GMV</div>
+        <p class="text-soft" style="font-size: 13px; line-height: 1.55;">Co-founded a travel company that hit Rs.11L GMV in 4 months on minimal resources. SciSpace has been building at founder pace since 2017 on $890K raised. I operate in that tempo. I don't need a large team to ship real product.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ON THE CALL AGENDA -->
+  <section>
+    <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-clock"/></svg> When we talk</div>
+    <h2 class="section-title">What the first 30 minutes <em>could look like.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      Not a presentation. A working session. Here's a rough sequence so you walk in knowing what we'd actually cover together.
+    </p>
+
+    <div class="card card-strong" style="padding: 32px;">
+      <ol style="list-style: none; counter-reset: cn; padding: 0;">
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">01</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">Walk through the audit, live, on scispace.com</div>
+            <div class="text-soft" style="font-size: 13px;">Not the deliverable. The actual site. We could update the page title (Finding 01) right there together in 5 minutes.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">8 min</div>
+        </li>
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">02</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">Talk through your current eval setup for the Agent</div>
+            <div class="text-soft" style="font-size: 13px;">What dimensions you track, what the biggest quality risk is right now, how regression is currently detected. So I understand what to build on vs. replace.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">8 min</div>
+        </li>
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">03</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">Pick the workflow that matches your biggest current gap</div>
+            <div class="text-soft" style="font-size: 13px;">Eval quality, feedback synthesis, sprint evidence, or cohort activation. Whichever one would remove the most weight from the PM's week right now.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">8 min</div>
+        </li>
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">04</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">The Agent's next 6 months: what you're building toward</div>
+            <div class="text-soft" style="font-size: 13px;">Saikiran's expansion vision, the OpenAI Research Mode threat, the institutional play. Where the Agent needs to be by end of 2026 and what the PM role's job is in getting there.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">4 min</div>
+        </li>
+
+        <li style="counter-increment: cn; display: grid; grid-template-columns: 60px 1fr 100px; gap: 18px; padding: 18px 0; align-items: start;">
+          <div class="mono" style="font-size: 24px; color: var(--ink-muted); font-weight: 500;">05</div>
+          <div>
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">Your questions, scope, next steps</div>
+            <div class="text-soft" style="font-size: 13px;">Whatever this package didn't answer. Honest scope and comp conversation. If we're aligned, what week one looks like.</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 11px; text-align: right;">2 min</div>
+        </li>
+
+      </ol>
+    </div>
+
+    <div class="calm-bar mt-24">
+      <svg class="ic" style="color: var(--green); flex-shrink: 0;"><use href="#i-spark"/></svg>
+      <span>The audit is yours either way. Ship it whether or not we work together.</span>
+    </div>
+  </section>
+
+  <!-- HOW THIS WAS BUILT -->
+  <section style="padding-top: 40px;">
+    <div class="card" style="padding: 24px; background: var(--bg-soft);">
+      <div class="row-between" style="flex-wrap: wrap; gap: 24px;">
+        <div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px;">How this package was built</div>
+          <div style="font-size: 16px; font-weight: 500; margin-bottom: 4px;">Concept to live deliverable in <span class="serif" style="font-size: 22px;">36 hours.</span></div>
+          <div class="text-soft" style="font-size: 13px;">Same velocity I'd bring to the Agent's sprint each week. Solo. End-to-end.</div>
+        </div>
+        <div class="row gap-8" style="flex-wrap: wrap;">
+          <span class="tag">Claude Code</span>
+          <span class="tag">Cursor</span>
+          <span class="tag">n8n</span>
+          <span class="tag">Microlink (live captures)</span>
+          <span class="tag">Figma · Geist Mono · Instrument Serif</span>
+          <span class="tag">~2,400 lines hand-written CSS+HTML</span>
+          <span class="tag">Zero templates</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">PM who builds. IIT Kanpur. AI-native daily.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9079273658 <a class="wa-badge" href="https://wa.me/919079273658" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span><br>
+        <a class="contact-link" href="https://www.linkedin.com/in/nihalchoudhary" target="_blank" rel="noopener"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 18H6V10h2.5v8zM7.25 8.6a1.45 1.45 0 1 1 0-2.9 1.45 1.45 0 0 1 0 2.9zM18 18h-2.5v-3.9c0-1-.4-1.6-1.3-1.6-.7 0-1.1.5-1.3 1-.07.18-.07.43-.07.68V18H10.4V10h2.4v1c.34-.5.95-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.5V18z"/></svg>linkedin.com/in/nihalchoudhary</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const ioCount = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target, 10) || 0;
+      const dur = 1200;
+      const t0 = performance.now();
+      function step(t) {
+        const p = Math.min(1, (t - t0) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      ioCount.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.counter').forEach(el => { el.textContent = '0'; ioCount.observe(el); });
+
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+</script>
+
+</body>
+</html>
