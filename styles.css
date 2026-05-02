@@ -580,14 +580,206 @@ section:last-of-type { border-bottom: 0; }
 .text-center { text-align: center; }
 .divider { height: 1px; background: var(--line); margin: 24px 0; }
 
-/* Responsive */
+/* ==============================================================
+   RESPONSIVE LAYER
+   Single source of truth for all card breakpoints.
+   Strategy:
+   - Desktop-first base styles (above) untouched
+   - Three breakpoints: 1024 / 880 / 720 / 480
+   - Inline-style grids in HTML are caught via [style*=...] selectors
+     so no per-card edits are needed
+   - !important is used only when overriding inline styles
+   ============================================================== */
+
+/* --- Tablet landscape and below (<= 1024px) --- */
+@media (max-width: 1024px) {
+  .wrap { padding: 0 24px; }
+  section { padding: 56px 0; }
+  .marquee-item { padding: 0 28px; }
+}
+
+/* --- Tablet portrait and below (<= 880px) --- */
 @media (max-width: 880px) {
+  /* Existing layout switches kept */
   .demo-grid { grid-template-columns: 1fr; }
   .demo-side { position: static; flex-direction: row; flex-wrap: wrap; }
   .kpis { grid-template-columns: repeat(2, 1fr); }
   .email-item { grid-template-columns: 1fr; }
   .email-item .bucket { text-align: left; }
   .finding { grid-template-columns: 40px 1fr; padding: 20px; }
+
+  /* Add: titles scale down */
+  .section-title { font-size: 26px; }
+  .page-lede { font-size: 16px; }
+
+  /* Add: section padding tightens */
+  section { padding: 48px 0; }
+
+  /* Add: 4-col trajectory becomes 2-col */
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Add: 3-col grids become 2-col */
+  [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Roadmap (4-cell trajectory in index hero) */
+  .roadmap-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Demo-side sidebar becomes a row layout */
+  .demo-side h4 { width: 100%; }
+  .workflow-list { width: 100%; }
+
+  /* Compare cells (e.g. SERP good/bad) */
+  .compare { grid-template-columns: 1fr !important; }
+}
+
+/* --- Large phone / small tablet (<= 720px) --- */
+@media (max-width: 720px) {
+  /* Topbar — compact: hide the long sub-text, keep brand mark + nav */
+  .brand-text { font-size: 13px; max-width: 60vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .brand-sub { display: none; }
+  .topbar { padding: 14px 0; }
+  .topnav { gap: 14px; font-size: 13px; }
+
+  /* Wrap padding tightens */
+  .wrap { padding: 0 20px; }
+
+  /* Section spacing */
+  section { padding: 40px 0; }
+
+  /* Page title sized down (clamp already does most of the work, but
+     for very long titles we reduce line-spacing too) */
+  .page-title { font-size: clamp(32px, 7vw, 48px); margin-bottom: 18px; }
+  .section-title { font-size: 22px; }
+  .page-lede { font-size: 15px; }
+
+  /* All 2-col inline grids stack on phone (covers both syntaxes) */
+  [style*="grid-template-columns: repeat(2, 1fr)"],
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* The "1fr | 60px (vs) | 1fr" contrast pattern stacks vertically.
+     The middle 60px label lane disappears; the rotated "+ ALONGSIDE THAT"
+     would sit awkwardly so it gets centered horizontally. */
+  [style*="grid-template-columns: 1fr 60px 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns: 1fr 60px 1fr"] > div:nth-child(2) {
+    transform: none !important;
+    padding: 8px 0;
+    text-align: center;
+  }
+  [style*="grid-template-columns: 1fr 60px 1fr"] > div:nth-child(2) > div {
+    transform: none !important;
+  }
+
+  /* Question/finding rows: "60px | 1fr | 100px-140px" → tighter left lane,
+     reflow the right-side meta cell underneath the body */
+  [style*="grid-template-columns: 60px 1fr 100px"],
+  [style*="grid-template-columns: 60px 1fr 140px"] {
+    grid-template-columns: 36px 1fr !important;
+  }
+  [style*="grid-template-columns: 60px 1fr 100px"] > *:nth-child(3),
+  [style*="grid-template-columns: 60px 1fr 140px"] > *:nth-child(3) {
+    grid-column: 2 / 3;
+    text-align: left !important;
+    margin-top: 4px;
+  }
+
+  /* Two-col "60px | 1fr" pattern (the Section 03 numbered list in
+     decision.html) — left column tightens to 36px, gap shrinks */
+  [style*="grid-template-columns: 60px 1fr;"],
+  [style*="grid-template-columns: 60px 1fr "] {
+    grid-template-columns: 36px 1fr !important;
+  }
+
+  /* Foot-grid: stack signature above contact block, left-align all */
+  .foot-grid { grid-template-columns: 1fr !important; gap: 20px; }
+  .foot .text-soft { text-align: left !important; }
+
+  /* Hero CTA row: full-width stacked buttons */
+  .page-header .row { flex-direction: column; align-items: stretch; gap: 10px; }
+  .page-header .row .btn { width: 100%; justify-content: center; }
+
+  /* Cards a touch tighter */
+  .card { padding: 18px; }
+  .card-tight { padding: 16px; }
+
+  /* Roadmap reverts to single column with horizontal connectors hidden */
+  .roadmap-grid { grid-template-columns: 1fr !important; }
+  .roadmap::before { display: none; }
+
+  /* Day-arc SVG is fixed-viewBox so already scales; ensure the wrapping
+     card doesn't overflow on tiny screens */
+  .day-arc, .card svg { max-width: 100%; }
+
+  /* Tag pills wrap nicely */
+  .tag { font-size: 10px; }
+
+  /* Button sizing for thumbs */
+  .btn { padding: 12px 16px; font-size: 14px; }
+}
+
+/* --- Phone (<= 480px) --- */
+@media (max-width: 480px) {
+  .wrap { padding: 0 16px; }
+  section { padding: 32px 0; }
+
+  /* Topbar absolute minimum — brand mark + nav only */
+  .brand-text { display: none; }
+  .topbar-inner { gap: 8px; }
+  .topnav { gap: 10px; font-size: 12px; }
+  .topnav a { padding: 4px 0; }
+
+  /* KPIs to single column on phones */
+  .kpis { grid-template-columns: 1fr !important; gap: 12px; }
+  .kpi { padding: 16px; }
+  .kpi .num { font-size: 28px; }
+
+  /* Marquee: smaller text, faster wrap-around feel */
+  .marquee-item .num { font-size: 20px; }
+  .marquee-item .lbl { font-size: 11px; }
+  .marquee-item { padding: 0 20px; }
+
+  /* Page title final shrink */
+  .page-title { font-size: clamp(28px, 8vw, 38px); }
+  .section-title { font-size: 20px; }
+
+  /* Founder note avatar smaller */
+  .founder-avatar { width: 40px; height: 40px; font-size: 18px; }
+
+  /* Compare-cell padding shrink */
+  .compare-cell { padding: 14px; }
+
+  /* Calm-bar (CTA bar at bottom of sections) */
+  .calm-bar { font-size: 13px; padding: 12px 14px; }
+
+  /* On-the-call agenda items: same 60px-1fr-100px treatment was already
+     handled at 720px; ensure spacing is tight on phone */
+  [style*="grid-template-columns: 60px 1fr"] {
+    gap: 10px !important;
+  }
+
+  /* Eyebrow text smaller */
+  .eyebrow { font-size: 10px; }
+
+  /* Tag-amber/green dots maintain readability */
+  .tag { padding: 3px 8px; }
+
+  /* Workflow list (sidebar) — stack vertically again on phone */
+  .demo-side { flex-direction: column; }
+  .workflow-list { display: flex; flex-direction: column; gap: 4px; }
+
+  /* Reduce card body font for dense panels */
+  .card { padding: 16px; }
+}
+
+/* Prevent any image / svg / inline content from forcing horizontal scroll */
+@media (max-width: 880px) {
+  body { overflow-x: hidden; }
+  img, svg, video { max-width: 100%; height: auto; }
+  pre, code { overflow-x: auto; max-width: 100%; }
 }
 
 /* ============== VISUAL ELEMENTS v2 ============== */
