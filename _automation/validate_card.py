@@ -26,14 +26,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-EXPECTED_HTML = [
-    "index.html",
-    "audit.html",
-    "morning-brief.html",
-    "email-triage.html",
-    "pre-meeting.html",
-    "reflection.html",
-]
+# Card types determine which "page two" file we expect.
+#   standard:  index.html + audit.html    + 4 workflow pages  (Cielo, SciSpace pattern)
+#   ros:       index.html + decision.html + 4 workflow pages  (Ventracle pattern)
+# Card type is auto-detected by which of audit.html / decision.html exists.
+
+REQUIRED_FILES_STANDARD = ["index.html", "audit.html"]
+REQUIRED_FILES_ROS = ["index.html", "decision.html"]
+MIN_WORKFLOW_PAGES = 4  # in addition to index + audit/decision
 
 # Things that should NEVER appear in shipped HTML
 BAD_PATTERNS = [
@@ -43,7 +43,8 @@ BAD_PATTERNS = [
     (r"127\.0\.0\.1", "localhost IP hardcoded"),
     (r"hover effects on titles and buttons for enhanced", "Figma Make placeholder meta description"),
     (r"\+91 9079273658", "old phone number; should be +91 9468688354"),
-    (r"misclifebusiness@gmail\.com\"", "raw email NOT wrapped in mailto link"),
+    # Negative lookbehind: only flag if NOT preceded by "mailto:".
+    (r"(?<!mailto:)misclifebusiness@gmail\.com\"", "raw email NOT wrapped in mailto link"),
 ]
 
 # Things that should always be present
@@ -92,13 +93,49 @@ class Report:
         return "\n".join(out)
 
 
-def validate_files(card_dir: Path, r: Report):
-    print(f"\n[1/5] File presence")
-    for name in EXPECTED_HTML:
+def detect_card_type(card_dir: Path):
+    """Return (card_type, expected_html_list).
+
+    card_type is "standard" (audit-based) or "ros" (decision-based).
+    expected_html_list is index + page-two + every other .html in the folder
+    (the workflow pages, whose names vary per card).
+    """
+    has_audit = (card_dir / "audit.html").exists()
+    has_decision = (card_dir / "decision.html").exists()
+
+    if has_audit and not has_decision:
+        card_type = "standard"
+        required = REQUIRED_FILES_STANDARD
+    elif has_decision and not has_audit:
+        card_type = "ros"
+        required = REQUIRED_FILES_ROS
+    elif has_audit and has_decision:
+        card_type = "hybrid"
+        required = REQUIRED_FILES_STANDARD + ["decision.html"]
+    else:
+        card_type = "unknown"
+        required = ["index.html"]
+
+    # Workflow pages = any .html in the folder that isn't index/audit/decision
+    all_html = sorted(p.name for p in card_dir.glob("*.html"))
+    workflows = [n for n in all_html if n not in {"index.html", "audit.html", "decision.html"}]
+
+    expected = list(required) + workflows
+    return card_type, expected, workflows
+
+
+def validate_files(card_dir: Path, r: Report, card_type: str, expected: list, workflows: list):
+    print(f"\n[1/5] File presence ({card_type} card)")
+    for name in expected:
         if (card_dir / name).exists():
             r.ok(f"present: {name}")
         else:
             r.fail(f"missing: {name}")
+
+    if len(workflows) < MIN_WORKFLOW_PAGES:
+        r.fail(f"only {len(workflows)} workflow page(s) found, expected >= {MIN_WORKFLOW_PAGES}")
+    else:
+        r.ok(f"workflow pages: {len(workflows)} found ({', '.join(workflows)})")
 
     if not (ROOT / "styles.css").exists():
         r.fail("missing: ../../styles.css (project-root)")
@@ -106,9 +143,9 @@ def validate_files(card_dir: Path, r: Report):
         r.ok("present: project-root styles.css")
 
 
-def validate_content(card_dir: Path, r: Report):
+def validate_content(card_dir: Path, r: Report, expected: list):
     print(f"\n[2/5] Content patterns (bad)")
-    for name in EXPECTED_HTML:
+    for name in expected:
         path = card_dir / name
         if not path.exists():
             continue
@@ -120,7 +157,7 @@ def validate_content(card_dir: Path, r: Report):
     print(f"\n[3/5] Required content present")
     for needle, label in REQUIRED_CONTENT:
         present_in = []
-        for name in EXPECTED_HTML:
+        for name in expected:
             path = card_dir / name
             if not path.exists():
                 continue
@@ -130,13 +167,13 @@ def validate_content(card_dir: Path, r: Report):
         if not present_in:
             r.fail(f"never appears: {label} ({needle!r})")
         else:
-            r.ok(f"{label}: appears in {len(present_in)}/{len(EXPECTED_HTML)} pages")
+            r.ok(f"{label}: appears in {len(present_in)}/{len(expected)} pages")
 
 
-def validate_assets(card_dir: Path, r: Report):
+def validate_assets(card_dir: Path, r: Report, expected: list):
     print(f"\n[4/5] Asset references")
     referenced = set()
-    for name in EXPECTED_HTML:
+    for name in expected:
         path = card_dir / name
         if not path.exists():
             continue
@@ -162,9 +199,9 @@ def validate_assets(card_dir: Path, r: Report):
             r.fail(f"{source} -> {ref}: file not found ({target})")
 
 
-def validate_metadata(card_dir: Path, r: Report):
+def validate_metadata(card_dir: Path, r: Report, expected: list):
     print(f"\n[5/5] Page metadata")
-    for name in EXPECTED_HTML:
+    for name in expected:
         path = card_dir / name
         if not path.exists():
             continue
@@ -189,11 +226,14 @@ def main():
 
     print(f"Validating cards/{args.slug}/")
 
+    card_type, expected, workflows = detect_card_type(card_dir)
+    print(f"  Card type detected: {card_type}")
+
     r = Report()
-    validate_files(card_dir, r)
-    validate_content(card_dir, r)
-    validate_assets(card_dir, r)
-    validate_metadata(card_dir, r)
+    validate_files(card_dir, r, card_type, expected, workflows)
+    validate_content(card_dir, r, expected)
+    validate_assets(card_dir, r, expected)
+    validate_metadata(card_dir, r, expected)
 
     print()
     print(r.render())

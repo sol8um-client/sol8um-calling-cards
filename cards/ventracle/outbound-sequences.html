@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 02 · Voice-Matched Outbound Sequences</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-mail"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">For the <span class="brand-sub">technical founder seeking a sales counterpart</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="decision.html">Partnership Fit</a>
+      <a href="outbound-sequences.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 02 &middot; Voice-Matched Outbound Sequences &middot; 09:00 to 17:00 continuous</div>
+    <h1 class="page-title">
+      Email plus LinkedIn plus voice,<br>
+      <em>in your voice, A/B-tested live.</em>
+    </h1>
+    <p class="page-lede">
+      The execution you posted for. Multi-channel sequences written in the voice you'd write them in, sending 30 to 50 high-fit touches across the day, with reply-aware branching that pauses sequences the moment someone responds. Every variant is tested live for statistical significance, not vibe. Winners get promoted, losers pruned. The sequence sharpens itself month over month.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="lead-sourcing.html">Lead Sourcing <span class="badge">01</span></a></li>
+          <li><a href="outbound-sequences.html" class="active">Outbound Sequences <span class="badge">02</span></a></li>
+          <li><a href="reply-triage.html">Reply Triage <span class="badge">03</span></a></li>
+          <li><a href="pipeline-pulse.html">Pipeline Pulse <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Smartlead or Instantly + LinkedIn Sales Nav + Aircall &rarr; n8n branching engine + Claude variant copy generation &rarr; Reply triage handoff (System 03).</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>An SDR sending 50 manual emails/day with default copy. The "spray and pray" failure mode where no one tracks which variant actually works.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Reply rate by variant, gated to statistical significance. Promote winners. Target: 8-15% reply rate on top variant by month two.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- System architecture -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How a sequence runs &middot; reply-aware branching</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Step 1 &middot; Email A or B (50/50)</div>
+              <div class="flow-node in">Step 2 &middot; LI connect (day 3)</div>
+              <div class="flow-node in">Step 3 &middot; Email follow-up (day 5)</div>
+              <div class="flow-node in">Step 4 &middot; Voicemail (day 8)</div>
+              <div class="flow-node in">Step 5 &middot; Breakup email (day 12)</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> n8n watches replies, pauses sequence per-lead, hands off to Reply Triage</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">A/B winner promoted weekly</div>
+              <div class="flow-node out">Reply &rarr; Triage (System 03)</div>
+              <div class="flow-node out">No-reply &rarr; Watchlist</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Variant performance &middot; sequence 03 &middot; week 4</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">A wins, promoting to 80% traffic</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 8px;">
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 12px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #16A34A; flex-shrink: 0;"></span>
+              <span style="width: 200px;">Variant A &middot; founder-direct</span>
+              <span style="flex: 1; height: 8px; background: #E5E5E5; border-radius: 4px; overflow: hidden;"><span style="display: block; width: 62%; height: 100%; background: #16A34A;"></span></span>
+              <span class="mono text-muted" style="width: 80px; text-align: right;">12.4% reply</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 12px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #D97706; flex-shrink: 0;"></span>
+              <span style="width: 200px;">Variant B &middot; soft-question</span>
+              <span style="flex: 1; height: 8px; background: #E5E5E5; border-radius: 4px; overflow: hidden;"><span style="display: block; width: 40%; height: 100%; background: #D97706;"></span></span>
+              <span class="mono text-muted" style="width: 80px; text-align: right;">8.1% reply</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 12px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #525252; flex-shrink: 0;"></span>
+              <span style="width: 200px;">Variant C &middot; case-study lead</span>
+              <span style="flex: 1; height: 8px; background: #E5E5E5; border-radius: 4px; overflow: hidden;"><span style="display: block; width: 16%; height: 100%; background: #525252;"></span></span>
+              <span class="mono text-muted" style="width: 80px; text-align: right;">testing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample output card -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; Variant A &middot; founder-direct &middot; sequence step 1</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>Winning variant</span>
+          </div>
+
+          <div style="background: var(--bg-soft); border-radius: 8px; padding: 18px; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; color: #1A1D23;">
+            <div style="font-weight: 600; margin-bottom: 4px;">Subject: 20/20 demos closing &middot; quick math</div>
+            <div style="color: #525252; font-size: 12px; margin-bottom: 12px;">From: [your name] &lt;[your email]&gt; &middot; To: Sarah Lin &lt;sarah@glide.com&gt;</div>
+            <div style="margin-bottom: 10px;">Sarah,</div>
+            <div style="margin-bottom: 10px;">Saw Glide's pricing change last month. Founding-member tier looks tight on the demo close side, similar shape to where I was 6 months ago.</div>
+            <div style="margin-bottom: 10px;">Quick context: I run a B2B SaaS that's closing 20/20 demos at the founding-member price point. The motion works, but I'd lose half my week to the demand side without the system underneath. Built one. Happy to walk you through it if it's relevant.</div>
+            <div style="margin-bottom: 10px;">Worth 15 min? I'm in CST.</div>
+            <div>[your name]</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; margin-top: 12px;">90 WORDS &middot; 1 OPENING &middot; 1 CREDENTIAL &middot; 1 ASK &middot; NO SLOP</div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; preview a step in your voice</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="step-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="1">Step 1 &middot; Cold email</option>
+              <option value="2">Step 2 &middot; LinkedIn connect</option>
+              <option value="3">Step 3 &middot; Email follow-up</option>
+              <option value="4">Step 4 &middot; Voicemail script</option>
+            </select>
+            <select id="variant-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="A">Variant A &middot; founder-direct</option>
+              <option value="B">Variant B &middot; soft-question</option>
+              <option value="C">Variant C &middot; case-study lead</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Generate</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="92">
+          <span class="label">Stat-sig sequence selection vs vibe-based copy</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">guesswork &rarr; data</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="lead-sourcing.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Lead Sourcing
+      </a>
+      <a href="reply-triage.html" class="btn">
+        Next: Reply Triage <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const step = document.getElementById('step-filter').value;
+    const variant = document.getElementById('variant-filter').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      '1A': '<strong>Step 1 &middot; Variant A &middot; founder-direct (90 words)</strong><br><em>Subject: 20/20 demos closing &middot; quick math</em><br>Sarah, saw Glide\'s pricing change last month. Founding-member tier looks tight on demo close side. I run a B2B SaaS closing 20/20 demos at this price point. Built the system underneath. Happy to walk you through if relevant. 15 min? CST. [name]',
+      '1B': '<strong>Step 1 &middot; Variant B &middot; soft-question (75 words)</strong><br><em>Subject: how are you handling outbound at Glide?</em><br>Hey Sarah, quick question. Glide\'s past the founding-member phase, but founders at your stage usually hit a wall on demand-gen tooling around now. How are you handling it? Curious because I built a system for this and the patterns I\'m seeing might map. [name]',
+      '1C': '<strong>Step 1 &middot; Variant C &middot; case-study lead (110 words)</strong><br><em>Subject: how a 12-person SaaS doubled demos in 60 days</em><br>Sarah, short story. Stencil Labs (12-person, B2B SaaS, similar stage to Glide) was running 8 demos/month. Three months later: 22 demos/month, same close rate. Same founder, same product. Just a system underneath the outbound. I built it. If Glide is anywhere close to that pattern, worth a 15-min walkthrough? [name]',
+      '4A': '<strong>Step 4 &middot; Variant A &middot; voicemail script (35 sec)</strong><br>"Hey Sarah, [name] here. Sent you a couple of notes about your demand-gen at Glide. Won\'t belabor it. If you\'re not the right person, no worries, can you point me at who is? Otherwise happy to send a 5-min loom walking through what I\'d build. Thanks."',
+      default: '<strong>Default sample &middot; Step 1 Variant A</strong><br>See the email card above. 90 words, 1 opening, 1 credential, 1 ask, no slop.'
+    };
+    let key = step + variant;
+    out.innerHTML = samples[key] || samples['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

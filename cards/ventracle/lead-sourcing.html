@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 01 · ICP-Locked Lead Sourcing</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">For the <span class="brand-sub">technical founder seeking a sales counterpart</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="decision.html">Partnership Fit</a>
+      <a href="lead-sourcing.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 01 &middot; ICP-Locked Lead Sourcing &middot; 06:00 daily</div>
+    <h1 class="page-title">
+      30 to 50 high-fit leads, queued<br>
+      <em>before you sit down.</em>
+    </h1>
+    <p class="page-lede">
+      The only thing worse than no demand engine is a demand engine that pumps generic lists. This system pulls fresh leads from Apollo and Sales Nav daily, dedupes against your CRM, scores by ICP fit, and queues the top 30 to 50 in a sequence-ready state. The filter retrains every week on which leads actually closed, not just which replied. So the queue gets sharper every month, not just bigger.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="lead-sourcing.html" class="active">Lead Sourcing <span class="badge">01</span></a></li>
+          <li><a href="outbound-sequences.html">Outbound Sequences <span class="badge">02</span></a></li>
+          <li><a href="reply-triage.html">Reply Triage <span class="badge">03</span></a></li>
+          <li><a href="pipeline-pulse.html">Pipeline Pulse <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Apollo + Sales Navigator + Clearbit enrichment &rarr; n8n dedupe + ICP scorer (Claude-assisted) &rarr; CRM queue (HubSpot or Pipedrive) + Slack #queue-ready morning ping.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>Hiring a list-builder VA. Buying static lists from a vendor every quarter. Founder spending 2 hrs/week on Apollo.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Reply rate of leads with fit-score &ge;70 vs. &lt;70. Target gap: 3-5x. Improves monthly through retraining.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- System architecture -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How the queue composes itself &middot; 06:00 daily run</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Apollo &middot; ICP filter A,B,C</div>
+              <div class="flow-node in">Sales Nav &middot; saved searches</div>
+              <div class="flow-node in">Clearbit &middot; enrichment</div>
+              <div class="flow-node in">Signal scrapers (HN/Reddit/funding)</div>
+              <div class="flow-node in">Referral list (your CRM)</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> n8n dedupes against CRM, Claude scores by ICP fit (1-100), ranks</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">CRM &middot; queue-ready leads</div>
+              <div class="flow-node out">Slack &middot; "42 ready, fit avg 78"</div>
+              <div class="flow-node out">Weekly &middot; ICP filter retrain</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Daily queue size &middot; last 4 weeks (sample run)</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">avg 41/day &middot; +12% vs week 1</span>
+          </div>
+          <svg class="sparkline" viewBox="0 0 600 56" preserveAspectRatio="none" style="height: 56px;">
+            <path d="M0 40 L60 38 L120 36 L180 32 L240 30 L300 28 L360 26 L420 24 L480 22 L540 20 L600 18" stroke="#7B61FF" stroke-width="1.5" fill="none"/>
+            <path d="M0 40 L60 38 L120 36 L180 32 L240 30 L300 28 L360 26 L420 24 L480 22 L540 20 L600 18 L600 56 L0 56 Z" fill="#7B61FF" fill-opacity="0.08"/>
+          </svg>
+        </div>
+
+        <!-- Sample output card -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; Today's queue &middot; Slack #queue-ready &middot; 06:02 CST</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>Live signal</span>
+          </div>
+
+          <div style="background: #1A1D23; border-radius: 8px; padding: 16px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #E3E4E6; line-height: 1.7;">
+            <div style="color: #7B61FF; font-weight: 600; margin-bottom: 8px;">@you &mdash; Daily queue ready &middot; Thu May 1 &middot; 42 leads &middot; avg fit-score 78</div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">&#9989; Top 5 &middot; fit &ge; 90</span><br>
+              <span style="color: #8A8A8A;">Sarah Lin &middot; Head of RevOps &middot; Glide (Series A SaaS, 38 ppl) &middot; <strong style="color:#E3E4E6;">96</strong></span><br>
+              <span style="color: #8A8A8A;">Marcus Chen &middot; Founder &middot; Stencil Labs (seed B2B, 12 ppl) &middot; <strong style="color:#E3E4E6;">94</strong></span><br>
+              <span style="color: #8A8A8A;">Aditi Rao &middot; VP Ops &middot; Mindstream (Series A, 22 ppl) &middot; <strong style="color:#E3E4E6;">91</strong></span><br>
+              <span style="color: #8A8A8A;">Jake Mendez &middot; Co-founder &middot; Fluxora (pre-seed, 8 ppl) &middot; <strong style="color:#E3E4E6;">90</strong></span><br>
+              <span style="color: #8A8A8A;">Priya Shah &middot; CEO &middot; Routesplit (seed, 18 ppl) &middot; <strong style="color:#E3E4E6;">90</strong></span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #D97706;">02 &middot; Mid-tier &middot; fit 70-89 &middot; 21 leads</span><br>
+              <span style="color: #8A8A8A;">Reply-rate-tested band. Rolling into sequence A by 09:00.</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #525252;">03 &middot; Watchlist &middot; fit 50-69 &middot; 16 leads</span><br>
+              <span style="color: #8A8A8A;">Holding for signal-trigger (funding, hiring, role-change). Not sequencing yet.</span>
+            </div>
+            <div style="color: #525252; margin-top: 8px; font-size: 11px;">Filter version v3.2 &middot; Last retrain: Mon Apr 28 &middot; 4 leads dropped from CRM dedupe (already in pipeline)</div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; simulate a queue with different ICP filters</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="stage-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="all">All stages</option>
+              <option value="seed">Pre-seed / seed</option>
+              <option value="a">Series A</option>
+              <option value="b">Series B+</option>
+            </select>
+            <select id="role-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="all">All roles</option>
+              <option value="founder">Founder / CEO</option>
+              <option value="ops">VP / Head of Ops</option>
+              <option value="rev">RevOps / Sales</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Generate queue</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="86">
+          <span class="label">Founder hours saved per week on list-building</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">~6 hrs &rarr; ~0</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="decision.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Back to partnership fit
+      </a>
+      <a href="outbound-sequences.html" class="btn">
+        Next: Outbound Sequences <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const stage = document.getElementById('stage-filter').value;
+    const role = document.getElementById('role-filter').value;
+    const out = document.getElementById('demo-output');
+    const queues = {
+      seed_founder: '<strong>Pre-seed / seed founders &middot; 18 leads &middot; avg fit 84</strong><br>Top: Marcus Chen (Stencil Labs, 12 ppl, 94) &middot; Jake Mendez (Fluxora, 8 ppl, 90) &middot; Riya Patel (Hopline, pre-seed, 88)<br><span style="color:var(--ink-muted)">Pattern: small teams, founder-led sales, founding-member pricing match. High signal.</span>',
+      a_ops: '<strong>Series A &middot; VP/Head of Ops &middot; 11 leads &middot; avg fit 81</strong><br>Top: Aditi Rao (Mindstream, 22 ppl, 91) &middot; Tomas Berg (Veridian, 31 ppl, 87)<br><span style="color:var(--ink-muted)">Pattern: at the stage where they\'re evaluating tooling for sales/ops. ICP-perfect timing.</span>',
+      a_rev: '<strong>Series A &middot; RevOps/Sales &middot; 9 leads &middot; avg fit 79</strong><br>Top: Sarah Lin (Glide, 38 ppl, 96) &middot; Daniel Park (Crestrun, 41 ppl, 84)<br><span style="color:var(--ink-muted)">Pattern: revenue-side decision-makers with budget authority. Faster cycles.</span>',
+      all_founder: '<strong>All founders/CEOs &middot; 23 leads &middot; avg fit 82</strong><br>Mix: 10 seed, 9 Series A, 4 Series B+. Bias: smaller teams reply faster.<br><span style="color:var(--ink-muted)">Recommended sequence: founder-direct copy. 12.4% historical reply rate at this fit-score band.</span>',
+      default: '<strong>Today\'s full queue &middot; 42 leads &middot; avg fit-score 78</strong><br>Stage mix: 40% seed, 38% Series A, 22% later<br>Role mix: 35% founder, 30% RevOps, 35% other senior<br><span style="color:var(--ink-muted)">Top 5 leads (fit &ge; 90) auto-flagged for sequence A. 21 in mid-tier. 16 in watchlist.</span>'
+    };
+    let key = (stage !== 'all' && role !== 'all') ? stage + '_' + role : (role !== 'all' ? 'all_' + role : 'default');
+    out.innerHTML = queues[key] || queues['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
