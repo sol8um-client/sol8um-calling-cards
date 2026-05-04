@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 04 · Launch Distribution Orchestrator</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-bar"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M3 11v2a2 2 0 0 0 2 2h1l4 4V5L6 9H5a2 2 0 0 0-2 2Z"/><path d="M14 7s3 1.5 3 5-3 5-3 5"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Vedika Bhaia / Social Capital</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="distribution-orchestrator.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 04 &middot; Launch Distribution Orchestrator &middot; Launch day, first 24 hours</div>
+    <h1 class="page-title">
+      The system runs the calendar.<br>
+      <em>You make judgment calls.</em>
+    </h1>
+    <p class="page-lede">
+      Launch day is where 500 creators across 12 timezones either compound or fall flat. The Head of Growth's worst case is spending launch hour 0 in Slack DMing creators. This system runs the posting calendar, monitors first-90-minute engagement signals, triggers amplification cascades when a launch is hot, and pivots when it's cold. The Head of Growth and the founder both watch the same dashboard. Decisions get made on numbers, not vibes.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="founder-voice-extraction.html">Founder-Voice Extraction <span class="badge">01</span></a></li>
+          <li><a href="hook-mining.html">Viral-Hook Mining <span class="badge">02</span></a></li>
+          <li><a href="creator-brief-qa.html">Creator Brief & QA <span class="badge">03</span></a></li>
+          <li><a href="distribution-orchestrator.html" class="active">Distribution Orchestrator <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Posting schedule (Postgres) &rarr; engagement webhook (X / LI APIs) &rarr; n8n decision engine &rarr; Slack alerts to Head of Growth + creator network &rarr; live launch dashboard (Next.js / Retool).</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>Head of Growth in Slack on launch day messaging "are you posting yet?" Founder asking "how's it going?" every 30 min. The "we missed the amplification window" failure mode where a hot launch flatlines because the cascade didn't trigger fast enough.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Time from launch-go to peak-reach (target: under 4 hours, was 12+). Manual coordination hours per launch day (target: under 2 hrs, was 8+).</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Dashboard preview -->
+        <div class="card mb-24" style="padding: 24px; background: #0F1115; color: #E3E4E6;">
+          <div class="row-between mb-20">
+            <div>
+              <div class="mono" style="font-size: 10px; letter-spacing: 0.14em; color: #E84C4C;">LAUNCH ORCHESTRATOR &middot; LIVE</div>
+              <div style="font-size: 18px; font-weight: 600; margin-top: 4px;">Sample launch &middot; Hour 02:34 &middot; HOT</div>
+            </div>
+            <span class="tag tag-green pulsing" style="background: rgba(46,204,113,0.18); color: #6EE7B7;"><span class="tag-dot" style="background: #6EE7B7;"></span>Cascade engaged</span>
+          </div>
+
+          <!-- Top KPI tiles -->
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px;">
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px;">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #8A8A8A; letter-spacing: 0.1em;">IMPRESSIONS</div>
+              <div style="font-size: 28px; font-weight: 600; margin-top: 4px; color: #E3E4E6;">8.2M</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #2ECC71; margin-top: 2px;">+34% vs target curve</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px;">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #8A8A8A; letter-spacing: 0.1em;">CREATORS LIVE</div>
+              <div style="font-size: 28px; font-weight: 600; margin-top: 4px; color: #E3E4E6;">312<span style="font-size: 16px; color: #8A8A8A;">/500</span></div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #2ECC71; margin-top: 2px;">on-schedule, EU + NA</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px;">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #8A8A8A; letter-spacing: 0.1em;">ENGAGEMENT RATE</div>
+              <div style="font-size: 28px; font-weight: 600; margin-top: 4px; color: #E3E4E6;">7.4<span style="font-size: 16px; color: #8A8A8A;">%</span></div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #2ECC71; margin-top: 2px;">2.3x baseline</div>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 14px;">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #8A8A8A; letter-spacing: 0.1em;">PROJECTED 24HR</div>
+              <div style="font-size: 28px; font-weight: 600; margin-top: 4px; color: #E3E4E6;">52M</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #6EE7B7; margin-top: 2px;">on track for 10M+ guarantee</div>
+            </div>
+          </div>
+
+          <!-- Reach curve -->
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+            <div class="row-between mb-12">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #8A8A8A; letter-spacing: 0.1em;">IMPRESSIONS &middot; LAUNCH HOUR 0 TO 24 (PROJECTED)</div>
+              <span style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #6EE7B7;">curve: hot, cascade firing</span>
+            </div>
+            <svg viewBox="0 0 600 90" preserveAspectRatio="none" style="width: 100%; height: 90px;">
+              <!-- Target curve (dashed) -->
+              <path d="M0 80 L50 70 L100 60 L150 55 L200 50 L250 46 L300 42 L350 39 L400 36 L450 34 L500 32 L550 31 L600 30" stroke="#525252" stroke-width="1" stroke-dasharray="3,3" fill="none"/>
+              <!-- Actual curve (solid) -->
+              <path d="M0 80 L50 65 L100 50 L150 38 L200 28 L250 20 L300 15 L350 18 L400 22 L450 26 L500 30 L550 32 L600 34" stroke="#2ECC71" stroke-width="1.5" fill="none"/>
+              <path d="M0 80 L50 65 L100 50 L150 38 L200 28 L250 20 L300 15 L350 18 L400 22 L450 26 L500 30 L550 32 L600 34 L600 90 L0 90 Z" fill="#2ECC71" fill-opacity="0.10"/>
+            </svg>
+            <div class="row-between" style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #8A8A8A; margin-top: 4px;">
+              <span>HOUR 0</span>
+              <span>HOUR 6</span>
+              <span>HOUR 12</span>
+              <span>HOUR 18</span>
+              <span>HOUR 24</span>
+            </div>
+          </div>
+
+          <!-- Decisions made / pending -->
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 16px;">
+            <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #8A8A8A; letter-spacing: 0.1em; margin-bottom: 12px;">DECISIONS LOG &middot; HOUR 02:34</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 12px; color: #E3E4E6;">
+              <div>
+                <div style="margin-bottom: 6px;"><span style="color: #6EE7B7;">AUTO &middot; 00:18</span> Cascade fired (3 mega-creators 250K+ followers)</div>
+                <div style="margin-bottom: 6px;"><span style="color: #6EE7B7;">AUTO &middot; 00:42</span> Slack alert: launch-trending in AI corner</div>
+                <div style="margin-bottom: 6px;"><span style="color: #6EE7B7;">AUTO &middot; 01:15</span> APAC creators rescheduled +4hr (catch evening peak)</div>
+                <div><span style="color: #FCD34D;">PENDING &middot; 02:30</span> Should we push paid amplification? (waiting on you)</div>
+              </div>
+              <div>
+                <div style="margin-bottom: 6px;"><span style="color: #6EE7B7;">AUTO &middot; 02:00</span> Two creators flagged: posts dead, likely shadowbanned</div>
+                <div style="margin-bottom: 6px;"><span style="color: #6EE7B7;">AUTO &middot; 02:12</span> Founder DMed: "your launch is trending, want to do a livestream?"</div>
+                <div style="margin-bottom: 6px;"><span style="color: #6EE7B7;">AUTO &middot; 02:25</span> Press list (8 outlets) auto-pinged with metrics</div>
+                <div><span style="color: #6EE7B7;">AUTO &middot; 02:34</span> Tomorrow: post-mortem deck queued for 09:00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; ask the orchestrator</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="question-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft); flex: 1; min-width: 280px;">
+              <option value="hot">What does the orchestrator do when a launch is HOT?</option>
+              <option value="cold">What does it do when a launch is COLD at hour 2?</option>
+              <option value="cascade">What triggers the amplification cascade?</option>
+              <option value="founder">What does the founder see during launch?</option>
+              <option value="postmortem">What's in the post-launch report?</option>
+            </select>
+            <button id="ask-demo" class="btn" style="flex: 0 0 auto;">Ask</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="89">
+          <span class="label">Time from launch-go to peak-reach</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">12+ hrs &rarr; under 4 hrs</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="creator-brief-qa.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Creator Brief & QA
+      </a>
+      <a href="index.html" class="btn">
+        Back to overview <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('ask-demo').addEventListener('click', function() {
+    const q = document.getElementById('question-filter').value;
+    const out = document.getElementById('demo-output');
+    const answers = {
+      hot: '<strong>When a launch is HOT (engagement &gt; 1.8x baseline in first 90 min)</strong><br>Auto-fires the amplification cascade: pings 3-5 mega-creators (250K+ followers) with a "this is hitting, here\'s your hook" Slack DM and a 1-tap repost option. Reschedules APAC creators 4 hours later to catch evening peak. Pings press contacts with live metrics. Drafts a "your launch is trending" DM to the founder with a livestream suggestion.<br><span style="color:var(--ink-muted)">All automatic. Head of Growth approves the paid-amplification spend, that\'s the only manual gate.</span>',
+      cold: '<strong>When a launch is COLD at hour 2 (engagement &lt; 0.6x baseline)</strong><br>Pauses the scheduled creator wave (saves their attention for a different launch). Auto-suggests 2 alternative hooks from System 02 library based on what IS trending today. Drafts a "we should pivot the angle, here\'s why" Slack message for the Head of Growth. If the founder is signed up for it, drafts an emergency-livestream invitation with 3 alternative talking points.<br><span style="color:var(--ink-muted)">Cold launches usually fail because no one notices fast enough. The system does.</span>',
+      cascade: '<strong>The amplification cascade triggers on three conditions, ANDed</strong><br>(1) Lead-creator post crossed 100K views in first 60 min, (2) engagement rate &gt; 5%, (3) at least 2 mega-creators are confirmed available for next 4 hours. Once all three: cascade fires automatically. Lead-creator post gets reposted by 3 mega-creators, then 8 mid-tier creators piggyback within 90 min, then APAC wave at +4hr.<br><span style="color:var(--ink-muted)">Designed to catch the algorithmic momentum window before X / LI deprioritize the post.</span>',
+      founder: '<strong>The founder gets a stripped-down view</strong><br>3 numbers (live impressions, projected 24hr, engagement rate vs target). One status banner (HOT / WARM / COLD). One CTA per state ("livestream now" / "respond to this top reply" / "stay calm, we\'re pivoting"). They don\'t see the creator-level mess. They see decisions and trajectory.<br><span style="color:var(--ink-muted)">Founder anxiety on launch day is the #1 reason coordination breaks down. This view solves it.</span>',
+      postmortem: '<strong>Post-launch report, auto-drafted, ready 09:00 day-after</strong><br>(1) Final reach + breakdown by creator tier, (2) which hooks in System 02 library carried the launch (and which fell flat), (3) creator performance ranking, who pulled their weight, who didn\'t, (4) decision-log with timestamps so we can audit what worked, (5) two-paragraph teardown the founder can repost as a "how we hit X views" thread (which becomes content for System 02\'s next library refresh). Closes the loop.<br><span style="color:var(--ink-muted)">Most agencies skip the post-mortem. Compounding the learning is what differentiates a 10-launch year from a 100-launch one.</span>'
+    };
+    out.innerHTML = answers[q] || answers['hot'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
