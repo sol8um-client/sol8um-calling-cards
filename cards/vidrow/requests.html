@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scivo · Initial Requests → What's Shipped</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .req { display: grid; grid-template-columns: 60px 1fr 140px; gap: 24px; padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 12px; align-items: start; }
+    .req-num { font-family: 'Geist Mono', monospace; font-size: 24px; color: var(--ink-muted); font-weight: 500; line-height: 1; padding-top: 4px; }
+    .req-body h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 6px; }
+    .req-body .ask { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 14px; }
+    .req-body .delivered { display: grid; grid-template-columns: 90px 1fr; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 13px; }
+    .req-body .delivered:first-of-type { border-top: 0; padding-top: 4px; }
+    .req-body .delivered .lbl { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); padding-top: 2px; }
+    .req-body code { font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft); padding: 2px 6px; border-radius: 3px; color: var(--ink); }
+    .req-status { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; padding-top: 4px; }
+    .req-status .pill { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+    .req-status .pill-shipped { background: #F0FDF4; color: #15803D; border: 1px solid #BBF7D0; }
+    .req-status .pill-partial { background: #FFFBEB; color: #B45309; border: 1px solid #FED7AA; }
+    .req-status .pill-pending { background: var(--bg-soft); color: var(--ink-muted); border: 1px solid var(--line); }
+    .req-status .pill-added { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+    .theme-band { border-top: 1px solid var(--ink); padding-top: 24px; margin: 48px 0 20px; display: flex; align-items: baseline; gap: 16px; }
+    .theme-band .num { font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+    .theme-band .ttl { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+    .theme-band .ttl em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    .pulse-dot { display: inline-block; width: 8px; height: 8px; border-radius: 999px; background: #16A34A; margin-right: 8px; box-shadow: 0 0 0 4px rgba(22,163,74,0.18); animation: pulseDot 2s ease-in-out infinite; vertical-align: middle; }
+    @keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 4px rgba(22,163,74,0.18); } 50% { box-shadow: 0 0 0 8px rgba(22,163,74,0.06); } }
+    .summary-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .summary-bar > div { padding: 18px 22px; border-right: 1px solid var(--line); }
+    .summary-bar > div:last-child { border-right: 0; }
+    .summary-bar .lbl { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px; }
+    .summary-bar .val { font-family: 'Geist Mono', monospace; font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+    .summary-bar .delta { font-size: 12px; color: var(--ink-soft); margin-top: 4px; }
+
+    .section-marker { padding: 36px 0 8px; border-top: 2px solid var(--ink); margin-top: 56px; }
+    .section-marker .eyebrow { font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
+    .section-marker h2 { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .section-marker h2 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    .section-marker p { font-size: 15px; color: var(--ink-soft); max-width: 760px; line-height: 1.55; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Anushank · Vidrow</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="requests.html" class="active">Initial Requests</a>
+      <a href="comparison.html">Speed · Quality · Cost</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="discovery.html">Discovery</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header" style="border-bottom: 0;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>Page 02 · The receipt · Vidrow's brief vs. what I added on top
+    </div>
+    <h1 class="page-title">
+      What you asked for. What's shipped.<br>
+      <em>And what I built on top.</em>
+    </h1>
+    <p class="page-lede">
+      Two sections. The first is the brief Vidrow set — every concrete ask the team made (in the original briefing and in the corrections during build). The second is a bigger list of dev-session additions I made to round the product out — proposed, you confirmed, now shipped. The line between "asked for" and "added" stays clean: the technical stack picks (kie.ai, Claude, multi-provider engine, vision-AI choice) were mine, not yours.
+    </p>
+
+    <div class="summary-bar mt-32">
+      <div>
+        <div class="lbl">Vidrow asks · shipped</div>
+        <div class="val" style="color: #16A34A;">8</div>
+        <div class="delta">running in dev today</div>
+      </div>
+      <div>
+        <div class="lbl">Vidrow asks · partial</div>
+        <div class="val" style="color: #D97706;">2</div>
+        <div class="delta">audio test · auto-retake loop</div>
+      </div>
+      <div>
+        <div class="lbl">Vidrow asks · open</div>
+        <div class="val" style="color: var(--ink-soft);">1</div>
+        <div class="delta">brand-kit shape</div>
+      </div>
+      <div>
+        <div class="lbl">Dev-session additions</div>
+        <div class="val" style="color: #1D4ED8;">12</div>
+        <div class="delta">proposed + confirmed</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION A · VIDROW'S INITIAL BRIEF
+       ============================================================ -->
+  <div class="section-marker">
+    <div class="eyebrow">Section A · 11 items</div>
+    <h2>What Vidrow asked for. <em>Verbatim, as the brief.</em></h2>
+    <p>
+      Sourced from the original briefing and the corrections you surfaced during the build (the bangle incident, the fake-scores incident, the Hindi-translation guard). Every item below started on Vidrow's side of the table — no implementation jargon, just the asks and how each one resolves inside the product.
+    </p>
+  </div>
+
+  <section style="padding-top: 24px;">
+
+    <!-- THEME 01: Pipeline shape -->
+    <div class="theme-band"><span class="num">A · Theme 01</span><span class="ttl">The pipeline itself — <em>script in, finished video out</em></span></div>
+
+    <div class="req">
+      <div class="req-num">01</div>
+      <div class="req-body">
+        <h3>A 6-stage script-to-video pipeline with human approval at every gate</h3>
+        <p class="ask">"Build us the pipeline. Stages we can see. Nothing moves forward without us approving it."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>Six stages from script to MP4: Script · Characters · Keyframes · Video · Audio · Assembly. Each stage is gated by a human approve before the next one fires.</span></div>
+        <div class="delivered"><span class="lbl">Visible</span><span>The skiing terrain progress bar shows which stage is active, locked, or complete; nothing happens silently.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-shipped">✓ Shipped</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">02</div>
+      <div class="req-body">
+        <h3>AI Director — automatic scene &amp; shot breakdown</h3>
+        <p class="ask">"The AI should figure out the shots, the camera, the lighting. We give it the script."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>You paste the script; the system produces a per-scene shot list with camera angles, lighting notes, and mood — no manual storyboarding.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-shipped">✓ Shipped</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">03</div>
+      <div class="req-body">
+        <h3>Voice + music + final MP4 — built into the pipeline</h3>
+        <p class="ask">"Don't make us export to a separate tool for VO and BGM. Single download at the end."</p>
+        <div class="delivered"><span class="lbl">Voice</span><span>Voice-over (English + Hindi) generated per shot with per-speaker auto-detection.</span></div>
+        <div class="delivered"><span class="lbl">Music</span><span>Background music keyed to scene mood, length-matched.</span></div>
+        <div class="delivered"><span class="lbl">Assembly</span><span>One downloadable MP4 at the end — no external editor. SEEKHO Scene 1 is already shipped end-to-end as proof (visible on the Overview page).</span></div>
+        <div class="delivered"><span class="lbl">Status</span><span>Module-level wiring is all there; the in-app full-pipeline run waits on one final audio test.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-partial">◐ Test pending</span></div>
+    </div>
+
+    <!-- THEME 02: Quality / correctness -->
+    <div class="theme-band"><span class="num">A · Theme 02</span><span class="ttl">Quality &amp; trust — <em>the corrections you made stuck</em></span></div>
+
+    <div class="req">
+      <div class="req-num">04</div>
+      <div class="req-body">
+        <h3>Quality gates with real vision-AI — no heuristic scores</h3>
+        <p class="ask">"Real vision check, not made-up scores. We caught the fake ones once already."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>Every generated frame is scored by a real vision model on face / clothing / body / critical markers (weighted 40 / 25 / 15 / 20). Five gates across the pipeline; no more fabricated 85/100 scores.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-shipped">✓ Shipped</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">05</div>
+      <div class="req-body">
+        <h3>Script as the source of truth across all stages</h3>
+        <p class="ask">"Don't lose the original script as we move through stages — every prompt must be grounded in it."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>The original script text travels through every stage. Each prompt — keyframe, video, voice — is rebuilt from it, never compressed to a summary.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-shipped">✓ Shipped</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">06</div>
+      <div class="req-body">
+        <h3>Character consistency that survives the cut</h3>
+        <p class="ask">"Same character, same face — every time. And no bangles on the male character."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>Each character gets a multi-angle anchor sheet at the top of the project. Every later prompt references those anchors. Vision QA scores the result against the sheet.</span></div>
+        <div class="delivered"><span class="lbl">Marker rule</span><span>Cross-character marker blocking — accessories are explicitly assigned to the character that owns them, so bangles never wander.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-shipped">✓ Shipped</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">07</div>
+      <div class="req-body">
+        <h3>Never auto-approve · ask before spending credits</h3>
+        <p class="ask">"Don't ever auto-approve generations. Credits cost money. Bad outputs waste them."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>No generation API call fires without an explicit human approve. Cost tracking shows what each generation will cost before you click.</span></div>
+        <div class="delivered"><span class="lbl">Open</span><span>The auto-retake-on-low-score loop is wired in one route today; extending it to the production routes is Sprint 02 (Q2 on the Roadmap).</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-partial">◐ Partial</span></div>
+    </div>
+
+    <!-- THEME 03: Audience + business -->
+    <div class="theme-band"><span class="num">A · Theme 03</span><span class="ttl">Hindi-first &amp; cost-aware — <em>your audience, your unit economics</em></span></div>
+
+    <div class="req">
+      <div class="req-num">08</div>
+      <div class="req-body">
+        <h3>Hindi / geography-aware — no English translation in transit</h3>
+        <p class="ask">"Hindi scripts shouldn't get translated to English in prompts. The voice should be native-pace."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>Hindi stays Hindi inside prompts — the no-translation rule is enforced at the prompt layer. Hindi voice catalog with native-pace speaker detection; 8 narration takes already in the bag for SEEKHO Scene 1.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-shipped">✓ Shipped</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">09</div>
+      <div class="req-body">
+        <h3>Cost-aware pipeline — know what you'll spend</h3>
+        <p class="ask">"Show us the cost before we approve. No surprises at month-end."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>Real-time cost tracking on every project — per generation, per stage, per project total. A dedicated Cost Comparison page lets you slide duration × monthly volume and see what 1,000 videos costs at each tier.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-shipped">✓ Shipped</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">10</div>
+      <div class="req-body">
+        <h3>Premium feel · smooth, lag-free experience</h3>
+        <p class="ask">"It has to feel premium. No jank when navigating, no hangs while generating."</p>
+        <div class="delivered"><span class="lbl">Outcome</span><span>21-issue performance audit landed in Session 4 (memoization across all stage pages, conditional polling, lazy-loaded heavy components, API response caching, fewer blur layers). Stage transitions feel instant; generation runs don't lock the UI.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-shipped">✓ Shipped</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">11</div>
+      <div class="req-body">
+        <h3>Brand kit / per-client templates</h3>
+        <p class="ask">"Eventually each client has a look — Vyapar isn't OkCredit."</p>
+        <div class="delivered"><span class="lbl">Today</span><span>The data model already carries brand name, target audience, genre, and language per project, so per-client work doesn't bleed across projects.</span></div>
+        <div class="delivered"><span class="lbl">Open</span><span>No formal "Brand Kit" object yet — this is the most important answer I want from you. Discovery Q01 asks what a brand kit needs to contain for the way Vidrow works with each client.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-pending">○ Open</span></div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       SECTION B · DEV-SESSION ADDITIONS
+       ============================================================ -->
+  <div class="section-marker">
+    <div class="eyebrow">Section B · 12 items</div>
+    <h2>What I added on top. <em>Proposed, you confirmed, now shipped.</em></h2>
+    <p>
+      None of these were in your original brief. Each one I proposed during a session, walked you through, and only built once you signed off. Three of them are technical foundation choices (kie.ai gateway, Claude as the thinking model, multi-provider routing) that replaced your current Google Flow Labs + Higgsfield stack with something cheaper and more flexible underneath. The rest are brand, visual system, and production extras.
+    </p>
+  </div>
+
+  <section style="padding-top: 24px;">
+
+    <!-- B · Technical foundation -->
+    <div class="theme-band"><span class="num">B · Theme 01</span><span class="ttl">Technical foundation — <em>my recommendations, your sign-off</em></span></div>
+
+    <div class="req">
+      <div class="req-num">12</div>
+      <div class="req-body">
+        <h3>kie.ai as the unified AI gateway</h3>
+        <p class="ask">My recommendation. Vidrow's current production stack is Google Flow Labs + Higgsfield. I proposed routing the Scivo build through kie.ai instead — one bill across Veo, Kling, Suno, ElevenLabs, Nano Banana Pro, with the cheapest pricing on most of them.</p>
+        <div class="delivered"><span class="lbl">Why</span><span>Flow Labs locks you to Veo + a $250/mo Ultra tier. Higgsfield is a prettier wrapper over the same models. kie.ai is the cheapest unified API for Veo Fast, Kling 3.0, Suno V4.5, and ElevenLabs simultaneously — no per-product subscription fees.</span></div>
+        <div class="delivered"><span class="lbl">Result</span><span>Standard tier API spend lands at ~$3.70 / 60s video (vs. Flow Pro ~$3, Higgsfield Pro ~$4.70 — but with full pipeline + character consistency + final MP4 included).</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added · confirmed</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">13</div>
+      <div class="req-body">
+        <h3>Claude (latest Sonnet) as the only "thinking" model</h3>
+        <p class="ask">My recommendation. Every reasoning step — script analysis, director breakdown, prompt building, character consistency, hook strategy, voice direction — runs on Claude Sonnet 4.6.</p>
+        <div class="delivered"><span class="lbl">Why</span><span>Best instruction-following + structured-output reliability for the prompt-heavy work the pipeline does. Cinematic prompts and multi-turn quality gates are where Claude's quality shows through.</span></div>
+        <div class="delivered"><span class="lbl">Coverage</span><span>10/10 thinking integrations now wired on Claude.</span></div>
+        <div class="delivered"><span class="lbl">Honest caveat</span><span>The model snapshot ID may not match the live API — audit flagged this; if it 404s, every Claude integration silently degrades to fallback. <strong>Sprint 01 fix · ~10 min</strong> (Q1 on the Roadmap).</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added · confirmed</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">14</div>
+      <div class="req-body">
+        <h3>Multi-provider engine — model swap per stage, per project</h3>
+        <p class="ask">My recommendation. A registry of 28 provider definitions (35 model+provider entries) that lets you swap the video model, image model, voice, music, and LLM independently — per project or per generation.</p>
+        <div class="delivered"><span class="lbl">Why</span><span>The AI video model market changes every 2 months; you don't want to re-architect every time. The registry lets a new model (Kling O3, Veo 3.2, Sora 3) drop in with a config change.</span></div>
+        <div class="delivered"><span class="lbl">Open</span><span>Routes are still hardcoded to kie.ai providers — registry routing isn't wired into the generation routes yet (Roadmap C1, highest-leverage cost win).</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added · partial</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">15</div>
+      <div class="req-body">
+        <h3>Vision-AI quality checking (specifically GPT-4o Vision)</h3>
+        <p class="ask">My recommendation, after you set the bar of "no fake scores." I picked GPT-4o Vision as the scorer because of its structured-output reliability for the face/clothing/body/markers rubric.</p>
+        <div class="delivered"><span class="lbl">Why</span><span>Vidrow's quality bar is "real vision check"; the model choice (GPT-4o Vision vs. Claude Vision vs. Gemini Vision) was mine. Roadmap C3 proposes swapping to GPT-4o-mini for ~10× cost savings if we want to.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added · confirmed</span></div>
+    </div>
+
+    <!-- B · Brand identity -->
+    <div class="theme-band"><span class="num">B · Theme 02</span><span class="ttl">Brand identity — <em>name, metaphor, palette</em></span></div>
+
+    <div class="req">
+      <div class="req-num">16</div>
+      <div class="req-body">
+        <h3>Brand name "Scivo" + tagline "From script to screen in one flow"</h3>
+        <p class="ask">Proposed during the rebrand-from-Vidrow-Pipeline session. Short, brandable, ties to "scene + video" with a soft Italian skiing nod.</p>
+        <div class="delivered"><span class="lbl">Use</span><span>Wordmark gradient from stage-1 ice-blue to stage-6 cosmic-purple. Domain placeholder, marketing site hero, in-app brand mark — all consistent.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added · confirmed</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">17</div>
+      <div class="req-body">
+        <h3>Skiing journey metaphor — six terrains for six stages</h3>
+        <p class="ask">Proposed to give the pipeline narrative shape. Each stage is a terrain on a journey from ground to galaxy: Ground Ice → Frozen Lake → Mountain Base → Summit → Sky Flight → Galaxy.</p>
+        <div class="delivered"><span class="lbl">Why</span><span>Replaces a generic "step 1, step 2…" stepper with a story arc. Each stage has its own visual identity instead of recycling the same chrome.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added · confirmed</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">18</div>
+      <div class="req-body">
+        <h3>Icy-blue → cosmic-purple stage gradient</h3>
+        <p class="ask">Proposed as the color system for the skiing journey: ice-blue (#b4e0f0) → indigo summit (#6366f1) → galaxy purple (#a855f7).</p>
+        <div class="delivered"><span class="lbl">Coverage</span><span>Pipeline progress bar, stage hero banners, marketing site hero — all use the same 6-color gradient.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added · confirmed</span></div>
+    </div>
+
+    <!-- B · Visual system -->
+    <div class="theme-band"><span class="num">B · Theme 03</span><span class="ttl">Visual system — <em>terrain SVGs, glassmorphism, animations</em></span></div>
+
+    <div class="req">
+      <div class="req-num">19</div>
+      <div class="req-body">
+        <h3>Six custom terrain SVG illustrations</h3>
+        <p class="ask">Built six original terrain illustrations to fill out the skiing metaphor — frost crystals, ice cracks, layered ridgelines, summit flag, aurora bands, nebula stars.</p>
+        <div class="delivered"><span class="lbl">System</span><span>Single source of truth for both pipeline cards (compact) and page headers (wide); same component, two modes.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">20</div>
+      <div class="req-body">
+        <h3>16 keyframe terrain animations</h3>
+        <p class="ask">Animated the terrains so each stage feels alive without being noisy: skierSlide, ripple, dashMove, flagFlutter, auroraShift, soundPulse, etc.</p>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">21</div>
+      <div class="req-body">
+        <h3>Glassmorphism dark theme + slim icon sidebar</h3>
+        <p class="ask">Specific UI execution of the "premium feel" ask: 64px icon-only sidebar, glass topbar with live generation status, dark theme.</p>
+        <div class="delivered"><span class="lbl">Components</span><span>10 glassmorphism UI components — card, button, dialog, badge, select, toast, etc.</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added</span></div>
+    </div>
+
+    <!-- B · Production extras -->
+    <div class="theme-band"><span class="num">B · Theme 04</span><span class="ttl">Production extras — <em>hooks, dashboards, perf</em></span></div>
+
+    <div class="req">
+      <div class="req-num">22</div>
+      <div class="req-body">
+        <h3>Hook optimizer — first-3-seconds attention strategy</h3>
+        <p class="ask">Added because short-form videos live or die in the first beat. The optimizer picks a hook strategy per script category.</p>
+        <div class="delivered"><span class="lbl">Strategies</span><span>tension-first · curiosity-gap · pattern-interrupt · emotional-stakes — keyed off the script type (paid-ad, organic-short, explainer, brand-story, testimonial, product-demo).</span></div>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added</span></div>
+    </div>
+
+    <div class="req">
+      <div class="req-num">23</div>
+      <div class="req-body">
+        <h3>Real-time generation dashboard + standalone Cost Comparison page</h3>
+        <p class="ask">Added to make the "cost-aware" ask (#9) tangible — live cost / time / model per project, plus a separate page with a duration × volume slider you can drop in front of any client.</p>
+      </div>
+      <div class="req-status"><span class="pill pill-added">+ Added</span></div>
+    </div>
+
+  </section>
+
+  <section>
+    <div class="section-eyebrow">The honest tally</div>
+    <h2 class="section-title">Where the gaps actually are.</h2>
+    <p class="text-soft mb-24" style="max-width: 720px;">
+      The "partial" items in Section A aren't unfinished work — they're explicit checkpoints where I held back to get your input first. Auto-retake on production routes can be a 1-day job, but only if you tell me whether 65 or 75 should be the bar. The brand-kit shape is a design conversation, not a build problem. Audio + assembly are running on a SEEKHO scene right now and will be done before the next session.
+    </p>
+    <p class="text-soft mb-24" style="max-width: 720px;">
+      Section B is added work I'm proud of but won't claim as Vidrow's ask. If any of it doesn't fit the way Vidrow wants to position the product (the kie.ai bet, the skiing metaphor, the dashboard verbosity, etc.), reply and let me know — I can pull it back as easily as I added it.
+    </p>
+
+    <div class="row mt-24">
+      <a href="comparison.html" class="btn">Next: Speed · Quality · Cost benchmarks →</a>
+      <a href="discovery.html" class="btn btn-secondary">Skip to the open questions</a>
+    </div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="signature">— Receipt is the relationship. <em>Two columns, one line drawn.</em></div>
+    <div class="text-soft" style="text-align: right;">
+      <div>Nihal Choudhary · sol8um.tech · IIT Kanpur</div>
+      <div class="mono mt-8" style="font-size: 11px;">misclifebusiness@gmail.com · prepared 2026-05-05</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

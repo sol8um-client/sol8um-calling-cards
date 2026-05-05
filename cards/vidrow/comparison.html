@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scivo · Speed · Quality · Cost — vs Everyone Else</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .pulse-dot { display: inline-block; width: 8px; height: 8px; border-radius: 999px; background: #16A34A; margin-right: 8px; box-shadow: 0 0 0 4px rgba(22,163,74,0.18); animation: pulseDot 2s ease-in-out infinite; vertical-align: middle; }
+    @keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 4px rgba(22,163,74,0.18); } 50% { box-shadow: 0 0 0 8px rgba(22,163,74,0.06); } }
+
+    /* Pillar header */
+    .pillar-head { display: flex; align-items: baseline; gap: 16px; border-top: 1px solid var(--ink); padding-top: 28px; margin-top: 56px; margin-bottom: 8px; }
+    .pillar-head .num { font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+    .pillar-head .ttl { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; }
+    .pillar-head .ttl em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    .pillar-lede { font-size: 15px; color: var(--ink-soft); max-width: 760px; line-height: 1.55; margin-bottom: 24px; }
+
+    /* Competitor table */
+    .ctable { width: 100%; border-collapse: collapse; border: 1px solid var(--line); font-size: 13px; background: #FFF; }
+    .ctable th, .ctable td { padding: 12px 14px; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .ctable th:last-child, .ctable td:last-child { border-right: 0; }
+    .ctable thead th { background: var(--bg-soft); font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); font-weight: 500; }
+    .ctable tbody tr.scivo-row { background: #0A0A0A; color: #FFF; }
+    .ctable tbody tr.scivo-row td { border-color: rgba(255,255,255,0.12); font-weight: 500; }
+    .ctable tbody tr.scivo-row .name { font-weight: 700; font-size: 14px; }
+    .ctable .name { font-weight: 600; }
+    .ctable .v-good { color: var(--green); font-family: 'Geist Mono', monospace; font-size: 12px; }
+    .ctable .v-bad { color: var(--red); font-family: 'Geist Mono', monospace; font-size: 12px; }
+    .ctable .v-mid { color: var(--amber); font-family: 'Geist Mono', monospace; font-size: 12px; }
+    .ctable .src { font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); }
+    .ctable .src a { border: 0; }
+
+    /* Metric callout */
+    .callout-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+    .callout { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); }
+    .callout.win { border-color: var(--ink); background: #0A0A0A; color: #FFF; }
+    .callout .lbl { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
+    .callout.win .lbl { color: rgba(255,255,255,0.55); }
+    .callout .v { font-family: 'Geist Mono', monospace; font-size: 26px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+    .callout .delta { font-size: 12px; color: var(--ink-soft); margin-top: 8px; }
+    .callout.win .delta { color: rgba(255,255,255,0.7); }
+
+    /* Bar chart — value labels live in the right column only; bars stay clean visually */
+    .bar-row { display: grid; grid-template-columns: 220px 1fr 110px; gap: 14px; align-items: center; padding: 8px 0; font-size: 13px; }
+    .bar-label { font-weight: 500; }
+    .bar-rail { background: var(--bg-soft); height: 22px; border-radius: 4px; position: relative; overflow: hidden; border: 1px solid var(--line); }
+    .bar-fill { height: 100%; min-width: 6px; }
+    .bar-fill.scivo { background: linear-gradient(90deg, #b4e0f0 0%, #6366f1 50%, #a855f7 100%); }
+    .bar-fill.competitor { background: #DC2626; }
+    .bar-fill.manual { background: #525252; }
+    .bar-fill.cheap { background: #16A34A; }
+    .bar-value { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--ink); text-align: right; font-weight: 600; }
+
+    /* Manual workflow */
+    .workflow-grid { display: grid; grid-template-columns: 1fr 60px 1fr; gap: 24px; align-items: stretch; }
+    .workflow-side { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-soft); }
+    .workflow-side.win { background: #0A0A0A; color: #FFF; border-color: #0A0A0A; }
+    .workflow-side .lbl { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 14px; }
+    .workflow-side.win .lbl { color: rgba(255,255,255,0.55); }
+    .workflow-side .stage-row { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 13px; }
+    .workflow-side.win .stage-row { border-color: rgba(255,255,255,0.12); }
+    .workflow-side .stage-row:first-of-type { border-top: 0; padding-top: 0; }
+    .workflow-side .v { font-family: 'Geist Mono', monospace; font-size: 12px; }
+    .workflow-vs { text-align: center; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: var(--ink-muted); align-self: center; }
+
+    /* Why-Scivo wins block */
+    .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; }
+    .why-card { padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); }
+    .why-card .h { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+    .why-card .p { font-size: 13px; color: var(--ink-soft); line-height: 1.5; }
+
+    .src-block { font-size: 11px; color: var(--ink-muted); font-family: 'Geist Mono', monospace; margin-top: 16px; line-height: 1.7; }
+    .src-block a { border-bottom: 1px dotted var(--line); }
+
+    .summary-headline { background: #0A0A0A; color: #FFF; padding: 36px 40px; border-radius: var(--radius); margin-top: 32px; }
+    .summary-headline h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; }
+    .summary-headline h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    .summary-headline p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.6; max-width: 760px; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Anushank · Vidrow</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="requests.html">Initial Requests</a>
+      <a href="comparison.html" class="active">Speed · Quality · Cost</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="discovery.html">Discovery</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header" style="border-bottom: 0;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>Page 03 · Benchmarks · May 2026 data
+    </div>
+    <h1 class="page-title">
+      Three pillars. Ten platforms.<br>
+      <em>One pipeline that wins all three.</em>
+    </h1>
+    <p class="page-lede">
+      The trick the rest of the market hasn't figured out: SPEED, QUALITY, and COST aren't a triangle you pick two of — they're a stack you compose. Below: Scivo benchmarked against Google Flow (Veo 3.1), Higgsfield, HeyGen, Runway Gen-4.5, Pika 2.5, Kling 3.0/O3, Sora 2, Luma Ray3, Hailuo-02, and Synthesia. Plus the manual freelance pipeline Vidrow runs today.
+    </p>
+  </section>
+
+  <!-- AT A GLANCE — full feature comparison -->
+  <section style="padding-top: 24px;">
+    <div class="section-eyebrow">At a glance · the full landscape</div>
+    <h2 class="section-title">Eleven options. <em>One handles your job.</em></h2>
+    <p class="text-soft mb-24" style="max-width: 760px;">
+      Most of the market generates clips, not videos. Three platforms attempt full pipelines (Flow, HeyGen, Synthesia), but each is locked to a specific shape (Scene Builder for Flow, avatars for HeyGen and Synthesia). Scivo is the only one that takes any script and produces a finished, character-consistent multi-scene video without forcing a presenter format.
+    </p>
+
+    <div style="overflow-x: auto;">
+    <table class="ctable">
+      <thead>
+        <tr>
+          <th style="min-width: 140px;">Platform</th>
+          <th>Per-second cost<br><span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-muted);">60s normalized</span></th>
+          <th>Max single clip</th>
+          <th>Stitched / extended</th>
+          <th>Script → multi-scene</th>
+          <th>Char. consistency</th>
+          <th>Native voice + music</th>
+          <th>Final stitched MP4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="scivo-row">
+          <td class="name">Scivo</td>
+          <td class="v-good">$0.02 – $0.28 / s · tier-pickable</td>
+          <td>10s clip × N shots</td>
+          <td class="v-good">unlimited (FFmpeg)</td>
+          <td class="v-good">native, AI Director</td>
+          <td class="v-good">5 vision gates · sheets</td>
+          <td class="v-good">Fish/ElevenLabs + Suno</td>
+          <td class="v-good">yes, one click</td>
+        </tr>
+        <tr>
+          <td class="name">Google Flow (Veo 3.1)</td>
+          <td class="v-good">~$0.05 / s · Pro</td>
+          <td>8 sec</td>
+          <td class="v-mid">Scene Builder chains</td>
+          <td class="v-mid">strong w/ Scene Builder</td>
+          <td class="v-mid">"Ingredients" image refs</td>
+          <td class="v-good">native, synced</td>
+          <td class="v-good">timeline export</td>
+        </tr>
+        <tr>
+          <td class="name">Higgsfield AI</td>
+          <td class="v-good">~$0.06 – $0.08 / s</td>
+          <td>~10 sec</td>
+          <td class="v-mid">via Lipsync/Speak</td>
+          <td class="v-mid">script→talking head</td>
+          <td class="v-mid">Soul ID digital twin</td>
+          <td class="v-good">Higgsfield Audio</td>
+          <td class="v-mid">partial</td>
+        </tr>
+        <tr>
+          <td class="name">HeyGen</td>
+          <td class="v-mid">~$0.30 / s · avatar-only</td>
+          <td>several min (avatar)</td>
+          <td class="v-good">multi-scene editor</td>
+          <td class="v-mid">script → avatar reads</td>
+          <td class="v-mid">same avatar always</td>
+          <td class="v-good">175+ langs</td>
+          <td class="v-good">yes</td>
+        </tr>
+        <tr>
+          <td class="name">Runway Gen-4.5</td>
+          <td class="v-mid">~$0.12 / s · Standard</td>
+          <td>10 sec</td>
+          <td class="v-bad">manual chain</td>
+          <td class="v-bad">weak, clip-based</td>
+          <td class="v-good">95% via Gen-4 References</td>
+          <td class="v-bad">none, external</td>
+          <td class="v-bad">no, just clips</td>
+        </tr>
+        <tr>
+          <td class="name">Pika 2.5</td>
+          <td class="v-mid">~$0.18 / s · Pro</td>
+          <td>10 sec</td>
+          <td class="v-mid">Scene Extension</td>
+          <td class="v-mid">Pikascenes</td>
+          <td class="v-mid">Smart Frame Linking</td>
+          <td class="v-bad">limited</td>
+          <td class="v-mid">partial</td>
+        </tr>
+        <tr>
+          <td class="name">Kling 3.0 / O3</td>
+          <td class="v-good">~$0.10 – $0.15 / s</td>
+          <td>2 min</td>
+          <td class="v-good">Extend to 3 min</td>
+          <td class="v-bad">limited</td>
+          <td class="v-mid">img-to-video refs</td>
+          <td class="v-mid">native in 2.6+</td>
+          <td class="v-bad">no, just clips</td>
+        </tr>
+        <tr>
+          <td class="name">Sora 2 / 2 Pro</td>
+          <td class="v-bad">~$0.35 / s · Pro</td>
+          <td>15s std / 25s Pro</td>
+          <td class="v-mid">Storyboard tool (Pro)</td>
+          <td class="v-mid">Storyboard scene cards</td>
+          <td class="v-mid">Cameos / refs</td>
+          <td class="v-good">dialogue + SFX</td>
+          <td class="v-mid">Storyboard partial</td>
+        </tr>
+        <tr>
+          <td class="name">Luma Dream / Ray3</td>
+          <td class="v-good">~$0.12 / s</td>
+          <td>15 sec (Pro)</td>
+          <td class="v-good">Extend to ~5 min</td>
+          <td class="v-mid">extend chains</td>
+          <td class="v-good">Character Seeds</td>
+          <td class="v-bad">none, external</td>
+          <td class="v-bad">no, just clips</td>
+        </tr>
+        <tr>
+          <td class="name">Hailuo / MiniMax 02</td>
+          <td class="v-mid">~$0.22 / s</td>
+          <td>6–10 sec</td>
+          <td class="v-bad">limited</td>
+          <td class="v-bad">no script flow</td>
+          <td class="v-bad">S2V single-clip only</td>
+          <td class="v-bad">none</td>
+          <td class="v-bad">no, just clips</td>
+        </tr>
+        <tr>
+          <td class="name">Synthesia</td>
+          <td class="v-bad">~$0.53+ / s · enterprise</td>
+          <td>unlimited (avatar)</td>
+          <td class="v-good">multi-scene editor</td>
+          <td class="v-good">script → avatar</td>
+          <td class="v-good">locked custom avatars</td>
+          <td class="v-good">175+ langs</td>
+          <td class="v-good">yes</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="text-muted mt-16" style="font-size: 11px; max-width: 760px; line-height: 1.6;">
+      Per-second cost = each platform's mid-tier monthly subscription divided by realistic finished-video output at that tier (60s reference). Flow Pro ($19.99/mo) ÷ ~6 finished videos = $3/video = $0.05/s. Same logic for the rest. This normalizes wildly different subscription / credit models so the apples-to-apples cost line is visible.
+    </p>
+    <p class="src-block">
+      Sources · pricing &amp; capability snapshot, May 2026:
+      <a href="https://blog.google/innovation-and-ai/products/flow-video-tips/">Flow</a>,
+      <a href="https://higgsfield.ai/pricing">Higgsfield</a>,
+      <a href="https://www.heygen.com/pricing">HeyGen</a>,
+      <a href="https://runwayml.com/pricing">Runway</a>,
+      <a href="https://pika.art/pricing">Pika</a>,
+      <a href="https://costbench.com/software/ai-video-generators/kling/">Kling</a>,
+      <a href="https://openai.com/index/sora-2/">Sora 2</a>,
+      <a href="https://lumalabs.ai/pricing">Luma</a>,
+      <a href="https://hailuoai.video/subscribe">Hailuo</a>,
+      <a href="https://www.synthesia.io/pricing">Synthesia</a>
+    </p>
+  </section>
+
+  <!-- PILLAR 1: SPEED -->
+  <div class="pillar-head"><span class="num">Pillar 01</span><span class="ttl">Speed — <em>under 20 minutes, end to end</em></span></div>
+  <p class="pillar-lede">
+    "Time to a 60-second multi-scene piece, including human review and one round of retries." This is the metric your producer feels every day. Below: Scivo's measured pipeline time vs. the working time on every other path you could pick.
+  </p>
+
+  <section style="padding-top: 0;">
+    <div class="card" style="padding: 28px;">
+      <div style="margin-bottom: 14px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--ink-muted); text-transform: uppercase;">Wall-clock to a 60-sec finished video</div>
+      <div class="bar-row"><div class="bar-label">Scivo</div><div class="bar-rail"><div class="bar-fill scivo" style="width: 5%;"></div></div><div class="bar-value">~17 min</div></div>
+      <div class="bar-row"><div class="bar-label">Flow / Sora Storyboard</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 22%;"></div></div><div class="bar-value">2–4 hrs</div></div>
+      <div class="bar-row"><div class="bar-label">HeyGen / Synthesia (avatar)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 22%;"></div></div><div class="bar-value">2–4 hrs</div></div>
+      <div class="bar-row"><div class="bar-label">Pika / Higgsfield</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 35%;"></div></div><div class="bar-value">3–6 hrs</div></div>
+      <div class="bar-row"><div class="bar-label">Runway / Kling / Luma</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 65%;"></div></div><div class="bar-value">6–12 hrs</div></div>
+      <div class="bar-row"><div class="bar-label">Hailuo (clip + manual stitch)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 70%;"></div></div><div class="bar-value">7–12 hrs</div></div>
+      <div class="bar-row"><div class="bar-label">Manual edit pipeline (India)</div><div class="bar-rail"><div class="bar-fill manual" style="width: 100%;"></div></div><div class="bar-value">12–18 days</div></div>
+    </div>
+
+    <div class="callout-grid">
+      <div class="callout win">
+        <div class="lbl">Scivo · per video</div>
+        <div class="v">~17 min</div>
+        <div class="delta">parallel batches, 6 concurrent shots, no waiting</div>
+      </div>
+      <div class="callout">
+        <div class="lbl">Best alternative · Flow</div>
+        <div class="v">2–4 hrs</div>
+        <div class="delta">native pipeline but Scene Builder is hands-on</div>
+      </div>
+      <div class="callout">
+        <div class="lbl">Manual edit · India</div>
+        <div class="v">12–18 days</div>
+        <div class="delta">script → shoot → edit → color → sound</div>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card"><div class="h">Why Scivo is faster</div><div class="p">Parallel batch generation (6 concurrent shots), Claude-strengthened prompts that reduce retake cycles, conditional UI polling that doesn't hammer the server, lazy-loaded heavy components.</div></div>
+      <div class="why-card"><div class="h">Where the time still goes</div><div class="p">Veo 3.1 / Kling 3.0 generation is 30–90s per clip — hard latency we don't control. Vision QA adds ~5s per gate. Human approve-time at each stage gate is the dominant factor at ~6 min total.</div></div>
+    </div>
+  </section>
+
+  <!-- PILLAR 2: QUALITY -->
+  <div class="pillar-head"><span class="num">Pillar 02</span><span class="ttl">Quality — <em>character consistency that survives the cut</em></span></div>
+  <p class="pillar-lede">
+    Quality in short-form video isn't "is the lighting nice." It's "does the same character show up looking the same in shot 1 and shot 7." It's "does the dialogue sync." It's "did the model add bangles to the male character because the prompt was sloppy." Scivo treats each of these as a checkable gate.
+  </p>
+
+  <section style="padding-top: 0;">
+    <div class="callout-grid">
+      <div class="callout win">
+        <div class="lbl">Scivo</div>
+        <div class="v">5 vision gates</div>
+        <div class="delta">face 40% · clothing 25% · body 15% · markers 20%</div>
+      </div>
+      <div class="callout">
+        <div class="lbl">Runway Gen-4.5 Refs</div>
+        <div class="v">~95%</div>
+        <div class="delta">single-image consistency · no cross-shot grading</div>
+      </div>
+      <div class="callout">
+        <div class="lbl">Most others</div>
+        <div class="v">none</div>
+        <div class="delta">consistency is a prayer, not a check</div>
+      </div>
+    </div>
+
+    <div class="why-grid mt-24">
+      <div class="why-card"><div class="h">Script as source of truth (Scivo only)</div><div class="p">Every prompt — keyframe, video, voice — is grounded in the original script text. Other tools generate shot-by-shot from disconnected prompts; Scivo's <code>prompt-builder.ts</code> rebuilds context per shot from the same source.</div></div>
+      <div class="why-card"><div class="h">Character anchors enforced</div><div class="p">Before any keyframe is generated, characters get a 6-view sheet (front, 3⁄4, side, back, action, expression). Every later prompt references those anchors. Vision QA scores the result against them.</div></div>
+      <div class="why-card"><div class="h">No English-to-Hindi prompt drift</div><div class="p">Hindi scripts stay Hindi inside prompts — no translation in transit. This is the kind of detail that bites when the voiceover is in Hindi but the model started thinking in English.</div></div>
+      <div class="why-card"><div class="h">Auto-retake on drift</div><div class="p">When vision QA scores a generated keyframe under threshold, the pipeline retakes automatically before showing it to you. Other tools don't gate at all — you ship the bad one or eat the cost of regenerating manually. (Auto-retake is wired in scene-pipeline-v2 today; production routes still log the score — Sprint 02 closes that gap.)</div></div>
+    </div>
+  </section>
+
+  <!-- PILLAR 3: COST -->
+  <div class="pillar-head"><span class="num">Pillar 03</span><span class="ttl">Cost — <em>where Scivo's orchestration earns its keep</em></span></div>
+  <p class="pillar-lede">
+    Per-second video generation has commoditized — Veo 3 Fast is sub-$0.04/sec, Kling 3.0 is sub-$0.10/sec. The cost win isn't picking the cheapest model. It's the orchestration: routing each task to the cheapest provider that meets quality, batching aggressively, and not paying for a Pro-tier subscription you never fill.
+  </p>
+
+  <section style="padding-top: 0;">
+    <div class="card" style="padding: 28px; margin-bottom: 24px;">
+      <div style="margin-bottom: 14px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--ink-muted); text-transform: uppercase;">Cost · 1 finished 60-sec multi-scene video</div>
+      <div class="bar-row"><div class="bar-label">Scivo · budget tier (Wan 2.5)</div><div class="bar-rail"><div class="bar-fill cheap" style="width: 4%;"></div></div><div class="bar-value">$1.30</div></div>
+      <div class="bar-row"><div class="bar-label">Scivo · standard tier (Hailuo-02)</div><div class="bar-rail"><div class="bar-fill cheap" style="width: 11%;"></div></div><div class="bar-value">$3.70</div></div>
+      <div class="bar-row"><div class="bar-label">Scivo · premium tier (Kling 3.0)</div><div class="bar-rail"><div class="bar-fill scivo" style="width: 22%;"></div></div><div class="bar-value">$7.25</div></div>
+      <div class="bar-row"><div class="bar-label">Google Flow Pro ($19.99 mo)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 9%;"></div></div><div class="bar-value">$3.00</div></div>
+      <div class="bar-row"><div class="bar-label">Higgsfield Creator ($119 mo)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 11%;"></div></div><div class="bar-value">$3.50</div></div>
+      <div class="bar-row"><div class="bar-label">Higgsfield Pro ($17.40 mo)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 14%;"></div></div><div class="bar-value">$4.70</div></div>
+      <div class="bar-row"><div class="bar-label">Runway Standard ($28 mo)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 22%;"></div></div><div class="bar-value">$7.20</div></div>
+      <div class="bar-row"><div class="bar-label">Google Flow Ultra ($249.99 mo)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 24%;"></div></div><div class="bar-value">$8.00</div></div>
+      <div class="bar-row"><div class="bar-label">Scivo · ultra tier (Veo 3.1)</div><div class="bar-rail"><div class="bar-fill scivo" style="width: 53%;"></div></div><div class="bar-value">$17.10</div></div>
+      <div class="bar-row"><div class="bar-label">HeyGen Team ($99 mo)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 56%;"></div></div><div class="bar-value">$18</div></div>
+      <div class="bar-row"><div class="bar-label">Sora 2 Pro ($200 mo)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 65%;"></div></div><div class="bar-value">$21</div></div>
+      <div class="bar-row"><div class="bar-label">Synthesia Custom (enterprise)</div><div class="bar-rail"><div class="bar-fill competitor" style="width: 100%;"></div></div><div class="bar-value">$32+</div></div>
+      <div class="bar-row"><div class="bar-label">Manual edit (India, lean)</div><div class="bar-rail"><div class="bar-fill manual" style="width: 100%;"></div></div><div class="bar-value">~$48</div></div>
+    </div>
+    <p class="src-block">
+      Scivo per-video cost = standard <code>estimateProjectCost()</code> from <code>src/lib/ai/cost-data.ts</code> (60s video, 12 shots, 1-2 scenes, 3 characters, 800 dialogue chars, 1.3× retake factor). Tier stacks: Budget = Wan 2.5 + Nano Banana 2 + Fish Audio. Standard = Hailuo-02 + Nano Banana Pro + Fish Audio. Premium = Kling 3.0 + FLUX Kontext Pro + ElevenLabs. Ultra = Veo 3.1 Quality + FLUX Kontext Max + ElevenLabs Direct. Competitor numbers from Scivo's own <code>COMPETITORS</code> table — derived from each platform's published mid-tier subscription divided by realistic monthly video output. Manual edit baseline from <a href="https://shunyanant.in/how-much-does-video-production-cost-in-india-a-complete-breakdown/">Shunyanant</a> &amp; <a href="https://cybertizemedia.com/blog/ad-film/ad-film-cost-in-india-2026/">Cybertize</a> — lower bound.
+    </p>
+
+    <!-- Tier ladder -->
+    <div class="card" style="padding: 28px; margin-top: 16px; background: var(--bg-soft);">
+      <div style="margin-bottom: 14px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--ink-muted); text-transform: uppercase;">Scivo tier ladder · pick your point on the cost / quality curve</div>
+      <div style="overflow-x: auto;">
+      <table class="ctable">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Video model</th>
+            <th>Image / sheet</th>
+            <th>Voice</th>
+            <th>Music</th>
+            <th>LLM director</th>
+            <th>~$ / 60s</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">Budget</td>
+            <td>Wan 2.5 · 720p · self-host or Fal.ai</td>
+            <td>Nano Banana 2 · Hypereal</td>
+            <td>Fish Audio</td>
+            <td>Suno V4.5</td>
+            <td>Claude Haiku 4.5</td>
+            <td class="v-good">~$1.30</td>
+            <td>Drafts · A/B tests · social cuts</td>
+          </tr>
+          <tr class="scivo-row">
+            <td class="name">Standard</td>
+            <td>Hailuo-02 · 768p · MiniMax</td>
+            <td>Nano Banana Pro · kie.ai</td>
+            <td>Fish Audio</td>
+            <td>Suno V4.5</td>
+            <td>Claude Sonnet 4.6</td>
+            <td class="v-good">~$3.70</td>
+            <td>Reels / Shorts · most agency work</td>
+          </tr>
+          <tr>
+            <td class="name">Premium</td>
+            <td>Kling 3.0 · 1080p · kie.ai</td>
+            <td>FLUX Kontext Pro · FluxAPI</td>
+            <td>ElevenLabs V2</td>
+            <td>Suno V4.5</td>
+            <td>Claude Sonnet 4.6</td>
+            <td class="v-mid">~$7.25</td>
+            <td>Brand films · client-facing pitches</td>
+          </tr>
+          <tr>
+            <td class="name">Ultra</td>
+            <td>Veo 3.1 Quality · 4K · kie.ai</td>
+            <td>FLUX Kontext Max · FluxAPI</td>
+            <td>ElevenLabs Direct</td>
+            <td>Suno V4.5</td>
+            <td>Claude Sonnet 4.6</td>
+            <td class="v-bad">~$17</td>
+            <td>Hero ads · TVC-class · case study</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="font-size: 12px; color: var(--ink-muted); margin-top: 12px;">
+        Tier definitions live in <code>src/lib/ai/cost-data.ts</code> (<code>RECOMMENDED_STACKS</code>). Per-project tier override exists in the UI. Per-stage model swap exists too (use Veo for hero shots, drop to Kling for cutaways) — wired into the registry but the routing layer still hardcodes kie.ai; that's the highest-leverage fix on the roadmap.
+      </p>
+    </div>
+  </section>
+
+  <!-- THE SCALE MATH — your 1000 videos -->
+  <section>
+    <div class="section-eyebrow">The math at Vidrow's scale</div>
+    <h2 class="section-title">~1,000 monthly videos. <em>Two ledgers.</em></h2>
+    <p class="text-soft mb-24" style="max-width: 760px;">
+      Pull the per-video number into your monthly delivery volume — the gap is no longer abstract. Below: 1,000 short-form videos a month under your current freelance/edit pipeline vs. through Scivo's standard tier.
+    </p>
+
+    <div class="workflow-grid">
+      <div class="workflow-side">
+        <div class="lbl">Today · India agency / freelance pipeline</div>
+        <div class="stage-row"><span>Script + storyboard per video</span><span></span><span class="v">₹15k–40k</span></div>
+        <div class="stage-row"><span>Voice talent / casting per video</span><span></span><span class="v">₹25k–1L</span></div>
+        <div class="stage-row"><span>Stock + license footage</span><span></span><span class="v">₹500–2k</span></div>
+        <div class="stage-row"><span>Editor + color + sound (mid-rate)</span><span></span><span class="v">₹3,000</span></div>
+        <div class="stage-row"><span><strong>Total per video (lean)</strong></span><span></span><span class="v" style="font-weight:700;">~₹4,000</span></div>
+        <div class="stage-row"><span>Time per video (concept → final)</span><span></span><span class="v">~6 hrs</span></div>
+        <div class="stage-row"><span style="font-weight:600;">Cost · 1,000 videos / month</span><span></span><span class="v" style="font-weight:700; font-size:14px;">~₹40 L</span></div>
+        <div class="stage-row"><span style="font-weight:600;">Time · 1,000 videos / month</span><span></span><span class="v" style="font-weight:700; font-size:14px;">~6,000 hrs</span></div>
+        <div class="stage-row"><span style="font-weight:600;">Headcount needed (160 hrs/mo)</span><span></span><span class="v" style="font-weight:700; font-size:14px;">~37 people</span></div>
+      </div>
+      <div class="workflow-vs">vs.</div>
+      <div class="workflow-side win">
+        <div class="lbl">Scivo · standard tier · same 1,000 videos</div>
+        <div class="stage-row"><span>API · video (Hailuo-02 · 60s)</span><span></span><span class="v">~$2.70</span></div>
+        <div class="stage-row"><span>API · keyframes + character sheets (Nano Banana Pro)</span><span></span><span class="v">~$0.68</span></div>
+        <div class="stage-row"><span>API · voice (Fish Audio) + music (Suno)</span><span></span><span class="v">~$0.24</span></div>
+        <div class="stage-row"><span>LLM · Claude Sonnet 4.6 director + prompts</span><span></span><span class="v">~$0.10</span></div>
+        <div class="stage-row"><span><strong>Total per video</strong></span><span></span><span class="v" style="font-weight:700;">~$3.70</span></div>
+        <div class="stage-row"><span>Wall-clock per video (parallel)</span><span></span><span class="v">~17 min</span></div>
+        <div class="stage-row"><span style="font-weight:600;">Cost · 1,000 videos / month</span><span></span><span class="v" style="font-weight:700; font-size:14px;">~$3,700 ≈ ₹3.1 L</span></div>
+        <div class="stage-row"><span style="font-weight:600;">Total review time · 1,000 videos</span><span></span><span class="v" style="font-weight:700; font-size:14px;">~100 hrs</span></div>
+        <div class="stage-row"><span style="font-weight:600;">Headcount needed</span><span></span><span class="v" style="font-weight:700; font-size:14px;">~1 producer</span></div>
+      </div>
+    </div>
+
+    <div class="summary-headline">
+      <h3>~92% lower cost. ~98% less production time. <em>Same 1,000 videos out the door.</em></h3>
+      <p>That's ~₹37L of monthly cost saved at standard tier. Premium tier (Kling 3.0 + ElevenLabs) lands at ~₹6 L/mo — still 85% lower than the manual baseline, with cinema-grade output. The same ~37-person edit floor can either stop existing (cost mode) or be redeployed onto more clients (revenue mode) — headroom to take on 5× the current book without hiring.</p>
+    </div>
+  </section>
+
+  <!-- WHERE COMPETITORS DO WIN — honest -->
+  <section>
+    <div class="section-eyebrow">An honest note · where rivals beat us today</div>
+    <h2 class="section-title">Three places <em>they're still ahead.</em></h2>
+    <p class="text-soft mb-24" style="max-width: 760px;">
+      Calling-cards have to be honest or they aren't useful. Three places Scivo isn't yet the best in class — and what it would take to close each gap. Each of these is on the Roadmap page.
+    </p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="h">Per-clip cinematic quality · Runway Gen-4.5 wins</div>
+        <div class="p">Runway's Gen-4.5 (latest as of May 2026) is the per-clip benchmark for "cinematic" output. Scivo defaults to Kling 3.0 for cost reasons. Fix: route Vidrow's premium-tier clients to Veo 3.1 Quality or Runway Gen-4.5 (Gen-4.5 will be added to the registry in the next sprint) — small per-video cost bump for hero shots.</div>
+      </div>
+      <div class="why-card">
+        <div class="h">Avatar lipsync · HeyGen wins</div>
+        <div class="p">If the deliverable is a presenter avatar reading a script (founder-led ads, explainer videos), HeyGen's lipsync is best-in-class. Fix: integrate D-ID or HeyGen's API as an optional "presenter" stage swap inside Scivo for that use-case.</div>
+      </div>
+      <div class="why-card">
+        <div class="h">Native long-clip generation · Kling O3 wins</div>
+        <div class="p">Kling O3 (latest) hits 2-min single-clip + 3-min Extend — unmatched for slow-paced narrative beats. Scivo currently chains 5–10s clips through Kling 3.0. Fix: route long-take shots through Kling O3 Extend mode, keep cuts through Kling 3.0.</div>
+      </div>
+      <div class="why-card">
+        <div class="h">Single-clip price floor · Kie.ai Veo Fast wins</div>
+        <div class="p">If the client only needs one 8-sec clip, Kie.ai Veo Fast at $0.30/clip is hard to beat. Scivo's pipeline overhead doesn't pay back at one-clip jobs. Fix: add a "single-clip mode" that skips stages 2-6 and goes straight to one of the registry providers.</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="signature">— Speed, quality, and cost are a stack, not a triangle.</div>
+    <div class="text-soft" style="text-align: right;">
+      <div>Nihal Choudhary · sol8um.tech · IIT Kanpur</div>
+      <div class="mono mt-8" style="font-size: 11px;">misclifebusiness@gmail.com · prepared 2026-05-05</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

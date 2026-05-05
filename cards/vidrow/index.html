@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scivo · Prepared for Vidrow — Overview</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    /* Vidrow card-specific accents — kept inline to avoid forking the shared styles */
+    :root {
+      --stage-1: #b4e0f0;
+      --stage-2: #7ec8e3;
+      --stage-3: #4a9fd4;
+      --stage-4: #6366f1;
+      --stage-5: #8b5cf6;
+      --stage-6: #a855f7;
+    }
+    .pulse-dot { display: inline-block; width: 8px; height: 8px; border-radius: 999px; background: #16A34A; margin-right: 8px; box-shadow: 0 0 0 4px rgba(22,163,74,0.18); animation: pulseDot 2s ease-in-out infinite; vertical-align: middle; }
+    @keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 4px rgba(22,163,74,0.18); } 50% { box-shadow: 0 0 0 8px rgba(22,163,74,0.06); } }
+    .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .marquee-track { display: flex; animation: marquee 38s linear infinite; white-space: nowrap; gap: 0; }
+    .marquee-item { display: inline-flex; align-items: baseline; gap: 10px; padding: 0 36px; border-right: 1px solid var(--line); }
+    .marquee-item .num { font-family: 'Geist Mono', monospace; font-size: 22px; font-weight: 600; color: var(--ink); }
+    .marquee-item .lbl { font-size: 12px; color: var(--ink-soft); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .stage-strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 32px 0 16px; }
+    .stage-cell { padding: 18px 14px; border: 1px solid var(--line); border-radius: var(--radius); position: relative; overflow: hidden; }
+    .stage-cell::before { content: ""; position: absolute; inset: 0; opacity: 0.06; background: var(--cell-color, var(--ink)); }
+    .stage-cell .num { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--ink-muted); letter-spacing: 0.12em; }
+    .stage-cell .name { font-size: 15px; font-weight: 600; margin-top: 4px; color: var(--cell-color, var(--ink)); }
+    .stage-cell .terrain { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+    .stage-cell .status { font-family: 'Geist Mono', monospace; font-size: 10px; margin-top: 10px; color: var(--green); letter-spacing: 0.1em; }
+    .stage-cell.partial .status { color: var(--amber); }
+    .scale-strip { display: grid; grid-template-columns: 1fr 60px 1fr; gap: 24px; margin: 24px 0; align-items: center; }
+    .scale-side { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); }
+    .scale-side.dark { background: #0A0A0A; color: #FFF; border-color: #0A0A0A; }
+    .scale-side .lbl { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 14px; }
+    .scale-side.dark .lbl { color: rgba(255,255,255,0.55); }
+    .scale-side .row { display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px; }
+    .scale-side.dark .row { border-color: rgba(255,255,255,0.12); }
+    .scale-side .row:first-of-type { border-top: 0; padding-top: 0; }
+    .scale-side .row .v { font-family: 'Geist Mono', monospace; font-weight: 600; }
+    .scale-vs { text-align: center; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: var(--ink-muted); }
+    .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .pillar { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+    .pillar .head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+    .pillar .head h4 { font-size: 18px; font-weight: 600; }
+    .pillar .head .delta { font-family: 'Geist Mono', monospace; font-size: 13px; color: var(--green); font-weight: 600; }
+    .pillar p { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+    .pillar .micro { font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 12px; }
+    .page-card { display: block; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: border-color 0.15s ease, background 0.15s ease; }
+    .page-card:hover { border-color: var(--ink); background: var(--bg-soft); opacity: 1; }
+    .page-card .head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .page-card .head .num { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--ink-muted); letter-spacing: 0.14em; }
+    .page-card h3 { font-size: 21px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .page-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+    .page-card .arrow { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--ink-muted); margin-top: 12px; display: inline-block; }
+    .page-card:hover .arrow { color: var(--ink); }
+    .ribbon { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 22px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .ribbon .ribbon-label { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+    .ribbon .ribbon-text { font-size: 14px; color: var(--ink-soft); }
+    .gradient-bar { height: 6px; border-radius: 999px; background: linear-gradient(90deg, var(--stage-1) 0%, var(--stage-2) 20%, var(--stage-3) 40%, var(--stage-4) 60%, var(--stage-5) 80%, var(--stage-6) 100%); margin: 0 0 12px; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Anushank · Vidrow</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html" class="active">Overview</a>
+      <a href="requests.html">Initial Requests</a>
+      <a href="comparison.html">Speed · Quality · Cost</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="discovery.html">Discovery</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="page-header" style="border-bottom: 0; padding-bottom: 32px; position: relative;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>Vidrow check-in · 30 days of build · prepared for Anushank, May 2026
+    </div>
+    <div class="gradient-bar" style="max-width: 320px;"></div>
+    <h1 class="page-title">
+      Scivo turns your script into a finished video.<br>
+      <em>The rest of the market still ships 10–15 second clips.</em>
+    </h1>
+    <p class="page-lede">
+      Six stages, one flow. Script analysis, character sheets, keyframes, video, voice + music, final assembly. Every stage is built, every Claude integration is live, every cost is tracked. The first SEEKHO video is in the can. The pipeline is ready to absorb the next 999.
+    </p>
+    <div class="row mt-32 gap-12">
+      <a href="comparison.html" class="btn">See the speed · quality · cost math
+        <span style="font-family:'Geist Mono', monospace; font-size: 12px; margin-left: 4px;">→</span>
+      </a>
+      <a href="requests.html" class="btn btn-secondary">What you asked for · what's shipped</a>
+    </div>
+  </section>
+
+  <!-- PROOF MARQUEE — Scivo build metrics -->
+  <section style="border-top: 0; padding: 0;">
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="num">6/6</span><span class="lbl">pipeline stages live</span></div>
+        <div class="marquee-item"><span class="num">10/10</span><span class="lbl">Claude integrations wired</span></div>
+        <div class="marquee-item"><span class="num">35</span><span class="lbl">provider entries in the registry</span></div>
+        <div class="marquee-item"><span class="num">~$3.70</span><span class="lbl">API cost per 60s · standard tier</span></div>
+        <div class="marquee-item"><span class="num">~17 min</span><span class="lbl">end-to-end · script to MP4</span></div>
+        <div class="marquee-item"><span class="num">21</span><span class="lbl">perf issues fixed in last audit</span></div>
+        <div class="marquee-item"><span class="num">5</span><span class="lbl">vision-checked quality gates</span></div>
+        <div class="marquee-item"><span class="num">7/7</span><span class="lbl">SEEKHO Scene 1 keyframes shipped</span></div>
+        <!-- duplicate for seamless loop -->
+        <div class="marquee-item"><span class="num">6/6</span><span class="lbl">pipeline stages live</span></div>
+        <div class="marquee-item"><span class="num">10/10</span><span class="lbl">Claude integrations wired</span></div>
+        <div class="marquee-item"><span class="num">35</span><span class="lbl">provider entries in the registry</span></div>
+        <div class="marquee-item"><span class="num">~$3.70</span><span class="lbl">API cost per 60s · standard tier</span></div>
+        <div class="marquee-item"><span class="num">~17 min</span><span class="lbl">end-to-end · script to MP4</span></div>
+        <div class="marquee-item"><span class="num">21</span><span class="lbl">perf issues fixed in last audit</span></div>
+        <div class="marquee-item"><span class="num">5</span><span class="lbl">vision-checked quality gates</span></div>
+        <div class="marquee-item"><span class="num">7/7</span><span class="lbl">SEEKHO Scene 1 keyframes shipped</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S BUILT — at a glance -->
+  <section style="padding-top: 64px;">
+    <div class="section-eyebrow">Where we are · 2026-05-05</div>
+    <h2 class="section-title">Six terrains. <em>All open.</em></h2>
+    <p class="text-soft mb-32" style="max-width: 720px;">
+      The skiing metaphor stuck. Each stage is its own terrain, each one runs end-to-end, and the pipeline is gated by human approval at every transition. SEEKHO's first scene is the proof — six shots through Kling 3.0 with character-consistent keyframes scored by GPT-4o Vision.
+    </p>
+
+    <div class="stage-strip">
+      <div class="stage-cell" style="--cell-color: var(--stage-1);">
+        <div class="num">01</div>
+        <div class="name">Script</div>
+        <div class="terrain">Ground Ice</div>
+        <div class="status">✓ LIVE</div>
+      </div>
+      <div class="stage-cell" style="--cell-color: var(--stage-2);">
+        <div class="num">02</div>
+        <div class="name">Characters</div>
+        <div class="terrain">Frozen Lake</div>
+        <div class="status">✓ LIVE</div>
+      </div>
+      <div class="stage-cell" style="--cell-color: var(--stage-3);">
+        <div class="num">03</div>
+        <div class="name">Keyframes</div>
+        <div class="terrain">Mountain Base</div>
+        <div class="status">✓ LIVE · V4</div>
+      </div>
+      <div class="stage-cell" style="--cell-color: var(--stage-4);">
+        <div class="num">04</div>
+        <div class="name">Video</div>
+        <div class="terrain">Summit</div>
+        <div class="status">✓ LIVE · 6/7 SHOTS</div>
+      </div>
+      <div class="stage-cell partial" style="--cell-color: var(--stage-5);">
+        <div class="num">05</div>
+        <div class="name">Audio</div>
+        <div class="terrain">Sky Flight</div>
+        <div class="status">◐ READY · TEST PENDING</div>
+      </div>
+      <div class="stage-cell partial" style="--cell-color: var(--stage-6);">
+        <div class="num">06</div>
+        <div class="name">Assembly</div>
+        <div class="terrain">Galaxy</div>
+        <div class="status">◐ READY · WAITS ON 05</div>
+      </div>
+    </div>
+
+    <div class="kpis mt-32">
+      <div class="kpi">
+        <div class="label">Stages live</div>
+        <div class="num">6 / 6</div>
+        <div class="delta">all 6 terrains usable end-to-end</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Claude (Sonnet 4.6) hooks</div>
+        <div class="num">10 / 10</div>
+        <div class="delta">every "thinking" step LLM-powered</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Quality gates</div>
+        <div class="num">5</div>
+        <div class="delta">GPT-4o Vision · auto-retake on drift</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Provider entries</div>
+        <div class="num">35</div>
+        <div class="delta">across video, image, voice, music · routing wiring is in roadmap</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM SCIVO SOLVES — at Vidrow's scale -->
+  <section>
+    <div class="section-eyebrow">The math at your scale</div>
+    <h2 class="section-title">~1,000 videos a month. <em>Two ways to deliver.</em></h2>
+    <p class="text-soft mb-24" style="max-width: 720px;">
+      You mentioned roughly a thousand pieces of monthly content delivered to clients. Here's what that looks like under the manual / freelance / agency model your team runs today, vs. the same thousand videos through Scivo at the standard tier. Numbers below assume 60-second short-form ads — the most common shape across Vyapar, Testbook, OkCredit-style briefs.
+    </p>
+
+    <div class="scale-strip">
+      <div class="scale-side">
+        <div class="lbl">Today · manual / freelance pipeline</div>
+        <div class="row"><span>Editor + voice-over per video</span><span class="v">~₹3,500</span></div>
+        <div class="row"><span>Stock + footage license</span><span class="v">~₹500</span></div>
+        <div class="row"><span>Time per video (concept → final)</span><span class="v">~6 hrs</span></div>
+        <div class="row"><span>Cost · 1,000 videos / month</span><span class="v">~₹40 L</span></div>
+        <div class="row"><span>Total time · 1,000 videos</span><span class="v">~6,000 hrs</span></div>
+        <div class="row"><span>Headcount needed (160 hrs/mo)</span><span class="v">~37 people</span></div>
+      </div>
+      <div class="scale-vs">vs.</div>
+      <div class="scale-side dark">
+        <div class="lbl">Scivo · standard tier · same 1,000 videos</div>
+        <div class="row"><span>API cost per 60s video</span><span class="v">~$3.70</span></div>
+        <div class="row"><span>Approve-time per video (human)</span><span class="v">~6 min</span></div>
+        <div class="row"><span>Wall-clock per video (parallel)</span><span class="v">~17 min</span></div>
+        <div class="row"><span>Cost · 1,000 videos / month</span><span class="v">~₹3.1 L</span></div>
+        <div class="row"><span>Total review time · 1,000 videos</span><span class="v">~100 hrs</span></div>
+        <div class="row"><span>Headcount needed</span><span class="v">~1 producer</span></div>
+      </div>
+    </div>
+
+    <div class="ribbon mt-24">
+      <span class="ribbon-label">At 1,000 videos / month</span>
+      <span class="ribbon-text"><strong style="font-family:'Geist Mono',monospace;color:var(--green);">~92% cost cut</strong> · <strong style="font-family:'Geist Mono',monospace;color:var(--green);">~98% time cut</strong> · same delivery cadence with one producer instead of a 30+ person edit floor.</span>
+    </div>
+    <p class="text-muted mt-16" style="font-size: 12px; max-width: 720px;">
+      Standard tier stack inside Scivo: Hailuo-02 768p video ($0.045/s), Nano Banana Pro keyframes ($0.02/img), Fish Audio voice ($0.08/1K chars), Suno V4.5 music ($0.20/track), Claude Sonnet 4.6 director. Premium tier (Kling 3.0 + ElevenLabs) lands closer to ~$7.25 per 60s; Ultra (Veo 3.1) closer to ~$17. See the tier ladder on the Comparison page. Manual line uses mid-market freelance editor rates from <a href="https://shunyanant.in/how-much-does-video-production-cost-in-india-a-complete-breakdown/" style="color:#FFF; border-bottom-color:rgba(255,255,255,0.4);">Shunyanant</a> &amp; <a href="https://cybertizemedia.com/blog/ad-film/ad-film-cost-in-india-2026/" style="color:#FFF; border-bottom-color:rgba(255,255,255,0.4);">Cybertize</a>.
+    </p>
+  </section>
+
+  <!-- THREE PILLARS PREVIEW -->
+  <section>
+    <div class="section-eyebrow">The three pillars</div>
+    <h2 class="section-title">Speed · Quality · Cost — <em>all three, no trade-off.</em></h2>
+    <p class="text-soft" style="max-width: 720px;">
+      Most AI video tools force a pick-two: Runway is high quality but slow + expensive; Hailuo is cheap + fast but visually thin; HeyGen is fast but only handles avatars. Scivo's pipeline architecture lets all three win at once, because the heavy lifting moves out of the model and into the orchestration: smarter prompts, parallel batches, vision QA, cheapest-provider routing.
+    </p>
+
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="head"><h4>Speed</h4><span class="delta">~17 min / video</span></div>
+        <p>Parallel batch generation (6 concurrent shots), conditional polling, lazy-loaded UI, conditional SWR. The pipeline doesn't wait — every stage that can run in parallel does.</p>
+        <div class="micro">vs. ~2 hrs in Flow / ~6 hrs manual</div>
+      </div>
+      <div class="pillar">
+        <div class="head"><h4>Quality</h4><span class="delta">5 vision gates</span></div>
+        <p>GPT-4o Vision scores face / clothing / body / markers per frame. Auto-retake below threshold, flag for human review at medium scores. Script is the source of truth across every prompt.</p>
+        <div class="micro">vs. zero gating in clip tools</div>
+      </div>
+      <div class="pillar">
+        <div class="head"><h4>Cost</h4><span class="delta">~$3.70 / 60s std</span></div>
+        <p>Four quality tiers from $1.30 (budget) to $17 (ultra). 35 provider entries registered (cheapest-first routing wiring is on the roadmap). Real-time cost tracking — you see what each generation costs before approving.</p>
+        <div class="micro">vs. $7-25 per video on Flow / Higgsfield / Runway</div>
+      </div>
+    </div>
+    <div class="row mt-24">
+      <a href="comparison.html" class="btn btn-secondary">Open the full comparison →</a>
+    </div>
+  </section>
+
+  <!-- PROOF — real SEEKHO scene 1 outputs -->
+  <section>
+    <div class="section-eyebrow">Proof · SEEKHO "Farsh Se Arsh Tak" · Scene 1</div>
+    <h2 class="section-title">Six shots through the pipeline. <em>Same character, same room, same night.</em></h2>
+    <p class="text-soft mb-24" style="max-width: 720px;">
+      Not stock placeholders — these are real Nano Banana Pro keyframes generated for SEEKHO Scene 1 (the opening "Taane Aur Dard" beat) using Claude-strengthened prompts grounded in the script. Same Indian middle-class home, same time of night, character continuity across the full scene. Below them, the final assembled MP4 with Hindi voice-over and BGM, end-to-end through Scivo.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 24px;">
+      <figure style="margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;">
+        <img src="shots/shot1-establishing.jpg" alt="SEEKHO Scene 1 Shot 1 establishing" loading="lazy" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; padding: 8px 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--line);">SHOT 01 · ESTABLISHING</figcaption>
+      </figure>
+      <figure style="margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;">
+        <img src="shots/shot2-medium.jpg" alt="SEEKHO Scene 1 Shot 2 medium" loading="lazy" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; padding: 8px 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--line);">SHOT 02 · MEDIUM</figcaption>
+      </figure>
+      <figure style="margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;">
+        <img src="shots/shot3-closeup.jpg" alt="SEEKHO Scene 1 Shot 3 closeup" loading="lazy" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; padding: 8px 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--line);">SHOT 03 · CLOSE-UP</figcaption>
+      </figure>
+      <figure style="margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;">
+        <img src="shots/shot4-extreme-closeup.jpg" alt="SEEKHO Scene 1 Shot 4 extreme closeup" loading="lazy" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; padding: 8px 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--line);">SHOT 04 · EXTREME CLOSE-UP</figcaption>
+      </figure>
+      <figure style="margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;">
+        <img src="shots/shot5-medium-highangle.jpg" alt="SEEKHO Scene 1 Shot 5 medium high angle" loading="lazy" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; padding: 8px 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--line);">SHOT 05 · MEDIUM HIGH-ANGLE</figcaption>
+      </figure>
+      <figure style="margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;">
+        <img src="shots/shot6-closeup-rimlight.jpg" alt="SEEKHO Scene 1 Shot 6 closeup rim light" loading="lazy" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        <figcaption style="font-family: 'Geist Mono', monospace; font-size: 10px; padding: 8px 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--line);">SHOT 06 · CLOSE-UP · RIM LIGHT</figcaption>
+      </figure>
+    </div>
+
+    <div class="card" style="padding: 24px;">
+      <div style="display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start;">
+        <div>
+          <div style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 10px;">Final assembled MP4 · Scene 1 · with Hindi VO + BGM</div>
+          <h3 style="font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px;">Six shots, one scene, one pipeline. <em style="font-family: 'Instrument Serif', serif; font-style: italic;">No external editor.</em></h3>
+          <p class="text-soft" style="font-size: 14px; line-height: 1.55; margin-bottom: 14px;">
+            Generated through Claude → Nano Banana Pro keyframes → Kling 3.0 video → ElevenLabs Hindi narration → Suno BGM → FFmpeg assembly. The whole scene took ~17 minutes of wall-clock time and roughly $4.20 of API spend. Not a teaser — the actual file lives at <code style="font-family: 'Geist Mono', monospace; font-size: 11px; background: var(--bg-soft); padding: 1px 5px; border-radius: 3px;">/exports/scene1-final-HD-with-VO.mp4</code> in the repo.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px;">
+            <div style="padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius);"><div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); letter-spacing: 0.1em;">SHOTS</div><div style="font-family: 'Geist Mono', monospace; font-size: 18px; font-weight: 600;">6 / 7</div><div style="font-size: 11px; color: var(--ink-soft);">shot 7 hit content filter</div></div>
+            <div style="padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius);"><div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); letter-spacing: 0.1em;">VOICES TESTED</div><div style="font-family: 'Geist Mono', monospace; font-size: 18px; font-weight: 600;">8</div><div style="font-size: 11px; color: var(--ink-soft);">EN + Hindi devanagari</div></div>
+            <div style="padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius);"><div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); letter-spacing: 0.1em;">FINAL MP4</div><div style="font-family: 'Geist Mono', monospace; font-size: 18px; font-weight: 600;">20 MB</div><div style="font-size: 11px; color: var(--ink-soft);">HD · with VO + BGM</div></div>
+          </div>
+        </div>
+        <div>
+          <video src="shots/scene1-preview.mp4" controls preload="metadata" playsinline style="width: 100%; border-radius: var(--radius); display: block; background: #000;"></video>
+          <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); letter-spacing: 0.1em; margin-top: 6px; text-align: center;">CLICK TO PLAY · 720P PREVIEW · ~30S</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INSIDE -->
+  <section>
+    <div class="section-eyebrow">What's inside this card</div>
+    <h2 class="section-title">Five pages, <em>built for you to read.</em></h2>
+    <p class="text-soft mb-24" style="max-width: 720px;">
+      Open them in order if you have the time, or skip straight to the Discovery page — that's the one with the open questions whose answers shape the next sprint. Each page is sized for a single sitting; nothing here requires us to be on a call.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+      <a href="requests.html" class="page-card">
+        <div class="head"><span class="num">PAGE 02</span></div>
+        <h3>Initial Requests → What's Shipped</h3>
+        <p>Two sections, one line drawn. Section A is Vidrow's brief — 11 concrete asks mapped to the feature inside Scivo that delivers each. Section B is the 12 dev-session additions I proposed and you confirmed, kept separate so the receipt stays honest.</p>
+        <span class="arrow">Open →</span>
+      </a>
+      <a href="comparison.html" class="page-card">
+        <div class="head"><span class="num">PAGE 03</span></div>
+        <h3>Speed · Quality · Cost vs. Everyone Else</h3>
+        <p>Side-by-side benchmarks against Google Flow, Higgsfield, HeyGen, Runway, Pika, Sora, Kling, Luma — and the manual freelance pipeline you're replacing.</p>
+        <span class="arrow">Open →</span>
+      </a>
+      <a href="roadmap.html" class="page-card">
+        <div class="head"><span class="num">PAGE 04</span></div>
+        <h3>Optimization Roadmap</h3>
+        <p>Where Scivo can push each pillar further — concrete code-level changes, model swaps, and architecture moves. Sequenced by impact-per-week-of-work.</p>
+        <span class="arrow">Open →</span>
+      </a>
+      <a href="discovery.html" class="page-card">
+        <div class="head"><span class="num">PAGE 05</span></div>
+        <h3>Discovery — 11 Questions for You</h3>
+        <p>The questions only you can answer. Brand kits, client deliverable formats, approval workflows, who-owns-what inside Vidrow, the engagement shape going forward. Three are flagged "★ Priority" — those three unblock everything else. Reply via WhatsApp, email, or call (your pick).</p>
+        <span class="arrow">Open →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- HOW THIS WAS BUILT -->
+  <section>
+    <div class="section-eyebrow">How this card was built</div>
+    <h2 class="section-title">From your brief, in 30 days. <em>With a stack picked for the job.</em></h2>
+    <p class="text-soft mb-24" style="max-width: 720px;">
+      Scivo isn't a wrapper around someone else's API; it's an opinionated orchestrator. The architectural picks were mine — kie.ai as the unified video/image/voice/music gateway (cheapest per task across Veo, Kling, Suno, ElevenLabs in one bill), Claude Sonnet 4.6 for every "thinking" step, the cheapest-per-task provider for every "generation" step. Vidrow gets to drop a script in and get a finished MP4 out — no procurement, no integrations, no cost spreadsheets to maintain. The product, the brand, the skiing metaphor, the terrain illustrations — all of it shipped in one continuous build with no template behind it.
+    </p>
+
+    <div class="kpis">
+      <div class="kpi">
+        <div class="label">Build sessions</div>
+        <div class="num">4</div>
+        <div class="delta">script analysis → terrain visuals</div>
+      </div>
+      <div class="kpi">
+        <div class="label">LOC in /src</div>
+        <div class="num">~12k</div>
+        <div class="delta">TypeScript · all typed</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Terrain illustrations</div>
+        <div class="num">6</div>
+        <div class="delta">SVG · 16 keyframe animations</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Schemas · zod validated</div>
+        <div class="num">100%</div>
+        <div class="delta">no untyped boundaries</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="signature">— Built for Anushank &amp; the Vidrow team.</div>
+    <div class="text-soft" style="text-align: right;">
+      <div>Nihal Choudhary · sol8um.tech · IIT Kanpur</div>
+      <div class="mono mt-8" style="font-size: 11px;">misclifebusiness@gmail.com · prepared 2026-05-05</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

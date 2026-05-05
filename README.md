@@ -128,7 +128,8 @@ It does *pull* from both:
 ## Reserved card slugs
 
 ```
-cielo  · Kiana Blücher / CIELO Agency  · DELIVERED 2026-04-28
+cielo   · Kiana Blücher / CIELO Agency  · DELIVERED 2026-04-28
+vidrow  · Anushank / Vidrow Agency      · DELIVERED 2026-05-04 (product check-in card, not job application)
 ```
 
 When a new card is built, append below.

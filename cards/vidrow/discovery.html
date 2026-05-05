@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scivo · Discovery — Questions for Anushank</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .pulse-dot { display: inline-block; width: 8px; height: 8px; border-radius: 999px; background: #16A34A; margin-right: 8px; box-shadow: 0 0 0 4px rgba(22,163,74,0.18); animation: pulseDot 2s ease-in-out infinite; vertical-align: middle; }
+    @keyframes pulseDot { 0%,100% { box-shadow: 0 0 0 4px rgba(22,163,74,0.18); } 50% { box-shadow: 0 0 0 8px rgba(22,163,74,0.06); } }
+
+    .theme-band { border-top: 1px solid var(--ink); padding-top: 28px; margin: 56px 0 12px; display: flex; align-items: baseline; gap: 16px; }
+    .theme-band .num { font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); }
+    .theme-band .ttl { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+    .theme-band .ttl em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    .theme-lede { font-size: 14px; color: var(--ink-soft); max-width: 760px; line-height: 1.55; margin-bottom: 24px; }
+
+    .qcard { padding: 26px 28px; border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 12px; }
+    .qcard .meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+    .qcard .qnum { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--ink-muted); letter-spacing: 0.14em; }
+    .qcard .qtag { font-family: 'Geist Mono', monospace; font-size: 10px; padding: 3px 10px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--line); color: var(--ink-soft); letter-spacing: 0.1em; text-transform: uppercase; }
+    .qcard .qtag.brand { background: #FEF3C7; border-color: #FDE68A; color: #92400E; }
+    .qcard .qtag.workflow { background: #DBEAFE; border-color: #BFDBFE; color: #1D4ED8; }
+    .qcard .qtag.delivery { background: #DCFCE7; border-color: #BBF7D0; color: #15803D; }
+    .qcard .qtag.commercial { background: #F3E8FF; border-color: #E9D5FF; color: #7C3AED; }
+    .qcard .qtag.technical { background: #FEE2E2; border-color: #FECACA; color: #B91C1C; }
+    .qcard .qtag.priority { background: #0A0A0A; border-color: #0A0A0A; color: #FFF; }
+    .qcard h3.qtext { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 24px; line-height: 1.35; font-weight: 400; margin-bottom: 12px; }
+    .qcard .why { font-size: 13px; color: var(--ink-soft); line-height: 1.55; margin-bottom: 14px; }
+    .qcard .followup { background: var(--bg-soft); border-left: 2px solid var(--ink); padding: 12px 16px; font-size: 13px; color: var(--ink); line-height: 1.55; }
+    .qcard .followup .lbl { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 4px; }
+    .qcard .answer-area { margin-top: 14px; }
+    .qcard textarea { width: 100%; min-height: 64px; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; font-family: inherit; font-size: 14px; resize: vertical; background: var(--bg); }
+    .qcard textarea:focus { outline: none; border-color: var(--ink); }
+    .qcard textarea::placeholder { color: var(--ink-muted); font-style: italic; }
+
+    .reading-grid { display: grid; grid-template-columns: 70px 1fr 130px; gap: 14px; align-items: start; padding: 14px 0; border-top: 1px solid var(--line); font-size: 14px; }
+    .reading-grid:first-of-type { border-top: 0; padding-top: 0; }
+    .reading-grid .when { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--ink-soft); padding-top: 1px; }
+    .reading-grid .what { font-weight: 500; }
+    .reading-grid .what .sub { display: block; color: var(--ink-soft); font-weight: 400; font-size: 13px; margin-top: 2px; }
+    .reading-grid .why-tag { font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); letter-spacing: 0.1em; text-transform: uppercase; text-align: right; padding-top: 3px; }
+
+    .reply-bar { padding: 24px 28px; border: 2px solid var(--ink); border-radius: var(--radius); background: #0A0A0A; color: #FFF; margin-top: 20px; }
+    .reply-bar .lbl { font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 10px; }
+    .reply-bar h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+    .reply-bar p { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.55; margin-bottom: 12px; }
+    .reply-bar .channels { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; }
+    .reply-bar .channel { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; font-size: 13px; color: #FFF; background: rgba(255,255,255,0.04); }
+    .reply-bar .channel a { color: #FFF; border-bottom: 0; }
+    .reply-bar .channel .icon { font-family: 'Geist Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.1em; }
+
+    .capture-form { padding: 32px; border: 2px solid var(--ink); border-radius: var(--radius); background: #FAFAFA; }
+    .capture-form h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .capture-form .sub { font-size: 14px; color: var(--ink-soft); margin-bottom: 24px; }
+    .capture-form label { display: block; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 6px; margin-top: 18px; }
+    .capture-form label:first-of-type { margin-top: 0; }
+    .capture-form input, .capture-form textarea { width: 100%; border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; font-family: inherit; font-size: 14px; background: #FFF; }
+    .capture-form input:focus, .capture-form textarea:focus { outline: none; border-color: var(--ink); }
+    .capture-form textarea { min-height: 72px; resize: vertical; }
+    .capture-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .capture-form .actions { margin-top: 24px; display: flex; gap: 12px; align-items: center; }
+    .capture-form .hint { font-size: 12px; color: var(--ink-muted); }
+
+    .priority-banner { background: linear-gradient(135deg, #FEF3C7 0%, #FED7AA 100%); border: 1px solid #FCD34D; border-radius: var(--radius); padding: 18px 24px; margin-bottom: 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .priority-banner .ico { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 28px; color: #92400E; line-height: 1; }
+    .priority-banner .txt { font-size: 14px; color: #78350F; line-height: 1.5; flex: 1; min-width: 200px; }
+    .priority-banner .txt strong { font-weight: 700; color: #92400E; }
+
+    .closing { padding: 36px 40px; border: 1px solid var(--ink); border-radius: var(--radius); background: #0A0A0A; color: #FFF; margin-top: 32px; }
+    .closing h3 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 14px; }
+    .closing h3 em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    .closing p { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.6; max-width: 720px; }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Anushank · Vidrow</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="requests.html">Initial Requests</a>
+      <a href="comparison.html">Speed · Quality · Cost</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="discovery.html" class="active">Discovery</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header" style="border-bottom: 0;">
+    <div class="eyebrow">
+      <span class="pulse-dot"></span>Page 05 · Discovery · 11 questions for you
+    </div>
+    <h1 class="page-title">
+      The questions <em>only you can answer.</em>
+    </h1>
+    <p class="page-lede">
+      The first four pages were what I built and why. This page is what I still don't know — and what your answers will turn into the next sprint plan. Each question has the context behind it (what your answer drives, where the implication shows up in the build) and a short note on how different answers steer the work in different directions. Answer in whatever order makes sense to you.
+    </p>
+
+    <div class="priority-banner">
+      <span class="ico">★</span>
+      <span class="txt"><strong>If you only answer three:</strong> Q05 (which pillar to ship first), Q06 (1,000 videos — current or projected), Q10 (internal-only / white-label / multi-agency). Those three unblock everything else on the Roadmap.</span>
+    </div>
+  </section>
+
+  <!-- HOW TO USE THIS CARD -->
+  <section style="padding-top: 24px;">
+    <div class="section-eyebrow">How to use this page</div>
+    <h2 class="section-title">Three ways to send your answers back.</h2>
+    <p class="text-soft mb-24" style="max-width: 760px;">
+      The textareas below are convenient but they don't save anywhere — your browser will lose them on refresh. Pick whichever channel is easiest:
+    </p>
+
+    <div class="card" style="padding: 28px;">
+      <div class="reading-grid"><div class="when">Option A</div><div class="what">Reply on WhatsApp / email<span class="sub">Quote the question number ("Q05 — we'd defend cost first to Vyapar; quality second"). I'll stitch your answers into the sprint plan within 24 hours.</span></div><div class="why-tag">Easiest</div></div>
+      <div class="reading-grid"><div class="when">Option B</div><div class="what">Type into the textareas, then screenshot or copy-paste<span class="sub">Useful if you want to think out loud while reading. Browser won't save the text — copy before you close the tab.</span></div><div class="why-tag">Most ergonomic</div></div>
+      <div class="reading-grid"><div class="when">Option C</div><div class="what">15-min call to talk through them<span class="sub">If a few of these are easier verbal than written, ping me and we'll do a quick voice call. I'll take notes; you don't have to.</span></div><div class="why-tag">If preferred</div></div>
+    </div>
+
+    <div class="reply-bar">
+      <div class="lbl">Where to send</div>
+      <h4>Send your answers to one of these:</h4>
+      <p>Whichever you prefer — same person on the other end. I'll consolidate answers into the next sprint document and send you the diff for sign-off.</p>
+      <div class="channels">
+        <span class="channel"><span class="icon">EMAIL</span><a href="mailto:misclifebusiness@gmail.com">misclifebusiness@gmail.com</a></span>
+        <span class="channel"><span class="icon">WHATSAPP</span>(your existing thread with me)</span>
+        <span class="channel"><span class="icon">CALL</span>(15 min, your slot)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE QUESTIONS — grouped by theme -->
+  <div class="theme-band"><span class="num">Cluster 01 · Brand &amp; client deliverables</span><span class="ttl">What does <em>"a brand kit"</em> actually mean inside Vidrow?</span></div>
+  <p class="theme-lede">
+    Scivo can store brand-level fields per project today (brand name, target audience, genre, language) but there's no formal Brand Kit object. Before designing one, I need to see how Vidrow actually segments client work. Three of the most common patterns: (a) one kit per client, (b) one kit per campaign, (c) one kit per platform (Reels vs. Shorts vs. TikTok).
+  </p>
+
+  <section style="padding-top: 0;">
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q01</span><span class="qtag brand">Brand kit shape</span></div>
+      <h3 class="qtext">When you start a project for Vyapar (vs. OkCredit, vs. Testbook), what do you reuse and what do you rebuild from scratch each time?</h3>
+      <p class="why">What this answer drives: whether a Brand Kit is a heavy schema (look-and-feel + voice + locked talent + LUT presets) or a light one (just brand name + tagline + 3-color palette). Wrong choice locks Scivo into one workflow.</p>
+      <div class="followup"><div class="lbl">If your answer is "we rebuild a lot"</div>The follow-up is: which assets do you wish you didn't have to rebuild? Those are the ones the Brand Kit should hold permanently.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q02</span><span class="qtag delivery">Output formats</span></div>
+      <h3 class="qtext">Which platforms do these ~1,000 videos go to — Reels, Shorts, TikTok, in-app, broadcast — and in what mix?</h3>
+      <p class="why">What this answer drives: each platform has different aspect ratio, max length, hook conventions, and codec preferences. Scivo can pre-build per-platform templates if we know the actual mix, instead of guessing or supporting all-of-the-above.</p>
+      <div class="followup"><div class="lbl">If your answer is "mostly Reels + Shorts"</div>The follow-up is: do you prefer one master 9:16 master per video, or a 9:16 + 1:1 + 16:9 triple delivery?</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+  </section>
+
+  <!-- Cluster 2: workflow / approval -->
+  <div class="theme-band"><span class="num">Cluster 02 · Workflow &amp; approvals</span><span class="ttl">Who, on the Vidrow team, <em>actually clicks "approve"</em>?</span></div>
+  <p class="theme-lede">
+    Scivo's gating model assumes a single human-in-loop. In reality you have producers, editors, account managers, and clients — different people deserve different rights. Before adding roles, I need to see your current approval chain.
+  </p>
+
+  <section style="padding-top: 0;">
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q03</span><span class="qtag workflow">Approval chain</span></div>
+      <h3 class="qtext">Walk me through the approval chain for a typical client video — script approval, rough cut, final cut, client sign-off. Who owns each gate?</h3>
+      <p class="why">What this answer drives: the mapping onto Scivo's stage gates. If a client signs off on the script before keyframes start, Scivo should expose a "client preview" view that hides editor-only controls. If clients are blind until final, we don't need that view at all.</p>
+      <div class="followup"><div class="lbl">If clients see drafts</div>The follow-up is: do they comment in WhatsApp, Notion, Frame.io, or email? That determines the export format Scivo needs to generate.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q04</span><span class="qtag workflow">Team roles</span></div>
+      <h3 class="qtext">Inside Vidrow, who would be the first three people to log into Scivo? And in what role — producer, editor, account lead?</h3>
+      <p class="why">What this answer drives: the multi-tenant schema in Sprint 04 (Roadmap, B3). I want to design user / workspace / role around actual people, not generic personas.</p>
+      <div class="followup"><div class="lbl">If you name 3 producers</div>Scivo's role model collapses to "owner + member". <strong>If you name 1 producer + 1 client + 1 editor</strong> we need three distinct roles with different permissions.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+  </section>
+
+  <!-- Cluster 3: scale & priorities -->
+  <div class="theme-band"><span class="num">Cluster 03 · Scale, priorities, the next sprint</span><span class="ttl">If you had to pick <em>one win for next week,</em> which?</span></div>
+  <p class="theme-lede">
+    The Roadmap page lists 18 concrete improvements across Speed, Quality, and Cost. I have an opinion on the order (Sprint 01 = quick quality wins, Sprint 03 = the cost engine). But the right sequence depends on which pillar you'd defend first to a client.
+  </p>
+
+  <section style="padding-top: 0;">
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q05</span><span class="qtag commercial">Sequencing</span><span class="qtag priority">★ Priority</span></div>
+      <h3 class="qtext">Of Speed (~17 min → ~5 min), Quality (auto-retake on every route), and Cost (~$3.70 → ~$2.40 / 60s std): which one would you defend first to a Vyapar / Testbook decision-maker?</h3>
+      <p class="why">What this answer drives: which sprint ships first. Cost wins are easiest to message externally ("90% cheaper"). Speed wins make Vidrow's internal team faster. Quality wins reduce client-side rework. They're not in conflict — just in order.</p>
+      <div class="followup"><div class="lbl">Implications</div><strong>If "cost":</strong> Sprint 03 (provider registry) goes first. <strong>If "quality":</strong> Sprint 01 + 02 goes first. <strong>If "speed":</strong> Sprint 02 alone, then re-pick.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q06</span><span class="qtag commercial">Volume reality</span><span class="qtag priority">★ Priority</span></div>
+      <h3 class="qtext">The 1,000-videos-a-month number — is that current real volume, projected if Scivo works, or aspirational?</h3>
+      <p class="why">What this answer drives: the architecture decisions in Roadmap B1 / B2 / B3 are sized for 1,000/mo concurrent users. If today's reality is 200/mo and 1,000 is 12 months out, Sprint 04 (multi-tenancy) can wait. If 1,000 is the next billing period, it's the gating constraint on everything else.</p>
+      <div class="followup"><div class="lbl">Implications</div><strong>If 200 today:</strong> Postgres migration (B2) can wait one quarter. <strong>If 1,000 in &lt;3 months:</strong> B2 + B3 are this month's first sprint.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+  </section>
+
+  <!-- Cluster 4: technical &amp; assets -->
+  <div class="theme-band"><span class="num">Cluster 04 · Technical · assets · who hosts what</span><span class="ttl">Where do <em>finished MP4s</em> need to live?</span></div>
+  <p class="theme-lede">
+    Today Scivo writes outputs to local disk. That doesn't scale beyond one machine. Before Sprint 04, I need a hosting decision — Cloudflare R2, S3, GCS, or Vercel Blob — informed by where Vidrow's existing video assets already sit.
+  </p>
+
+  <section style="padding-top: 0;">
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q07</span><span class="qtag technical">Asset hosting</span></div>
+      <h3 class="qtext">Where do finished client deliverables live today — Drive, Frame.io, S3, your own NAS, WhatsApp?</h3>
+      <p class="why">What this answer drives: if Drive is the destination, Scivo gets a Drive integration that auto-uploads on assembly. If S3, we share a bucket. If WhatsApp (still common in agencies), we generate a downloadable link with thumbnail preview. The destination dictates the export pipeline.</p>
+      <div class="followup"><div class="lbl">If multiple destinations</div>The follow-up is: per-project export route, or one global default with overrides?</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q08</span><span class="qtag technical">Voice library</span></div>
+      <h3 class="qtext">Do you have a roster of preferred voice-over artists / voice clones you reuse, or do you cast fresh per project?</h3>
+      <p class="why">What this answer drives: ElevenLabs supports voice cloning. If Vidrow has 5–10 go-to voices (e.g. "Vyapar male warm Hindi", "Testbook female crisp Hindi"), we can pre-clone and let producers pick from a dropdown — same speaker across all videos for that client, automatically.</p>
+      <div class="followup"><div class="lbl">If you have a roster</div>The follow-up is: send 30s clean samples per voice and I'll get them clone-ready. <strong>If you cast fresh:</strong> we lean on the ElevenLabs catalog and Suno's built-in voices.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q09</span><span class="qtag technical">Source script formats</span></div>
+      <h3 class="qtext">What format do scripts come to your team in — Google Docs, Notion, raw .txt, slide decks, voice notes from clients, all of the above?</h3>
+      <p class="why">What this answer drives: Scivo's script ingest is a textarea right now. If 80% of incoming scripts are Google Docs, an "Import from Drive" button removes a copy-paste step. If a chunk are voice notes, Whisper transcription belongs in the pipeline.</p>
+      <div class="followup"><div class="lbl">Implications</div><strong>If Google Docs &gt;50%:</strong> Drive import gets prioritized. <strong>If voice notes show up:</strong> Whisper gets added to the script stage.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+  </section>
+
+  <!-- Cluster 5: commercial / partnership -->
+  <div class="theme-band"><span class="num">Cluster 05 · Commercial &amp; relationship</span><span class="ttl">How does <em>this engagement</em> work going forward?</span></div>
+  <p class="theme-lede">
+    Scivo started as a build-for-Vidrow project. As it matures, the path forks: licensed exclusively to Vidrow, sold to Vidrow + other agencies (with Vidrow as flagship + co-design partner), or spun out as an independent product with Vidrow holding equity. None of these are decisions for today — but your answers to Q10 and Q11 will shape every architectural decision in Sprint 04.
+  </p>
+
+  <section style="padding-top: 0;">
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q10</span><span class="qtag commercial">Engagement shape</span><span class="qtag priority">★ Priority</span></div>
+      <h3 class="qtext">Is Scivo something Vidrow wants to use internally, white-label for clients, license out to other agencies, or a hybrid?</h3>
+      <p class="why">What this answer drives: every multi-tenancy decision. Internal-only = simpler schema, no need for org-level isolation. White-label = needs theming + custom domains. Multi-agency = full SaaS with billing, subscriptions, role-based access.</p>
+      <div class="followup"><div class="lbl">If "all of the above eventually"</div>I'll propose we design for white-label first (least lock-in) and grow into multi-tenant.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+
+    <div class="qcard">
+      <div class="meta-row"><span class="qnum">Q11</span><span class="qtag commercial">Cadence + ownership</span></div>
+      <h3 class="qtext">What cadence do you want to work at — weekly demos, async Slack updates, monthly check-ins? And what does ownership / IP look like?</h3>
+      <p class="why">What this answer drives: my build cycles + the right paperwork. Weekly demos = tighter scope per sprint. Monthly = bigger sprints with broader reviews. IP terms decide whether the codebase stays solo or moves into a Vidrow repo.</p>
+      <div class="followup"><div class="lbl">Implications</div><strong>If "weekly":</strong> Roadmap sprints get resized to 5-day chunks. <strong>If "monthly":</strong> we batch into the four sprints already in the Roadmap.</div>
+      <div class="answer-area"><textarea placeholder="Type your answer here, or skip and reply via WhatsApp / email…"></textarea></div>
+    </div>
+  </section>
+
+  <!-- ANUSHANK'S OPEN-ENDED CAPTURE -->
+  <section>
+    <div class="section-eyebrow">Anything else on your mind?</div>
+    <h2 class="section-title">Open canvas. <em>Whatever the 11 didn't cover.</em></h2>
+    <p class="text-soft mb-24" style="max-width: 760px;">
+      The 11 above are the ones I think matter most. But you'll see things I missed — features Vidrow's team has been muttering about, client friction I haven't heard, tools you wish Scivo replaced. Drop any of it here, in any shape. I read it the same day.
+    </p>
+
+    <div class="capture-form">
+      <h3>Your additions to the brief</h3>
+      <p class="sub">No template needed — but if it helps, here are five prompts. Skip any that don't fit.</p>
+
+      <div class="row2">
+        <div>
+          <label>Features you wish Scivo had</label>
+          <textarea placeholder="e.g. 'Telugu voice option', 'auto-translate captions', 'Frame.io export'…"></textarea>
+        </div>
+        <div>
+          <label>Frustrations with current workflow (Flow / Higgsfield / manual)</label>
+          <textarea placeholder="e.g. 'reviewers take 4 days', 'characters drift between shots', 'credits expire'…"></textarea>
+        </div>
+      </div>
+
+      <label>Specific clients or campaigns Scivo should be built around first</label>
+      <textarea placeholder="e.g. 'we're shooting a Vyapar campaign next week — could Scivo handle 6 of the 12 videos?'…"></textarea>
+
+      <div class="row2">
+        <div>
+          <label>Things that could go wrong (what would make this fail)</label>
+          <textarea placeholder="e.g. 'team won't adopt if it can't import from Notion', 'client wouldn't buy AI-only'…"></textarea>
+        </div>
+        <div>
+          <label>Things you want me to action this week</label>
+          <textarea placeholder="e.g. 'send the cost-comparison link to my team', 'draft the brand-kit schema'…"></textarea>
+        </div>
+      </div>
+
+      <label>Final word — anything else</label>
+      <textarea placeholder="The thing you're thinking about that none of the boxes above quite catch."></textarea>
+
+      <div class="actions">
+        <span class="hint">Browser doesn't save these — copy-paste into WhatsApp/email when you're done. Or send a screenshot.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section style="padding-bottom: 48px;">
+    <div class="closing">
+      <h3>Eleven questions, one decision: <em>where Scivo goes next.</em></h3>
+      <p>The build is real. The numbers are real. The roadmap is sequenced. What's missing is the part only you can answer — what Vidrow actually needs from this in the next 60 days, and how we work together to get it there. Reply in whatever channel works. I'll have the next sprint plan back to you within 24 hours of your answers landing.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="signature">— Over to you, Anushank.</div>
+    <div class="text-soft" style="text-align: right;">
+      <div>Nihal Choudhary · sol8um.tech · IIT Kanpur</div>
+      <div class="mono mt-8" style="font-size: 11px;">misclifebusiness@gmail.com · prepared 2026-05-05</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
