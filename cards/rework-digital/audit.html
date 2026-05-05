@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reworkdigital.io · Audit · for Anslem Ebiega</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-eye"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-check"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12l5 5 9-12"/></symbol>
+  <symbol id="i-bar"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Anslem Ebiega / REWORK Digital</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html" class="active">Website Audit</a>
+      <a href="discovery-scope.html">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Part One &middot; 10 findings &middot; 4 themes &middot; verified live 2026-05-05</div>
+    <h1 class="page-title">
+      Where reworkdigital.io is leaving<br>
+      <em>the proof-of-work promise unproven.</em>
+    </h1>
+    <p class="page-lede">
+      Your brand promise is "proof of work verified marketplace." That's a strong category claim. The audit below is built around one question: does the site visibly prove that promise to either of your two audiences (the business hiring an expert, the expert applying to join) before it asks them to sign up? Each finding pairs the actual page evidence with what it costs the visitor and how fast it's fixed.
+    </p>
+    <div class="row mt-32 gap-24" style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted);">
+      <span><span class="pulse-dot"></span>Audited live &middot; 2026-05-05</span>
+      <span>&middot; reworkdigital.io</span>
+      <span>&middot; founded 2025 &middot; 47 LinkedIn followers &middot; 4 anonymized case studies</span>
+    </div>
+  </section>
+
+  <!-- ICP SIGNAL BLOCK -->
+  <section style="padding-top: 40px;">
+    <div class="card-strong card mb-32">
+      <div class="row-between" style="align-items: flex-start;">
+        <div>
+          <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-eye"/></svg> Reading the room</div>
+          <h2 style="font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px;">Two audiences arrive at reworkdigital.io. Site optimizes for neither.</h2>
+          <p class="text-soft" style="max-width: 680px; font-size: 14px;">
+            A two-sided marketplace has the dual-audience problem in its DNA. Businesses hiring need to trust the experts. Experts joining need to trust the platform. The same homepage has to do both jobs. Right now, three buyer types arrive and bounce off equally hard.
+          </p>
+        </div>
+        <span class="tag tag-amber pulsing"><span class="tag-dot"></span>Strategic</span>
+      </div>
+      <div class="divider"></div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--blue);"><use href="#i-spark"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 01 &middot; Business hiring</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">Operations lead, $50K-$200K to spend</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">SaaS / D2C / FinTech / Logistics. Found you via a search or referral. Wants proof you've done work like theirs at the quality and reliability your "proof of work verified" tagline promises. Decision: post a job and pick an expert.</div>
+          <div class="impact-bar" data-pct="65">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill amber"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">65%</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: #B45309;"><use href="#i-zap"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 02 &middot; Expert applying</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">AI / automation builder</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Reading your JD or finding you via Wellfound. Wants to see what success on the platform looks like, what other experts have made, what the verification path is, what payments look like. Decision: apply, or move to Toptal / Contra.</div>
+          <div class="impact-bar" data-pct="55">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill amber"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">55%</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--green);"><use href="#i-shield"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 03 &middot; Strategic partner</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">Investor / press / acquirer</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Researching the AI marketplace category. Wants to see growth signals, named clients, founder voice, product depth. Currently sees 47 LinkedIn followers, anonymized case studies, no founder presence on the homepage. Misses the actual story.</div>
+          <div class="impact-bar" data-pct="35">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill red"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">35%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What's already working -->
+    <div class="card mb-32" style="border-color: #BBF7D0; background: #F0FDF4;">
+      <div class="row gap-12">
+        <svg class="ic ic-lg" style="color: var(--green);"><use href="#i-check"/></svg>
+        <div>
+          <div class="mono" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #15803D; margin-bottom: 6px;">Three things already working</div>
+          <div style="font-size: 16px; font-weight: 500; line-height: 1.55; max-width: 720px;">
+            <strong>"Proof of work verified marketplace" is genuinely differentiated.</strong> Toptal, Upwork, Contra all sell experts; only REWORK frames the verification layer as the wedge. <strong>Trust-tier system + milestone-based escrow</strong> is a smart trust mechanism that solves the cold-start problem without requiring social proof first. <strong>Toronto-Eastern-Time hiring with full-async culture</strong> matches the product model: deliverables-over-meetings. None of those need touching. The findings below are about how the site fails to make them visible.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME A: PROOF-OF-WORK PARADOX -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">A</div>
+      <div>
+        <div class="theme-band-title">The proof-of-work paradox</div>
+        <div class="text-soft" style="font-size: 13px;">Three findings. Your brand wedge is "proof of work verified." The site doesn't show the work.</div>
+      </div>
+    </div>
+
+    <!-- Finding 01 -->
+    <div class="finding mb-24">
+      <div class="finding-num">01</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Brand promise is "proof of work verified" but zero proof of work is visible without signup, to either side.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>Critical · 1 day</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Hero verbatim: <em>"One platform to hire, build, prove, and grow."</em> The verb "prove" is the brand wedge. A visitor sees zero actual proven work before being asked to sign up. "Proof of Work" exists as a footer link, but the page behind it is gated. For a marketplace selling trust, the trust-source has to be visible BEFORE the trust-ask.</div>
+        </div>
+
+        <div class="browser-frame mb-16 mt-16">
+          <div class="browser-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="url-pill">reworkdigital.io</div>
+          </div>
+          <div class="browser-body" style="padding: 32px 28px;">
+            <div style="font-size: 28px; font-weight: 600; line-height: 1.15; letter-spacing: -0.02em; max-width: 600px;">Automate anything. Hire AI experts.</div>
+            <div class="text-soft mt-16" style="font-size: 16px; max-width: 540px;">One platform to hire, build, <strong style="color: #DC2626;">prove,</strong> and grow, powered by AI tools that work as hard as you do.</div>
+            <div class="row mt-24 gap-12">
+              <span style="background: #0A0A0A; color: #FFF; padding: 10px 18px; border-radius: 4px; font-size: 13px; font-weight: 500;">Get Started</span>
+              <span style="border: 1px solid var(--line); padding: 10px 18px; border-radius: 4px; font-size: 13px;">Explore</span>
+            </div>
+            <div style="margin-top: 32px; padding: 12px; border: 2px dashed #DC2626; border-radius: 4px; background: #FEF2F2; color: #991B1B; font-family: 'Geist Mono', monospace; font-size: 11px; text-align: center;">
+              ↑ THE WORD "PROVE" IS THE WEDGE &middot; ZERO PROVEN WORK VISIBLE ON THIS PAGE
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">COST TO BUYER 01</div>
+          <div class="finding-text">A business operations lead arrives, reads "proof of work verified," scrolls looking for an example deliverable to evaluate. Finds anonymized case studies. Moves to Toptal where they can see real expert profiles before signing up.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">QUICK WIN</div>
+          <div class="finding-text">Surface 3-5 actual milestone-verified deliverables on the public site. One per category (SaaS support / D2C / FinTech / Logistics). Show the artifact, the metric, the verification timestamp. The brand promise becomes self-evident.</div>
+        </div>
+        <div class="impact-bar" data-pct="92">
+          <span class="label">Estimated lift on hero-to-signup conversion</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">+significant, persistent</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 02 -->
+    <div class="finding mb-24">
+      <div class="finding-num">02</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Four case studies on the homepage. All anonymized. A marketplace selling trust, with anonymized trust signals.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>Critical · 4 hr</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Verbatim case-study labels on the homepage: <em>"SaaS support: 68% auto-resolution, $480K savings,"</em> <em>"D2C ecommerce: 3.0x conversion, +220% email rev,"</em> <em>"FinTech: under 1s latency, $240K savings,"</em> <em>"Logistics AP: minus 85% time, 99.2% accuracy."</em> Zero named clients. Zero logos. Zero links to deliverable artifacts.</div>
+        </div>
+
+        <div class="browser-frame mb-16 mt-16">
+          <div class="browser-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="url-pill">reworkdigital.io (case studies section)</div>
+          </div>
+          <div class="browser-body" style="padding: 28px;">
+            <div class="mono text-muted" style="font-size: 11px; letter-spacing: 0.14em; margin-bottom: 16px;">CASE STUDIES &middot; AS THEY APPEAR</div>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; font-family: 'Geist Mono', monospace; font-size: 13px;">
+              <div style="padding: 14px; background: #FAFAFA; border-radius: 4px;">
+                <div class="text-muted" style="font-size: 10px; letter-spacing: 0.1em;">CASE 01 &middot; SAAS SUPPORT</div>
+                <div style="font-weight: 600; margin-top: 4px; font-size: 14px;">68% auto-resolution &middot; $480K savings</div>
+                <div class="text-muted" style="font-size: 11px; margin-top: 8px;">Client: <span style="color: #DC2626;">[anonymized]</span></div>
+              </div>
+              <div style="padding: 14px; background: #FAFAFA; border-radius: 4px;">
+                <div class="text-muted" style="font-size: 10px; letter-spacing: 0.1em;">CASE 02 &middot; D2C ECOM</div>
+                <div style="font-weight: 600; margin-top: 4px; font-size: 14px;">3.0x conversion &middot; +220% email rev</div>
+                <div class="text-muted" style="font-size: 11px; margin-top: 8px;">Client: <span style="color: #DC2626;">[anonymized]</span></div>
+              </div>
+              <div style="padding: 14px; background: #FAFAFA; border-radius: 4px;">
+                <div class="text-muted" style="font-size: 10px; letter-spacing: 0.1em;">CASE 03 &middot; FINTECH</div>
+                <div style="font-weight: 600; margin-top: 4px; font-size: 14px;">under 1s latency &middot; $240K savings</div>
+                <div class="text-muted" style="font-size: 11px; margin-top: 8px;">Client: <span style="color: #DC2626;">[anonymized]</span></div>
+              </div>
+              <div style="padding: 14px; background: #FAFAFA; border-radius: 4px;">
+                <div class="text-muted" style="font-size: 10px; letter-spacing: 0.1em;">CASE 04 &middot; LOGISTICS AP</div>
+                <div style="font-weight: 600; margin-top: 4px; font-size: 14px;">minus 85% time &middot; 99.2% accuracy</div>
+                <div class="text-muted" style="font-size: 11px; margin-top: 8px;">Client: <span style="color: #DC2626;">[anonymized]</span></div>
+              </div>
+            </div>
+            <div style="margin-top: 20px; padding: 12px; border: 2px dashed #DC2626; border-radius: 4px; background: #FEF2F2; color: #991B1B; font-family: 'Geist Mono', monospace; font-size: 11px; text-align: center;">
+              ↑ MARKETPLACE SELLING TRUST &middot; ZERO NAMED CLIENTS &middot; BRAND CONTRADICTION
+            </div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">COST TO BUYER 01</div>
+          <div class="finding-text">An ops lead at a $50M D2C company sees the case studies. They want to know: did this come from a brand like ours? Could we talk to that customer? Without a named client, the metric is unverifiable. Trust is asserted, not earned.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">QUICK WIN</div>
+          <div class="finding-text">Get permission from ONE client. Name them. Add their logo. Link their public quote or LinkedIn post about working with REWORK. A single named case unlocks the rest because each subsequent named one adds compounding less effort and more weight.</div>
+        </div>
+        <div class="impact-bar" data-pct="88">
+          <span class="label">Estimated lift on case-study credibility</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">qualitative +significant</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 03 -->
+    <div class="finding mb-24">
+      <div class="finding-num">03</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Trust-tier methodology (Bronze, Silver, Gold, Diamond) is the trust mechanism. The methodology itself isn't documented publicly.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 30 min</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Site references "Automation Expert Trust Tiers" and "<60s Verification" but the criteria for each tier (what gets you from Bronze to Diamond, what verification actually checks) aren't described publicly. Both audiences need this: businesses to understand what tier means when picking an expert, experts to know the path.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; OPACITY</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 2; padding: 8px 0;">
+              <div>BRONZE &middot; ???</div>
+              <div>SILVER &middot; ???</div>
+              <div>GOLD &middot; ???</div>
+              <div>DIAMOND &middot; ???</div>
+            </div>
+            <div class="text-soft mt-8" style="font-size: 13px;">Tiers exist as labels. Methodology is invisible.</div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; PUBLIC RUBRIC</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; line-height: 1.7; padding: 8px 0;">
+              <div><strong>BRONZE</strong> &middot; verified profile, 0-2 milestones</div>
+              <div><strong>SILVER</strong> &middot; 3-5 milestones, 95%+ on-time</div>
+              <div><strong>GOLD</strong> &middot; 6+ milestones, 4.7+ rating</div>
+              <div><strong>DIAMOND</strong> &middot; 10+ milestones, ROI metric verified</div>
+            </div>
+            <div class="text-soft mt-8" style="font-size: 13px;">Both audiences read the same rubric. Trust is earned by spec, not vibes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME B: DUAL-AUDIENCE FAILURE -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">B</div>
+      <div>
+        <div class="theme-band-title">Dual-audience failure</div>
+        <div class="text-soft" style="font-size: 13px;">Three findings. Marketplace serves both businesses and experts. Site optimizes for neither.</div>
+      </div>
+    </div>
+
+    <!-- Finding 04 -->
+    <div class="finding mb-24">
+      <div class="finding-num">04</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">No expert portfolios browsable from the public site. Businesses can't preview what they'd get.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 2 hr</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">"Browse Projects" link in the footer goes to a gated page. Toptal lets prospects browse anonymized expert summaries publicly (skills, tier, sample work, region). Contra puts expert portfolios on the public web by default. REWORK gates the entire supply side.</div>
+        </div>
+
+        <div class="card-tight card mt-16" style="padding: 18px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em;">COMPETITIVE LANDSCAPE &middot; PUBLIC DISCOVERABILITY OF EXPERT SUPPLY</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 12px;">
+              <span style="width: 100px;">Toptal</span>
+              <span style="flex: 1; height: 8px; background: #E5E5E5; border-radius: 4px; overflow: hidden;"><span style="display: block; width: 70%; height: 100%; background: #16A34A;"></span></span>
+              <span class="text-muted" style="width: 200px; font-size: 11px;">browsable, anonymized</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 12px;">
+              <span style="width: 100px;">Contra</span>
+              <span style="flex: 1; height: 8px; background: #E5E5E5; border-radius: 4px; overflow: hidden;"><span style="display: block; width: 95%; height: 100%; background: #16A34A;"></span></span>
+              <span class="text-muted" style="width: 200px; font-size: 11px;">fully public portfolios</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 12px;">
+              <span style="width: 100px;">Upwork</span>
+              <span style="flex: 1; height: 8px; background: #E5E5E5; border-radius: 4px; overflow: hidden;"><span style="display: block; width: 80%; height: 100%; background: #16A34A;"></span></span>
+              <span class="text-muted" style="width: 200px; font-size: 11px;">profiles + reviews public</span>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 12px;">
+              <span style="width: 100px;"><strong>REWORK</strong></span>
+              <span style="flex: 1; height: 8px; background: #E5E5E5; border-radius: 4px; overflow: hidden;"><span style="display: block; width: 5%; height: 100%; background: #DC2626;"></span></span>
+              <span class="text-muted" style="width: 200px; font-size: 11px;">fully gated, signup-required</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 05 -->
+    <div class="finding mb-24">
+      <div class="finding-num">05</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">No expert testimonials surfaced anywhere. Applying experts can't tell what success looks like.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Medium · 4 hr</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Search the live site for "expert" testimonials, success stories, or earnings figures. Zero results. Two-sided marketplaces (Upwork "I made $1M as a freelancer" type stories, Toptal expert profile narratives) live on supply-side proof. REWORK has none on the public surface.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; APPLYING EXPERT'S VIEW</div>
+            <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+              I see a marketplace promising "proof of work verification." I see no other expert who has succeeded here. I see no earnings figures. I see no story arc.
+              <br><br>
+              <em class="text-muted">"Why would I list my best work on a platform with no track record visible to ME?"</em>
+            </div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; A SINGLE TESTIMONIAL</div>
+            <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+              <em>"I did $40K of contract work in my first quarter on REWORK. Auto-released payments meant zero chasing invoices. The verification badge made my next 3 clients close in days, not weeks."</em>
+              <br><br>
+              <span class="text-muted" style="font-size: 12px;">[Named expert] &middot; Diamond tier &middot; 14 milestones</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 06 -->
+    <div class="finding mb-24">
+      <div class="finding-num">06</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">"How it works" is gated behind signup. The literal explanation of the marketplace requires conversion before education.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 1 hr</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Footer references "Cost Calculator" and "How it works" content but both are gated behind signup. The standard funnel is: educate visitor → create curiosity → ask for signup. REWORK inverts that.</div>
+        </div>
+
+        <div class="card-tight card mt-16" style="padding: 18px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em;">FUNNEL ORDER &middot; STANDARD VS REWORK</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div>
+              <div class="mono" style="font-size: 11px; color: #15803D; margin-bottom: 8px;">STANDARD MARKETPLACE FUNNEL</div>
+              <ol style="font-size: 13px; line-height: 1.8; padding-left: 20px;">
+                <li>Educate visitor (how it works)</li>
+                <li>Show proof (case studies, expert quality)</li>
+                <li>Create curiosity (what could I get)</li>
+                <li>Ask for signup</li>
+              </ol>
+            </div>
+            <div>
+              <div class="mono" style="font-size: 11px; color: #DC2626; margin-bottom: 8px;">REWORK CURRENT FLOW</div>
+              <ol style="font-size: 13px; line-height: 1.8; padding-left: 20px;">
+                <li>Hero claim (proof of work verified)</li>
+                <li>Anonymized case studies</li>
+                <li>Ask for signup BEFORE education</li>
+                <li>Education AFTER conversion</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME C: THIN SOCIAL PROOF -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">C</div>
+      <div>
+        <div class="theme-band-title">Thin social proof</div>
+        <div class="text-soft" style="font-size: 13px;">Three findings. 2025 startup with network-effect product. Capture surfaces are zero.</div>
+      </div>
+    </div>
+
+    <!-- Finding 07 -->
+    <div class="finding mb-24">
+      <div class="finding-num">07</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">47 LinkedIn followers for a marketplace promising network value. Numbers as legitimacy signal cut both ways.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · ongoing</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">linkedin.com/company/reworkdigital-io: 47 followers. For a network-effect business, the visible network signal IS the trust signal. 47 says "too early" before a visitor reads a word.</div>
+        </div>
+
+        <div class="card-tight card mt-16" style="padding: 18px; background: #FEF2F2; border-color: #FECACA;">
+          <div class="mono" style="font-size: 11px; color: #991B1B; letter-spacing: 0.1em; margin-bottom: 12px;">LINKEDIN FOLLOWER COUNT &middot; AS A LEGITIMACY SIGNAL</div>
+          <div style="font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 2;">
+            <div>Toptal &middot; 380K followers</div>
+            <div>Contra &middot; 28K followers</div>
+            <div>Upwork &middot; 2.1M followers</div>
+            <div>Mercor &middot; 18K followers</div>
+            <div><strong>REWORK Digital &middot; 47 followers</strong> &larr;</div>
+          </div>
+          <div class="text-soft mt-12" style="font-size: 13px;">Founder-led content + employee post amplification + cross-link from the homepage CTA bar can move this 100x in 90 days. Right now there's no funnel pushing visitors toward the LinkedIn page at all.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 08 -->
+    <div class="finding mb-24">
+      <div class="finding-num">08</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Founder voice not surfaced on the site. Anslem is the trust source for an early marketplace; he's invisible.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 30 min</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">"Anslem" appears on the About page but not on the homepage. No photo. No quote. No link to his LinkedIn or X. Founder-led marketplaces (Replit, Lovable, Toptal early-days) all surface the founder as the trust source while the marketplace is still building the network.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; HOMEPAGE</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; color: #525252; line-height: 1.8;">
+              SEARCH "anslem" ON HOMEPAGE<br>
+              0 RESULTS<br><br>
+              FOUNDER PHOTO COUNT: 0<br>
+              FOUNDER QUOTE COUNT: 0<br>
+              LINK TO LINKEDIN/X: NONE
+            </div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; "BUILT BY"</div>
+            <div style="display: flex; gap: 12px; align-items: center; padding: 12px 0;">
+              <div style="width: 44px; height: 44px; border-radius: 999px; background: #0A0A0A; color: #FFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; flex-shrink: 0;">A</div>
+              <div>
+                <div style="font-weight: 600; font-size: 14px;">Anslem Ebiega &middot; Founder & CEO</div>
+                <div class="text-soft" style="font-size: 12px;">Toronto &middot; Building proof-of-work for the AI work economy</div>
+              </div>
+            </div>
+            <div class="text-soft mt-8" style="font-size: 13px;">A founder photo + 1-line POV closes the trust loop. Especially for a 2025 startup where the founder IS the trust source.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 09 -->
+    <div class="finding mb-24">
+      <div class="finding-num">09</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">No newsletter, no email capture, no follow-the-founder CTA. Every visitor who leaves is gone forever.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Compounding · 30 min</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Footer site map: Platform / Products / Legal / Company. Inside those: Browse Projects, Proof of Work, Categories, About, For Employers, For Professionals, Case Studies, Blog, FAQ, Help, Academy. Zero email capture surfaces. Zero "follow Anslem on LinkedIn" CTA. Zero newsletter.</div>
+        </div>
+
+        <div class="browser-frame mb-16 mt-16">
+          <div class="browser-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="url-pill">reworkdigital.io (footer)</div>
+          </div>
+          <div class="browser-body" style="padding: 24px; background: #0F1115; color: #E3E4E6;">
+            <div class="mono" style="font-size: 10px; color: #8A8A8A; letter-spacing: 0.14em; margin-bottom: 14px;">FOOTER &middot; ALL CAPTURE-ELIGIBLE SLOTS</div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; font-size: 13px;">
+              <div>
+                <div class="mono" style="font-size: 10px; color: #6EE7B7; margin-bottom: 8px;">PLATFORM</div>
+                <div style="line-height: 1.8;">AutoPilot Network<br>Browse Projects<br>Proof of Work<br>Cost Calculator</div>
+              </div>
+              <div>
+                <div class="mono" style="font-size: 10px; color: #6EE7B7; margin-bottom: 8px;">PRODUCTS</div>
+                <div style="line-height: 1.8;">Finprob<br>SwitchAsses<br>Loevech<br>RECI</div>
+              </div>
+              <div>
+                <div class="mono" style="font-size: 10px; color: #6EE7B7; margin-bottom: 8px;">COMPANY</div>
+                <div style="line-height: 1.8;">About<br>Blog<br>FAQ<br>Help Center</div>
+              </div>
+              <div>
+                <div class="mono" style="font-size: 10px; color: #6EE7B7; margin-bottom: 8px;">LEGAL</div>
+                <div style="line-height: 1.8;">Terms<br>Privacy<br>Contact</div>
+              </div>
+            </div>
+            <div class="mono" style="font-size: 10px; color: #FCA5A5; letter-spacing: 0.14em; margin-top: 24px;">CAPTURE SURFACES IN ENTIRE FOOTER: 0</div>
+            <div style="font-size: 13px; color: #8A8A8A; margin-top: 4px;">No email capture. No newsletter. No "follow on LinkedIn." Visitors who don't sign up vanish.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME D: BRAND SPRAWL -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">D</div>
+      <div>
+        <div class="theme-band-title">Brand sprawl</div>
+        <div class="text-soft" style="font-size: 13px;">One finding. Sibling products dilute the marketplace pitch.</div>
+      </div>
+    </div>
+
+    <!-- Finding 10 -->
+    <div class="finding mb-24">
+      <div class="finding-num">10</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Five sibling products in the footer (Finprob, SwitchAsses, Loevech, RECI, Resume Builder) dilute the marketplace promise.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Strategic · 1 hr</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Footer "Products" section lists five sibling products that aren't the marketplace. For a 2025 startup still building category awareness around "proof of work verified marketplace," surfacing five other products in the main nav is signal-noise. Especially "SwitchAsses" which would benefit from a more careful naming pass before being on the front-page footer.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; FOOTER PRODUCTS SECTION</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 2; padding: 8px 0;">
+              <div>Finprob</div>
+              <div>SwitchAsses</div>
+              <div>Loevech</div>
+              <div>RECI</div>
+              <div>Resume Builder</div>
+            </div>
+            <div class="text-soft mt-8" style="font-size: 13px;">5 noise products in the main nav. Splits attention from the core marketplace pitch.</div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; CONSOLIDATE</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 2; padding: 8px 0;">
+              <div>(removed)</div>
+              <div><em>Each on their own subdomain</em></div>
+              <div><em>or rolled up into</em></div>
+              <div><em>a single /labs page</em></div>
+              <div><em>for v2 review</em></div>
+            </div>
+            <div class="text-soft mt-8" style="font-size: 13px;">Main nav focuses on the marketplace promise. Sibling products surface where they belong, not next to the brand-defining link.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section>
+    <div class="card card-strong" style="padding: 32px; text-align: center;">
+      <h2 class="section-title" style="margin-bottom: 16px;">If this read clean, <em>walk through the workflows next.</em></h2>
+      <p class="text-soft" style="max-width: 620px; margin: 0 auto 24px; font-size: 15px;">
+        Four interactive demos of the systems I'd ship in week one as your AI Automation Specialist. One per case-study category you publish. Each one is interactive.
+      </p>
+      <div class="row gap-12" style="justify-content: center;">
+        <a href="discovery-scope.html" class="btn">Open the workflows
+          <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+        </a>
+        <a href="index.html" class="btn btn-secondary">Back to overview</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">AI-native founder. IIT Kanpur. Sol8um.tech.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9468688354 <a class="wa-badge" href="https://wa.me/919468688354" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span><br>
+        <a class="contact-link" href="https://www.linkedin.com/in/nihalchoudhary" target="_blank" rel="noopener"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 18H6V10h2.5v8zM7.25 8.6a1.45 1.45 0 1 1 0-2.9 1.45 1.45 0 0 1 0 2.9zM18 18h-2.5v-3.9c0-1-.4-1.6-1.3-1.6-.7 0-1.1.5-1.3 1-.07.18-.07.43-.07.68V18H10.4V10h2.4v1c.34-.5.95-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.5V18z"/></svg>linkedin.com/in/nihalchoudhary</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+</script>
+
+</body>
+</html>

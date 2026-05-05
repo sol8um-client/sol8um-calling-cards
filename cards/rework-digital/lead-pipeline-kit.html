@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 03 · Lead Pipeline Builder Kit</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Anslem Ebiega / REWORK Digital</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="lead-pipeline-kit.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 03 &middot; Lead Pipeline Builder Kit &middot; D2C ecommerce case study</div>
+    <h1 class="page-title">
+      Modular pipelines, configured per client.<br>
+      <em>Each one strengthens the next.</em>
+    </h1>
+    <p class="page-lede">
+      The biggest hidden cost on a contractor marketplace is rebuilding the same pipeline from scratch for each new client. A 2-week build for client A is then a 2-week build for client B, then for C. This system replaces that pattern with a kit of reusable modules (lead scoring, Apollo enrichment, CRM sync, multi-channel sequencing, sales handoff). Each engagement reuses 60-70% of prior modules. Configuration time drops to under 2 days per client. Maps to your published 3.0x conversion / +220% email revenue case study.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="discovery-scope.html">Discovery to Scope <span class="badge">01</span></a></li>
+          <li><a href="ai-support-eval.html">AI Support + Eval <span class="badge">02</span></a></li>
+          <li><a href="lead-pipeline-kit.html" class="active">Lead Pipeline Kit <span class="badge">03</span></a></li>
+          <li><a href="proof-of-work-layer.html">Proof-of-Work Layer <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Apollo / Clearbit (enrichment) + HubSpot / Salesforce (CRM) + Smartlead / Instantly (sequencing) + n8n (orchestration) + Slack (alerts).</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>Building each lead pipeline from scratch per client. The "I'm spending 80% of my time on plumbing, 20% on the strategy that matters" failure mode.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Time to deliver a full working lead pipeline per client. Target: under 2 days. Was: 2 weeks.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- System architecture -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">The 6 reusable modules &middot; assemble per client</div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <div style="padding: 14px; background: #BBF7D0; border-radius: 4px;">
+              <div class="mono" style="font-size: 10px; color: #15803D; letter-spacing: 0.1em; margin-bottom: 6px;">M1 &middot; SOURCING</div>
+              <div style="font-weight: 600; font-size: 13px;">Apollo + Sales Nav saved searches</div>
+              <div class="text-muted" style="font-size: 11px; margin-top: 6px;">ICP-locked, daily refresh</div>
+            </div>
+            <div style="padding: 14px; background: #BFDBFE; border-radius: 4px;">
+              <div class="mono" style="font-size: 10px; color: #1D4ED8; letter-spacing: 0.1em; margin-bottom: 6px;">M2 &middot; ENRICHMENT</div>
+              <div style="font-weight: 600; font-size: 13px;">Clearbit + LinkedIn enrichment</div>
+              <div class="text-muted" style="font-size: 11px; margin-top: 6px;">Tech stack, role, signals</div>
+            </div>
+            <div style="padding: 14px; background: #DDD6FE; border-radius: 4px;">
+              <div class="mono" style="font-size: 10px; color: #6D28D9; letter-spacing: 0.1em; margin-bottom: 6px;">M3 &middot; SCORING</div>
+              <div style="font-weight: 600; font-size: 13px;">ICP-fit scorer (Claude)</div>
+              <div class="text-muted" style="font-size: 11px; margin-top: 6px;">0-100, retrains weekly</div>
+            </div>
+            <div style="padding: 14px; background: #FED7AA; border-radius: 4px;">
+              <div class="mono" style="font-size: 10px; color: #B45309; letter-spacing: 0.1em; margin-bottom: 6px;">M4 &middot; SEQUENCING</div>
+              <div style="font-weight: 600; font-size: 13px;">Email + LI + voice cadence</div>
+              <div class="text-muted" style="font-size: 11px; margin-top: 6px;">Reply-aware branching</div>
+            </div>
+            <div style="padding: 14px; background: #FCA5A5; border-radius: 4px;">
+              <div class="mono" style="font-size: 10px; color: #991B1B; letter-spacing: 0.1em; margin-bottom: 6px;">M5 &middot; CRM SYNC</div>
+              <div style="font-weight: 600; font-size: 13px;">HubSpot / Salesforce write</div>
+              <div class="text-muted" style="font-size: 11px; margin-top: 6px;">Bidirectional, status-aware</div>
+            </div>
+            <div style="padding: 14px; background: #FEF3C7; border-radius: 4px;">
+              <div class="mono" style="font-size: 10px; color: #B45309; letter-spacing: 0.1em; margin-bottom: 6px;">M6 &middot; HANDOFF</div>
+              <div style="font-weight: 600; font-size: 13px;">Sales notification + brief</div>
+              <div class="text-muted" style="font-size: 11px; margin-top: 6px;">Slack ping, calendar slot</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Module reuse rate &middot; cumulative across 6 client engagements</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">avg 67% reused, build time 2.3 days/client</span>
+          </div>
+          <svg class="sparkline" viewBox="0 0 600 56" preserveAspectRatio="none" style="height: 56px;">
+            <path d="M0 50 L100 36 L200 28 L300 22 L400 18 L500 16 L600 14" stroke="#16A34A" stroke-width="1.5" fill="none"/>
+            <path d="M0 50 L100 36 L200 28 L300 22 L400 18 L500 16 L600 14 L600 56 L0 56 Z" fill="#16A34A" fill-opacity="0.10"/>
+          </svg>
+        </div>
+
+        <!-- Sample output card -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; D2C client engagement &middot; modules assembled</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>Day 2 ready</span>
+          </div>
+
+          <div style="background: #1A1D23; border-radius: 8px; padding: 16px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #E3E4E6; line-height: 1.7;">
+            <div style="color: #7B61FF; font-weight: 600; margin-bottom: 8px;">D2C ECOM CLIENT &middot; 38-PERSON TEAM &middot; SHOPIFY-NATIVE</div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">M1 SOURCING</span> &middot; reused from prior D2C client &middot; ICP filter tuned for $5M-$50M GMV brands<br>
+              <span style="color: #8A8A8A;">~1,200 leads / week</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">M2 ENRICHMENT</span> &middot; reused as-is &middot; Clearbit + LinkedIn signals<br>
+              <span style="color: #8A8A8A;">Adds revenue band, tech stack, role seniority</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #D97706;">M3 SCORING</span> &middot; tuned for D2C &middot; weights revenue × growth-rate &times; tech-stack-match<br>
+              <span style="color: #8A8A8A;">Half-day of tuning. Retrains weekly on closed deals.</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #D97706;">M4 SEQUENCING</span> &middot; new for this client &middot; 5-step cadence in their voice<br>
+              <span style="color: #8A8A8A;">Half-day of copy workshop with founder. A/B variants generated by Claude.</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">M5 CRM SYNC</span> &middot; reused &middot; HubSpot bidirectional<br>
+              <span style="color: #8A8A8A;">Status-aware: pipeline-stage updates flow back to sequence trigger</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">M6 HANDOFF</span> &middot; reused &middot; Slack #deals-ready &middot; Cal.com auto-book<br>
+              <span style="color: #8A8A8A;">Brief includes: revenue, tech stack, signal flags, recommended angle</span>
+            </div>
+            <div style="color: #525252; margin-top: 8px; font-size: 11px;">Build time: 2.3 days &middot; 4 of 6 modules reused &middot; client live by Day 3</div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; assemble a kit for a client type</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="client-vertical" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="d2c">D2C ecommerce</option>
+              <option value="b2b-saas">B2B SaaS</option>
+              <option value="agency">Agency / services</option>
+              <option value="fintech">FinTech</option>
+            </select>
+            <button id="assemble-demo" class="btn" style="flex: 0 0 auto;">Assemble kit</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="91">
+          <span class="label">Time to deliver lead pipeline per client</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">2 weeks &rarr; under 2 days</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="ai-support-eval.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: AI Support + Eval
+      </a>
+      <a href="proof-of-work-layer.html" class="btn">
+        Next: Proof-of-Work Layer <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('assemble-demo').addEventListener('click', function() {
+    const v = document.getElementById('client-vertical').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      d2c: '<strong>D2C ecommerce kit &middot; 4 of 6 modules reused &middot; 2.3 days build</strong><br>Sourcing (reused) &middot; Enrichment (reused) &middot; Scoring (tuned, half-day) &middot; Sequencing (new, half-day) &middot; CRM sync (reused) &middot; Handoff (reused)<br><span style="color:var(--ink-muted)">Reusable assets: Clearbit revenue/tech filters, HubSpot bidirectional sync, Cal.com auto-book.</span>',
+      'b2b-saas': '<strong>B2B SaaS kit &middot; 5 of 6 modules reused &middot; 1.7 days build</strong><br>Sourcing (reused) &middot; Enrichment (reused) &middot; Scoring (reused, light tuning) &middot; Sequencing (new, voice workshop) &middot; CRM sync (reused) &middot; Handoff (reused)<br><span style="color:var(--ink-muted)">B2B SaaS clients reuse the most because the ICP shape is similar across them.</span>',
+      agency: '<strong>Agency / services kit &middot; 3 of 6 modules reused &middot; 3.1 days build</strong><br>Sourcing (tuned, day 1) &middot; Enrichment (reused) &middot; Scoring (new, day 2) &middot; Sequencing (new, day 2) &middot; CRM sync (reused) &middot; Handoff (reused)<br><span style="color:var(--ink-muted)">Agency clients have unusual ICPs (other agencies, specific verticals). More tuning required.</span>',
+      fintech: '<strong>FinTech kit &middot; 4 of 6 modules reused &middot; 2.5 days build</strong><br>Sourcing (reused) &middot; Enrichment (extended for compliance signals) &middot; Scoring (tuned, half-day) &middot; Sequencing (new, half-day) &middot; CRM sync (reused) &middot; Handoff (extended for KYC trigger)<br><span style="color:var(--ink-muted)">FinTech requires compliance-aware enrichment and KYC handoff. Worth the extra half-day.</span>'
+    };
+    out.innerHTML = samples[v] || samples['d2c'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

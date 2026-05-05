@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 02 · AI Support Agent + Eval Loop</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-bot"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="4" y="6" width="16" height="14" rx="2"/><circle cx="9" cy="13" r="1.4"/><circle cx="15" cy="13" r="1.4"/><path d="M12 2v4M8 6h8"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Anslem Ebiega / REWORK Digital</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Website Audit</a>
+      <a href="ai-support-eval.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 02 &middot; AI Support Agent + Eval Loop &middot; SaaS support case study</div>
+    <h1 class="page-title">
+      Auto-resolution that doesn't drift.<br>
+      <em>Quality holds because the eval loop holds it.</em>
+    </h1>
+    <p class="page-lede">
+      The standard failure mode of customer-support automation: ship the bot at 70% auto-resolution, celebrate, then watch the rate quietly drop to 45% over six months as the question mix shifts and nobody notices. This system replaces that with a Claude-powered support agent paired with a continuous eval suite: every change to the bot gets regression-tested against a golden set, drift gets caught before clients see it, and the handoff-resolution learning loop expands tier-1 coverage by ~3 issue types per month. Maps directly to your published 68% auto-resolution / $480K savings case study.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="discovery-scope.html">Discovery to Scope <span class="badge">01</span></a></li>
+          <li><a href="ai-support-eval.html" class="active">AI Support + Eval <span class="badge">02</span></a></li>
+          <li><a href="lead-pipeline-kit.html">Lead Pipeline Kit <span class="badge">03</span></a></li>
+          <li><a href="proof-of-work-layer.html">Proof-of-Work Layer <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Intercom / Front API &rarr; n8n + Claude classifier + handoff trigger &rarr; eval suite (golden set, regression test, drift monitor) &rarr; CI alert on quality drop.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>The "we shipped a bot but it got worse over time" silent failure. Manual QA on a sample of tickets each month. The 3-month-late discovery that auto-resolution rate has halved.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Auto-resolution rate stable month-over-month (target 68%, matching your published case study), no drift exceeding 3% before alert fires.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- System architecture -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How a ticket moves through &middot; real-time + nightly eval</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Ticket lands &middot; Intercom inbox</div>
+              <div class="flow-node in">Email-to-ticket forwards</div>
+              <div class="flow-node in">Chat widget on site</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Claude classifies + responds (or escalates with context to human)</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">Auto-resolved &middot; tagged for eval</div>
+              <div class="flow-node out">Escalated &middot; pre-briefed for human</div>
+              <div class="flow-node out">Nightly eval &middot; golden set rerun</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Auto-resolution rate &middot; last 12 weeks</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">stable at 68% &middot; eval pass-rate 94%</span>
+          </div>
+          <svg class="sparkline" viewBox="0 0 600 56" preserveAspectRatio="none" style="height: 56px;">
+            <path d="M0 30 L50 28 L100 26 L150 24 L200 22 L250 22 L300 22 L350 22 L400 22 L450 22 L500 22 L550 22 L600 22" stroke="#16A34A" stroke-width="1.5" fill="none"/>
+            <path d="M0 30 L50 28 L100 26 L150 24 L200 22 L250 22 L300 22 L350 22 L400 22 L450 22 L500 22 L550 22 L600 22 L600 56 L0 56 Z" fill="#16A34A" fill-opacity="0.10"/>
+          </svg>
+        </div>
+
+        <!-- Sample output card -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; nightly eval report &middot; Slack</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>No drift</span>
+          </div>
+
+          <div style="background: #1A1D23; border-radius: 8px; padding: 16px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #E3E4E6; line-height: 1.7;">
+            <div style="color: #4A90D9; font-weight: 600; margin-bottom: 8px;">@client-success &mdash; Eval suite passed &middot; Mon May 5 02:34 UTC &middot; 200 golden tickets rerun</div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">CLASSIFICATION ACCURACY</span> 94.2% (target &gt; 90%) &middot; <span style="color: #6EE7B7;">+0.3 vs last week</span><br>
+              <span style="color: #8A8A8A;">No regressions on 18 golden cases, 2 net-new improvements</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">AUTO-RESOLUTION RATE</span> 68.4% (target &gt; 65%) &middot; <span style="color: #6EE7B7;">stable</span><br>
+              <span style="color: #8A8A8A;">Tier-1 issue mix: billing 42%, account-setup 24%, integrations 18%, other 16%</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #2ECC71;">HALLUCINATION RATE</span> 0.4% (target &lt; 1%) &middot; <span style="color: #6EE7B7;">safe band</span><br>
+              <span style="color: #8A8A8A;">No URL fabrications, no incorrect billing math, no fake feature claims</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #D97706;">LEARNING LOOP</span> 4 new issue types added to tier-1 coverage this week<br>
+              <span style="color: #8A8A8A;">From handoff resolutions: SSO setup, webhook debugging, API rate limits, data export</span>
+            </div>
+            <div style="color: #525252; margin-top: 8px; font-size: 11px;">Full eval log: notion.so/client/ai-support/evals/2026-05-05</div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; classify a ticket</div>
+          <div style="margin-bottom: 12px;">
+            <textarea id="ticket-input" placeholder="Paste a hypothetical ticket..." style="width: 100%; min-height: 80px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.5; background: var(--bg-soft); resize: vertical;">Hi, my invoice for last month says $499 but I thought we were on the $299 plan. Can someone help?</textarea>
+          </div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+            <button id="classify-demo" class="btn" style="flex: 0 0 auto;">Classify + decide</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="89">
+          <span class="label">Quality drift detection lag</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">3 months &rarr; same-day</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="discovery-scope.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Discovery to Scope
+      </a>
+      <a href="lead-pipeline-kit.html" class="btn">
+        Next: Lead Pipeline Kit <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('classify-demo').addEventListener('click', function() {
+    const t = document.getElementById('ticket-input').value.toLowerCase();
+    const out = document.getElementById('demo-output');
+    let label, color, response;
+
+    if (t.includes('invoice') || t.includes('billing') || t.includes('charge') || t.includes('refund') || t.includes('subscription') || t.includes('plan')) {
+      label = 'BILLING &middot; AUTO-RESOLVABLE'; color = '#15803D';
+      response = 'Auto-classified as billing inquiry. Bot pulls last 3 invoices from Stripe, computes the diff vs stated plan, drafts response with breakdown. If the math holds, auto-sends. If there\'s an actual overcharge, escalates to billing-ops with full context. Estimated handle time: under 90 sec.';
+    } else if (t.includes('integrate') || t.includes('webhook') || t.includes('api') || t.includes('connect')) {
+      label = 'INTEGRATION &middot; TIER-1 EXPANDED'; color = '#15803D';
+      response = 'Recently added to tier-1 coverage via the learning loop (4 weeks ago). Bot pulls relevant docs, generates code snippet for the integration, asks 1 clarifying question if endpoint is ambiguous.';
+    } else if (t.includes('not work') || t.includes('broken') || t.includes('bug') || t.includes('error') || t.includes('crash')) {
+      label = 'BUG REPORT &middot; ESCALATE WITH CONTEXT'; color = '#B45309';
+      response = 'Auto-classified as bug report. Bot does NOT attempt resolution. Escalates to engineering with: account ID, recent error logs (auto-pulled from Sentry), reproduction steps if user provided them. Pre-briefs the engineer so first reply is informed.';
+    } else if (t.includes('cancel') || t.includes('refund') || t.includes('downgrade') || t.includes('leave')) {
+      label = 'RETENTION &middot; ESCALATE TO HUMAN'; color = '#991B1B';
+      response = 'Cancellation intent detected. Bot does NOT auto-resolve. Routes to retention specialist with: user tenure, plan history, last 30 days of usage, NPS score if available. Personal outreach within 1 hour SLA.';
+    } else {
+      label = 'NEEDS REVIEW &middot; AMBIGUOUS'; color = '#525252';
+      response = 'Ambiguous intent. Bot asks 1 clarifying question OR escalates to a human triage specialist. Logs ambiguity for next eval cycle (helps tier-1 expansion).';
+    }
+
+    out.innerHTML = '<strong style="color: ' + color + '; letter-spacing: 0.08em;">' + label + '</strong><br><br>' + response;
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
