@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 03 · Proof-of-Quality Surfacing System</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Max Filin / WOWCUBE</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">CRO Audit</a>
+      <a href="proof-of-quality.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 03 &middot; Proof-of-Quality Surfacing System &middot; build week 1-3, ongoing</div>
+    <h1 class="page-title">
+      The buyer's #1 objection,<br>
+      <em>defused on the PDP itself.</em>
+    </h1>
+    <p class="page-lede">
+      The Theme A audit thesis says trust repair leads, copy tweaks come later. This system is the engine for that. Reviews aggregator (Yotpo + YouTube + Reddit), tagged by hardware / software / support, surfaced on the PDP with a verified-purchase filter. Plus a firmware-update changelog block that says "your cube gets better every month." Plus live ship-time and return-rate stats. The buyer arriving with category concerns finds them addressed where the buy decision happens.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="cro-experiment-engine.html">CRO Experiment Engine <span class="badge">01</span></a></li>
+          <li><a href="journey-instrumentation.html">Journey Instrumentation <span class="badge">02</span></a></li>
+          <li><a href="proof-of-quality.html" class="active">Proof of Quality <span class="badge">03</span></a></li>
+          <li><a href="bundle-upsell.html">Bundle / Upsell <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Yotpo or Judge.me (reviews) + YouTube comment scraper + Reddit search + Trustpilot embed + n8n classifier (Claude tags by hardware/software/support) + Shopify PDP block.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>The "buyer Googles, finds mixed reviews, hesitates" flow that loses Buyers 02 and 03 to third-party sources. Brings the proof onto your owned property.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>4 of 4 Theme A findings closed within 30 days: reviews on PDP, firmware-update transparency, third-party trust signals clickable, awards surfaced at buy box.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Architecture -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How proof-of-quality composes itself &middot; per PDP visit</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Yotpo verified reviews</div>
+              <div class="flow-node in">YouTube unboxing comments</div>
+              <div class="flow-node in">Reddit r/Cubers mentions</div>
+              <div class="flow-node in">Firmware release notes</div>
+              <div class="flow-node in">Live ship + return stats</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Claude classifier tags by HW/SW/support &middot; ranks by recency + reach &middot; filters by sentiment</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">PDP reviews block</div>
+              <div class="flow-node out">"Cube gets better" badge</div>
+              <div class="flow-node out">Awards + press cluster</div>
+              <div class="flow-node out">Live ship + return stat tile</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Theme A finding closure &middot; rolling weeks</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">target: 4/4 in 30 days</span>
+          </div>
+          <div style="display: flex; gap: 4px; height: 24px; border-radius: 4px; overflow: hidden;">
+            <div style="flex: 1; background: #16A34A; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #FFF;">F01</div>
+            <div style="flex: 1; background: #16A34A; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #FFF;">F02</div>
+            <div style="flex: 1; background: #D97706; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #FFF;">F03 (in build)</div>
+            <div style="flex: 1; background: #E5E5E5; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-size: 10px; color: #525252;">EXTENSIONS</div>
+          </div>
+        </div>
+
+        <!-- Sample PDP block mockup -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; PDP trust block (proposed)</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>Mockup</span>
+          </div>
+
+          <div style="background: var(--bg-soft); border-radius: 8px; padding: 18px; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.65; color: #1A1D23;">
+            <div class="row gap-16 mb-16" style="flex-wrap: wrap;">
+              <div style="flex: 1; min-width: 180px; padding: 14px; background: #FFF; border-radius: 6px; border: 1px solid var(--line);">
+                <div style="font-size: 24px; font-weight: 700; color: #15803D;">4.6 / 5</div>
+                <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #525252; letter-spacing: 0.08em;">FROM 247 VERIFIED PURCHASES</div>
+                <div style="font-size: 12px; margin-top: 6px;">86% would recommend</div>
+              </div>
+              <div style="flex: 1; min-width: 180px; padding: 14px; background: #FFF; border-radius: 6px; border: 1px solid var(--line);">
+                <div style="font-size: 14px; font-weight: 600;">Your cube gets better every month</div>
+                <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #525252; letter-spacing: 0.08em; margin-top: 4px;">v3.2 SHIPPED MAY 4 &middot; 18 UPDATES IN 12 MONTHS</div>
+                <div style="font-size: 12px; margin-top: 6px;">Read changelog &rarr;</div>
+              </div>
+              <div style="flex: 1; min-width: 180px; padding: 14px; background: #FFF; border-radius: 6px; border: 1px solid var(--line);">
+                <div style="font-size: 14px; font-weight: 600;">Award-winning hardware</div>
+                <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #525252; letter-spacing: 0.08em; margin-top: 4px;">CES 2021 &middot; EDISON &middot; RED DOT &middot; TIME</div>
+                <div style="font-size: 12px; margin-top: 6px;">Published reviews &rarr;</div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--line); padding-top: 16px;">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #525252; letter-spacing: 0.08em; margin-bottom: 10px;">RECENT VERIFIED REVIEWS &middot; FILTERABLE</div>
+              <div class="row gap-8 mb-12" style="flex-wrap: wrap;">
+                <span class="tag tag-green" style="font-size: 11px;">All (247)</span>
+                <span class="tag" style="font-size: 11px;">Hardware (192)</span>
+                <span class="tag" style="font-size: 11px;">Software (88)</span>
+                <span class="tag" style="font-size: 11px;">Support (43)</span>
+                <span class="tag" style="font-size: 11px;">Gift (61)</span>
+              </div>
+              <div style="font-size: 13px; padding: 10px 12px; background: #FFF; border-left: 3px solid #15803D; margin-bottom: 8px;">
+                <strong>"The post-Spin-Master firmware fixed every issue I had with my pre-order unit."</strong>
+                <br><span style="color: #525252; font-size: 12px;">Marcus L. &middot; Verified purchase &middot; Tagged: Software, Hardware</span>
+              </div>
+              <div style="font-size: 13px; padding: 10px 12px; background: #FFF; border-left: 3px solid #15803D;">
+                <strong>"Bought this for my 11-year-old. Three months in, she still picks it up every day."</strong>
+                <br><span style="color: #525252; font-size: 12px;">Aisha K. &middot; Verified purchase &middot; Tagged: Gift</span>
+              </div>
+            </div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; margin-top: 12px;">PROPOSED PDP BLOCK &middot; SHIPS WEEK 2 ONCE YOTPO IS INTEGRATED</div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; query the trust surfaces</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="surface-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="reviews">Reviews block</option>
+              <option value="firmware">Firmware update badge</option>
+              <option value="awards">Awards / press cluster</option>
+              <option value="ship">Live ship + return stats</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Generate</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="91">
+          <span class="label">Theme A finding closure rate (30 days)</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">target 4/4 trust artifacts on PDP</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="journey-instrumentation.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Journey Instrumentation
+      </a>
+      <a href="bundle-upsell.html" class="btn">
+        Next: Bundle / Upsell <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const s = document.getElementById('surface-filter').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      reviews: '<strong>Reviews block &middot; PDP</strong><br>Yotpo integrated week 1. Post-launch seeding: pull 50 verified-purchase reviews from existing customer email list with a 3-question form ("rate, what worked, what didn\'t").<br><span style="color:var(--ink-muted)">Filter chips by tag (hardware / software / support / gift). Verified-purchase only by default. Sort by "most helpful" weighted by review depth + recency.</span>',
+      firmware: '<strong>"Your cube gets better every month" badge</strong><br>Pulls from internal release notes (Notion / GitHub releases). Surfaces: latest firmware version, ship date, count of updates in last 12 months, link to full changelog.<br><span style="color:var(--ink-muted)">Defuses the buyer\'s pre-existing software-stability concern by showing post-launch software investment is real and ongoing.</span>',
+      awards: '<strong>Awards / press cluster &middot; PDP buy box</strong><br>CES 2021, Edison Award, Red Dot, Time "Best Inventions". Each clickable to the actual coverage. Press logos (Forbes, BBC, CNET, Gizmodo) below, also clickable.<br><span style="color:var(--ink-muted)">Currently these signals exist on About page only. Moving them to the PDP buy box puts them where the trust decision is happening, not where the buyer never goes.</span>',
+      ship: '<strong>Live ship + return stats &middot; PDP tile</strong><br>"Ships in 3 days (current avg)" &middot; "30-day returns, free return shipping" &middot; "Refunds processed in 5-7 business days" &middot; "Return rate: 4.2% (industry avg: 8-12%)".<br><span style="color:var(--ink-muted)">Live numbers, not generic "Reliable shipping." Specifics outperform generics measurably. The return-rate stat is a flex if your number is genuinely low.</span>',
+      default: '<strong>Default &middot; full Theme A trust surface</strong><br>Reviews block + firmware-update badge + awards/press cluster + live ship/return stats. All four ship to the PDP within 30 days. Closes the 4 critical findings in Theme A.<br><span style="color:var(--ink-muted)">Estimated PDP-to-cart lift: 20-40% based on industry benchmarks for adding reviews + financing + trust signals to a $499 hardware PDP.</span>'
+    };
+    out.innerHTML = samples[s] || samples['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

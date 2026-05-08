@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 04 · Bundle and Upsell Intelligence</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-cart"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M3 4h2l3 11h10l3-8H7"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Max Filin / WOWCUBE</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">CRO Audit</a>
+      <a href="bundle-upsell.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 04 &middot; Bundle and Upsell Intelligence &middot; week 1 ship + ongoing A/B</div>
+    <h1 class="page-title">
+      AOV math, not vibe math.<br>
+      <em>Bundle merchandising done right.</em>
+    </h1>
+    <p class="page-lede">
+      Solves Finding 08 directly. The current PDP shows variants in a dropdown: Standalone $499, Bundle $439, Ultimate $499. Same price as standalone, drastically more value. A buyer who notices feels rewarded; a buyer who doesn't picks the worse option without realizing. This system replaces the dropdown with a visual comparison block, adds cart-time upsells, and runs a post-purchase cross-sell sequence. AOV lift target: +15-25% in 60 days.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="cro-experiment-engine.html">CRO Experiment Engine <span class="badge">01</span></a></li>
+          <li><a href="journey-instrumentation.html">Journey Instrumentation <span class="badge">02</span></a></li>
+          <li><a href="proof-of-quality.html">Proof of Quality <span class="badge">03</span></a></li>
+          <li><a href="bundle-upsell.html" class="active">Bundle / Upsell <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Shopify metafields (bundle copy + savings math) + Convert.com (A/B) + Klaviyo (post-purchase) + Rebuy or ReConvert (cart upsells) + Smartlook (validate buyer behavior).</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>Variant dropdown that hides the bundle math. Cart pages that miss the obvious accessory upsell (Extra Dock at $29). Post-purchase emails that say "thanks" and nothing else.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>AOV lift +15-25% in 60 days. Bundle attach rate (currently estimated &lt;15%) climbs to 35%+. Extra Dock cart-time attach 20%+.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Visual bundle comparison -->
+        <div class="card mb-24" style="padding: 24px;">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Proposed bundle comparison block &middot; PDP</div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <div style="padding: 18px; background: #FAFAFA; border-radius: 6px; border: 1px solid var(--line);">
+              <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; margin-bottom: 8px;">STANDALONE</div>
+              <div style="font-size: 22px; font-weight: 700; margin-bottom: 8px;">$499</div>
+              <div style="font-size: 13px; line-height: 1.5; color: #525252;">
+                WOWCube console only. Charging dock included.
+              </div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #525252; margin-top: 12px;">JUST THE CUBE</div>
+            </div>
+            <div style="padding: 18px; background: #F0FDF4; border-radius: 6px; border: 2px solid #16A34A; position: relative;">
+              <div style="position: absolute; top: -12px; left: 18px; background: #16A34A; color: #FFF; padding: 3px 10px; border-radius: 4px; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em;">MOST PICKED</div>
+              <div class="mono" style="font-size: 10px; letter-spacing: 0.14em; margin-bottom: 8px; color: #15803D;">ULTIMATE BUNDLE</div>
+              <div style="font-size: 22px; font-weight: 700; margin-bottom: 4px;">$499 <span style="text-decoration: line-through; color: #525252; font-weight: 400; font-size: 14px;">$648</span></div>
+              <div style="font-size: 12px; color: #15803D; font-weight: 600; margin-bottom: 8px;">SAME PRICE, SAVE $149</div>
+              <div style="font-size: 13px; line-height: 1.5; color: #1A1D23;">
+                Cube + 4 game packs + Extra Dock + 1-yr warranty extension.
+              </div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #15803D; margin-top: 12px;">EVERYTHING YOU'LL EVENTUALLY BUY</div>
+            </div>
+            <div style="padding: 18px; background: #FAFAFA; border-radius: 6px; border: 1px solid var(--line);">
+              <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; margin-bottom: 8px;">BUNDLE</div>
+              <div style="font-size: 22px; font-weight: 700; margin-bottom: 4px;">$439 <span style="text-decoration: line-through; color: #525252; font-weight: 400; font-size: 14px;">$598</span></div>
+              <div style="font-size: 12px; color: #15803D; font-weight: 600; margin-bottom: 8px;">SAVE $159</div>
+              <div style="font-size: 13px; line-height: 1.5; color: #525252;">
+                Cube + 4 game packs. No extra dock or warranty.
+              </div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #525252; margin-top: 12px;">CHEAPEST WAY IN</div>
+            </div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 16px;">REPLACES: VARIANT DROPDOWN. NEW LOGIC: "MOST PICKED" SOCIAL-PROOF NUDGE TO THE ULTIMATE BUNDLE.</div>
+        </div>
+
+        <!-- Cart-time + post-purchase -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; cart upsell + post-purchase sequence</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>AOV ladder</span>
+          </div>
+
+          <div style="background: #1A1D23; border-radius: 8px; padding: 16px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #E3E4E6; line-height: 1.7;">
+            <div style="color: #E84C4C; font-weight: 600; margin-bottom: 8px;">@cro &mdash; Bundle and Upsell Funnel &middot; AOV ladder</div>
+            <div style="margin-bottom: 14px;">
+              <span style="color: #2ECC71;">PDP &middot; PURCHASE EVENT</span> Buyer picks Ultimate Bundle ($499). AOV at PDP: $499<br>
+              <span style="color: #8A8A8A;">"Most picked" social-proof badge nudges 28% of buyers from standalone to Ultimate. Net AOV lift on this conversion alone: +$0 (same price) but more product shipped, lower future-accessory-revenue dependency.</span>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <span style="color: #4A90D9;">CART &middot; UPSELL TRIGGER</span> Standalone-only buyer sees: "Add an Extra Dock for charging on the road - $29"<br>
+              <span style="color: #8A8A8A;">Industry attach rate for cart-time accessory upsells: 18-25%. Adds $5-7 AOV per cart.</span>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <span style="color: #FCD34D;">POST-PURCHASE &middot; DAY 7</span> Klaviyo email: "Your cube has 4 game packs. Here are 6 more your kid (or you) will love."<br>
+              <span style="color: #8A8A8A;">Game-pack cross-sell. Industry post-purchase email-driven AOV lift: 8-15% on lifetime customer value.</span>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <span style="color: #2ECC71;">POST-PURCHASE &middot; DAY 30</span> "Your firmware just shipped v3.3. Here's what's new + 2 new games tested by your community."<br>
+              <span style="color: #8A8A8A;">Doubles as proof-of-quality (ties to System 03) and a soft-sell for the next game pack. Engagement loop, not a hard ask.</span>
+            </div>
+            <div>
+              <span style="color: #525252;">POST-PURCHASE &middot; DAY 90</span> "It's been 3 months. How is your cube? Leave a review for $10 off your next order."<br>
+              <span style="color: #8A8A8A;">Captures verified reviews for System 03's reviews block. Closes the loop between PDP trust and customer experience.</span>
+            </div>
+            <div style="color: #525252; margin-top: 8px; font-size: 11px;">Net AOV target: +$60-75 per order in 60 days &middot; LTV target: +20% on 12-month cohort</div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; query the AOV ladder</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="stage-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="pdp">PDP &middot; bundle merchandising</option>
+              <option value="cart">Cart &middot; accessory upsell</option>
+              <option value="post7">Post-purchase day 7</option>
+              <option value="post30">Post-purchase day 30</option>
+              <option value="post90">Post-purchase day 90</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Show stage detail</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="84">
+          <span class="label">AOV lift target (60 days)</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">+15-25% baseline target</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="proof-of-quality.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Proof of Quality
+      </a>
+      <a href="index.html" class="btn">
+        Back to overview <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const s = document.getElementById('stage-filter').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      pdp: '<strong>PDP &middot; bundle merchandising</strong><br>Visual 3-card comparison replaces variant dropdown. Standalone $499 / Ultimate $499 (most picked) / Bundle $439. Each card shows what\'s included + savings.<br><span style="color:var(--ink-muted)">Hypothesis: bundle attach moves from estimated 15% to 35-40% based on the same-price-better-value reframe. Estimated AOV impact: +$15-30 per order on the bundle-vs-standalone shift alone.</span>',
+      cart: '<strong>Cart &middot; accessory upsell</strong><br>Standalone-only buyers see Extra Dock ($29) and Travel Case ($19) at cart with one-click add. Bundle and Ultimate buyers see complementary game pack picks instead.<br><span style="color:var(--ink-muted)">Industry attach rate for well-merchandised accessory upsells: 18-25%. AOV impact: $5-7 per cart on average. ReConvert or Rebuy app handles this in Shopify.</span>',
+      post7: '<strong>Post-purchase day 7</strong><br>Klaviyo email: "Your cube has 4 game packs. Here are 6 more." Personalized to which packs they own. Soft sell, link to game pack page.<br><span style="color:var(--ink-muted)">Industry click-through rate for post-purchase day-7 emails on hardware: 22-30%. Conversion to next-purchase: 6-10%. Direct LTV impact.</span>',
+      post30: '<strong>Post-purchase day 30</strong><br>"Your firmware just shipped v3.3. Here\'s what\'s new + 2 new games." Doubles as System 03 proof-of-quality reinforcement and a soft sell for the next game pack.<br><span style="color:var(--ink-muted)">This email is the engagement loop. It justifies the firmware-update badge promise on the PDP. Customers get the experience they were sold.</span>',
+      post90: '<strong>Post-purchase day 90</strong><br>"How is your cube? Leave a review for $10 off your next order." Captures verified reviews for System 03\'s PDP block.<br><span style="color:var(--ink-muted)">90-day timing is intentional: the customer has used the cube long enough to have a real opinion, hasn\'t forgotten the brand, and is in the next-purchase consideration window.</span>',
+      default: '<strong>Default &middot; full AOV ladder</strong><br>PDP merchandising + cart upsell + 4 post-purchase emails (day 7, 14, 30, 90).<br><span style="color:var(--ink-muted)">Net AOV target +$60-75 per order &middot; LTV +20% on 12-month cohorts &middot; reviews-captured rate from day-90 emails feeds System 03</span>'
+    };
+    out.innerHTML = samples[s] || samples['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
