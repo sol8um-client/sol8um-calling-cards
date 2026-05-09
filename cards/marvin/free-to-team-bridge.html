@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 02 · Free-to-Team Conversion Bridge</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12h3l3-3 4 4 4-4 3 3h3"/><path d="M5 12v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Chirag Narula / Marvin</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html">Growth Audit</a>
+      <a href="free-to-team-bridge.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 02 &middot; Free-to-Team Conversion Bridge &middot; Day 5-25</div>
+    <h1 class="page-title">
+      The 5-user-minimum chasm,<br>
+      <em>bridged.</em>
+    </h1>
+    <p class="page-lede">
+      Solves Finding 02. Free is solo-only. Standard requires 5 users minimum. The 1-to-5 ramp doesn't exist. A solo Free user who's hooked has nowhere to go. This system builds the missing bridge: solo activated user invites teammate (still free), teammate invites another, when 5 reached the team auto-trials Standard. The product engineers team formation. The PM watches the conversion arc, not the spreadsheet.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="onboarding-activation.html">Onboarding Activation <span class="badge">01</span></a></li>
+          <li><a href="free-to-team-bridge.html" class="active">Free-to-Team Bridge <span class="badge">02</span></a></li>
+          <li><a href="researcher-habit-loop.html">Researcher Habit Loop <span class="badge">03</span></a></li>
+          <li><a href="team-expansion-referral.html">Team Expansion <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Shopify-style team-formation logic in product (custom build) + Customer.io lifecycle email + Mixpanel cohort tracking + n8n for trigger orchestration.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>The "solo Free user wants to upgrade but can't get 4 colleagues to commit" cliff. Solo-to-team conversion that depends on luck.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>% of solo Free users who invite at least one teammate within 14 days. Target 30%+. Then % of those teams that reach 5 users (Standard auto-trial). Target 40%+.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Bridge stages -->
+        <div class="card mb-24" style="padding: 24px;">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">The 1-to-5 ramp &middot; engineered, not accidental</div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #BBF7D0; border-radius: 4px;">
+              <div class="mono" style="font-size: 11px; color: #15803D; min-width: 80px;">STAGE 01</div>
+              <div style="flex: 1; font-weight: 600;">Solo activated (1 user, on Free, hooked)</div>
+              <div class="mono" style="font-size: 11px; color: #15803D;">36% of signups</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #DDF7E0; border-radius: 4px;">
+              <div class="mono" style="font-size: 11px; color: #15803D; min-width: 80px;">STAGE 02</div>
+              <div style="flex: 1; font-weight: 600;">Invites first teammate (workspace expanded, free)</div>
+              <div class="mono" style="font-size: 11px; color: #15803D;">target 30%+</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #FEF3C7; border-radius: 4px;">
+              <div class="mono" style="font-size: 11px; color: #B45309; min-width: 80px;">STAGE 03</div>
+              <div style="flex: 1; font-weight: 600;">2-4 user team (free, expanded usage limits)</div>
+              <div class="mono" style="font-size: 11px; color: #B45309;">target 18%+</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #FED7AA; border-radius: 4px;">
+              <div class="mono" style="font-size: 11px; color: #B45309; min-width: 80px;">STAGE 04</div>
+              <div style="flex: 1; font-weight: 600;">5th user joins &rarr; auto-trial Standard for 14 days</div>
+              <div class="mono" style="font-size: 11px; color: #B45309;">target 12%+</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px; background: #FEF2F2; border-radius: 4px;">
+              <div class="mono" style="font-size: 11px; color: #991B1B; min-width: 80px;">STAGE 05</div>
+              <div style="flex: 1; font-weight: 600;">Trial-to-paid conversion (admin's call)</div>
+              <div class="mono" style="font-size: 11px; color: #991B1B;">target 8%+</div>
+            </div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.1em; margin-top: 16px;">EVERY STAGE HAS AN A/B SLOT &middot; LIFECYCLE EMAIL TRIGGERS &middot; IN-PRODUCT NUDGES</div>
+        </div>
+
+        <!-- Sample stage -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; Stage 02 trigger sequence</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>Live cohort</span>
+          </div>
+
+          <div style="background: #1A1D23; border-radius: 8px; padding: 16px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #E3E4E6; line-height: 1.7;">
+            <div style="color: #2ECC71; font-weight: 600; margin-bottom: 8px;">@bridge &mdash; Stage 02 cohort &middot; Solo activated &rarr; first invite</div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #E3E4E6;">DAY 0 of stage:</span> User reaches "first AI insight surfaced" event<br>
+              <span style="color: #8A8A8A;">In-product banner: "Your insight is more powerful with a teammate. Invite one for free."</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #E3E4E6;">DAY 2:</span> If no invite sent yet<br>
+              <span style="color: #8A8A8A;">Email: "Researchers who invite a teammate in week 1 keep using Marvin 3x more often." (Anonymized cohort data, not a sales pitch.)</span>
+            </div>
+            <div style="margin-bottom: 12px;">
+              <span style="color: #E3E4E6;">DAY 5:</span> If still no invite<br>
+              <span style="color: #8A8A8A;">In-product modal at next AI-insight surfaced: "Share this insight directly with a colleague?" (One-click magic link.)</span>
+            </div>
+            <div>
+              <span style="color: #E3E4E6;">DAY 7:</span> Cohort closes<br>
+              <span style="color: #8A8A8A;">If invited: enters Stage 03. If not: stays solo, lifecycle email cadence drops to weekly engagement (System 03).</span>
+            </div>
+            <div style="color: #525252; margin-top: 8px; font-size: 11px;">Variant testing: in-product banner vs email-first vs modal-only. Stat-sig at 1,500 cohort members.</div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; query a stage</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="stage-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="s01">Stage 01 &middot; Solo activated</option>
+              <option value="s02">Stage 02 &middot; First invite sent</option>
+              <option value="s03">Stage 03 &middot; 2-4 user team</option>
+              <option value="s04">Stage 04 &middot; 5th user joins (auto-trial)</option>
+              <option value="s05">Stage 05 &middot; Trial-to-paid</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Show stage detail</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="86">
+          <span class="label">Solo-to-team-invite rate within 14 days</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">target 30%+ &middot; current likely &lt;15%</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="onboarding-activation.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Onboarding Activation
+      </a>
+      <a href="researcher-habit-loop.html" class="btn">
+        Next: Researcher Habit Loop <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const s = document.getElementById('stage-filter').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      s01: '<strong>Stage 01 &middot; Solo activated</strong><br>User reached "first AI insight surfaced" event. They\'re hooked on the product but still solo.<br><span style="color:var(--ink-muted)">~36% of signups arrive here. The starting point of the team-formation funnel.</span>',
+      s02: '<strong>Stage 02 &middot; First invite sent</strong><br>Triggers: in-product banner at activation, email day 2, modal day 5. Target conversion: 30%+ within 14 days of activation.<br><span style="color:var(--ink-muted)">A/B test: which trigger placement wins. Baseline historical from PLG products in this category: 18-25%. Marvin\'s collaborative product nature should outperform.</span>',
+      s03: '<strong>Stage 03 &middot; 2-4 user team</strong><br>Workspace expanded to multi-user. Free tier limits expand proportionally (5 files/month per user, not 5/team).<br><span style="color:var(--ink-muted)">This is the soft-trial period. Team feels Marvin in collaborative mode. Each subsequent invite costs less effort because the product already has team value.</span>',
+      s04: '<strong>Stage 04 &middot; 5th user joins (auto-trial)</strong><br>5th user signs up. System auto-converts the workspace to a 14-day Standard trial. Admin notified, all users get expanded paid features.<br><span style="color:var(--ink-muted)">The 5-user-minimum chasm becomes a milestone instead of a cliff. The team earned the trial through usage, not through a sales call.</span>',
+      s05: '<strong>Stage 05 &middot; Trial-to-paid</strong><br>14-day Standard trial ends. Admin decides: convert to paid or revert to Free (but workspace persists, so reverting feels like a downgrade).<br><span style="color:var(--ink-muted)">Industry benchmark for product-led trial-to-paid: 12-18%. Marvin\'s already-using-it cohort should hit higher because the team is using the product, not evaluating it.</span>',
+      default: '<strong>Default &middot; full bridge</strong><br>36% solo activated &rarr; 30% first invite &rarr; 18% 2-4 user team &rarr; 12% auto-trial Standard &rarr; 8% paid<br><span style="color:var(--ink-muted)">Net impact: solo Free users who would otherwise stall on Free now have an engineered path to paid Standard.</span>'
+    };
+    out.innerHTML = samples[s] || samples['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

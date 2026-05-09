@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>heymarvin.com · Growth Audit · for Chirag Narula</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-eye"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-check"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12l5 5 9-12"/></symbol>
+  <symbol id="i-bar"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12h3l3-3 4 4 4-4 3 3h3"/><path d="M5 12v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Chirag Narula / Marvin</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="audit.html" class="active">Growth Audit</a>
+      <a href="onboarding-activation.html">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Part One &middot; 10 findings &middot; 4 themes &middot; verified live 2026-05-09</div>
+    <h1 class="page-title">
+      Where heymarvin.com is leaving<br>
+      <em>the PLG motion half-built.</em>
+    </h1>
+    <p class="page-lede">
+      Marvin is a PLG product (real free tier, self-serve signup, generous limits) wearing sales-led marketing clothes (Get-demo dominates the homepage, /product is a 404, onboarding is human-assisted at scale). The Growth + Onboarding + Conversion PM hire is exactly the person who closes that gap. The audit is built around that thesis. Each finding pairs the actual page evidence with what it costs Marvin in funnel terms and how fast it's fixed.
+    </p>
+    <div class="row mt-32 gap-24" style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted);">
+      <span><span class="pulse-dot"></span>Audited live &middot; 2026-05-09</span>
+      <span>&middot; heymarvin.com</span>
+      <span>&middot; 350% revenue growth &middot; 13K users &middot; 10 Fortune 100</span>
+    </div>
+  </section>
+
+  <!-- ICP SIGNAL -->
+  <section style="padding-top: 40px;">
+    <div class="card-strong card mb-32">
+      <div class="row-between" style="align-items: flex-start;">
+        <div>
+          <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-eye"/></svg> Reading the room</div>
+          <h2 style="font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px;">Three buyer types arrive at heymarvin.com. The funnel speaks to one of them.</h2>
+          <p class="text-soft" style="max-width: 680px; font-size: 14px;">
+            A research-tools buyer arrives in one of three modes. The current funnel is built for the enterprise buyer who books a demo. The solo researcher and the team lead are technically served (Free tier exists) but not architecturally invited.
+          </p>
+        </div>
+        <span class="tag tag-amber pulsing"><span class="tag-dot"></span>Strategic</span>
+      </div>
+      <div class="divider"></div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--blue);"><use href="#i-spark"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 01 &middot; Solo researcher</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">UXR / PM doing it themselves</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Heard about Marvin from a peer. Wants to try it on their own interviews first. Hits the Free tier. Loves it. Wants to bring it to their team. Then hits the 5-user-minimum chasm. The path from "I love it" to "we use it" is missing.</div>
+          <div class="impact-bar" data-pct="68">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill amber"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">68%</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: #B45309;"><use href="#i-handshake"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 02 &middot; Team lead, 3-7 researchers</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">Head of Research / PMO</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Comparing Marvin vs Dovetail vs Notably. Wants to see comparison content, pricing math for a team of 5, integration list. Site delivers some of this but not in a "buyer in active comparison" arrangement. They click around and decide.</div>
+          <div class="impact-bar" data-pct="55">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill amber"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">55%</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--green);"><use href="#i-shield"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 03 &middot; Enterprise procurement</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">Microsoft / Honda / Sonos-style</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Not browsing the site. Routed via sales. Books a demo through "Get demo." This is the buyer the current funnel is engineered for. Conversion here is healthy; Marvin already has 10 Fortune 100s.</div>
+          <div class="impact-bar" data-pct="86">
+            <span class="label">Fit signal</span>
+            <span class="track"><span class="fill"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">86%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Already working -->
+    <div class="card mb-32" style="border-color: #BBF7D0; background: #F0FDF4;">
+      <div class="row gap-12">
+        <svg class="ic ic-lg" style="color: var(--green);"><use href="#i-check"/></svg>
+        <div>
+          <div class="mono" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #15803D; margin-bottom: 6px;">Three things already working</div>
+          <div style="font-size: 16px; font-weight: 500; line-height: 1.55; max-width: 720px;">
+            <strong>Real revenue traction.</strong> 350% revenue growth in under a year, 4,000+ teams, 13,000+ users, 10 Fortune 100 companies. For a $10.8M-raised seed-stage startup, this is genuinely strong PMF. <strong>Tier-1 client list.</strong> Microsoft AETHER team, Honda, Sonos, VistaPrint, Razorpay, Lattice, Vanta. Real, named, premium. Most early-stage SaaS would kill for this logo wall. <strong>AI-native positioning is defensible.</strong> "Repository AND insights engine" framing vs Dovetail is a genuine wedge. SOC 2 + ISO 27001 + ISO 42001 + HIPAA + GDPR for a 51-200 startup is unusual and a real moat. None of those need touching. The findings below are about how the live funnel fails to translate that traction into self-serve growth.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live capture as evidence -->
+    <div class="shot-frame mb-32">
+      <div class="shot-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="url">heymarvin.com</span>
+        <span class="live">LIVE &middot; AUDITED 2026-05-09</span>
+      </div>
+      <img class="shot-img" src="shots/marvin-home.png" alt="heymarvin.com homepage above the fold">
+    </div>
+  </section>
+
+  <!-- THEME A: PLG-vs-SALES-LED -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">A</div>
+      <div>
+        <div class="theme-band-title">The PLG-vs-sales-led identity confusion</div>
+        <div class="text-soft" style="font-size: 13px;">Three findings. The product motion is PLG. The marketing motion is sales-led. The Growth PM closes that gap.</div>
+      </div>
+    </div>
+
+    <!-- F01 -->
+    <div class="finding mb-24">
+      <div class="finding-num">01</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">"Get demo" dominates the homepage CTA hierarchy despite a working free tier existing.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>Critical · 30 min A/B</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Hero CTA: "Get demo" (large, primary, accent color). "Sign up" appears top-right, small. For a PLG product with a real $0/year Free tier (5 files/month, 5 AI moderated interviews, no card required), this CTA hierarchy is inverted. Self-serve signups are the volume play. Demos are the high-touch enterprise play.</div>
+        </div>
+
+        <div class="shot-frame mb-16 mt-16">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">heymarvin.com</span>
+            <span class="live">HERO &middot; CTA HIERARCHY INVERTED</span>
+          </div>
+          <img class="shot-img" src="shots/marvin-home.png" alt="heymarvin.com hero with Get demo dominant over Sign up">
+          <div class="shot-overlay">
+            <div class="shot-mark amber" style="left: 78%; top: 0%; width: 18%; height: 8%;"></div>
+            <div class="shot-callout amber" style="left: 60%; top: 9%;">"GET DEMO" PRIMARY &middot; "SIGN UP" SECONDARY (TOP RIGHT, SMALL)</div>
+            <div class="shot-mark" style="left: 36%; top: 50%; width: 28%; height: 14%;"></div>
+            <div class="shot-callout" style="left: 36%; top: 65%;">SECONDARY HERO CTA: "GET DEMO" AGAIN</div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">QUICK WIN</div>
+          <div class="finding-text">A/B test the CTA hierarchy. Variant A: "Sign up free" primary, "Get demo" secondary. Variant B: split CTA card showing both paths with framing ("Solo researcher? Sign up free. Team of 5+? Get a demo."). 30-minute test config. The PM hired into this role would likely flip this within their first month.</div>
+        </div>
+        <div class="impact-bar" data-pct="88">
+          <span class="label">Estimated lift on self-serve signups</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">+significant, persistent</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- F02 -->
+    <div class="finding mb-24">
+      <div class="finding-num">02</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">5-user minimum on Standard tier creates a solo-to-team activation chasm. The 1-to-5 ramp is missing.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>Critical · Strategic · 2-4 weeks</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Free: solo only, $0, 5 files/month. Standard: custom pricing, 5 users minimum, billed annually. Enterprise: custom pricing, 5 users minimum. A solo Free user who's hooked has nowhere to go. They can't upgrade to a 1-user paid tier. They can't always rally 4 colleagues overnight. The chasm sits at the seam between activation and monetization.</div>
+        </div>
+
+        <div class="shot-frame mb-16 mt-16">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">heymarvin.com/pricing</span>
+            <span class="live">PRICING &middot; 1-TO-5 RAMP MISSING</span>
+          </div>
+          <img class="shot-img" src="shots/marvin-pricing.png" alt="heymarvin.com pricing showing Free + Standard + Enterprise with 5-user minimum">
+          <div class="shot-overlay">
+            <div class="shot-mark amber" style="left: 8%; top: 32%; width: 86%; height: 50%;"></div>
+            <div class="shot-callout amber" style="left: 20%; top: 24%;">FREE (SOLO ONLY) &rarr; STANDARD (5 USER MIN). NO 1-TO-4 USER OPTION.</div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">QUICK WIN</div>
+          <div class="finding-text">Two paths. <strong>(a) Add a Solo Pro tier</strong> at $X/mo for individual researchers who want more than Free but can't bring 5 teammates yet. Captures the in-between buyer. <strong>(b) Build a team-formation flow</strong> (System 02 in the workflows section): Free user invites teammate-by-teammate, each invite expands the seat-pool free, when 5 teammates join the team auto-converts to Standard trial. The product engineers the team formation.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F03 -->
+    <div class="finding mb-24">
+      <div class="finding-num">03</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Free tier is unlimited-time with no Free-to-Paid urgency engineered.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 1-2 weeks</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Free: $0 per year forever. 5 files/month. No trial clock, no usage-based nudge that triggers paid features unlock, no progressive disclosure of paid value. Industry benchmark: PLG products that compound (Notion's block limit, Loom's video count, Linear's seat count) engineer Free-to-Paid pressure into the product itself. Marvin's Free tier is generous but creates no upgrade pressure.</div>
+        </div>
+
+        <div class="shot-frame mb-16 mt-16">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">heymarvin.com/pricing</span>
+            <span class="live">FREE TIER &middot; NO URGENCY ENGINEERED</span>
+          </div>
+          <img class="shot-img" src="shots/marvin-pricing.png" alt="heymarvin.com pricing Free tier">
+          <div class="shot-overlay">
+            <div class="shot-mark amber" style="left: 8%; top: 32%; width: 28%; height: 50%;"></div>
+            <div class="shot-callout amber" style="left: 8%; top: 24%;">FREE = UNLIMITED TIME, NO TRIAL CLOCK, NO PRESSURE</div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">QUICK WIN</div>
+          <div class="finding-text">Engineer one specific paid-feature pressure point. Examples: "Your 5 monthly files reset on day X. Upgrade to keep your insights queryable." Or: "Agentic Ask AI on premium queries (limit 3/month free)." The point isn't to break Free; it's to make the upgrade decision concrete and tied to real value the user already loves.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME B: ONBOARDING -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">B</div>
+      <div>
+        <div class="theme-band-title">Onboarding and activation friction</div>
+        <div class="text-soft" style="font-size: 13px;">Three findings. The activation moment is unpicked. The discovery path is broken.</div>
+      </div>
+    </div>
+
+    <!-- F04 -->
+    <div class="finding mb-24">
+      <div class="finding-num">04</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">heymarvin.com/product returns 404. A curious visitor has no self-serve discovery path.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 1 day</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">heymarvin.com/product is a 404. The natural URL a curious visitor types when they want to learn more is broken. Result: visitors either Get-Demo or leave. There's no in-between for the self-serve user who wants to understand the product before signing up.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; 404</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 1.7; padding: 8px 0;">
+              GET https://heymarvin.com/product<br>
+              &gt; HTTP/2 404 Not Found
+            </div>
+            <div class="text-soft mt-8" style="font-size: 13px;">A standard URL a curious visitor would try. Broken.</div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; /product LANDING</div>
+            <div style="font-size: 13px; line-height: 1.6; padding: 8px 0;">
+              Self-serve product tour. 4 sections matching the 4 hero capabilities (AI Moderated Interview, Agentic Ask AI, repository search, integrations). Each with a 30-second video, a representative screenshot, and a "Try it free" CTA back to signup. Ships in a day with the existing product collateral.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F05 -->
+    <div class="finding mb-24">
+      <div class="finding-num">05</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Activation moment is unclear. The site never picks a hero job-to-be-done.</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>Critical · Strategic · 1-2 weeks</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">The homepage carries multiple value props simultaneously: AI Moderated Interviews, Agentic Ask AI, repository search, AI insights, 30+ integrations. Different visitor segments interpret different value props as the lead. The site speaks to all of them, which is the same as speaking to none of them clearly. For a Growth PM, picking the activation moment is the highest-leverage decision.</div>
+        </div>
+
+        <div class="shot-frame mb-16 mt-16">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">heymarvin.com</span>
+            <span class="live">HOMEPAGE &middot; FIVE VALUE PROPS, NO HERO ONE</span>
+          </div>
+          <img class="shot-img" src="shots/marvin-home.png" alt="heymarvin.com homepage with multiple value propositions">
+          <div class="shot-overlay">
+            <div class="shot-mark amber" style="left: 4%; top: 18%; width: 92%; height: 35%;"></div>
+            <div class="shot-callout amber" style="left: 22%; top: 11%;">HERO TRIES TO COVER MULTIPLE JOBS-TO-BE-DONE AT ONCE</div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">QUICK WIN</div>
+          <div class="finding-text">Pull activation data from Mixpanel/Amplitude. Find the action that correlates highest with day-7 retention and day-30 paid conversion. THAT is the activation moment. Architect onboarding around it. The other features are post-activation upgrade hooks, not first-impression sells. (System 01 owns this directly.)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F06 -->
+    <div class="finding mb-24">
+      <div class="finding-num">06</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Onboarding is human-assisted at scale. Multiple G2 reviews mention "onboarding calls."</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Strategic · ongoing 4-8 weeks</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">G2 reviews repeatedly cite "the onboarding call provided by the team was insightful." Implies high-touch onboarding for paid users. High-touch onboarding doesn't scale to PLG. Either it ramps down (and self-serve onboarding becomes the new normal) or PLG remains a marketing veneer over a sales-led motion.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; HUMAN-ASSISTED</div>
+            <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+              Customer signs up &rarr; books an onboarding call &rarr; CSM walks them through the product &rarr; customer activates.
+              <br><br>
+              <em class="text-muted">Doesn't scale past ~50 onboardings/week. Caps growth at the CSM team's bandwidth.</em>
+            </div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; IN-PRODUCT TOUR</div>
+            <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+              Customer signs up &rarr; in-product guided tour with sample data preloaded &rarr; AI-assisted "import your first interview" walkthrough &rarr; customer activates without human touch.
+              <br><br>
+              <em class="text-muted">Scales infinitely. CSM team becomes the escalation path, not the default path.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME C: CONVERSION ARCHITECTURE -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">C</div>
+      <div>
+        <div class="theme-band-title">Conversion architecture</div>
+        <div class="text-soft" style="font-size: 13px;">Two findings. Comparison content is in the wrong place. The integrations gap is publicly visible.</div>
+      </div>
+    </div>
+
+    <!-- F07 -->
+    <div class="finding mb-24">
+      <div class="finding-num">07</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Comparison vs Dovetail content lives at /resources/dovetail-alternatives. Buried in content marketing, not surfaced for in-funnel conversion.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Medium · 1 day</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">The /resources/dovetail-alternatives page exists and is well-written. Placement signals "we want SEO traffic on this query," not "we want the buyer who's in active comparison mode to convert." A buyer comparing Marvin vs Dovetail right now has to know to navigate to Resources to find this. Most don't.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; SEO POSITIONED</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 1.7; padding: 8px 0;">
+              heymarvin.com/<br>
+              heymarvin.com/pricing<br>
+              heymarvin.com/customers<br>
+              heymarvin.com/security<br>
+              heymarvin.com/resources/dovetail-alternatives &larr;
+            </div>
+            <div class="text-soft mt-8" style="font-size: 13px;">Comparison content lives 2 clicks deep. Buyer in comparison mode rarely finds it.</div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; IN-FUNNEL</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 13px; line-height: 1.7; padding: 8px 0;">
+              heymarvin.com/<br>
+              heymarvin.com/pricing<br>
+              heymarvin.com/<strong>vs-dovetail</strong> &larr; (in main nav under Pricing)<br>
+              heymarvin.com/customers<br>
+              heymarvin.com/security
+            </div>
+            <div class="text-soft mt-8" style="font-size: 13px;">Same content, different placement. Buyer comparing Marvin vs Dovetail clicks one link from the main nav.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F08 -->
+    <div class="finding mb-24">
+      <div class="finding-num">08</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Integrations gap publicly: Zoom, Microsoft Teams, Google Meet, Otter all absent from the public list. Surprising for a research-call platform.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 1 day</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Public integrations page lists FigJam, Miro, Confluence, Notion, Slack, Asana, Jira, Rally, Salesforce, Pendo, Qualtrics, Google Forms, UserTesting. Zoom, Teams, Meet, Otter, HubSpot, Zapier are absent. For a research-call analysis platform, customer interviews happen on Zoom/Teams/Meet. Either these integrations exist and need to be surfaced, or they're missing. Both outcomes fail the buyer's "can it import my interviews?" test.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; PUBLIC INTEGRATIONS LIST</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 12px; line-height: 1.8; padding: 8px 0;">
+              FigJam &middot; Miro &middot; Confluence &middot; Notion<br>
+              Slack &middot; Asana &middot; Jira &middot; Rally<br>
+              Salesforce &middot; Pendo &middot; Qualtrics<br>
+              Google Forms &middot; UserTesting<br>
+              <br>
+              <span style="color: #DC2626;">Missing from public list:</span><br>
+              Zoom &middot; Teams &middot; Meet &middot; Otter &middot; HubSpot &middot; Zapier
+            </div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; FIX</div>
+            <div style="font-size: 13px; line-height: 1.6; padding: 8px 0;">
+              <strong>If they exist:</strong> add to the public integrations page immediately. These are the ones a buyer specifically searches for ("does Marvin work with Zoom?").
+              <br><br>
+              <strong>If they don't exist:</strong> roadmap them. Zoom and Teams are table stakes for this category. Customer interview audio capture starts there.
+              <br><br>
+              <em class="text-muted">Either way, the public listing should answer the "can it import my interviews?" question without friction.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME D: RETENTION + EXPANSION -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">D</div>
+      <div>
+        <div class="theme-band-title">Retention and expansion</div>
+        <div class="text-soft" style="font-size: 13px;">Two findings. The viral loop is missing. The traction metric is buried.</div>
+      </div>
+    </div>
+
+    <!-- F09 -->
+    <div class="finding mb-24">
+      <div class="finding-num">09</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">No public referral or team-invite mechanic for a fundamentally collaborative product.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High · 2-4 weeks</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">A researcher invites a teammate to see an insight. That's the natural viral loop for a collaborative research tool. Marvin's marketing surface doesn't have the magic-link / "invite-a-teammate" entry point as a growth lever. Inside the app it likely exists; on the marketing site it's invisible.</div>
+        </div>
+
+        <div class="compare mt-16">
+          <div class="compare-cell bad">
+            <div class="compare-label bad">CURRENT &middot; NO PUBLIC INVITE LOOP</div>
+            <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+              No "invite a teammate" CTA on the marketing site. No magic-link landing page for invitees. No referral-incentive mention.
+              <br><br>
+              <em class="text-muted">A researcher who finds an insight worth sharing has no clean path to bring a colleague in via the public site.</em>
+            </div>
+          </div>
+          <div class="compare-cell good">
+            <div class="compare-label good">SUGGESTED &middot; INSIGHT-LEVEL INVITE LOOP</div>
+            <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+              In-product: "Share this insight with a teammate" generates a magic link. Invitee clicks, lands at the specific insight (gated by 1-click signup), sees the value before signing up.
+              <br><br>
+              On the marketing site: a "How sharing works" sub-page within /product. Plus visible referral incentive ("Bring a teammate, both get an extra 5 files/month").
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F10 -->
+    <div class="finding mb-24">
+      <div class="finding-num">10</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Headline traction metric ("350% revenue growth, 13K users, 10 Fortune 100") is buried in case studies instead of being the above-the-fold social proof.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Medium · 30 min</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">For a self-serve signup CTA, this stat ("350% revenue growth, 13K users, 10 Fortune 100s") is the strongest single conversion driver and it's invisible. Above-the-fold currently has hero copy + logo strip. Adding the metric strip as a third row would make the social proof concrete and quantitative, not just logo-decorative.</div>
+        </div>
+
+        <div class="shot-frame mb-16 mt-16">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">heymarvin.com</span>
+            <span class="live">ABOVE FOLD &middot; METRIC STRIP MISSING</span>
+          </div>
+          <img class="shot-img" src="shots/marvin-home.png" alt="heymarvin.com above the fold without traction metrics">
+          <div class="shot-overlay">
+            <div class="shot-mark amber" style="left: 4%; top: 35%; width: 92%; height: 12%;"></div>
+            <div class="shot-callout amber" style="left: 14%; top: 28%;">METRIC STRIP "350% GROWTH &middot; 13K USERS &middot; 10 FORTUNE 100" SHOULD LIVE HERE</div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">QUICK WIN</div>
+          <div class="finding-text">Add a 3-stat strip directly below the hero copy: <strong>350% revenue growth this year</strong> &middot; <strong>13,000+ researchers</strong> &middot; <strong>10 Fortune 100 customers</strong>. 30-minute add. Concrete, quantitative, scannable. Lifts signup-CTA click-through measurably (industry pattern: 10-25% lift on hero-stat additions).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section>
+    <div class="card card-strong" style="padding: 32px; text-align: center;">
+      <h2 class="section-title" style="margin-bottom: 16px;">If this read clean, <em>walk through the workflows next.</em></h2>
+      <p class="text-soft" style="max-width: 620px; margin: 0 auto 24px; font-size: 15px;">
+        Four interactive demos of the systems a Growth + Onboarding + Conversion PM would ship in week one. Each one is interactive. Each one maps to a lifecycle stage in your JD.
+      </p>
+      <div class="row gap-12" style="justify-content: center;">
+        <a href="onboarding-activation.html" class="btn">Open the workflows
+          <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+        </a>
+        <a href="index.html" class="btn btn-secondary">Back to overview</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">AI-native founder. IIT Kanpur. Sol8um.tech.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9468688354 <a class="wa-badge" href="https://wa.me/919468688354" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span><br>
+        <a class="contact-link" href="https://www.linkedin.com/in/nihalchoudhary" target="_blank" rel="noopener"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 18H6V10h2.5v8zM7.25 8.6a1.45 1.45 0 1 1 0-2.9 1.45 1.45 0 0 1 0 2.9zM18 18h-2.5v-3.9c0-1-.4-1.6-1.3-1.6-.7 0-1.1.5-1.3 1-.07.18-.07.43-.07.68V18H10.4V10h2.4v1c.34-.5.95-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.5V18z"/></svg>linkedin.com/in/nihalchoudhary</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+</script>
+
+</body>
+</html>
