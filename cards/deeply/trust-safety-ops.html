@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 04 · Trust + Safety Ops</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">For <span class="brand-sub">Felix Feng / Deeply</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Read</a>
+      <a href="decision.html">Surface Design</a>
+      <a href="trust-safety-ops.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 04 &middot; Trust + Safety Ops &middot; the system that lets you sleep at night</div>
+    <h1 class="page-title">
+      Some conversations<br>
+      <em>need to stop, not finish.</em>
+    </h1>
+    <p class="page-lede">
+      A mental-health-adjacent product running bilateral relationship conversations will see things you can't ship without preparing for. Hints of self-harm. Hints of abuse. Crisis-level emotional escalation. This is not a feature you add in month six. It's day-1 infrastructure. Claude flags. The conversation pauses with care, not silence. Both partners see help-resources immediately. A human queue picks up the case. The therapist-referral integration is built before you need it, not after.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="bilateral-onboarding.html">Bilateral Onboarding <span class="badge">01</span></a></li>
+          <li><a href="resolve-orchestrator.html">Resolve Orchestrator <span class="badge">02</span></a></li>
+          <li><a href="outcome-tracking.html">Outcome Tracking <span class="badge">03</span></a></li>
+          <li><a href="trust-safety-ops.html" class="active">Trust + Safety Ops <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Claude classifier (crisis-detection) + Postgres flag queue + Slack alert (founder + on-call) + immediate in-product resource surface + therapist-referral integration via Spring Health or BetterHelp partner API.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>The "we'll deal with that when it happens" approach that becomes a liability the moment it happens.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Crisis-detection precision and recall on a curated test set (built before launch). Time-to-pause when flagged. Human-review SLA. Numbers tracked weekly.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Flow -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">The flag-and-handoff flow &middot; real-time</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Conversation input &middot; either partner</div>
+              <div class="flow-node in">Claude scans for crisis signal</div>
+              <div class="flow-node in">Categories: self-harm, abuse, crisis, escalation</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Flag &middot; pause conversation &middot; surface resources to both &middot; alert human queue</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">Both see 988 + local hotline</div>
+              <div class="flow-node out">Therapist referral offered</div>
+              <div class="flow-node out">Human follow-up within SLA</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample flag -->
+        <div class="card mb-16" style="padding: 24px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; what the user sees when flagged</div>
+            <span class="tag" style="background: #FEF2F2; color: #991B1B; border-color: #FECACA;"><span class="tag-dot"></span>Care, not silence</span>
+          </div>
+
+          <div style="background: var(--bg-soft); border-radius: 8px; padding: 22px; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.65; color: #1A1D23; border-left: 4px solid #DC2626;">
+            <div style="font-weight: 600; font-size: 16px; margin-bottom: 10px;">We're going to pause this Resolve for a moment.</div>
+            <p style="margin-bottom: 12px;">Something in this conversation suggests you might need more support than a structured tool can give. That's okay. We'd rather get this right than keep going.</p>
+            <p style="margin-bottom: 14px;">If you're in immediate distress, please reach out:</p>
+
+            <div style="background: #FFF; padding: 14px 16px; border-radius: 6px; border: 1px solid var(--line); margin-bottom: 14px; font-size: 14px;">
+              <strong>988 Suicide and Crisis Lifeline (US)</strong> &middot; call or text 988<br>
+              <strong>Samaritans (UK)</strong> &middot; 116 123<br>
+              <strong>International:</strong> findahelpline.com
+            </div>
+
+            <p style="margin-bottom: 10px;">When you're ready, we can connect you with a real human therapist through our partner network. No judgment, no pressure. Your conversation with your partner stays paused until you both decide what's next.</p>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="background: #0A0A0A; color: #FFF; padding: 10px 16px; border-radius: 6px; font-size: 13px; font-weight: 500;">Connect me with a therapist</span>
+              <span style="border: 1px solid var(--line); padding: 10px 16px; border-radius: 6px; font-size: 13px;">I'm okay, just give me a minute</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; classify a sample input</div>
+          <div style="margin-bottom: 12px;">
+            <textarea id="input-text" placeholder="Type a sample line a partner might say..." style="width: 100%; min-height: 70px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.5; background: var(--bg-soft); resize: vertical;">I just want this to stop. I don't know how much more of this I can take.</textarea>
+          </div>
+          <button id="classify-demo" class="btn" style="flex: 0 0 auto;">Run classifier</button>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6; margin-top: 12px;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="95">
+          <span class="label">Crisis-detection coverage at launch</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">curated test set before user-1 &middot; operational day 1</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="outcome-tracking.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Outcome Tracking
+      </a>
+      <a href="index.html" class="btn">
+        Back to overview <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('classify-demo').addEventListener('click', function() {
+    const text = document.getElementById('input-text').value.toLowerCase();
+    const out = document.getElementById('demo-output');
+    let category, color, response;
+
+    if (text.includes('hurt myself') || text.includes('end it') || text.includes('don\'t want to live') || text.includes('want to die')) {
+      category = 'SELF-HARM SIGNAL';
+      color = '#DC2626';
+      response = 'Conversation paused immediately. Both partners see 988 / local crisis resources. Therapist-referral CTA offered. Human queue alerted, SLA 15 min. Conversation does not resume until manual review.';
+    } else if (text.includes('hits me') || text.includes('hit me') || text.includes('hurts me') || text.includes('afraid of') || text.includes('scared of') || text.includes('threat')) {
+      category = 'ABUSE SIGNAL';
+      color = '#DC2626';
+      response = 'Conversation paused for the flagged partner only (privacy: the other partner does not see the abuse-flag detail). Crisis resources surfaced. Domestic violence hotlines prioritized (1-800-799-7233 US). Specialist queue alerted, SLA 15 min.';
+    } else if (text.includes('can\'t take') || text.includes('exhausted') || text.includes('overwhelm') || text.includes('breaking') || text.includes('stop')) {
+      category = 'ESCALATION SIGNAL';
+      color = '#B45309';
+      response = 'Conversation soft-paused. Both partners see: "We\'re going to pause for a moment." Resources offered but not mandated. Resume option available after 10 minutes. Human notification at end-of-day (lower SLA than crisis).';
+    } else if (text.includes('angry') || text.includes('frustrated') || text.includes('tired')) {
+      category = 'EMOTIONAL CHARGE &middot; NORMAL RANGE';
+      color = '#525252';
+      response = 'No flag. This is what Resolve is designed for: high emotional charge that the Conversation Orchestrator (System 02) translates and structures. Continue.';
+    } else {
+      category = 'NORMAL INPUT';
+      color = '#16A34A';
+      response = 'No flag detected. Conversation continues through the standard Resolve flow.';
+    }
+
+    out.innerHTML = '<strong style="color: ' + color + '; letter-spacing: 0.08em;">' + category + '</strong><br><br>' + response;
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

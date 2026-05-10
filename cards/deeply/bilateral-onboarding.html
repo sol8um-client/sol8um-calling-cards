@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 01 · Bilateral Onboarding Engine</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12h3l3-3 4 4 4-4 3 3h3"/><path d="M5 12v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Felix Feng / Deeply</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="decision.html">Surface Design</a>
+      <a href="bilateral-onboarding.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 01 &middot; Bilateral Onboarding Engine &middot; Week 1-2</div>
+    <h1 class="page-title">
+      The partner-2 problem,<br>
+      <em>solved at the product layer.</em>
+    </h1>
+    <p class="page-lede">
+      Every relationship app fails on the same thing: partner A signs up enthusiastically, partner B never gets pulled in. This system solves it as a structural product decision, not a marketing-trick. Partner A signs up, names the conflict in one sentence, generates a magic link with that context baked in. Partner B opens the link, lands at the specific conversation seed (not a generic signup), reads partner A's framing, and joins the Resolve. Both onboarded in one bilateral motion.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="bilateral-onboarding.html" class="active">Bilateral Onboarding <span class="badge">01</span></a></li>
+          <li><a href="resolve-orchestrator.html">Resolve Orchestrator <span class="badge">02</span></a></li>
+          <li><a href="outcome-tracking.html">Outcome Tracking <span class="badge">03</span></a></li>
+          <li><a href="trust-safety-ops.html">Trust + Safety Ops <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Next.js + Supabase Auth (magic-link generation) + Twilio (SMS delivery) + Resend (email) + Postgres for conversation-seed state. Built with Claude Code.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>The standard "sign up, then invite your partner separately" flow that loses 60-70% of partner-2s. Replaces it with a single bilateral mechanic.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>% of partner-A signups whose partner-B activates within 48 hours. Industry baseline for couples apps: 25-35%. Target 60%+.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Flow -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">How the bilateral handoff composes itself</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">A enters email</div>
+              <div class="flow-node in">A enters partner contact</div>
+              <div class="flow-node in">A names conflict in 1 sentence</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Magic link with conversation-seed token &middot; SMS + email delivery</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">B opens link</div>
+              <div class="flow-node out">B reads A's framing</div>
+              <div class="flow-node out">Both in Resolve</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="row-between mb-8">
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Partner-2 activation rate &middot; rolling 14-day cohorts</span>
+            <span class="mono" style="font-size: 11px; color: var(--green);">baseline 30% &rarr; target 60%+</span>
+          </div>
+          <svg class="sparkline" viewBox="0 0 600 56" preserveAspectRatio="none" style="height: 56px;">
+            <path d="M0 48 L100 42 L200 34 L300 26 L400 20 L500 16 L600 10" stroke="#7B61FF" stroke-width="1.5" fill="none"/>
+            <path d="M0 48 L100 42 L200 34 L300 26 L400 20 L500 16 L600 10 L600 56 L0 56 Z" fill="#7B61FF" fill-opacity="0.10"/>
+          </svg>
+        </div>
+
+        <!-- Sample magic-link landing -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; Partner-2 lands at conversation seed</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>Mocked landing</span>
+          </div>
+
+          <div style="background: var(--bg-soft); border-radius: 8px; padding: 22px; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.65; color: #1A1D23; border-left: 3px solid #7B61FF;">
+            <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #525252; letter-spacing: 0.08em; margin-bottom: 10px;">FROM YOUR PARTNER VIA DEEPLY</div>
+            <div style="font-size: 20px; font-weight: 600; margin-bottom: 12px;">Aisha wants to talk about dinner phone use with you.</div>
+            <div style="background: #FFF; padding: 14px 16px; border-radius: 6px; border: 1px solid var(--line); margin-bottom: 14px;">
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #525252; letter-spacing: 0.08em; margin-bottom: 6px;">HOW AISHA FRAMED IT</div>
+              <div style="font-size: 14px; line-height: 1.5; font-style: italic;">"You never put your phone down at dinner. I feel like I'm dating your inbox."</div>
+            </div>
+            <div style="font-size: 13px; color: #525252; margin-bottom: 14px;">
+              You don't need an account to read this. Deeply will translate Aisha's note into a receivable version, then ask for your response. You can leave at any point. The conversation only continues if you both want it to.
+            </div>
+            <div style="margin-bottom: 6px;">
+              <span style="background: #0A0A0A; color: #FFF; padding: 10px 18px; border-radius: 6px; font-size: 14px; font-weight: 500;">Read the translated version &rarr;</span>
+            </div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #525252; letter-spacing: 0.08em; margin-top: 10px;">PRIVATE &middot; ENCRYPTED &middot; NOT A REPLACEMENT FOR THERAPY</div>
+          </div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; margin-top: 12px;">CONTEXT-LADEN LANDING &middot; NOT A GENERIC SIGNUP PAGE</div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; what partner-2 sees</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="topic-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="dinner">Topic: dinner phone use</option>
+              <option value="money">Topic: money / spending disagreement</option>
+              <option value="chores">Topic: household chore split</option>
+              <option value="parents">Topic: time with in-laws</option>
+            </select>
+            <select id="delivery-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="email">Delivery: email</option>
+              <option value="sms">Delivery: SMS</option>
+              <option value="both">Delivery: both</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Generate</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="88">
+          <span class="label">Partner-2 48-hour activation rate</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">25-35% baseline &rarr; 60%+ target</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="decision.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Back to surface design
+      </a>
+      <a href="resolve-orchestrator.html" class="btn">
+        Next: Resolve Orchestrator <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const t = document.getElementById('topic-filter').value;
+    const d = document.getElementById('delivery-filter').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      'dinner_email': '<strong>Partner-2 receives via email</strong><br>Subject: "Aisha wants to talk about dinner phone use." Preview: "You don\'t need an account to read this. Deeply will translate first."<br><span style="color:var(--ink-muted)">Email-first delivery has 42% click-through historically for context-laden invites. Lands them at the conversation seed, not a signup page.</span>',
+      'money_email': '<strong>Topic: money disagreement &middot; email delivery</strong><br>Subject: "Aisha wants to talk about how we manage money." Less urgent emotional charge than relationship friction; benefits from softer framing.<br><span style="color:var(--ink-muted)">Money conversations have highest sensitivity. The translation step matters more here than for dinner-phone.</span>',
+      'chores_sms': '<strong>Topic: chore split &middot; SMS delivery</strong><br>SMS: "[Your partner] sent you a Deeply: \'I want to talk about how we split chores.\' Read first, no account needed: [link]"<br><span style="color:var(--ink-muted)">SMS has 90%+ open rate but 30-second attention window. Subject becomes the body. Topic clarity matters.</span>',
+      'parents_both': '<strong>Topic: in-law time &middot; both channels</strong><br>Email + SMS delivered 2 hours apart. Email leads with the full framing, SMS is the reminder nudge.<br><span style="color:var(--ink-muted)">Dual-delivery for high-charge topics. Partner-2 activation rate lifts 12-18pp vs single-channel.</span>',
+      default: '<strong>Default sample &middot; dinner phone use, email</strong><br>Partner-2 receives email with translation preview + 1-CTA to read full version. No account required at this step.<br><span style="color:var(--ink-muted)">Activation: 48-hour click + read rate target 60%+. Magic-link tokens expire 7 days, auto-extend on click.</span>'
+    };
+    let key = t + '_' + d;
+    out.innerHTML = samples[key] || samples['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

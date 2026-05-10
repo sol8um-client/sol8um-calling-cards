@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Launch Surface Design · for Felix Feng</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-eye"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-check"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12l5 5 9-12"/></symbol>
+  <symbol id="i-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12h3l3-3 4 4 4-4 3 3h3"/><path d="M5 12v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">Prepared for <span class="brand-sub">Felix Feng / Deeply</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Overview</a>
+      <a href="decision.html" class="active">Surface Design</a>
+      <a href="bilateral-onboarding.html">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Part One &middot; 5 blocks &middot; usable, not illustrative &middot; built 2026-05-09</div>
+    <h1 class="page-title">
+      The marketing site Deeply doesn't have yet,<br>
+      <em>sketched five ways.</em>
+    </h1>
+    <p class="page-lede">
+      Deeply is in stealth. No public site, no waitlist page, no founder POV blog. The classic audit problem (find what's broken on the live site) doesn't apply. So instead of critiquing what's there, this page sketches what should be there. Five building blocks for the marketing site, each one designed in card form. Take them, ship them, point user-1 at them. This is what a hybrid PM and engineer ships in week one when "build the marketing surface" is on the list.
+    </p>
+    <div class="row mt-32 gap-24" style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted);">
+      <span><span class="pulse-dot"></span>Designed 2026-05-09</span>
+      <span>&middot; pre-launch surface</span>
+      <span>&middot; usable building blocks</span>
+    </div>
+  </section>
+
+  <!-- Reading the room -->
+  <section style="padding-top: 40px;">
+    <div class="card-strong card mb-32">
+      <div class="row-between" style="align-items: flex-start;">
+        <div>
+          <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-eye"/></svg> Reading the room</div>
+          <h2 style="font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px;">Three buyer types will arrive at Deeply's first marketing page. The surface has to do all three jobs.</h2>
+          <p class="text-soft" style="max-width: 680px; font-size: 14px;">
+            A bilateral relationship product attracts buyers in different mental states. The site has to convert each of them differently. The blocks below are designed around these three.
+          </p>
+        </div>
+        <span class="tag tag-amber pulsing"><span class="tag-dot"></span>Strategic</span>
+      </div>
+      <div class="divider"></div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--blue);"><use href="#i-spark"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 01 &middot; The hurting partner</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">"Something's wrong, we need help"</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Found Deeply at 11pm after a fight. Wants the conversation to stop hurting and start moving. Decision: try it tonight or wait until next month. The site has to land "this is for tonight" in 5 seconds.</div>
+          <div class="impact-bar" data-pct="85">
+            <span class="label">Highest intent</span>
+            <span class="track"><span class="fill"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">85%</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: #B45309;"><use href="#i-handshake"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 02 &middot; The proactive partner</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">"Therapy waitlist is 6 weeks"</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Already in counseling-curious mode. Read about Deeply somewhere. Wants to understand what makes it different from BetterHelp, Lasting, Paired. Will read carefully before committing.</div>
+          <div class="impact-bar" data-pct="68">
+            <span class="label">Comparison mode</span>
+            <span class="track"><span class="fill amber"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">68%</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--green);"><use href="#i-shield"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Buyer 03 &middot; The skeptical partner</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">"Why should I trust this with my marriage?"</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Their partner just sent them a magic link. They're cautious. Wants to know: is the AI playing therapist? Is this safe? Who's behind it? Trust signals decide.</div>
+          <div class="impact-bar" data-pct="52">
+            <span class="label">Trust gate</span>
+            <span class="track"><span class="fill amber"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">52%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What you have working -->
+    <div class="card mb-32" style="border-color: #BBF7D0; background: #F0FDF4;">
+      <div class="row gap-12">
+        <svg class="ic ic-lg" style="color: var(--green);"><use href="#i-check"/></svg>
+        <div>
+          <div class="mono" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #15803D; margin-bottom: 6px;">Three things you already have to work with</div>
+          <div style="font-size: 16px; font-weight: 500; line-height: 1.55; max-width: 720px;">
+            <strong>A real wedge.</strong> Bilateral signed commitments are not what BetterHelp, Lasting, Paired, or Arya do. Most relationship apps are solo-input or insight-only. Deeply is structured-conversation-to-commitment. <strong>A validation number that means something.</strong> 4.56/5 for "signed resolution scored highest of any metric tested" is a real PMF signal pre-launch. <strong>A founder who ships.</strong> Set Labs / Index Cooperative was real. Telly was real. The self-taught engineer-founder origin story (freeCodeCamp essay, 5K+ reactions) is a brand asset. None of these need building. They need surfacing on the first page.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK 01: HERO -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">01</div>
+      <div>
+        <div class="theme-band-title">Hero + bilateral thesis</div>
+        <div class="text-soft" style="font-size: 13px;">Three seconds to land "this is for tonight, for the two of you, with structure not just feelings."</div>
+      </div>
+    </div>
+
+    <!-- Mock hero -->
+    <div class="browser-frame mb-16 mt-16">
+      <div class="browser-bar">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="url-pill">deeply.com</div>
+      </div>
+      <div class="browser-body" style="padding: 60px 40px; text-align: center; background: linear-gradient(180deg, #FAFAFA 0%, #FFF 100%);">
+        <div style="font-size: 12px; font-family: 'Geist Mono', monospace; letter-spacing: 0.16em; color: #525252; text-transform: uppercase; margin-bottom: 18px;">CREDIT KARMA FOR RELATIONSHIPS</div>
+        <h2 style="font-size: 44px; font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; margin-bottom: 16px; max-width: 700px; margin-left: auto; margin-right: auto;">
+          When <em style="font-family: 'Instrument Serif', serif; font-style: italic;">"we should talk"</em><br>actually leads somewhere.
+        </h2>
+        <p style="font-size: 17px; color: #525252; max-width: 580px; margin: 0 auto 28px; line-height: 1.45;">
+          Therapy has a 6-week waitlist and costs $200 a session. Self-help diagnoses but doesn't prescribe. Deeply structures hard conversations into signed commitments. <strong>Tonight, not next month.</strong>
+        </p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <span style="background: #0A0A0A; color: #FFF; padding: 14px 24px; border-radius: 6px; font-size: 15px; font-weight: 500;">Send invite to your partner &rarr;</span>
+          <span style="border: 1px solid var(--line); padding: 14px 24px; border-radius: 6px; font-size: 15px;">Watch the Resolve flow</span>
+        </div>
+        <div style="margin-top: 22px; font-family: 'Geist Mono', monospace; font-size: 11px; color: #525252; letter-spacing: 0.08em;">
+          PRIVATE &middot; ENCRYPTED &middot; NOT A REPLACEMENT FOR THERAPY
+        </div>
+      </div>
+    </div>
+
+    <div class="finding-row">
+      <div class="finding-label">DESIGN NOTES</div>
+      <div class="finding-text">Eyebrow names the analogy first (Credit Karma for Relationships). Headline uses the universal couple-language "we should talk" reframed as something that produces an outcome. Subhead names the buyer's pain (waitlist, cost) and Deeply's wedge (signed commitments) in one line. Primary CTA is bilateral by default. Footer line earns the trust gate without overclaiming.</div>
+    </div>
+  </section>
+
+  <!-- BLOCK 02: RESOLVE FLOW DEMO -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">02</div>
+      <div>
+        <div class="theme-band-title">The Resolve flow, visible</div>
+        <div class="text-soft" style="font-size: 13px;">A 60-second animation showing partner A's raw input, AI translation, partner B's response, the signed resolution.</div>
+      </div>
+    </div>
+
+    <div class="card mt-16" style="padding: 28px;">
+      <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Mockup &middot; 4-step Resolve flow shown on the homepage</div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
+        <div class="card card-tight" style="background: #FAFAFA;">
+          <div class="mono" style="font-size: 10px; color: #6D28D9; letter-spacing: 0.14em; margin-bottom: 8px;">STEP 01 &middot; PARTNER A</div>
+          <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px;">Share your side, raw</div>
+          <div style="font-size: 12px; line-height: 1.55; color: #525252; font-style: italic;">"You never put your phone down at dinner. I feel like I'm dating your inbox."</div>
+        </div>
+        <div class="card card-tight" style="background: #F0F4FF;">
+          <div class="mono" style="font-size: 10px; color: #1D4ED8; letter-spacing: 0.14em; margin-bottom: 8px;">STEP 02 &middot; AI TRANSLATES</div>
+          <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px;">Receivable, not accusatory</div>
+          <div style="font-size: 12px; line-height: 1.55; color: #525252;">"Connection at dinner matters to me. I want us both phone-down for that hour."</div>
+        </div>
+        <div class="card card-tight" style="background: #FAFAFA;">
+          <div class="mono" style="font-size: 10px; color: #B45309; letter-spacing: 0.14em; margin-bottom: 8px;">STEP 03 &middot; PARTNER B</div>
+          <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px;">Reads and responds</div>
+          <div style="font-size: 12px; line-height: 1.55; color: #525252; font-style: italic;">"I didn't realize. I'd been using dinner to clear urgent stuff. Let's try a phone basket."</div>
+        </div>
+        <div class="card card-tight" style="background: #F0FDF4;">
+          <div class="mono" style="font-size: 10px; color: #15803D; letter-spacing: 0.14em; margin-bottom: 8px;">STEP 04 &middot; SIGNED</div>
+          <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px;">Specific commitments</div>
+          <div style="font-size: 12px; line-height: 1.55; color: #525252;">Both phones in basket 7-8pm. 30-day check-in. Both partners signed Tue.</div>
+        </div>
+      </div>
+      <div class="mono text-muted mt-16" style="font-size: 10px; letter-spacing: 0.1em;">A REAL EXAMPLE BEATS ABSTRACT EXPLANATION &middot; AI IS TRANSPARENT, NOT MAGICAL</div>
+    </div>
+
+    <div class="finding-row mt-16">
+      <div class="finding-label">DESIGN NOTES</div>
+      <div class="finding-text">The example matters. Pick something universal (dinner, screen time, chores, money) so the viewer instantly sees themselves. Show the AI's translation literally so the viewer understands what Deeply does that they couldn't do alone. The signed-and-dated outcome is the moment the viewer thinks "oh, this is different from just venting."</div>
+    </div>
+  </section>
+
+  <!-- BLOCK 03: TRUST SIGNALS -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">03</div>
+      <div>
+        <div class="theme-band-title">Trust signals for a mental-health-adjacent product</div>
+        <div class="text-soft" style="font-size: 13px;">Therapist endorsements, validation methodology, privacy commitments, what-we-are-NOT statement.</div>
+      </div>
+    </div>
+
+    <div class="compare mt-16">
+      <div class="compare-cell bad">
+        <div class="compare-label bad">RISKY &middot; OVERCLAIM</div>
+        <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+          "AI couples therapy that works."<br><br>
+          <span class="text-muted">Reads as "AI playing therapist." Triggers immediate skepticism from Buyer 03 and regulatory concern.</span>
+        </div>
+      </div>
+      <div class="compare-cell good">
+        <div class="compare-label good">HONEST &middot; EARNS TRUST</div>
+        <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+          <strong>What we are:</strong> a structured conversation tool that turns hard talks into signed commitments.<br><br>
+          <strong>What we are not:</strong> therapy, AI playing therapist, a substitute for crisis support.<br><br>
+          <span class="text-muted">If you're in crisis, here's where to go: 988 (US), Samaritans (UK), more.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-16" style="padding: 20px;">
+      <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Three trust badges that ship in week 1</div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+        <div class="card card-tight" style="background: #FAFAFA;">
+          <div style="font-weight: 600; font-size: 14px; margin-bottom: 6px;">Validation methodology</div>
+          <div style="font-size: 12px; color: #525252; line-height: 1.5;">"Our signed resolution scored 4.56/5 in a 50-couple validation panel. Details: [link]." Show the work.</div>
+        </div>
+        <div class="card card-tight" style="background: #FAFAFA;">
+          <div style="font-weight: 600; font-size: 14px; margin-bottom: 6px;">Therapist endorsements</div>
+          <div style="font-size: 12px; color: #525252; line-height: 1.5;">1-2 licensed couples therapists who reviewed the flow. Their actual quote, their actual name and credential. Earns 80% of the trust the site needs.</div>
+        </div>
+        <div class="card card-tight" style="background: #FAFAFA;">
+          <div style="font-weight: 600; font-size: 14px; margin-bottom: 6px;">Privacy commitment</div>
+          <div style="font-size: 12px; color: #525252; line-height: 1.5;">"Your conversations are encrypted at rest, never used to train models, deleted on request." Plain language, footer-anchored.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK 04: BILATERAL CTA -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">04</div>
+      <div>
+        <div class="theme-band-title">Bilateral CTA mechanic</div>
+        <div class="text-soft" style="font-size: 13px;">"Send invite to your partner" as primary action. Solves the partner-2 problem at the marketing layer.</div>
+      </div>
+    </div>
+
+    <div class="compare mt-16">
+      <div class="compare-cell bad">
+        <div class="compare-label bad">DEFAULT &middot; SOLO SIGNUP</div>
+        <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+          Primary CTA: "Sign up free"<br><br>
+          User signs up alone. Then has to figure out how to invite partner. Most don't. Partner-2 activation rate craters.<br><br>
+          <span class="text-muted">Every relationship app fails here.</span>
+        </div>
+      </div>
+      <div class="compare-cell good">
+        <div class="compare-label good">DEEPLY &middot; BILATERAL CTA</div>
+        <div style="font-size: 14px; line-height: 1.6; padding: 8px 0;">
+          Primary CTA: <strong>"Send invite to your partner"</strong><br><br>
+          User enters: their email + partner's contact + the conflict in one sentence ("dinner phone use"). Magic link sent. Partner-2 lands at the specific conversation context, not a generic signup page.<br><br>
+          <span class="text-muted">Bilateral by default. Solves the structural problem upstream.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-16" style="padding: 20px;">
+      <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Inline form mock &middot; the actual CTA</div>
+      <div style="background: var(--bg-soft); border-radius: 8px; padding: 24px;">
+        <div style="font-weight: 600; font-size: 16px; margin-bottom: 12px;">Start your first Resolve in 60 seconds.</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+          <div style="padding: 10px 12px; background: #FFF; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; color: #525252;">Your email</div>
+          <div style="padding: 10px 12px; background: #FFF; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; color: #525252;">Partner's email or phone</div>
+        </div>
+        <div style="padding: 10px 12px; background: #FFF; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; color: #525252; margin-bottom: 12px;">What's the conversation about? (1 sentence)</div>
+        <div style="background: #0A0A0A; color: #FFF; padding: 12px 20px; border-radius: 6px; font-size: 14px; font-weight: 500; display: inline-block;">Send the invite &rarr;</div>
+        <div class="mono text-muted mt-12" style="font-size: 10px; letter-spacing: 0.1em;">PARTNER-2 GETS: "[YOUR NAME] WANTS TO RESOLVE [TOPIC] WITH YOU. CLICK TO READ FIRST, NO ACCOUNT NEEDED."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCK 05: FOUNDER NOTE -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">05</div>
+      <div>
+        <div class="theme-band-title">Founder note &middot; Felix's voice</div>
+        <div class="text-soft" style="font-size: 13px;">200 words on the homepage. The moment your 3.7K Medium followers move from DeFi to Deeply.</div>
+      </div>
+    </div>
+
+    <div class="card mt-16" style="padding: 28px; background: var(--bg-soft);">
+      <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Mock founder note &middot; placeholder copy, your voice goes here</div>
+      <div style="display: flex; gap: 16px; align-items: flex-start;">
+        <div style="width: 56px; height: 56px; border-radius: 999px; background: #0A0A0A; color: #FFF; display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px; font-weight: 400; flex-shrink: 0;">F</div>
+        <div>
+          <div class="mono text-muted mb-6" style="font-size: 11px; letter-spacing: 0.12em;">FELIX FENG &middot; FOUNDER</div>
+          <p style="font-size: 15px; line-height: 1.6; margin-bottom: 12px;">
+            I've spent the last 18 months watching couples I care about wait six weeks for therapy, give up on self-help books that diagnose but don't prescribe, and try to have hard conversations alone at 11pm without anything structural to help them. They know something's wrong. They don't know what to do.
+          </p>
+          <p style="font-size: 15px; line-height: 1.6; margin-bottom: 12px;">
+            Deeply is what I wished existed for them. It's not therapy. It's not AI playing therapist. It's a structured tool that converts hard conversations into signed commitments. Bilateral, specific, trackable. Our signed-resolution feature scored higher in validation than anything else we tested.
+          </p>
+          <p style="font-size: 15px; line-height: 1.6;">
+            If you and your partner are stuck on a conversation that keeps looping back, this is for you. If you're in crisis, please reach out to 988 or your local equivalent first. Deeply works alongside that, not instead of it.
+          </p>
+          <div class="mono text-muted mt-12" style="font-size: 11px; letter-spacing: 0.12em;">READ THE FULL STORY &rarr; <span class="text-muted">/about</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="finding-row mt-16">
+      <div class="finding-label">DESIGN NOTES</div>
+      <div class="finding-text">Founder note is the strongest single trust signal an early-stage product can ship. Felix has 3.7K Medium followers and the credibility of Set Labs / Telly / freeCodeCamp. The Medium followers are a head start. A founder note + 1 longer thesis post on the company blog moves them from DeFi to Deeply. Keep the crisis-handoff line; it earns the trust gate for Buyer 03.</div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section>
+    <div class="card card-strong" style="padding: 32px; text-align: center;">
+      <h2 class="section-title" style="margin-bottom: 16px;">If this read clean, <em>walk through the workflows next.</em></h2>
+      <p class="text-soft" style="max-width: 620px; margin: 0 auto 24px; font-size: 15px;">
+        Four interactive demos of the systems a hybrid PM and engineer would ship in week one. Each one maps to a line in your JD. Each one is the production-engineering version of what the surface design above lands users on.
+      </p>
+      <div class="row gap-12" style="justify-content: center;">
+        <a href="bilateral-onboarding.html" class="btn">Open the workflows
+          <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+        </a>
+        <a href="index.html" class="btn btn-secondary">Back to overview</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">AI-native founder. IIT Kanpur. Sol8um.tech.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9468688354 <a class="wa-badge" href="https://wa.me/919468688354" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span><br>
+        <a class="contact-link" href="https://www.linkedin.com/in/nihalchoudhary" target="_blank" rel="noopener"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 18H6V10h2.5v8zM7.25 8.6a1.45 1.45 0 1 1 0-2.9 1.45 1.45 0 0 1 0 2.9zM18 18h-2.5v-3.9c0-1-.4-1.6-1.3-1.6-.7 0-1.1.5-1.3 1-.07.18-.07.43-.07.68V18H10.4V10h2.4v1c.34-.5.95-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.5V18z"/></svg>linkedin.com/in/nihalchoudhary</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+</script>
+
+</body>
+</html>
