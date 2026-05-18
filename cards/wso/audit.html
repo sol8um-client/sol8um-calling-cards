@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wall Street Oasis · Product Audit · for Pranav Macker</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-eye"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-check"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12l5 5 9-12"/></symbol>
+  <symbol id="i-bar"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="3" width="4" height="18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">For <span class="brand-sub">Pranav Macker / Wall Street Oasis</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Read</a>
+      <a href="audit.html" class="active">Product Audit</a>
+      <a href="spec-to-sprint.html">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">Part One &middot; 10 findings &middot; 4 themes &middot; verified live 2026-05-11</div>
+    <h1 class="page-title">
+      Where WSO's product surface<br>
+      <em>has room to grow.</em>
+    </h1>
+    <p class="page-lede">
+      This is not a conversion audit. WSO is profitable and the funnel works. It's a product-opportunity audit, the kind of thing I'd bring to a first roadmap meeting. The throughline: WSO is sitting on a 17-year data moat and running it across two disconnected stacks. The PM hired into this role is the person who connects the seam and turns the archive into product. Ten findings, grouped four ways.
+    </p>
+    <div class="row mt-32 gap-24" style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted);">
+      <span><span class="pulse-dot"></span>Audited live &middot; 2026-05-11</span>
+      <span>&middot; wallstreetoasis.com</span>
+      <span>&middot; founded 2006 &middot; Drupal &middot; 17+ year archive</span>
+    </div>
+  </section>
+
+  <!-- READING THE ROOM -->
+  <section style="padding-top: 40px;">
+    <div class="card-strong card mb-32">
+      <div class="row-between" style="align-items: flex-start;">
+        <div>
+          <div class="section-eyebrow"><svg class="ic ic-sm"><use href="#i-eye"/></svg> Reading the room</div>
+          <h2 style="font-size: 24px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px;">WSO has two products and three kinds of user.</h2>
+          <p class="text-soft" style="max-width: 680px; font-size: 14px;">
+            The free community member, the Academy applicant, and the Academy student are three different relationships with WSO. They live across two stacks that do not share a spine. The PM's job starts here: making the seam between them a designed product, not an accident of history.
+          </p>
+        </div>
+        <span class="tag tag-amber pulsing"><span class="tag-dot"></span>Strategic</span>
+      </div>
+      <div class="divider"></div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--blue);"><use href="#i-search"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">User 01 &middot; Free community member</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">Reading the forum, free</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Found WSO via a Google search for an IB recruiting question. Reads threads, lurks. The 17-year archive is what they came for. They are the top of the funnel and the least instrumented.</div>
+          <div class="impact-bar" data-pct="90">
+            <span class="label">Volume</span>
+            <span class="track"><span class="fill"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">highest</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: #B45309;"><use href="#i-target"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">User 02 &middot; Academy applicant</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">On the waitlist, deciding</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">Joined the Academy waitlist, got the two free resources, is weighing a $6K-$9K decision. The conversion from User 01 to here is the single most valuable transition WSO has, and it is barely measured.</div>
+          <div class="impact-bar" data-pct="62">
+            <span class="label">Leverage</span>
+            <span class="track"><span class="fill amber"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">the money step</span>
+          </div>
+        </div>
+        <div class="card card-tight" style="background: var(--bg-soft);">
+          <div class="row gap-8 mb-8">
+            <svg class="ic" style="color: var(--green);"><use href="#i-shield"/></svg>
+            <span class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">User 03 &middot; Academy student</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px;">Paid, in the 12-week program</div>
+          <div class="text-soft" style="font-size: 13px; line-height: 1.5;">In the Academy dashboard, working through mentorship and mock interviews. Lives almost entirely on the newer stack. The "Top Job Offer Guaranteed" promise rides on this user's outcome.</div>
+          <div class="impact-bar" data-pct="85">
+            <span class="label">Outcome stake</span>
+            <span class="track"><span class="fill"></span></span>
+            <span class="mono text-muted" style="font-size: 11px;">the guarantee</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Already working -->
+    <div class="card mb-32" style="border-color: #BBF7D0; background: #F0FDF4;">
+      <div class="row gap-12">
+        <svg class="ic ic-lg" style="color: var(--green);"><use href="#i-check"/></svg>
+        <div>
+          <div class="mono" style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #15803D; margin-bottom: 6px;">Three things already working</div>
+          <div style="font-size: 16px; font-weight: 500; line-height: 1.55; max-width: 720px;">
+            <strong>The data moat is real and deep.</strong> 17 years of forum Q&A, 100,000+ interview and salary datapoints, 10,000+ mock-interview scores. No competitor can buy or build that corpus. <strong>The Academy guarantee is a genuine trust signal.</strong> "Top Job Offer Guaranteed or your tuition is free," with an under-4% acceptance rate and 88% placement, is a real and defensible promise. <strong>The "organic community" brand position</strong> is the un-salesy option in a salesy category. It took 17 years to earn and cannot be shortcut. None of these need fixing. The findings below are about turning them into more product.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live capture -->
+    <div class="shot-frame mb-32">
+      <div class="shot-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="url">wallstreetoasis.com</span>
+        <span class="live">LIVE &middot; AUDITED 2026-05-11</span>
+      </div>
+      <img class="shot-img" src="shots/wso-home.png" alt="wallstreetoasis.com homepage">
+    </div>
+  </section>
+
+  <!-- THEME A -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">A</div>
+      <div>
+        <div class="theme-band-title">The two-stack seam</div>
+        <div class="text-soft" style="font-size: 13px;">Three findings. WSO is two products that don't share a spine.</div>
+      </div>
+    </div>
+
+    <!-- F01 -->
+    <div class="finding mb-24">
+      <div class="finding-num">01</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">WSO is two products on two stacks. The community site and the Academy don't feel like one company.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Strategic</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">The main site at wallstreetoasis.com and the Academy at /academy run on visibly different systems. Different nav, different visual language, different feel. One is the 19-year Drupal community monolith. The other is a newer Academy platform. A user crossing from one to the other notices the seam.</div>
+        </div>
+
+        <div class="shot-frame mb-16 mt-16">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">wallstreetoasis.com/academy</span>
+            <span class="live">A DIFFERENT VISUAL SYSTEM</span>
+          </div>
+          <img class="shot-img" src="shots/wso-academy.png" alt="WSO Academy page, a different visual system">
+          <div class="shot-overlay">
+            <div class="shot-mark amber" style="left: 4%; top: 4%; width: 60%; height: 16%;"></div>
+            <div class="shot-callout amber" style="left: 6%; top: 22%;">ACADEMY: DIFFERENT NAV, DIFFERENT SYSTEM FROM THE MAIN SITE</div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">WHY IT MATTERS</div>
+          <div class="finding-text">The PM hired into this role is the connective tissue across these two stacks. The seam isn't just cosmetic. It's where the most valuable user signal gets lost (Findings 02 and 08). Week one, I'd want an honest map of what lives on which stack and where the handoffs are.</div>
+        </div>
+        <div class="impact-bar" data-pct="78">
+          <span class="label">Strategic priority for the PM role</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">the core of the job</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- F02 -->
+    <div class="finding mb-24">
+      <div class="finding-num">02</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">A community member and an Academy student are probably two separate identity records.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">Two stacks, two systems, near-certainly two identity tables. The community runs on Drupal. The Academy CRM is Keap. A forum power-user and an Academy lead are the same human, but the systems likely can't see that without manual stitching.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">WHY IT MATTERS</div>
+          <div class="finding-text">It means WSO cannot automatically see "this person read 30 IB-recruiting threads this month" as a high-intent Academy lead. The warmest signal in the building is invisible to the team that would act on it. A shared identity spine across Drupal and Keap is the unlock.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F03 -->
+    <div class="finding mb-24">
+      <div class="finding-num">03</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">The Drupal monolith's age is a roadmap constraint nobody has scoped on paper.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Strategic</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">wallstreetoasis.com has run on Drupal since 2006. A 19-year-old codebase. Every new community-side feature either works with the Drupal version or gets built as a bolt-on. That's not a crisis, Drupal is sturdy, but it's a constraint that shapes every roadmap decision.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">WHY IT MATTERS</div>
+          <div class="finding-text">A PM who can talk fluently with senior engineers (the JD's exact phrase) should own an honest assessment: what can Drupal still do well, what should move off it, what's the cost of each path. That's a week-one or week-two deliverable, and it makes every later roadmap call cheaper.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME B -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">B</div>
+      <div>
+        <div class="theme-band-title">The archive is a moat used like a band-aid</div>
+        <div class="text-soft" style="font-size: 13px;">Three findings. 17 years of Q&A, underbuilt as product.</div>
+      </div>
+    </div>
+
+    <!-- F04 -->
+    <div class="finding mb-24">
+      <div class="finding-num">04</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">The AI bot posts in forum threads. That's a band-aid. The real product is "ask the archive."</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>High &middot; biggest unbuilt product</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">WSO has an AI bot trained on 17+ years of WSO content. Right now it shows up as a participant inside forum threads. Useful, but it's a feature bolted onto the old surface.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">THE OPPORTUNITY</div>
+          <div class="finding-text">The actual product is a discovery layer: "ask the WSO archive." A user types a finance-recruiting question and gets a synthesized answer with cited source threads, instantly. It's the single highest-value unbuilt product WSO has, because the corpus already exists and no competitor can match it. This is Workflow 03 in the next section.</div>
+        </div>
+        <div class="impact-bar" data-pct="92">
+          <span class="label">Product opportunity size</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">the moat, made queryable</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- F05 -->
+    <div class="finding mb-24">
+      <div class="finding-num">05</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">"100,000+ interview & salary datapoints" is a homepage stat. It should be a product surface.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">The homepage says, verbatim, "100,000+ interview &amp; salary datapoints across thousands of firms." It's framed as a credibility number, sitting next to "1,217,427 students enrolled."</div>
+        </div>
+
+        <div class="shot-frame mb-16 mt-16">
+          <div class="shot-bar">
+            <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            <span class="url">wallstreetoasis.com</span>
+            <span class="live">THE MOAT, USED AS A STAT</span>
+          </div>
+          <img class="shot-img" src="shots/wso-home.png" alt="wallstreetoasis.com homepage with the datapoints stat">
+          <div class="shot-overlay">
+            <div class="shot-mark amber" style="left: 4%; top: 38%; width: 44%; height: 14%;"></div>
+            <div class="shot-callout amber" style="left: 6%; top: 54%;">100,000+ DATAPOINTS: A CREDIBILITY LINE, NOT YET A QUERYABLE PRODUCT</div>
+          </div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">THE OPPORTUNITY</div>
+          <div class="finding-text">100,000 structured datapoints want to be a sliceable product: a compensation explorer, a firm-by-firm interview-difficulty index, a "what does an analyst at this fund actually make" tool. That's a reason to return monthly, and a natural funnel into Academy. Right now it's a number you read once.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F06 -->
+    <div class="finding mb-24">
+      <div class="finding-num">06</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Forum search is pre-AI-era in a category where users now expect synthesized answers.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">A 17-year Drupal forum almost certainly does keyword search over threads. In 2026 a user with a recruiting question expects to ask it and get a synthesized answer, the way they would from any AI tool.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">THE OPPORTUNITY</div>
+          <div class="finding-text">Competitors will ship "ask AI" over their content. They have smaller corpora. WSO has the biggest one in the category and should win this decisively, but only if the PM builds the discovery layer (Finding 04) before someone else's good-enough version sets the user expectation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME C -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">C</div>
+      <div>
+        <div class="theme-band-title">The community-to-Academy funnel</div>
+        <div class="text-soft" style="font-size: 13px;">Two findings. The money step exists, but it isn't instrumented.</div>
+      </div>
+    </div>
+
+    <!-- F07 -->
+    <div class="finding mb-24">
+      <div class="finding-num">07</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">The funnel exists as steps, not as an instrumented product with conversion rates per stage.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">The path is: free community member, then Academy waitlist (with two free resources), then application, then admissions call. Each step is real and intentional.</div>
+        </div>
+
+        <div class="card-tight card mt-16 mb-16" style="padding: 16px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em;">THE FUNNEL AS IT RUNS TODAY</div>
+          <div style="display: flex; gap: 6px; align-items: center; font-family: 'Geist Mono', monospace; font-size: 11px; flex-wrap: wrap;">
+            <span style="background: #EFF6FF; color: #1D4ED8; padding: 8px 12px; border-radius: 4px;">FREE MEMBER</span>
+            <span class="text-muted">&rarr;</span>
+            <span style="background: #FFFBEB; color: #B45309; padding: 8px 12px; border-radius: 4px;">WAITLIST</span>
+            <span class="text-muted">&rarr;</span>
+            <span style="background: #FFFBEB; color: #B45309; padding: 8px 12px; border-radius: 4px;">APPLICATION</span>
+            <span class="text-muted">&rarr;</span>
+            <span style="background: #F0FDF4; color: #15803D; padding: 8px 12px; border-radius: 4px;">ADMISSIONS CALL</span>
+            <span class="text-muted">&rarr;</span>
+            <span style="background: #0A0A0A; color: #FFF; padding: 8px 12px; border-radius: 4px;">ENROLLED</span>
+          </div>
+          <div class="text-soft mt-12" style="font-size: 13px;">Four transitions. If each one isn't a measured number with an experiment slot, WSO is flying the most valuable part of the business on instinct.</div>
+        </div>
+
+        <div class="finding-row">
+          <div class="finding-label">THE OPPORTUNITY</div>
+          <div class="finding-text">Instrument every transition. Conversion rate per step, dropoff reasons, an A/B slot at each one. The waitlist-to-application step alone, optimized, moves real revenue given a $6K-$9K price point.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- F08 -->
+    <div class="finding mb-24">
+      <div class="finding-num">08</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">The highest-intent Academy leads are invisible, because of the identity seam in Finding 02.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>High</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">A free community member reading 30 IB-recruiting threads is the warmest possible Academy lead. But community-side behavior lives on Drupal and the Academy CRM is Keap. The intent signal and the team that would act on it are on different stacks.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">THE OPPORTUNITY</div>
+          <div class="finding-text">Once the identity spine exists (Finding 02), forum behavior becomes a lead score. "This member just read the PE-recruiting megathread three times" becomes a trigger: surface the Academy waitlist to exactly that person, at exactly that moment. The funnel stops being passive.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEME D -->
+  <section style="padding-top: 16px;">
+    <div class="theme-band">
+      <div class="theme-band-num">D</div>
+      <div>
+        <div class="theme-band-title">Ops latency</div>
+        <div class="text-soft" style="font-size: 13px;">Two findings. The JD asks for ops automation by name. Here's where it goes first.</div>
+      </div>
+    </div>
+
+    <!-- F09 -->
+    <div class="finding mb-24">
+      <div class="finding-num">09</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Service latency is already visible to the public. A reviewer reports resume review taking "more than one month."</h3>
+          <span class="tag tag-red"><span class="tag-dot"></span>High &middot; maps to the JD</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">A Trustpilot reviewer reports a resume review took "more than one month" with "slow communication." The JD explicitly asks the PM to "scope and ship internal automations." This is where that work starts, and it's measurable from day one.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">THE OPPORTUNITY</div>
+          <div class="finding-text">Resume-review SLA automation: an intake that timestamps and starts a clock, an AI pre-pass that flags the obvious fixes so the human reviewer starts from an annotated draft, and an SLA dashboard that catches anything aging past target. Month becomes days. Workflow 04 builds this.</div>
+        </div>
+        <div class="impact-bar" data-pct="82">
+          <span class="label">Turnaround improvement target</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">month &rarr; days</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- F10 -->
+    <div class="finding mb-24">
+      <div class="finding-num">10</div>
+      <div>
+        <div class="row-between mb-8" style="align-items: flex-start;">
+          <h3 class="finding-title">Mentor-matching and admissions triage are human-heavy. Both are on-brand automation targets.</h3>
+          <span class="tag tag-amber"><span class="tag-dot"></span>Medium-High</span>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">EVIDENCE</div>
+          <div class="finding-text">WSO works with 3,500+ mentors. Matching students to the right mentor, and triaging Academy applications against an under-4% acceptance bar, is human-heavy judgment work that scales linearly with headcount.</div>
+        </div>
+        <div class="finding-row">
+          <div class="finding-label">THE OPPORTUNITY</div>
+          <div class="finding-text">An AI-assisted layer: mentor-matching that proposes the top three fits with reasoning a human confirms, and an admissions pre-pass that ranks applications so the human reviewer spends time on the genuine maybes. Not replacing the judgment, removing the sorting. That's the on-brand automation the JD wants.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section>
+    <div class="card card-strong" style="padding: 32px; text-align: center;">
+      <h2 class="section-title" style="margin-bottom: 16px;">If this read clean, <em>the workflows show how I'd build it.</em></h2>
+      <p class="text-soft" style="max-width: 620px; margin: 0 auto 24px; font-size: 15px;">
+        Four interactive demos, one per quadrant of the role. Dev coordination, the AI interview coach, the archive intelligence layer, and the ops automation engine. Each one maps to a finding above.
+      </p>
+      <div class="row gap-12" style="justify-content: center;">
+        <a href="spec-to-sprint.html" class="btn">Open the workflows
+          <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+        </a>
+        <a href="index.html" class="btn btn-secondary">Back to overview</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-grid">
+      <div>
+        <div class="signature">Nihal Choudhary</div>
+        <div class="mt-8 mono text-muted" style="font-size: 11px; letter-spacing: 0.08em;">PM who ships. EdTech + FinTech. AI-native daily.</div>
+      </div>
+      <div class="text-soft" style="text-align: right;">
+        <a class="contact-link" href="mailto:misclifebusiness@gmail.com"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>misclifebusiness@gmail.com</a><br>
+        <span class="contact-row">+91 9468688354 <a class="wa-badge" href="https://wa.me/919468688354" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.1-.3.2-.6 0-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.1 5 4.4 1.7.7 2.4.8 3.3.7.5-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.4c1.4.8 3 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.4-3-1.4-4.7 0-4.5 3.7-8.3 8.3-8.3s8.3 3.7 8.3 8.3-3.5 8.7-8 8.7z"/></svg>WhatsApp</a></span><br>
+        <a class="contact-link" href="https://www.linkedin.com/in/nihalchoudhary" target="_blank" rel="noopener"><svg class="ic ic-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 18H6V10h2.5v8zM7.25 8.6a1.45 1.45 0 1 1 0-2.9 1.45 1.45 0 0 1 0 2.9zM18 18h-2.5v-3.9c0-1-.4-1.6-1.3-1.6-.7 0-1.1.5-1.3 1-.07.18-.07.43-.07.68V18H10.4V10h2.4v1c.34-.5.95-1.2 2.3-1.2 1.7 0 2.9 1.1 2.9 3.5V18z"/></svg>linkedin.com/in/nihalchoudhary</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+</script>
+
+</body>
+</html>

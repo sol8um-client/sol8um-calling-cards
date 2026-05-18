@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 04 · Ops Automation Engine</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">For <span class="brand-sub">Pranav Macker / Wall Street Oasis</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Read</a>
+      <a href="audit.html">Product Audit</a>
+      <a href="ops-automation.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 04 &middot; Ops Automation Engine &middot; internal ops</div>
+    <h1 class="page-title">
+      A resume review took "more than a month."<br>
+      <em>That's a measurable target.</em>
+    </h1>
+    <p class="page-lede">
+      The JD asks for internal ops automation by name. A public Trustpilot review hands us the first target: resume review running over a month, with slow communication. This system fixes the kind of work that scales linearly with headcount. Resume-review SLA tracking, an AI pre-pass that annotates the obvious fixes before a human opens the doc, mentor-matching, admissions triage. Not replacing the human judgment. Removing the sorting and the waiting.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="spec-to-sprint.html">Spec-to-Sprint <span class="badge">01</span></a></li>
+          <li><a href="ai-interview-coach.html">AI Interview Coach <span class="badge">02</span></a></li>
+          <li><a href="forum-archive-intelligence.html">Forum Archive Intelligence <span class="badge">03</span></a></li>
+          <li><a href="ops-automation.html" class="active">Ops Automation <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>n8n orchestrates. Claude does the pre-pass annotation and the matching reasoning. Keap (the existing CRM) holds the records. An SLA dashboard catches anything aging past target.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>The resume that sits in an inbox for a month. The mentor-match done from memory. The admissions pile sorted by hand. Work that grows with headcount instead of with software.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Resume-review turnaround, target measured in days not "more than a month." Mentor-match time. Percentage of admissions applications a human spends real time on (the genuine maybes, not the obvious sorts).</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Flow -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Resume review, re-architected</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Resume submitted</div>
+              <div class="flow-node in">Auto-acknowledge + SLA clock starts</div>
+              <div class="flow-node in">Claude pre-pass annotates obvious fixes</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Human reviewer opens a pre-annotated draft, adds the judgment, sends</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">Review delivered in days</div>
+              <div class="flow-node out">SLA dashboard, nothing aging</div>
+              <div class="flow-node out">Student kept in the loop</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample SLA board -->
+        <div class="card mb-16" style="padding: 24px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; the resume-review SLA board</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>Nothing aging</span>
+          </div>
+
+          <div style="background: #1A1D23; border-radius: 8px; padding: 18px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #E3E4E6; line-height: 1.8;">
+            <div style="color: #4A90D9; font-weight: 600; margin-bottom: 8px;">Resume Review Queue &middot; SLA target: 3 business days</div>
+            <div style="display: grid; grid-template-columns: 1fr 90px 110px; gap: 4px 12px;">
+              <div style="color: #8A8A8A;">CANDIDATE</div><div style="color: #8A8A8A;">AGE</div><div style="color: #8A8A8A;">STATUS</div>
+              <div>m. chen</div><div style="color:#2ECC71;">4 hrs</div><div style="color:#2ECC71;">pre-pass done</div>
+              <div>a. okafor</div><div style="color:#2ECC71;">11 hrs</div><div style="color:#FCD34D;">in human review</div>
+              <div>r. patel</div><div style="color:#2ECC71;">1.2 days</div><div style="color:#FCD34D;">in human review</div>
+              <div>s. kim</div><div style="color:#FCD34D;">2.4 days</div><div style="color:#E84C4C;">SLA warning</div>
+              <div>j. alvarez</div><div style="color:#2ECC71;">6 hrs</div><div style="color:#2ECC71;">pre-pass done</div>
+            </div>
+            <div style="color: #525252; margin-top: 10px; font-size: 11px;">One item near the SLA line, flagged before it breaches. Compare: the current state is a review surfacing on Trustpilot at "more than a month."</div>
+          </div>
+        </div>
+
+        <!-- AI pre-pass sample -->
+        <div class="card mb-16" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; what the human reviewer opens (pre-annotated)</div>
+          <div style="background: var(--bg-soft); border-radius: 8px; padding: 16px; font-size: 13px; line-height: 1.65;">
+            <div style="margin-bottom: 8px;"><strong>Claude pre-pass found 4 mechanical fixes</strong> so the human starts on substance:</div>
+            <div style="padding-left: 8px; border-left: 2px solid #FED7AA; margin-bottom: 6px;">Bullet 3 leads with a duty, not a result. Flag for "lead with the number."</div>
+            <div style="padding-left: 8px; border-left: 2px solid #FED7AA; margin-bottom: 6px;">Two bullets exceed two lines. Banking resumes are one line per bullet.</div>
+            <div style="padding-left: 8px; border-left: 2px solid #FED7AA; margin-bottom: 6px;">Inconsistent date format between two roles.</div>
+            <div style="padding-left: 8px; border-left: 2px solid #FED7AA; margin-bottom: 10px;">No deal or transaction value quantified anywhere. Big one for IB.</div>
+            <div class="text-soft" style="font-size: 12px;">The human reviewer now spends their time on the judgment call (is this story compelling for PE vs IB), not on catching formatting. That's where the month becomes days.</div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; which ops process to automate first</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="proc-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="resume">Resume review SLA</option>
+              <option value="mentor">Mentor-matching</option>
+              <option value="admissions">Admissions triage</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Show the automation plan</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="83">
+          <span class="label">Resume-review turnaround</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">"more than a month" &rarr; days</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="forum-archive-intelligence.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Forum Archive Intelligence
+      </a>
+      <a href="index.html" class="btn">
+        Back to overview <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const p = document.getElementById('proc-filter').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      resume: '<strong>Resume review SLA &middot; automate first</strong><br>Why first: it is already a public complaint, and it is the most mechanical. Intake timestamps and starts a clock. Claude pre-pass annotates formatting and quantification gaps. Human reviewer opens an annotated draft. SLA dashboard flags anything aging.<br><span style="color:var(--ink-muted)">Highest visible impact, lowest build risk. The right week-one or week-two automation.</span>',
+      mentor: '<strong>Mentor-matching &middot; automate second</strong><br>3,500+ mentors. The match should propose the top 3 fits with reasoning (industry, target firm, background overlap, availability) and a human confirms. Not auto-assigned, auto-shortlisted.<br><span style="color:var(--ink-muted)">Removes the "match from memory" step. The human still owns the call, they just stop doing the sort.</span>',
+      admissions: '<strong>Admissions triage &middot; automate third</strong><br>Under-4% acceptance means most applications are clear nos or clear maybes. An AI pre-pass ranks the pile so the human reviewer spends their hours on the genuine maybes, not re-reading obvious sorts.<br><span style="color:var(--ink-muted)">Sensitive, so it ships after the lower-risk two. The human always sees every application; the AI just orders the queue.</span>',
+      default: '<strong>Ops automation, sequenced</strong><br>Resume SLA first (public, mechanical, low risk). Mentor-matching second. Admissions triage third (most sensitive, ships last).<br><span style="color:var(--ink-muted)">Sequence by visible impact over build risk. The JD wants this; here is the order I would do it in.</span>'
+    };
+    out.innerHTML = samples[p] || samples['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

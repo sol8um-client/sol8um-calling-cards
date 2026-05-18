@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 02 · AI Interview Coach</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-bot"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><rect x="4" y="6" width="16" height="14" rx="2"/><circle cx="9" cy="13" r="1.4"/><circle cx="15" cy="13" r="1.4"/><path d="M12 2v4M8 6h8"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">For <span class="brand-sub">Pranav Macker / Wall Street Oasis</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Read</a>
+      <a href="audit.html">Product Audit</a>
+      <a href="ai-interview-coach.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 02 &middot; AI Interview Coach &middot; the AI initiative</div>
+    <h1 class="page-title">
+      WSO has 10,000 mock-interview scores.<br>
+      <em>That's the product, not the stat.</em>
+    </h1>
+    <p class="page-lede">
+      The JD mentions an AI mock-interview platform across 8 industry tracks. WSO already scores mock interviews against a database of over 10,000 scores. Most companies would kill for that corpus. The opportunity is to make it the engine of a real coaching loop: a candidate records an answer, gets scored against the 10,000, and most importantly gets the one specific drill that moves their weakest sub-score. Not a number. A next action.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="spec-to-sprint.html">Spec-to-Sprint <span class="badge">01</span></a></li>
+          <li><a href="ai-interview-coach.html" class="active">AI Interview Coach <span class="badge">02</span></a></li>
+          <li><a href="forum-archive-intelligence.html">Forum Archive Intelligence <span class="badge">03</span></a></li>
+          <li><a href="ops-automation.html">Ops Automation <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>Whisper for the transcript. Claude scores the answer against a rubric and benchmarks it against the 10,000-score corpus. A drill library mapped to each weak sub-category. The Academy dashboard renders it.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>A mock-interview score that tells a candidate "72/100" and nothing about what to do next. The gap between knowing you're weak and knowing how to fix it.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Score-improvement curve per candidate across a cohort. The real one: correlation between AI-coach usage and the Academy's job-placement outcome, the number the "Top Job Offer Guaranteed" promise rides on.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Flow -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Answer to drill, one loop</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">Candidate records answer</div>
+              <div class="flow-node in">Whisper transcribes</div>
+              <div class="flow-node in">Track + question type tagged</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Claude scores sub-categories, benchmarks vs the 10,000-score corpus, picks the drill</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">Sub-score breakdown</div>
+              <div class="flow-node out">Percentile vs corpus</div>
+              <div class="flow-node out">One specific next drill</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample scorecard -->
+        <div class="card mb-16" style="padding: 24px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; scorecard for one mock answer</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>IB track</span>
+          </div>
+
+          <div style="background: #1A1D23; border-radius: 8px; padding: 18px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #E3E4E6; line-height: 1.7;">
+            <div style="color: #4A90D9; font-weight: 600; margin-bottom: 8px;">Question: "Walk me through a DCF." &middot; IB track &middot; benchmarked vs 10,412 scores</div>
+            <div style="margin-bottom: 6px;">Structure &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2ECC71;">88</span> &nbsp;<span style="color:#525252;">78th percentile</span></div>
+            <div style="margin-bottom: 6px;">Technical accuracy &nbsp;<span style="color:#2ECC71;">91</span> &nbsp;<span style="color:#525252;">84th percentile</span></div>
+            <div style="margin-bottom: 6px;">Concision &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#E84C4C;">61</span> &nbsp;<span style="color:#525252;">31st percentile &larr; weakest</span></div>
+            <div style="margin-bottom: 6px;">Confidence / delivery <span style="color:#FCD34D;">74</span> &nbsp;<span style="color:#525252;">52nd percentile</span></div>
+            <div style="margin-bottom: 14px;">Follow-up handling &nbsp;<span style="color:#2ECC71;">85</span> &nbsp;<span style="color:#525252;">71st percentile</span></div>
+            <div style="color: #FCD34D; margin-bottom: 4px;">YOUR NEXT DRILL</div>
+            <div style="color: #8A8A8A;">Your DCF answer was technically strong but ran 2m 40s. Top-quartile answers land in 90 seconds. Drill: re-record the same question with a 90-second timer. Cut the WACC derivation to one line. The interviewer asks follow-ups if they want depth, your job is the clean spine.</div>
+            <div style="color: #525252; margin-top: 8px; font-size: 11px;">One weak sub-score. One drill. Not a report card, a next step.</div>
+          </div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; see a scorecard by track</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="track-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft);">
+              <option value="ib">Investment Banking</option>
+              <option value="pe">Private Equity</option>
+              <option value="hf">Hedge Fund</option>
+              <option value="consulting">Consulting</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Generate scorecard</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="84">
+          <span class="label">From "score" to "specific next action"</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">every score ends in a drill</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="spec-to-sprint.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: Spec-to-Sprint
+      </a>
+      <a href="forum-archive-intelligence.html" class="btn">
+        Next: Forum Archive Intelligence <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const t = document.getElementById('track-filter').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      ib: '<strong>Investment Banking &middot; "Walk me through a DCF"</strong><br>Structure 88, Technical 91, Concision 61 (weakest), Delivery 74, Follow-ups 85.<br><strong>Drill:</strong> re-record with a 90-second timer. Cut the WACC derivation to one line.<br><span style="color:var(--ink-muted)">The corpus says top-quartile DCF answers are short. The weak sub-score points straight at the fix.</span>',
+      pe: '<strong>Private Equity &middot; "Why this fund?"</strong><br>Firm research 79, Thesis fit 68 (weakest), Deal knowledge 86, Delivery 81.<br><strong>Drill:</strong> rewrite the answer around one specific deal the fund did and why it maps to your background. Generic "I like your strategy" answers score bottom-third.<br><span style="color:var(--ink-muted)">PE interviewers test specificity. The drill forces it.</span>',
+      hf: '<strong>Hedge Fund &middot; "Pitch me a stock"</strong><br>Thesis clarity 83, Variant view 59 (weakest), Risk awareness 72, Conviction 88.<br><strong>Drill:</strong> add the "what does the market believe that\'s wrong" sentence. A pitch without a variant view is just a description.<br><span style="color:var(--ink-muted)">The 10,000-score corpus is brutal on pitches that lack an edge.</span>',
+      consulting: '<strong>Consulting &middot; market-sizing case</strong><br>Structure 90, Math 84, Assumptions stated 64 (weakest), Communication 79.<br><strong>Drill:</strong> re-run the case narrating every assumption out loud before using it. Unstated assumptions are the top score-killer in case interviews.<br><span style="color:var(--ink-muted)">The weak sub-score is always the most actionable one.</span>',
+      default: '<strong>Scorecard</strong><br>Five sub-scores, each benchmarked against the 10,000+ corpus. The weakest one gets a specific drill.<br><span style="color:var(--ink-muted)">The product is the drill, not the number.</span>'
+    };
+    out.innerHTML = samples[t] || samples['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System 03 · Forum Archive Intelligence</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-clock"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-flow"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></symbol>
+  <symbol id="i-arrow"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M5 12h14m-7-7 7 7-7 7"/></symbol>
+  <symbol id="i-zap"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-spark"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"><path d="m12 2 1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2Z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark"><span class="glyph">N</span></span>
+      <span class="brand-text">For <span class="brand-sub">Pranav Macker / Wall Street Oasis</span></span>
+    </a>
+    <nav class="topnav">
+      <a href="index.html">Read</a>
+      <a href="audit.html">Product Audit</a>
+      <a href="forum-archive-intelligence.html" class="active">Workflows</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="page-header">
+    <div class="eyebrow">System 03 &middot; Forum Archive Intelligence &middot; new product</div>
+    <h1 class="page-title">
+      17 years of answers, buried.<br>
+      <em>This is the shovel.</em>
+    </h1>
+    <p class="page-lede">
+      Since 2006, finance candidates have been asking and answering recruiting questions on the WSO forum. That archive is the deepest moat in the category. Right now an AI bot posts inside threads, which helps a little. The real product is "ask the WSO archive": a user types a question, gets a synthesized answer with cited source threads, in seconds. The dead archive becomes a live, queryable product. And every answer ends with a quiet path into the Academy.
+    </p>
+  </section>
+
+  <section style="padding-top: 32px;">
+    <div class="demo-grid">
+
+      <aside class="demo-side">
+        <h4>Workflows</h4>
+        <ul class="workflow-list">
+          <li><a href="spec-to-sprint.html">Spec-to-Sprint <span class="badge">01</span></a></li>
+          <li><a href="ai-interview-coach.html">AI Interview Coach <span class="badge">02</span></a></li>
+          <li><a href="forum-archive-intelligence.html" class="active">Forum Archive Intelligence <span class="badge">03</span></a></li>
+          <li><a href="ops-automation.html">Ops Automation <span class="badge">04</span></a></li>
+        </ul>
+
+        <h4 class="mt-24">How it runs</h4>
+        <div class="card card-tight" style="font-size: 13px; line-height: 1.55;">
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">STACK</div>
+          <div>The 17-year forum corpus chunked and embedded into a vector store. A retrieval pass over the index. Claude synthesizes the answer with inline citations. Renders as a box above forum search results.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">REPLACES</div>
+          <div>Keyword search that returns 40 thread links. The AI bot that posts inside threads as a band-aid. The user who wanted an answer and got a reading list.</div>
+          <div class="divider"></div>
+          <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.12em; margin-bottom: 8px;">ANCHOR METRIC</div>
+          <div>Archive-query volume. The conversion one: archive-query to Academy-waitlist rate. The archive becomes a measurable funnel into the paid product.</div>
+        </div>
+      </aside>
+
+      <div>
+
+        <!-- Flow -->
+        <div class="flow-diagram mb-24">
+          <div class="mono text-muted mb-16" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Question to cited answer</div>
+          <div class="row gap-8" style="flex-wrap: wrap; align-items: center;">
+            <div class="flow-stack">
+              <div class="flow-node in">User asks a recruiting question</div>
+              <div class="flow-node in">17-year corpus, embedded + indexed</div>
+            </div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-node proc"><svg class="ic ic-sm"><use href="#i-zap"/></svg> Retrieval over the index, Claude synthesizes with inline citations to real threads</div>
+            <span class="flow-arrow" style="font-size: 24px;">&rarr;</span>
+            <div class="flow-stack">
+              <div class="flow-node out">Synthesized answer</div>
+              <div class="flow-node out">3 cited source threads</div>
+              <div class="flow-node out">Quiet path to Academy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample answer -->
+        <div class="card mb-16" style="padding: 24px;">
+          <div class="row-between mb-16">
+            <div class="mono text-muted" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Sample &middot; "ask the archive" answer box</div>
+            <span class="tag tag-green pulsing"><span class="tag-dot"></span>Cited, not invented</span>
+          </div>
+
+          <div style="background: var(--bg-soft); border-radius: 8px; padding: 20px; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.65; color: #1A1D23; border-left: 3px solid #2563EB;">
+            <div class="mono text-muted mb-8" style="font-size: 10px; letter-spacing: 0.14em;">QUESTION</div>
+            <div style="font-weight: 600; font-size: 15px; margin-bottom: 14px;">"How early should I start networking for IB summer analyst recruiting?"</div>
+
+            <div class="mono text-muted mb-8" style="font-size: 10px; letter-spacing: 0.14em;">ANSWER FROM THE ARCHIVE</div>
+            <div style="margin-bottom: 14px;">
+              The consistent answer across 17 years of WSO threads: start the summer before your target recruiting cycle, roughly 12 to 18 months out. For a target sophomore-summer internship, that means networking in freshman spring. The threads agree the early mover advantage is real and front-loaded. Cold outreach in the off-cycle gets responses; the same outreach during peak recruiting competes with everyone else's.
+            </div>
+
+            <div style="background: #FFF; padding: 12px 14px; border-radius: 6px; border: 1px solid var(--line); margin-bottom: 14px;">
+              <div class="mono text-muted mb-6" style="font-size: 10px; letter-spacing: 0.1em;">CITED SOURCE THREADS</div>
+              <div style="font-size: 13px; line-height: 1.7;">
+                "Networking timeline for SA recruiting" &middot; 2019 &middot; 84 replies<br>
+                "How early is too early to network" &middot; 2022 &middot; 51 replies<br>
+                "Off-cycle outreach response rates, what worked" &middot; 2024 &middot; 39 replies
+              </div>
+            </div>
+
+            <div style="font-size: 13px; color: #525252;">Want a structured networking plan for your exact timeline? The WSO Academy builds one with you. <span style="color: #2563EB;">See the Academy &rarr;</span></div>
+          </div>
+          <div class="mono text-muted mt-12" style="font-size: 10px; letter-spacing: 0.1em;">EVERY ANSWER IS GROUNDED IN REAL THREADS AND ENDS WITH A QUIET ACADEMY PATH</div>
+        </div>
+
+        <!-- Demo interaction -->
+        <div class="card" style="padding: 20px;">
+          <div class="mono text-muted mb-12" style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;">Interactive &middot; ask the archive</div>
+          <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <select id="q-filter" style="padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; font-family: 'Geist Mono', monospace; font-size: 12px; background: var(--bg-soft); flex: 1; min-width: 260px;">
+              <option value="gpa">"Does my GPA matter for IB recruiting?"</option>
+              <option value="nontarget">"Can I break in from a non-target school?"</option>
+              <option value="pe">"When do I recruit for PE if I'm in banking?"</option>
+              <option value="exit">"What are realistic exit options from a hedge fund?"</option>
+            </select>
+            <button id="run-demo" class="btn" style="flex: 0 0 auto;">Ask</button>
+          </div>
+          <div id="demo-output" style="display: none; background: var(--bg-soft); border-radius: 6px; padding: 16px; font-size: 13px; line-height: 1.6;">
+          </div>
+        </div>
+
+        <div class="impact-bar mt-24" data-pct="90">
+          <span class="label">The moat, turned into a queryable product</span>
+          <span class="track"><span class="fill"></span></span>
+          <span class="mono text-muted" style="font-size: 11px;">archive &rarr; product &rarr; Academy funnel</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row-between mt-32">
+      <a href="ai-interview-coach.html" class="btn btn-secondary">
+        <svg class="ic ic-sm"><use href="#i-arrow"/></svg> Prev: AI Interview Coach
+      </a>
+      <a href="ops-automation.html" class="btn">
+        Next: Ops Automation <svg class="ic ic-sm"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const ioReveal = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .impact-bar').forEach(el => ioReveal.observe(el));
+
+  document.getElementById('run-demo').addEventListener('click', function() {
+    const q = document.getElementById('q-filter').value;
+    const out = document.getElementById('demo-output');
+    const samples = {
+      gpa: '<strong>"Does my GPA matter for IB recruiting?"</strong><br>Archive consensus: yes below a threshold, diminishing above it. Most threads cite 3.5 as the resume-screen line, 3.7+ as comfortable. Below 3.5, networking and a strong story can offset it but it is a real headwind.<br><span style="color:var(--ink-muted)">Cited: "GPA cutoffs by bank" 2021 &middot; "Got IB offer with 3.3" 2023 &middot; "Does GPA matter" megathread 2018</span>',
+      nontarget: '<strong>"Can I break in from a non-target school?"</strong><br>Archive consensus: yes, and it is the single most-discussed topic on WSO. The pattern across threads: 3x the networking volume of a target student, start earlier, lead with a specific reason for finance. Non-target offers happen every cycle.<br><span style="color:var(--ink-muted)">Cited: "Non-target success stories" 2020 &middot; "Non-target networking playbook" 2022 &middot; "Broke in from a state school" 2024</span>',
+      pe: '<strong>"When do I recruit for PE if I\'m in banking?"</strong><br>Archive consensus: on-cycle PE recruiting has crept earlier every year, now often within the first 3-6 months of starting as an analyst. Off-cycle is the path for anyone who misses or wants more control.<br><span style="color:var(--ink-muted)">Cited: "PE on-cycle timeline 2024" &middot; "On-cycle is insane this year" 2023 &middot; "Off-cycle vs on-cycle" megathread</span>',
+      exit: '<strong>"What are realistic exit options from a hedge fund?"</strong><br>Archive consensus: more nuanced than IB exits. Threads cite other funds, going to the buy-side LP world, corporate strategy, or starting up. The "HF is a terminal seat" view shows up often, exits are real but less of a conveyor belt than banking.<br><span style="color:var(--ink-muted)">Cited: "HF exit opps" 2021 &middot; "Left my HF seat, AMA" 2023 &middot; "Is HF terminal" 2019</span>',
+      default: '<strong>Ask the archive</strong><br>Any recruiting question gets a synthesized answer from 17 years of threads, with citations. Grounded, not invented.<br><span style="color:var(--ink-muted)">Every answer ends with a quiet path to the Academy.</span>'
+    };
+    out.innerHTML = samples[q] || samples['default'];
+    out.style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
