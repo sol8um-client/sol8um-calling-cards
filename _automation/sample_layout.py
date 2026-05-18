@@ -74,7 +74,7 @@ def main():
         print(
             f"  cluster {i+1}: y={y_min}-{y_max}  "
             f"({y_min/H*100:5.1f}% - {y_max/H*100:5.1f}%)  "
-            f"→ {strip_path.name}"
+            f"-> {strip_path.name}"
         )
 
     print()
